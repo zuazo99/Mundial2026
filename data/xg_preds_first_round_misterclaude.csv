@@ -1,0 +1,33 @@
+date,team,opponent,xg_estimated
+1,South Korea,Switzerland,1.01
+1,Switzerland,South Korea,1.29
+2,Japan,Morocco,0.88
+2,Morocco,Japan,0.89
+3,Germany,Scotland,1.73
+3,Scotland,Germany,0.86
+4,Brazil,Netherlands,1.22
+4,Netherlands,Brazil,1.34
+5,Ecuador,Norway,0.93
+5,Norway,Ecuador,0.84
+6,Australia,France,0.82
+6,France,Australia,1.5
+7,Cape Verde,Mexico,0.83
+7,Mexico,Cape Verde,1.86
+8,Colombia,England,1.08
+8,England,Colombia,1.22
+9,Belgium,Czech Republic,1.46
+9,Czech Republic,Belgium,0.97
+10,Bosnia and Herzegovina,Turkey,0.78
+10,Turkey,Bosnia and Herzegovina,1.91
+11,Austria,Spain,0.83
+11,Spain,Austria,1.55
+12,Croatia,Uzbekistan,1.35
+12,Uzbekistan,Croatia,0.83
+13,Canada,Egypt,1.3
+13,Egypt,Canada,1.1
+14,Iran,United States,1.5
+14,United States,Iran,1.27
+15,Argentina,Uruguay,1.31
+15,Uruguay,Argentina,0.7
+16,Ivory Coast,Portugal,0.76
+16,Portugal,Ivory Coast,1.42
