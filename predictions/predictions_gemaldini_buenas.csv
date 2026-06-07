@@ -1,0 +1,105 @@
+Team_1,Score_1,Score_2,Team_2
+Mexico,2,0,South Africa
+South Korea,1,1,Czech Republic
+Mexico,2,2,South Korea
+Czech Republic,1,0,South Africa
+Czech Republic,1,1,Mexico
+South Africa,1,2,South Korea
+Canada,1,1,Bosnia and Herzegovina
+Qatar,0,4,Switzerland
+Canada,2,0,Qatar
+Switzerland,2,0,Bosnia and Herzegovina
+Switzerland,3,0,Canada
+Bosnia and Herzegovina,3,1,Qatar
+Brazil,1,0,Morocco
+Haiti,1,2,Scotland
+Brazil,2,0,Haiti
+Scotland,1,1,Morocco
+Scotland,1,2,Brazil
+Morocco,2,0,Haiti
+United States,1,2,Paraguay
+Australia,1,1,Turkey
+United States,1,1,Australia
+Turkey,1,1,Paraguay
+Turkey,2,1,United States
+Paraguay,2,1,Australia
+Germany,3,1,Curaçao
+Ivory Coast,1,1,Ecuador
+Germany,2,1,Ivory Coast
+Ecuador,3,0,Curaçao
+Ecuador,1,0,Germany
+Curaçao,0,2,Ivory Coast
+Netherlands,1,1,Japan
+Sweden,2,1,Tunisia
+Netherlands,3,1,Sweden
+Tunisia,1,2,Japan
+Tunisia,1,1,Netherlands
+Japan,1,1,Sweden
+Belgium,1,1,Egypt
+Iran,2,0,New Zealand
+Belgium,1,1,Iran
+New Zealand,1,2,Egypt
+New Zealand,2,3,Belgium
+Egypt,1,2,Iran
+Spain,2,0,Cape Verde
+Saudi Arabia,1,1,Uruguay
+Spain,2,1,Saudi Arabia
+Uruguay,1,0,Cape Verde
+Uruguay,0,1,Spain
+Cape Verde,1,1,Saudi Arabia
+France,2,1,Senegal
+Iraq,0,1,Norway
+France,2,0,Iraq
+Norway,2,1,Senegal
+Norway,2,2,France
+Senegal,1,0,Iraq
+Argentina,2,1,Algeria
+Austria,2,0,Jordan
+Argentina,1,1,Austria
+Jordan,1,1,Algeria
+Jordan,0,2,Argentina
+Algeria,1,2,Austria
+Portugal,1,0,DR Congo
+Uzbekistan,1,1,Colombia
+Portugal,2,1,Uzbekistan
+Colombia,2,2,DR Congo
+Colombia,2,2,Portugal
+DR Congo,0,2,Uzbekistan
+England,2,1,Croatia
+Ghana,0,1,Panama
+England,2,0,Ghana
+Panama,1,2,Croatia
+Panama,0,3,England
+Croatia,2,0,Ghana
+South Korea,2,1,Bosnia and Herzegovina
+Brazil,0,1,Japan
+Ecuador,1,0,Scotland
+Netherlands,1,2,Morocco
+Germany,2,3,Norway
+France,3,1,Sweden
+Mexico,2,1,Ivory Coast
+England,2,1,Colombia
+Iran,2,1,Czech Republic
+Paraguay,2,1,Canada
+Spain,2,1,Austria
+Uzbekistan,1,2,Croatia
+Switzerland,2,1,Egypt
+Turkey,2,1,Belgium
+Argentina,2,1,Uruguay
+Portugal,2,1,Senegal
+South Korea,1,2,Morocco
+Ecuador,1,2,France
+Japan,2,1,Norway
+Mexico,0,1,England
+Spain,3,2,Croatia
+Paraguay,2,1,Iran
+Argentina,2,1,Turkey
+Switzerland,1,2,Portugal
+Morocco,1,2,France
+Spain,2,1,Paraguay
+Japan,1,2,England
+Argentina,1,2,Portugal
+France,1,2,Spain
+England,2,1,Portugal
+France,2,1,Portugal
+Spain,2,1,England

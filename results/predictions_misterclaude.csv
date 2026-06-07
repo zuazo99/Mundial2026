@@ -1,0 +1,105 @@
+Team_1,Score_1,Score_2,Team_2
+Mexico,3,1,South Africa
+South Korea,1,1,Czech Republic
+Mexico,1,1,South Korea
+Czech Republic,1,1,South Africa
+Czech Republic,0,1,Mexico
+South Africa,1,1,South Korea
+Canada,2,1,Bosnia and Herzegovina
+Qatar,1,3,Switzerland
+Canada,2,0,Qatar
+Switzerland,3,0,Bosnia and Herzegovina
+Switzerland,2,0,Canada
+Bosnia and Herzegovina,1,1,Qatar
+Brazil,1,3,Morocco
+Haiti,0,4,Scotland
+Brazil,2,1,Haiti
+Scotland,0,2,Morocco
+Scotland,1,2,Brazil
+Morocco,3,1,Haiti
+United States,2,2,Paraguay
+Australia,0,1,Turkey
+United States,2,1,Australia
+Turkey,2,0,Paraguay
+Turkey,4,1,United States
+Paraguay,2,1,Australia
+Germany,4,1,Curaçao
+Ivory Coast,0,1,Ecuador
+Germany,1,0,Ivory Coast
+Ecuador,3,1,Curaçao
+Ecuador,1,1,Germany
+Curaçao,1,2,Ivory Coast
+Netherlands,1,2,Japan
+Sweden,2,1,Tunisia
+Netherlands,2,2,Sweden
+Tunisia,0,1,Japan
+Tunisia,1,3,Netherlands
+Japan,1,0,Sweden
+Belgium,1,1,Egypt
+Iran,2,2,New Zealand
+Belgium,1,1,Iran
+New Zealand,1,1,Egypt
+New Zealand,1,4,Belgium
+Egypt,0,1,Iran
+Spain,2,1,Cape Verde
+Saudi Arabia,1,2,Uruguay
+Spain,4,1,Saudi Arabia
+Uruguay,2,0,Cape Verde
+Uruguay,1,2,Spain
+Cape Verde,2,1,Saudi Arabia
+France,1,1,Senegal
+Iraq,0,1,Norway
+France,3,0,Iraq
+Norway,2,0,Senegal
+Norway,0,1,France
+Senegal,1,0,Iraq
+Argentina,4,0,Algeria
+Austria,1,1,Jordan
+Argentina,1,0,Austria
+Jordan,1,2,Algeria
+Jordan,1,2,Argentina
+Algeria,1,2,Austria
+Portugal,2,1,DR Congo
+Uzbekistan,1,0,Colombia
+Portugal,1,0,Uzbekistan
+Colombia,2,0,DR Congo
+Colombia,2,2,Portugal
+DR Congo,3,1,Uzbekistan
+England,3,1,Croatia
+Ghana,1,1,Panama
+England,2,0,Ghana
+Panama,1,2,Croatia
+Panama,0,2,England
+Croatia,1,0,Ghana
+South Korea,1,2,Canada
+Morocco,1,2,Netherlands
+Germany,1,2,United States
+Japan,2,1,Brazil
+Ecuador,0,1,Norway
+France,2,1,Sweden
+Mexico,2,1,Scotland
+England,2,1,DR Congo
+Belgium,2,1,Cape Verde
+Turkey,2,1,Ivory Coast
+Spain,2,1,Austria
+Colombia,2,1,Croatia
+Switzerland,3,1,Algeria
+Paraguay,1,2,Iran
+Argentina,2,1,Uruguay
+Portugal,2,1,Senegal
+Canada,3,2,Japan
+United States,2,3,France
+Netherlands,2,1,Norway
+Mexico,0,2,England
+Spain,1,3,Colombia
+Turkey,1,2,Belgium
+Argentina,1,2,Iran
+Switzerland,1,3,Portugal
+Canada,1,2,France
+Colombia,2,1,Belgium
+Netherlands,1,2,England
+Iran,0,2,Portugal
+France,1,2,Colombia
+England,3,1,Portugal
+France,4,2,Portugal
+Colombia,2,3,England
