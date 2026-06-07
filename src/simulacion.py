@@ -1,4 +1,4 @@
-from src.clases_simulacion import Tournament
+from clases_simulacion import Tournament
 
 
 # # Group A

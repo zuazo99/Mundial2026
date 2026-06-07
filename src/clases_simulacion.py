@@ -1,6 +1,6 @@
 import pandas as pd
 import random as rd
-from src.xg_preds import train_model
+from xg_preds import train_model
 
 class Team:
     # Añadir stats de ventana como atributos
