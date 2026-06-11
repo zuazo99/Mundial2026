@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* ─── CSS custom properties ─────────────────────────────────────── */
+:root {
+  --bg-base:     hsl(220 15% 7%);
+  --bg-card:     hsl(220 15% 11%);
+  --bg-muted:    hsl(220 15% 15%);
+  --border:      hsl(220 15% 20%);
+  --text-base:   hsl(220 15% 90%);
+  --text-muted:  hsl(220 10% 55%);
+  --gold:        hsl(45 100% 50%);
+  --gold-dim:    hsl(45 70% 35%);
+  --green:       hsl(142 72% 42%);
+  --amber:       hsl(38 92% 50%);
+  --red:         hsl(0 72% 51%);
+  --blue:        hsl(220 80% 58%);
+}
+
+/* ─── Base ───────────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text-base);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+/* ─── Tab system ─────────────────────────────────────────────────── */
+[data-tab-content] { display: none; }
+[data-tab-content].active { display: block; }
+
+/* ─── Variant display ────────────────────────────────────────────── */
+.variant-block { display: none !important; }
+body[data-active-variant="misterclaude"] .variant-block[data-variant="misterclaude"] { display: block !important; }
+body[data-active-variant="gemaldini"]    .variant-block[data-variant="gemaldini"]    { display: block !important; }
+body[data-active-variant="dav_gpo"]      .variant-block[data-variant="dav_gpo"]      { display: block !important; }
+
+/* ─── XG bar ─────────────────────────────────────────────────────── */
+.xg-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--blue);
+  transition: width 0.3s ease;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeIn 0.25s ease forwards; }
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 hsla(45,100%,50%,0.4); }
+  50%       { box-shadow: 0 0 0 8px hsla(45,100%,50%,0); }
+}
+.pulse-gold { animation: pulse-gold 1.5s ease infinite; }
+
+/* ─── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
