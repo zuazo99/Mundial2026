@@ -1,0 +1,53 @@
+---
+import Flag from './Flag.astro';
+interface Props {
+  team1: string; score1: number;
+  team2: string; score2: number;
+  xg1?: number;  xg2?: number;
+  ko?: boolean;
+}
+const { team1, score1, team2, score2, xg1, xg2, ko = false } = Astro.props;
+const winner = score1 > score2 ? team1 : score1 < score2 ? team2 : null;
+const maxXG = 2.5;
+const bar1 = xg1 != null ? Math.min(100, (xg1 / maxXG) * 100) : null;
+const bar2 = xg2 != null ? Math.min(100, (xg2 / maxXG) * 100) : null;
+---
+<div class="flex items-center gap-2 py-2 px-3 rounded-lg bg-[var(--bg-muted)] text-sm">
+  <!-- Team 1 -->
+  <div class={`flex items-center gap-1.5 flex-1 justify-end ${winner === team2 ? 'opacity-50' : ''}`}>
+    <span class={`text-right leading-tight ${winner === team1 ? 'font-semibold text-[var(--gold)]' : ''}`}>
+      {team1}
+    </span>
+    <Flag team={team1} />
+  </div>
+
+  <!-- Score -->
+  <div class="flex items-center gap-1 shrink-0 font-mono text-base font-bold">
+    <span class={score1 > score2 ? 'text-[var(--gold)]' : ''}>{score1}</span>
+    <span class="text-[var(--text-muted)]">–</span>
+    <span class={score2 > score1 ? 'text-[var(--gold)]' : ''}>{score2}</span>
+  </div>
+
+  <!-- Team 2 -->
+  <div class={`flex items-center gap-1.5 flex-1 ${winner === team1 ? 'opacity-50' : ''}`}>
+    <Flag team={team2} />
+    <span class={`leading-tight ${winner === team2 ? 'font-semibold text-[var(--gold)]' : ''}`}>
+      {team2}
+    </span>
+  </div>
+</div>
+
+<!-- XG bars -->
+{bar1 != null && bar2 != null && (
+  <div class="flex gap-1 px-3 pb-1">
+    <div class="flex-1 flex justify-end">
+      <div title={`XG ${team1}: ${xg1?.toFixed(2)}`}
+           class="xg-bar" style={`width:${bar1}%`}></div>
+    </div>
+    <div class="w-8 shrink-0"></div>
+    <div class="flex-1">
+      <div title={`XG ${team2}: ${xg2?.toFixed(2)}`}
+           class="xg-bar" style={`width:${bar2}%`}></div>
+    </div>
+  </div>
+)}
