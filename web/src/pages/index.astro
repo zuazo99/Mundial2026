@@ -3,8 +3,10 @@ import Base from '../layouts/Base.astro';
 import Flag from '../components/Flag.astro';
 import GroupCard from '../components/GroupCard.astro';
 import BracketMatch from '../components/BracketMatch.astro';
-import { predictions, type Variant } from '../data/predictions';
+import ConsensusIndicator from '../components/ConsensusIndicator.astro';
+import { predictions, type Variant, type MatchResult } from '../data/predictions';
 import { xgData } from '../data/xg';
+import { BASE_ELO, ELO_ADJUSTMENTS } from '../data/groups';
 import { computeAllStandings } from '../lib/computeStandings';
 import { buildBracket, getChampion, getRunnerUp } from '../lib/bracketBuilder';
 
@@ -39,6 +41,36 @@ const variantData = Object.fromEntries(
 // Consensus: do all 3 models agree on the champion?
 const champions = VARIANTS.map(v => variantData[v].champion);
 const allAgree = champions.every(c => c === champions[0]);
+
+// Cross-model R32 match winners for divergence indicators
+// Shape: { matchIndex: [winner_mc, winner_gem, winner_dav] }
+const r32Consensus: Record<number, string[]> = {};
+VARIANTS.forEach((v, vi) => {
+  predictions[v].r32.forEach((m: MatchResult, mi: number) => {
+    if (!r32Consensus[mi]) r32Consensus[mi] = [];
+    r32Consensus[mi][vi] = m.score1 > m.score2 ? m.team1 : m.team2;
+  });
+});
+
+// "Shock del torneo": match with the lowest ELO win probability for the actual winner
+function eloWinProb(winnerElo: number, loserElo: number): number {
+  return 1 / (1 + Math.pow(10, -(winnerElo - loserElo) / 400));
+}
+
+const shocks = VARIANTS.map(v => {
+  const rounds = predictions[v];
+  const koMatches = [...rounds.r32, ...rounds.sweet16, ...rounds.elite8, ...rounds.semis, ...rounds.final];
+  let minProb = 1, shockMatch: MatchResult | null = null;
+  for (const m of koMatches) {
+    const winner = m.score1 > m.score2 ? m.team1 : m.team2;
+    const loser  = m.score1 > m.score2 ? m.team2 : m.team1;
+    const wElo = (BASE_ELO[winner] ?? 1500) + (ELO_ADJUSTMENTS[v]?.[winner] ?? 0);
+    const lElo = (BASE_ELO[loser]  ?? 1500) + (ELO_ADJUSTMENTS[v]?.[loser]  ?? 0);
+    const prob = eloWinProb(wElo, lElo);
+    if (prob < minProb) { minProb = prob; shockMatch = m; }
+  }
+  return { match: shockMatch, prob: minProb };
+});
 ---
 
 <Base>
@@ -113,28 +145,37 @@ const allAgree = champions.every(c => c === champions[0]);
     <!-- ── CUADRO ──────────────────────────────────────────────── -->
     <section id="cuadro" data-tab-content>
       <h2 class="text-lg font-bold mb-4">Cuadro del Torneo</h2>
-      {VARIANTS.map(v => (
+      {VARIANTS.map((v, vi) => (
         <div class="variant-block" data-variant={v}>
           <div class="overflow-x-auto pb-4">
-            <div class="flex gap-4 min-w-max">
+            <div class="flex gap-5 min-w-max">
               {variantData[v].bracket.map((round) => (
-                <div class="flex flex-col gap-2" style="min-width:200px">
+                <div class="flex flex-col gap-2" style="min-width:210px">
                   <h3 class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] px-1 mb-1">
                     {round.label}
                   </h3>
                   <div class={`flex flex-col ${
                     round.name === 'r32'     ? 'gap-2' :
-                    round.name === 'sweet16' ? 'gap-4' :
-                    round.name === 'elite8'  ? 'gap-8' :
-                    round.name === 'semis'   ? 'gap-16' : 'gap-4'
+                    round.name === 'sweet16' ? 'gap-6' :
+                    round.name === 'elite8'  ? 'gap-14' :
+                    round.name === 'semis'   ? 'gap-32' : 'gap-6'
                   }`}>
-                    {round.matches.map((m) => (
-                      <BracketMatch
-                        match={m}
-                        isHighlighted={
-                          round.name === 'final' && m.winner === variantData[v].champion
-                        }
-                      />
+                    {round.matches.map((m, mi) => (
+                      <div class="relative">
+                        <BracketMatch
+                          match={m}
+                          isHighlighted={
+                            (round.name === 'final' || round.name === 'semis') &&
+                            m.winner === variantData[v].champion
+                          }
+                        />
+                        {/* Divergence indicator for R32 */}
+                        {round.name === 'r32' && r32Consensus[mi] && (
+                          <div class="absolute -top-1 -right-1">
+                            <ConsensusIndicator winners={r32Consensus[mi]} />
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -203,6 +244,29 @@ const allAgree = champions.every(c => c === champions[0]);
           </p>
         </div>
       )}
+
+      {/* Shock del torneo */}
+      {VARIANTS.map((v, vi) => {
+        const { match, prob } = shocks[vi];
+        if (!match) return null;
+        const winner = match.score1 > match.score2 ? match.team1 : match.team2;
+        const loser  = match.score1 > match.score2 ? match.team2 : match.team1;
+        return (
+          <div class="variant-block mb-4" data-variant={v}>
+            <div class="rounded-xl border border-[var(--red)]/50 bg-[var(--red)]/5 p-4">
+              <p class="text-xs font-semibold text-[var(--red)] uppercase tracking-wide mb-1">
+                ⚡ Shock del torneo
+              </p>
+              <p class="font-bold">
+                <Flag team={winner} /> {winner} elimina a <Flag team={loser} /> {loser}
+              </p>
+              <p class="text-xs text-[var(--text-muted)] mt-1">
+                Solo un {(prob * 100).toFixed(0)}% de probabilidad según ELO · Resultado: {match.score1}–{match.score2}
+              </p>
+            </div>
+          </div>
+        );
+      })}
 
       {/* Stats section for active variant — shown via JS */}
       {VARIANTS.map(v => {
@@ -295,6 +359,44 @@ const allAgree = champions.every(c => c === champions[0]);
         el.classList.toggle('active', el.id === target);
       });
     });
+  });
+
+  // ─── "Camino al título": highlight a team's full bracket journey ─
+  let activeJourneyTeam: string | null = null;
+
+  function highlightJourney(team: string | null) {
+    // Reset all matches
+    document.querySelectorAll<HTMLElement>('.bracket-match').forEach(el => {
+      el.style.opacity = '';
+      el.style.boxShadow = '';
+      el.style.border = '';
+    });
+    if (!team) { activeJourneyTeam = null; return; }
+    activeJourneyTeam = team;
+
+    document.querySelectorAll<HTMLElement>('.bracket-match').forEach(el => {
+      const t1 = el.dataset.team1;
+      const t2 = el.dataset.team2;
+      if (t1 === team || t2 === team) {
+        el.style.opacity = '1';
+        el.style.boxShadow = '0 0 0 2px var(--gold), 0 0 16px hsla(45,100%,50%,0.3)';
+      } else {
+        el.style.opacity = '0.25';
+      }
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    const row = (e.target as Element).closest<HTMLElement>('.team-row');
+    if (row) {
+      const team = row.dataset.team!;
+      highlightJourney(team === activeJourneyTeam ? null : team);
+      return;
+    }
+    // Click outside bracket → clear
+    if (!(e.target as Element).closest('.bracket-match')) {
+      highlightJourney(null);
+    }
   });
 
   // ─── Variant switching ────────────────────────────────────────

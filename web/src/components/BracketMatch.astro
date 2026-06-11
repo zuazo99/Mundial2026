@@ -6,23 +6,31 @@ interface Props {
   isHighlighted?: boolean;
 }
 const { match, isHighlighted = false } = Astro.props;
-const { team1, score1, team2, score2, winner } = match;
+const { team1, score1, team2, score2, winner, id } = match;
 ---
 
-<div class={`rounded-lg border overflow-hidden text-xs ${
-  isHighlighted
-    ? 'border-[var(--gold)] shadow-[0_0_12px_hsla(45,100%,50%,0.2)]'
-    : 'border-[var(--border)]'
-}`}>
+<div
+  class={`bracket-match rounded-lg border overflow-hidden text-xs transition-all cursor-pointer ${
+    isHighlighted
+      ? 'border-[var(--gold)] shadow-[0_0_12px_hsla(45,100%,50%,0.2)]'
+      : 'border-[var(--border)] hover:border-[var(--text-muted)]'
+  }`}
+  data-match-id={id}
+  data-team1={team1}
+  data-team2={team2}
+>
   {[
-    { team: team1, score: score1, oScore: score2 },
-    { team: team2, score: score2, oScore: score1 },
-  ].map(({ team, score, oScore }) => {
+    { team: team1, score: score1 },
+    { team: team2, score: score2 },
+  ].map(({ team, score }) => {
     const isWinner = team === winner;
     return (
-      <div class={`flex items-center gap-2 px-2 py-1.5 ${
-        isWinner ? 'bg-[var(--bg-muted)]' : 'bg-[var(--bg-card)] opacity-60'
-      }`}>
+      <div
+        class={`flex items-center gap-2 px-2 py-1.5 team-row ${
+          isWinner ? 'bg-[var(--bg-muted)]' : 'bg-[var(--bg-card)] opacity-60'
+        }`}
+        data-team={team}
+      >
         <Flag team={team} />
         <span class={`flex-1 truncate ${isWinner ? 'font-semibold' : ''}`}>{team}</span>
         <span class={`font-mono font-bold tabular-nums ${isWinner ? 'text-[var(--gold)]' : ''}`}>
