@@ -59,7 +59,7 @@ def train_model(name):
     df_historia["clean_ratio"] = (df_historia["goals_conceded"] == 0).astype(int)
     df_historia["clean_20"] = df_historia.groupby("team")["clean_ratio"].transform(lambda x: calculate_window(x, 20))
 
-    df_historia["dif_goals_elo"] = np.where(df_historia["opponent_elo"] > df_historia["elo"], df_historia["goals"] - df_historia["goals_conceded"], np.NaN)
+    df_historia["dif_goals_elo"] = np.where(df_historia["opponent_elo"] > df_historia["elo"], df_historia["goals"] - df_historia["goals_conceded"], np.nan)
     df_historia["underdog_20"] = df_historia.groupby("team")["dif_goals_elo"].transform(lambda x: calculate_window(x, 20))
     df_historia["underdog_20"].fillna(0, inplace=True)
 
@@ -72,8 +72,8 @@ def train_model(name):
     pca = PCA(n_components=2, random_state=42)
     pca_data = pca.fit_transform(scaled_data)
 
-    df_historia["PCA_1"] = np.NaN
-    df_historia["PCA_2"] = np.NaN
+    df_historia["PCA_1"] = np.nan
+    df_historia["PCA_2"] = np.nan
     df_historia.loc[no_nan_rows, "PCA_1"] = pca_data[:, 0]
     df_historia.loc[no_nan_rows, "PCA_2"] = pca_data[:, 1]
 
