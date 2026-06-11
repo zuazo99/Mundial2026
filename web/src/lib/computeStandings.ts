@@ -25,21 +25,20 @@ export interface GroupStandings {
   matchdays: MatchResult[][];
 }
 
-function compareTeams(
-  a: TeamStanding,
-  b: TeamStanding,
-  matches: MatchResult[],
-  teams: string[],
-): number {
-  // 1. Points
-  if (b.pts !== a.pts) return b.pts - a.pts;
+// Recursively orders a set of teams, mirroring Python's tie_break() in
+// clases_simulacion.py. Head-to-head stats are recomputed over ONLY the teams
+// still tied at the current level; whenever a criterion splits the set, each
+// resulting subgroup is re-ranked from scratch (recursion), so H2H never leaks
+// in results against teams outside the tie.
+function rankTeams(tied: TeamStanding[], matches: MatchResult[]): TeamStanding[] {
+  if (tied.length <= 1) return tied;
 
-  // H2H stats between tied teams
+  const tiedNames = tied.map(t => t.team);
   const h2h: Record<string, { pts: number; gd: number; gf: number }> = {};
-  for (const t of teams) h2h[t] = { pts: 0, gd: 0, gf: 0 };
+  for (const t of tiedNames) h2h[t] = { pts: 0, gd: 0, gf: 0 };
 
   for (const m of matches) {
-    if (teams.includes(m.team1) && teams.includes(m.team2)) {
+    if (tiedNames.includes(m.team1) && tiedNames.includes(m.team2)) {
       h2h[m.team1].gf += m.score1;
       h2h[m.team2].gf += m.score2;
       h2h[m.team1].gd += (m.score1 - m.score2);
@@ -50,16 +49,36 @@ function compareTeams(
     }
   }
 
-  // 2. H2H points
-  if (h2h[b.team].pts !== h2h[a.team].pts) return h2h[b.team].pts - h2h[a.team].pts;
-  // 3. H2H GD
-  if (h2h[b.team].gd !== h2h[a.team].gd) return h2h[b.team].gd - h2h[a.team].gd;
-  // 4. H2H GF
-  if (h2h[b.team].gf !== h2h[a.team].gf) return h2h[b.team].gf - h2h[a.team].gf;
-  // 5. Overall GD
-  if (b.gd !== a.gd) return b.gd - a.gd;
-  // 6. Overall GF
-  return b.gf - a.gf;
+  // Criteria in priority order: total points, H2H points, H2H GD, H2H GF,
+  // overall GD, overall GF.
+  const criteria: ((t: TeamStanding) => number)[] = [
+    t => t.pts,
+    t => h2h[t.team].pts,
+    t => h2h[t.team].gd,
+    t => h2h[t.team].gf,
+    t => t.gd,
+    t => t.gf,
+  ];
+
+  for (const criterio of criteria) {
+    const buckets = new Map<number, TeamStanding[]>();
+    for (const t of tied) {
+      const value = criterio(t);
+      if (!buckets.has(value)) buckets.set(value, []);
+      buckets.get(value)!.push(t);
+    }
+
+    if (buckets.size > 1) {
+      const result: TeamStanding[] = [];
+      for (const value of [...buckets.keys()].sort((x, y) => y - x)) {
+        result.push(...rankTeams(buckets.get(value)!, matches));
+      }
+      return result;
+    }
+  }
+
+  // Every criterion left them tied — preserve input order.
+  return tied;
 }
 
 export function computeGroupStandings(
@@ -86,11 +105,9 @@ export function computeGroupStandings(
     updateStanding(m.team2, m.score2, m.score1);
   }
 
-  // Sort with tie-break
-  const sorted = [...teamsArr].sort((a, b) =>
-    compareTeams(st[a], st[b], groupRows, teamsArr)
-  );
-  sorted.forEach((t, i) => { st[t].pos = i + 1; });
+  // Order with the recursive tie-break (mirrors Python's tie_break)
+  const sorted = rankTeams(teamsArr.map(t => st[t]), groupRows);
+  sorted.forEach((s, i) => { s.pos = i + 1; });
 
   // Split into matchdays: rows [0,1]=J1, [2,3]=J2, [4,5]=J3
   const matchdays = [
@@ -101,7 +118,7 @@ export function computeGroupStandings(
 
   return {
     letter: groupDef.letter,
-    teams: sorted.map(t => st[t]),
+    teams: sorted,
     matchdays,
   };
 }
