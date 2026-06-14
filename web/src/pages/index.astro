@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import Flag from '../components/Flag.astro';
 import GroupCard from '../components/GroupCard.astro';
 import BracketMatch from '../components/BracketMatch.astro';
-import ConsensusIndicator from '../components/ConsensusIndicator.astro';
 import { predictions, type Variant, type MatchResult } from '../data/predictions';
 import { xgData } from '../data/xg';
 import { BASE_ELO, ELO_ADJUSTMENTS } from '../data/groups';
@@ -17,6 +16,11 @@ const VARIANT_LABELS: Record<Variant, string> = {
   misterclaude: 'Mister Claude',
   gemaldini:    'Gemaldini',
   dav_gpo:      'Dav-GPO',
+};
+const VARIANT_SHORT: Record<Variant, string> = {
+  misterclaude: 'MC',
+  gemaldini:    'GEM',
+  dav_gpo:      'DAV',
 };
 
 // Pre-compute standings + bracket for each variant at build time
@@ -78,35 +82,15 @@ const shocks = VARIANTS.map(v => {
 <Base>
   <!-- ── Navigation ─────────────────────────────────────────────── -->
   <header class="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg-base)]/90 backdrop-blur">
-    <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
-      <div class="flex items-center gap-3">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center gap-2 sm:gap-3 sm:flex-nowrap sm:justify-between py-2 sm:py-0 sm:h-14">
+      <!-- Logo — order 1 -->
+      <div class="flex items-center gap-3 order-1">
         <span class="text-2xl">⚽</span>
         <span class="font-black text-sm tracking-tight hidden sm:block">MUNDIAL 2026 ML</span>
       </div>
 
-      <!-- Tab nav -->
-      <nav class="flex gap-1" id="tab-nav">
-        {[
-          { id: 'grupos',    label: 'Grupos'    },
-          { id: 'cuadro',    label: 'Cuadro'    },
-          { id: 'resultado', label: 'Resultado' },
-          { id: 'simular',   label: 'Simular'   },
-        ].map(({ id, label }) => (
-          <button
-            data-tab={id}
-            class={`tab-btn px-3 py-1.5 rounded-md text-xs font-semibold transition-colors
-              ${id === 'grupos'
-                ? 'bg-[var(--blue)] text-white'
-                : 'text-[var(--text-muted)] hover:text-[var(--text-base)] hover:bg-[var(--bg-muted)]'
-              }`}
-          >
-            {label}
-          </button>
-        ))}
-      </nav>
-
-      <!-- Variant toggle -->
-      <div class="flex gap-1 bg-[var(--bg-muted)] p-1 rounded-lg" id="variant-nav">
+      <!-- Variant toggle — order 2 on mobile (right of logo), order 3 on sm+ -->
+      <div class="flex gap-1 bg-[var(--bg-muted)] p-1 rounded-lg order-2 sm:order-3 ml-auto sm:ml-0" id="variant-nav">
         {VARIANTS.map(v => (
           <button
             data-variant-btn={v}
@@ -116,10 +100,32 @@ const shocks = VARIANTS.map(v => {
                 : 'text-[var(--text-muted)] hover:text-[var(--text-base)]'
               }`}
           >
-            {VARIANT_LABELS[v]}
+            <span class="sm:hidden">{VARIANT_SHORT[v]}</span>
+            <span class="hidden sm:inline">{VARIANT_LABELS[v]}</span>
           </button>
         ))}
       </div>
+
+      <!-- Tab nav — order 3 on mobile (full-width row), order 2 on sm+ -->
+      <nav class="grid grid-cols-4 sm:flex gap-1 order-3 sm:order-2 w-full sm:w-auto" id="tab-nav">
+        {[
+          { id: 'grupos',    label: 'Grupos'    },
+          { id: 'cuadro',    label: 'Cuadro'    },
+          { id: 'resultado', label: 'Resultado' },
+          { id: 'simular',   label: 'Simular'   },
+        ].map(({ id, label }) => (
+          <button
+            data-tab={id}
+            class={`tab-btn px-3 py-2 sm:py-1.5 rounded-md text-xs font-semibold transition-colors
+              ${id === 'grupos'
+                ? 'bg-[var(--blue)] text-white'
+                : 'text-[var(--text-muted)] hover:text-[var(--text-base)] hover:bg-[var(--bg-muted)]'
+              }`}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
     </div>
   </header>
 
@@ -153,32 +159,25 @@ const shocks = VARIANTS.map(v => {
           <div class="overflow-x-auto pb-4">
             <div class="flex gap-5 min-w-max">
               {variantData[v].bracket.map((round) => (
-                <div class="flex flex-col gap-2" style="min-width:210px">
+                <div class="flex flex-col gap-2 w-44 sm:w-[210px]">
                   <h3 class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] px-1 mb-1">
                     {round.label}
                   </h3>
                   <div class={`flex flex-col ${
                     round.name === 'r32'     ? 'gap-2' :
-                    round.name === 'sweet16' ? 'gap-6' :
-                    round.name === 'elite8'  ? 'gap-14' :
-                    round.name === 'semis'   ? 'gap-32' : 'gap-6'
+                    round.name === 'sweet16' ? 'gap-3 sm:gap-6' :
+                    round.name === 'elite8'  ? 'gap-8 sm:gap-14' :
+                    round.name === 'semis'   ? 'gap-16 sm:gap-32' : 'gap-3 sm:gap-6'
                   }`}>
                     {round.matches.map((m, mi) => (
-                      <div class="relative">
-                        <BracketMatch
-                          match={m}
-                          isHighlighted={
-                            (round.name === 'final' || round.name === 'semis') &&
-                            m.winner === variantData[v].champion
-                          }
-                        />
-                        {/* Divergence indicator for R32 */}
-                        {round.name === 'r32' && r32Consensus[mi] && (
-                          <div class="absolute -top-1 -right-1">
-                            <ConsensusIndicator winners={r32Consensus[mi]} />
-                          </div>
-                        )}
-                      </div>
+                      <BracketMatch
+                        match={m}
+                        isHighlighted={
+                          (round.name === 'final' || round.name === 'semis') &&
+                          m.winner === variantData[v].champion
+                        }
+                        consensus={round.name === 'r32' ? r32Consensus[mi] : undefined}
+                      />
                     ))}
                   </div>
                 </div>

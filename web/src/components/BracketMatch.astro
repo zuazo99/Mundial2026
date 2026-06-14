@@ -4,9 +4,30 @@ import type { BracketMatch } from '../lib/bracketBuilder';
 interface Props {
   match: BracketMatch;
   isHighlighted?: boolean;
+  consensus?: string[];
 }
-const { match, isHighlighted = false } = Astro.props;
+const { match, isHighlighted = false, consensus } = Astro.props;
 const { team1, score1, team2, score2, winner, id } = match;
+
+let consensusColor = '';
+let consensusLabel = '';
+let consensusTitle = '';
+if (consensus) {
+  const unique = [...new Set(consensus)];
+  if (unique.length === 1) {
+    consensusColor = 'var(--green)';
+    consensusLabel = 'Consenso 3/3';
+    consensusTitle = 'Los 3 modelos coinciden';
+  } else if (unique.length === 2) {
+    consensusColor = 'var(--amber)';
+    consensusLabel = 'Consenso 2/3';
+    consensusTitle = '2 de 3 modelos coinciden';
+  } else {
+    consensusColor = 'var(--red)';
+    consensusLabel = 'Consenso 0/3';
+    consensusTitle = 'Todos los modelos discrepan';
+  }
+}
 ---
 
 <div
@@ -39,4 +60,21 @@ const { team1, score1, team2, score2, winner, id } = match;
       </div>
     );
   })}
+  {consensus && (
+    <div
+      class="flex items-center gap-1.5 px-2 py-1 border-t border-[var(--border)] bg-[var(--bg-card)]"
+      title={consensusTitle}
+    >
+      <span
+        style={`background:${consensusColor}`}
+        class="w-1.5 h-1.5 rounded-full shrink-0"
+      />
+      <span
+        style={`color:${consensusColor}`}
+        class="text-[9px] uppercase tracking-wide font-semibold"
+      >
+        {consensusLabel}
+      </span>
+    </div>
+  )}
 </div>
