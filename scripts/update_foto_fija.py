@@ -1,34 +1,32 @@
 """
-Update the "foto fija" (team stat snapshot) used by xg_preds.py to include
-real World Cup match results from data/world_cup_results.csv.
+Update each variant's "foto fija" (team stat snapshot) using real World Cup results.
 
-For each team that has played real WC matches this updates:
-  - Rolling averages (gf_prom_5, gc_prom_5, gf_prom_15, gc_prom_15)
-  - ELO (using standard FIFA-style formula: K=40)
+Reads:  data/world_cup_results.csv
+        data/models_csv/df_{variant}.csv   (historical match data per team)
+Writes: data/ai_models/foto_fija_updated.csv  (variant-independent since real scores are facts)
 
-Output: data/ai_models/foto_fija_updated.csv
-        → picked up automatically by src/xg_preds.py when it exists.
+The updated file is picked up automatically by src/xg_preds.py when it exists.
+Run AFTER fetch_real_results.py.
 
-Run after fetch_real_results.py:
+Usage:
     python3 scripts/update_foto_fija.py
 """
 import csv
 import os
 import math
 
-ROOT    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RESULTS = os.path.join(ROOT, "data", "world_cup_results.csv")
-OUT     = os.path.join(ROOT, "data", "ai_models", "foto_fija_updated.csv")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-VARIANTS   = ["misterclaude", "gemaldini", "dav_gpo"]
-K_FACTOR   = 40   # FIFA World Cup ELO K-factor
-WINDOW_5   = 5
-WINDOW_15  = 15
+REAL_RESULTS = os.path.join(ROOT, "data", "world_cup_results.csv")
+OUT = os.path.join(ROOT, "data", "ai_models", "foto_fija_updated.csv")
+
+VARIANTS = ["misterclaude", "gemaldini", "dav_gpo"]
+
+# FIFA World Cup ELO K-factor
+ELO_K = 40
 
 
-# ─── helpers ────────────────────────────────────────────────────────────────
-
-def read_csv(path):
+def read_csv(path: str) -> list[dict]:
     with open(path, encoding="utf-8-sig") as f:
         return list(csv.DictReader(f))
 
@@ -39,153 +37,170 @@ def elo_expected(team_elo: float, opp_elo: float) -> float:
 
 def elo_update(team_elo: float, opp_elo: float, result: float) -> float:
     """result: 1=win, 0.5=draw, 0=loss"""
-    return team_elo + K_FACTOR * (result - elo_expected(team_elo, opp_elo))
+    return team_elo + ELO_K * (result - elo_expected(team_elo, opp_elo))
 
 
-def rolling_avg(history: list[float], window: int) -> float:
-    """Mean of up to the last `window` elements."""
-    tail = history[-window:]
+def rolling_mean(values: list[float], window: int) -> float:
+    tail = values[-window:] if len(values) >= window else values
     return sum(tail) / len(tail) if tail else 0.0
 
 
-# ─── main ───────────────────────────────────────────────────────────────────
-
-def build_updated_foto_fija():
-    if not os.path.exists(RESULTS):
-        print(f"  {os.path.relpath(RESULTS, ROOT)} not found — nothing to update.")
-        return
-
-    real_matches = read_csv(RESULTS)
-    if not real_matches:
-        print("  No real results found — nothing to update.")
-        return
-
-    print(f"  {len(real_matches)} real matches loaded.")
-
-    # We base the update on misterclaude's foto fija (ELO / rolling avgs are
-    # the same across variants; only the trained model differs per variant).
-    base_path = os.path.join(
-        ROOT, "data", "ai_models", "xg_preds_J1_misterclaude_complete.csv"
-    )
-    base_rows = read_csv(base_path)
-
-    # Build a per-team snapshot from the J1 complete file (last row per team)
-    snapshot: dict[str, dict] = {}
-    for r in base_rows:
-        snapshot[r["team"]] = r
-
-    # Per-team recent goals history (last 15 pre-WC for the rolling window)
-    # We need the raw historical sequence to extend the rolling window correctly.
-    # Load the training CSV for the last-match history.
-    history_path = os.path.join(ROOT, "data", "models_csv", "df_misterclaude.csv")
-    hist_rows = read_csv(history_path)
-    # Keep only pre-WC rows, sorted by team+date
-    hist_rows = [r for r in hist_rows if r["date"] < "2026-06-11"]
-    hist_rows.sort(key=lambda r: (r["team"], r["date"]))
-
-    # Build per-team goal histories (last 20 to cover window_15 + new matches)
-    gf_history: dict[str, list[float]] = {}
-    gc_history: dict[str, list[float]] = {}
-    elo_map:    dict[str, float]        = {}
-
-    for r in hist_rows:
-        team = r["team"]
-        try:
-            gf = float(r["goals"]) if r["goals"] else None
-            gc = float(r["goals_conceded"]) if r["goals_conceded"] else None
-            el = float(r["elo"]) if r["elo"] else None
-        except (ValueError, KeyError):
+def load_foto_fija(variant: str) -> dict[str, dict]:
+    """Load pre-WC foto fija from the J1 complete CSV (one row = one predicted match)."""
+    path = os.path.join(ROOT, "data", "ai_models", f"xg_preds_J1_{variant}_complete.csv")
+    rows = read_csv(path)
+    teams: dict[str, dict] = {}
+    for r in rows:
+        name = r["team"]
+        if name in teams:
             continue
-        if gf is not None:
-            gf_history.setdefault(team, []).append(gf)
-        if gc is not None:
-            gc_history.setdefault(team, []).append(gc)
-        if el is not None:
-            elo_map[team] = el   # keep the last ELO value
+        try:
+            teams[name] = {
+                "elo":      float(r["elo"]),
+                "gf_prom_5":  float(r["gf_prom_5"]),
+                "gc_prom_5":  float(r["gc_prom_5"]),
+                "elo_prom_5": float(r["elo_prom_5"]),
+                "gf_prom_15": float(r["gf_prom_15"]),
+                "gc_prom_15": float(r["gc_prom_15"]),
+                "PCA_1":    float(r["PCA_1"]),
+                "PCA_2":    float(r["PCA_2"]),
+                "confed":   int(r["confed"]),
+            }
+        except (KeyError, ValueError):
+            pass
+    return teams
 
-    # Trim to last 20 per team so we only hold recent history
-    for team in list(gf_history):
-        gf_history[team] = gf_history[team][-20:]
-    for team in list(gc_history):
-        gc_history[team] = gc_history[team][-20:]
 
-    # Seed any WC teams missing from history with the foto fija averages
-    for team, snap in snapshot.items():
-        if team not in gf_history:
-            gf_history[team] = [float(snap.get("gf_prom_5") or 1.0)] * 5
-        if team not in gc_history:
-            gc_history[team] = [float(snap.get("gc_prom_5") or 1.0)] * 5
-        if team not in elo_map:
-            elo_map[team] = float(snap.get("elo") or 1500.0)
+def load_recent_history(variant: str, window: int = 15) -> dict[str, list[dict]]:
+    """
+    Load the last `window` historical matches per team from the training CSV.
+    Returns {team_name: [{"goals": int, "goals_conceded": int, "opponent_elo": float}, ...]}
+    sorted oldest→newest.
+    """
+    path = os.path.join(ROOT, "data", "models_csv", f"df_{variant}.csv")
+    rows = read_csv(path)
+    # keep only pre-WC rows where goals are recorded
+    history: dict[str, list] = {}
+    for r in rows:
+        if r.get("date", "") >= "2026-06-11":
+            continue
+        goals = r.get("goals", "")
+        goals_c = r.get("goals_conceded", "")
+        opp_elo = r.get("opponent_elo", "")
+        if goals == "" or goals_c == "" or opp_elo == "":
+            continue
+        team = r["team"]
+        if team not in history:
+            history[team] = []
+        history[team].append({
+            "date":           r["date"],
+            "goals":          float(goals),
+            "goals_conceded": float(goals_c),
+            "opponent_elo":   float(opp_elo),
+        })
+    # sort by date and keep last `window` entries
+    for team in history:
+        history[team] = sorted(history[team], key=lambda x: x["date"])[-window:]
+    return history
 
-    # Apply real WC results in chronological order
-    real_matches.sort(key=lambda r: r["date"])
-    for m in real_matches:
-        home = m["home_team"]
-        away = m["away_team"]
-        hg   = int(m["home_goals"])
-        ag   = int(m["away_goals"])
-        h_elo = elo_map.get(home, 1500.0)
-        a_elo = elo_map.get(away, 1500.0)
 
-        # ELO result: 1=win, 0.5=draw, 0=loss
-        if hg > ag:
-            h_res, a_res = 1.0, 0.0
-        elif hg < ag:
-            h_res, a_res = 0.0, 1.0
-        else:
-            h_res, a_res = 0.5, 0.5
+def compute_updated_foto_fija(foto_fija: dict, history: dict, real_results: list[dict]) -> dict:
+    """
+    Apply real WC match results on top of the foto fija.
+    Returns updated foto fija dict (same structure as input `foto_fija`).
+    """
+    # Clone the foto fija
+    updated = {team: dict(stats) for team, stats in foto_fija.items()}
+    # Clone history buffers (used to compute new rolling avgs)
+    buffers: dict[str, list] = {}
+    for team, matches in history.items():
+        buffers[team] = [dict(m) for m in matches]
 
-        new_h_elo = elo_update(h_elo, a_elo, h_res)
-        new_a_elo = elo_update(a_elo, h_elo, a_res)
+    # Process real matches in date order
+    for match in sorted(real_results, key=lambda x: x["date"]):
+        home = match["home_team"]
+        away = match["away_team"]
+        hg   = int(match["home_goals"])
+        ag   = int(match["away_goals"])
 
-        for team, gf, gc, new_elo in [
-            (home, hg, ag, new_h_elo),
-            (away, ag, hg, new_a_elo),
-        ]:
-            gf_history.setdefault(team, []).append(float(gf))
-            gc_history.setdefault(team, []).append(float(gc))
-            elo_map[team] = new_elo
+        for team, opp, gf, gc in [(home, away, hg, ag), (away, home, ag, hg)]:
+            if team not in updated:
+                continue  # team not in our model (shouldn't happen)
 
-    # Build the updated foto fija rows
-    teams_with_real_results = set()
-    for m in real_matches:
-        teams_with_real_results.add(m["home_team"])
-        teams_with_real_results.add(m["away_team"])
+            opp_stats = updated.get(opp, {})
+            opp_elo   = opp_stats.get("elo", updated[team]["elo"])
 
-    updated: dict[str, dict] = {}
-    for team, snap in snapshot.items():
-        if team not in teams_with_real_results:
-            continue   # only write rows for teams that have played
-        updated[team] = {
-            "team":       team,
-            "elo":        round(elo_map.get(team, float(snap.get("elo") or 1500.0)), 1),
-            "gf_prom_5":  round(rolling_avg(gf_history.get(team, []), WINDOW_5),  4),
-            "gc_prom_5":  round(rolling_avg(gc_history.get(team, []), WINDOW_5),  4),
-            "elo_prom_5": snap.get("elo_prom_5", ""),   # opponent ELO avg unchanged
-            "gf_prom_15": round(rolling_avg(gf_history.get(team, []), WINDOW_15), 4),
-            "gc_prom_15": round(rolling_avg(gc_history.get(team, []), WINDOW_15), 4),
-            "PCA_1":      snap.get("PCA_1", ""),        # style unchanged after 1-3 matches
-            "PCA_2":      snap.get("PCA_2", ""),
-            "confed":     snap.get("confed", ""),
-        }
+            # ELO update
+            if gf > gc:
+                result = 1.0
+            elif gf == gc:
+                result = 0.5
+            else:
+                result = 0.0
+            updated[team]["elo"] = elo_update(updated[team]["elo"], opp_elo, result)
 
-    if not updated:
-        print("  No teams with real results found in foto fija — nothing written.")
-        return
+            # Extend rolling buffer
+            buf = buffers.setdefault(team, [])
+            buf.append({
+                "date":           match["date"],
+                "goals":          float(gf),
+                "goals_conceded": float(gc),
+                "opponent_elo":   opp_elo,
+            })
 
+            # Recompute rolling averages from buffer
+            gf_list  = [x["goals"]          for x in buf]
+            gc_list  = [x["goals_conceded"] for x in buf]
+            oelo_list= [x["opponent_elo"]    for x in buf]
+
+            updated[team]["gf_prom_5"]  = rolling_mean(gf_list,   5)
+            updated[team]["gc_prom_5"]  = rolling_mean(gc_list,   5)
+            updated[team]["elo_prom_5"] = rolling_mean(oelo_list, 5)
+            updated[team]["gf_prom_15"] = rolling_mean(gf_list,  15)
+            updated[team]["gc_prom_15"] = rolling_mean(gc_list,  15)
+
+    return updated
+
+
+def write_foto_fija(updated: dict) -> None:
+    fieldnames = ["team", "elo", "gf_prom_5", "gc_prom_5", "elo_prom_5",
+                  "gf_prom_15", "gc_prom_15", "PCA_1", "PCA_2", "confed"]
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    fields = ["team", "elo", "gf_prom_5", "gc_prom_5", "elo_prom_5",
-              "gf_prom_15", "gc_prom_15", "PCA_1", "PCA_2", "confed"]
     with open(OUT, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(updated.values())
-
-    print(f"  Updated foto fija for {len(updated)} teams → {os.path.relpath(OUT, ROOT)}")
+        for team, stats in sorted(updated.items()):
+            writer.writerow({"team": team, **{k: stats[k] for k in fieldnames[1:] if k in stats}})
+    print(f"  Wrote updated foto fija for {len(updated)} teams → {os.path.relpath(OUT, ROOT)}")
 
 
 if __name__ == "__main__":
-    print("Updating foto fija with real World Cup results...")
-    build_updated_foto_fija()
+    if not os.path.exists(REAL_RESULTS):
+        print(f"No real results file found at {os.path.relpath(REAL_RESULTS, ROOT)}.")
+        print("Run scripts/fetch_real_results.py first.")
+        raise SystemExit(1)
+
+    real_results = read_csv(REAL_RESULTS)
+    if not real_results:
+        print("No real results yet — nothing to update.")
+        raise SystemExit(0)
+
+    print(f"Processing {len(real_results)} real matches...")
+
+    # Use misterclaude as canonical foto fija base (all variants share the same WC calendar)
+    # ELO/rolling-avg updates are applied identically since real results are factual
+    foto_fija = load_foto_fija("misterclaude")
+    history   = load_recent_history("misterclaude")
+
+    updated = compute_updated_foto_fija(foto_fija, history, real_results)
+
+    teams_updated = sum(
+        1 for team in updated
+        if any(
+            m["home_team"] == team or m["away_team"] == team
+            for m in real_results
+        )
+    )
+    print(f"  ELO + rolling averages updated for {teams_updated} teams")
+    write_foto_fija(updated)
     print("Done.")
