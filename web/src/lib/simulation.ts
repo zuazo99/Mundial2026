@@ -12,6 +12,7 @@ import type { TeamStats } from '../data/teamStats';
 import { GROUPS, getElo } from '../data/groups';
 import { mejoresTerceros } from '../data/mejoresTerceros';
 import { computeGroupStandings, getBestThirds, type GroupStandings } from './computeStandings';
+import { knockoutXg } from '../data/knockoutXg';
 
 const NUM_ITERATIONS = 30;
 
@@ -105,36 +106,22 @@ function simulateMatch(
   return [g1, g2];
 }
 
-// ─── XG estimation for knockout stage ────────────────────────────────────────
-// Primary: call the Python serverless endpoint (same XGBoost model used in simulation).
-// Fallback: ELO-based formula used when the API is unavailable (local dev without server).
+// ─── XG for knockout stage — pre-computed lookup table ───────────────────────
+// knockoutXg contains XG predictions from the real XGBoost model for every
+// possible matchup (48×47 ordered pairs × 3 variants), generated at build time
+// by scripts/export_data.py. Falls back to ELO formula for unknown teams.
 
 function eloToXG(eloTeam: number, eloOpponent: number): number {
   const winProb = 1 / (1 + Math.pow(10, -(eloTeam - eloOpponent) / 400));
   return Math.max(0.4, 1.15 + (winProb - 0.5) * 1.6);
 }
 
-async function fetchKnockoutXG(
-  fixtures: [string, string][],
-  variant: Variant,
-): Promise<{ xg1: number; xg2: number }[]> {
-  const matchups = fixtures.map(([team1, team2]) => ({ team1, team2 }));
-  try {
-    const res = await fetch("/api/predict", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ variant, matchups }),
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    return data.predictions as { xg1: number; xg2: number }[];
-  } catch {
-    // Fallback to ELO approximation if the endpoint is unreachable
-    return fixtures.map(([t1, t2]) => ({
-      xg1: eloToXG(getElo(t1, variant), getElo(t2, variant)),
-      xg2: eloToXG(getElo(t2, variant), getElo(t1, variant)),
-    }));
-  }
+function getKnockoutXG(team1: string, team2: string, variant: Variant): { xg1: number; xg2: number } {
+  const xg1 = knockoutXg[variant]?.[team1]?.[team2]
+    ?? eloToXG(getElo(team1, variant), getElo(team2, variant));
+  const xg2 = knockoutXg[variant]?.[team2]?.[team1]
+    ?? eloToXG(getElo(team2, variant), getElo(team1, variant));
+  return { xg1, xg2 };
 }
 
 // ─── XG lookup from group stage CSV data ─────────────────────────────────────
@@ -213,12 +200,12 @@ export interface FullSimResult {
   thirdPlace: string;
 }
 
-export async function simulateTournament(
+export function simulateTournament(
   variant: Variant,
   xgData: { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry[] },
   stats: Record<string, TeamStats>,
   onProgress?: (stage: string, pct: number) => void,
-): Promise<FullSimResult> {
+): FullSimResult {
   // 1. Group stage (local, XG pre-calculado del modelo Python)
   onProgress?.("Fase de grupos", 0);
   const groups = simulateGroups(xgData, variant);
@@ -267,12 +254,12 @@ export async function simulateTournament(
     [K1, thirdMap["1K"] ?? bestThirds[7]],
   ];
 
-  // 4. Knockout rounds — XG del endpoint Python, Poisson local
+  // 4. Knockout rounds — XG del lookup pre-calculado (modelo Python real), Poisson local
   onProgress?.("Ronda de 32", 0);
-  const r32XG = await fetchKnockoutXG(r32Fixtures, variant);
-  const r32Matches = r32Fixtures.map(([t1, t2], i) =>
-    simulateKnockoutMatch(t1, t2, variant, r32XG[i].xg1, r32XG[i].xg2)
-  );
+  const r32Matches = r32Fixtures.map(([t1, t2]) => {
+    const { xg1, xg2 } = getKnockoutXG(t1, t2, variant);
+    return simulateKnockoutMatch(t1, t2, variant, xg1, xg2);
+  });
   const r32Winners = r32Matches.map(m => m.score1 > m.score2 ? m.team1 : m.team2);
   onProgress?.("Ronda de 32", 100);
 
@@ -283,10 +270,10 @@ export async function simulateTournament(
     [r32Winners[14], r32Winners[13]], [r32Winners[12], r32Winners[15]],
   ];
   onProgress?.("Octavos de Final", 0);
-  const s16XG = await fetchKnockoutXG(s16Fixtures, variant);
-  const s16Matches = s16Fixtures.map(([t1, t2], i) =>
-    simulateKnockoutMatch(t1, t2, variant, s16XG[i].xg1, s16XG[i].xg2)
-  );
+  const s16Matches = s16Fixtures.map(([t1, t2]) => {
+    const { xg1, xg2 } = getKnockoutXG(t1, t2, variant);
+    return simulateKnockoutMatch(t1, t2, variant, xg1, xg2);
+  });
   const s16Winners = s16Matches.map(m => m.score1 > m.score2 ? m.team1 : m.team2);
   onProgress?.("Octavos de Final", 100);
 
@@ -295,32 +282,27 @@ export async function simulateTournament(
     [s16Winners[2], s16Winners[3]], [s16Winners[6], s16Winners[7]],
   ];
   onProgress?.("Cuartos de Final", 0);
-  const e8XG = await fetchKnockoutXG(e8Fixtures, variant);
-  const e8Matches = e8Fixtures.map(([t1, t2], i) =>
-    simulateKnockoutMatch(t1, t2, variant, e8XG[i].xg1, e8XG[i].xg2)
-  );
+  const e8Matches = e8Fixtures.map(([t1, t2]) => {
+    const { xg1, xg2 } = getKnockoutXG(t1, t2, variant);
+    return simulateKnockoutMatch(t1, t2, variant, xg1, xg2);
+  });
   const e8Winners = e8Matches.map(m => m.score1 > m.score2 ? m.team1 : m.team2);
   onProgress?.("Cuartos de Final", 100);
 
   onProgress?.("Semifinales", 0);
-  const semiFixtures: [string, string][] = [
-    [e8Winners[0], e8Winners[1]], [e8Winners[2], e8Winners[3]],
+  const semiMatches = [
+    (() => { const { xg1, xg2 } = getKnockoutXG(e8Winners[0], e8Winners[1], variant); return simulateKnockoutMatch(e8Winners[0], e8Winners[1], variant, xg1, xg2); })(),
+    (() => { const { xg1, xg2 } = getKnockoutXG(e8Winners[2], e8Winners[3], variant); return simulateKnockoutMatch(e8Winners[2], e8Winners[3], variant, xg1, xg2); })(),
   ];
-  const semiXG = await fetchKnockoutXG(semiFixtures, variant);
-  const semiMatches = semiFixtures.map(([t1, t2], i) =>
-    simulateKnockoutMatch(t1, t2, variant, semiXG[i].xg1, semiXG[i].xg2)
-  );
   const semiWinners = semiMatches.map(m => m.score1 > m.score2 ? m.team1 : m.team2);
   const semiLosers  = semiMatches.map(m => m.score1 > m.score2 ? m.team2 : m.team1);
   onProgress?.("Semifinales", 100);
 
   onProgress?.("Final", 0);
-  const finalFixtures: [string, string][] = [
-    [semiLosers[0], semiLosers[1]], [semiWinners[0], semiWinners[1]],
-  ];
-  const finalXG = await fetchKnockoutXG(finalFixtures, variant);
-  const thirdMatch = simulateKnockoutMatch(finalFixtures[0][0], finalFixtures[0][1], variant, finalXG[0].xg1, finalXG[0].xg2);
-  const finalMatch  = simulateKnockoutMatch(finalFixtures[1][0], finalFixtures[1][1], variant, finalXG[1].xg1, finalXG[1].xg2);
+  const { xg1: txg1, xg2: txg2 } = getKnockoutXG(semiLosers[0], semiLosers[1], variant);
+  const thirdMatch = simulateKnockoutMatch(semiLosers[0], semiLosers[1], variant, txg1, txg2);
+  const { xg1: fxg1, xg2: fxg2 } = getKnockoutXG(semiWinners[0], semiWinners[1], variant);
+  const finalMatch  = simulateKnockoutMatch(semiWinners[0], semiWinners[1], variant, fxg1, fxg2);
   onProgress?.("Final", 100);
 
   const champion   = finalMatch.score1 > finalMatch.score2 ? finalMatch.team1 : finalMatch.team2;

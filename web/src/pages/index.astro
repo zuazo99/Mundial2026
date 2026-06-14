@@ -461,7 +461,7 @@ const shocks = VARIANTS.map(v => {
     let stageIndex = 0;
     const stageCount = 7;
 
-    const result = await simulateTournament(
+    const result = simulateTournament(
       variant,
       xgData[variant],
       teamStats[variant],
