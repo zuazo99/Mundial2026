@@ -5,4 +5,61 @@ export interface RealResult {
   homeGoals: number; awayGoals: number;
 }
 
-export const realResults: RealResult[] = [];
+export const realResults: RealResult[] = [
+  {
+    "date": "2026-06-11",
+    "homeTeam": "Mexico",
+    "awayTeam": "South Africa",
+    "homeGoals": 2,
+    "awayGoals": 0
+  },
+  {
+    "date": "2026-06-12",
+    "homeTeam": "South Korea",
+    "awayTeam": "Czech Republic",
+    "homeGoals": 2,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-06-12",
+    "homeTeam": "Canada",
+    "awayTeam": "Bosnia and Herzegovina",
+    "homeGoals": 1,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-06-13",
+    "homeTeam": "United States",
+    "awayTeam": "Paraguay",
+    "homeGoals": 4,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-06-13",
+    "homeTeam": "Qatar",
+    "awayTeam": "Switzerland",
+    "homeGoals": 1,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-06-13",
+    "homeTeam": "Brazil",
+    "awayTeam": "Morocco",
+    "homeGoals": 1,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-06-14",
+    "homeTeam": "Haiti",
+    "awayTeam": "Scotland",
+    "homeGoals": 0,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-06-14",
+    "homeTeam": "Australia",
+    "awayTeam": "Turkey",
+    "homeGoals": 2,
+    "awayGoals": 0
+  }
+];
