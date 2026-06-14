@@ -173,11 +173,32 @@ Para que un amistoso de 2017 no pese igual que un partido reciente, cada fila se
   )
   ```
 
-### De entrenamiento a predicción
+### De entrenamiento a predicción: la "foto fija"
 
-1. **Foto fija:** tras entrenar, se toma el **último estado conocido** (medias móviles, ELO, PCA…) de cada selección antes del Mundial.
-2. Con esa foto fija se predice el XG de cada partido del calendario real, dividido en tres jornadas de grupos (J1, J2, J3) por fecha.
-3. La simulación convierte ese XG en goles minuto a minuto: `XG/90` es la probabilidad de marcar en cada minuto (proceso de Poisson), modulada por multiplicadores que reaccionan al marcador y al tiempo restante. 30 iteraciones por partido → se escoge el marcador más frecuente. En eliminatorias se añaden prórroga y penaltis.
+El modelo no puede ver el futuro, pero sí puede congelar el **estado de cada equipo justo antes del torneo**. Eso es la **foto fija**: el último registro de cada selección en los datos históricos (antes del 11 de junio de 2026), que incluye:
+
+- Las medias móviles de goles a favor/en contra de los últimos 5 y 15 partidos
+- La media del ELO de los rivales recientes (proxy de la dificultad del calendario)
+- Los componentes de estilo de juego (`PCA_1`, `PCA_2`)
+- La confederación y el ELO propio en ese momento
+
+Con esa foto fija como input, el modelo predice el XG esperado de cada partido del calendario real (dividido en J1, J2, J3 por fechas). Es decir: **el modelo entrena sobre el pasado, pero infiere sobre el presente usando el último snapshot disponible** de cada equipo.
+
+La simulación convierte ese XG en goles minuto a minuto: `XG/90` es la probabilidad de marcar en cada minuto (proceso de Poisson), modulada por multiplicadores que reaccionan al marcador y al tiempo restante. 30 iteraciones por partido → se escoge el marcador más frecuente. En eliminatorias se añaden prórroga y penaltis.
+
+### Actualización con resultados reales
+
+Una vez el Mundial ha comenzado, la foto fija se puede actualizar con los resultados reales de cada jornada jugada:
+
+1. `scripts/fetch_real_results.py` obtiene los marcadores de [football-data.org](https://www.football-data.org/) y los guarda en `data/world_cup_results.csv`.
+2. `scripts/update_foto_fija.py` lee esos resultados y recalcula para cada equipo que ha jugado:
+   - Las medias móviles de goles (la ventana deslizante ahora incluye los partidos reales)
+   - El ELO (actualizado con la fórmula estándar, K=40 para el Mundial)
+   - Escribe `data/ai_models/foto_fija_updated.csv`
+3. Al re-ejecutar `python src/xg_preds.py`, el script detecta `foto_fija_updated.csv` y **sobreescribe automáticamente** las métricas de los equipos que ya han jugado antes de predecir las jornadas siguientes. El modelo XGBoost en sí no se re-entrena (tiene suficiente histórico); solo cambian los inputs de inferencia.
+4. `python src/simulacion.py` recalcula el bracket con las predicciones actualizadas.
+
+Todo este proceso se ejecuta **automáticamente cada día a las 8:00 UTC** mediante un workflow de GitHub Actions (`.github/workflows/daily_update.yml`), que además regenera la web y hace el commit. Solo hace falta configurar el secreto `FOOTBALL_DATA_API_KEY` en el repositorio (clave gratuita en [football-data.org](https://www.football-data.org/client/register)).
 
 ---
 
@@ -198,8 +219,9 @@ El modelo es sólido como punto de partida, pero tiene márgenes claros de mejor
 - **Modelo de goles correlacionado:** usar un Poisson bivariante o el ajuste de **Dixon-Coles** para capturar la dependencia entre los goles de ambos equipos.
 - **Trabajar con la distribución completa**, no solo con el marcador modal: mostrar probabilidades de victoria/empate/derrota y márgenes de incertidumbre.
 - **Calibrar contra el mercado** (cuotas) para validar y corregir sesgos sistemáticos.
-- **Más iteraciones por partido** para estimaciones más estables, y **automatizar la actualización del ELO** en lugar de mantenerlo hardcodeado.
+- **Más iteraciones por partido** para estimaciones más estables.
 - **Features de tiro/xG real** (datos de disparos) en vez de derivar el XG solo de goles históricos.
+- **PCA dinámico**: actualmente el estilo de juego (`PCA_1`, `PCA_2`) se mantiene fijo de la foto fija base y no se actualiza con los partidos del Mundial — re-entrenar el PCA incrementalmente mejoraría la precisión.
 
 ---
 
