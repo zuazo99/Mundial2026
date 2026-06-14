@@ -25,7 +25,7 @@ jobs:
           cache: pip
 
       - name: Install Python dependencies
-        run: pip install pandas numpy scikit-learn xgboost
+        run: pip install -r requirements.txt
 
       - name: Fetch real World Cup results
         env:
