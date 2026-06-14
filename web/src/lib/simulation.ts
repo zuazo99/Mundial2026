@@ -12,6 +12,7 @@ import type { TeamStats } from '../data/teamStats';
 import { GROUPS, getElo } from '../data/groups';
 import { mejoresTerceros } from '../data/mejoresTerceros';
 import { computeGroupStandings, getBestThirds, type GroupStandings } from './computeStandings';
+import { knockoutXg } from '../data/knockoutXg';
 
 const NUM_ITERATIONS = 30;
 
@@ -105,11 +106,22 @@ function simulateMatch(
   return [g1, g2];
 }
 
-// ─── XG estimation for knockout stage (ELO-based, since model can't run in browser) ─
+// ─── XG for knockout stage — pre-computed lookup table ───────────────────────
+// knockoutXg contains XG predictions from the real XGBoost model for every
+// possible matchup (48×47 ordered pairs × 3 variants), generated at build time
+// by scripts/export_data.py. Falls back to ELO formula for unknown teams.
 
 function eloToXG(eloTeam: number, eloOpponent: number): number {
   const winProb = 1 / (1 + Math.pow(10, -(eloTeam - eloOpponent) / 400));
   return Math.max(0.4, 1.15 + (winProb - 0.5) * 1.6);
+}
+
+function getKnockoutXG(team1: string, team2: string, variant: Variant): { xg1: number; xg2: number } {
+  const xg1 = knockoutXg[variant]?.[team1]?.[team2]
+    ?? eloToXG(getElo(team1, variant), getElo(team2, variant));
+  const xg2 = knockoutXg[variant]?.[team2]?.[team1]
+    ?? eloToXG(getElo(team2, variant), getElo(team1, variant));
+  return { xg1, xg2 };
 }
 
 // ─── XG lookup from group stage CSV data ─────────────────────────────────────
@@ -170,26 +182,10 @@ export interface KnockoutResult {
 function simulateKnockoutMatch(
   team1: string, team2: string,
   variant: Variant,
-  stats: Record<string, TeamStats>,
+  xg1: number, xg2: number,
 ): SimMatchResult {
   const elo1 = getElo(team1, variant);
   const elo2 = getElo(team2, variant);
-  // Use team stats if available, otherwise fall back to ELO-only
-  const st1 = stats[team1];
-  const st2 = stats[team2];
-  let xg1: number, xg2: number;
-  if (st1 && st2) {
-    // Blend ELO estimate with rolling attack/defense averages
-    const eloXG1 = eloToXG(elo1, elo2);
-    const attackAdj = ((st1.gfProm5 + st1.gfProm15) / 2 - (st2.gcProm5 + st2.gcProm15) / 2) * 0.15;
-    xg1 = Math.max(0.4, eloXG1 + attackAdj);
-    const eloXG2 = eloToXG(elo2, elo1);
-    const attackAdj2 = ((st2.gfProm5 + st2.gfProm15) / 2 - (st1.gcProm5 + st1.gcProm15) / 2) * 0.15;
-    xg2 = Math.max(0.4, eloXG2 + attackAdj2);
-  } else {
-    xg1 = eloToXG(elo1, elo2);
-    xg2 = eloToXG(elo2, elo1);
-  }
   const [score1, score2] = simulateMatch(xg1, xg2, true, elo1, elo2);
   return { team1, score1, team2, score2, xg1, xg2 };
 }
@@ -210,7 +206,7 @@ export function simulateTournament(
   stats: Record<string, TeamStats>,
   onProgress?: (stage: string, pct: number) => void,
 ): FullSimResult {
-  // 1. Group stage
+  // 1. Group stage (local, XG pre-calculado del modelo Python)
   onProgress?.("Fase de grupos", 0);
   const groups = simulateGroups(xgData, variant);
   onProgress?.("Fase de grupos", 100);
@@ -237,13 +233,11 @@ export function simulateTournament(
       if (gIdx >= 0) thirdMap[slot] = groups[gIdx].standings.teams[2].team;
     }
   } else {
-    // Fallback: assign best thirds in order
     const slotOrder = ["1A", "1B", "1D", "1E", "1G", "1I", "1K", "1L"];
     slotOrder.forEach((slot, i) => { thirdMap[slot] = bestThirds[i] ?? "TBD"; });
   }
 
   // R32 fixture order mirrors Python's create_first_round() in clases_simulacion.py
-  // (using group-position shorthand: A1=winner of group A, etc.)
   const A1=groupWinners[0],A2=groupRunners[0],B1=groupWinners[1],B2=groupRunners[1];
   const C1=groupWinners[2],C2=groupRunners[2],D1=groupWinners[3],D2=groupRunners[3];
   const E1=groupWinners[4],E2=groupRunners[4],F1=groupWinners[5],F2=groupRunners[5];
@@ -260,14 +254,15 @@ export function simulateTournament(
     [K1, thirdMap["1K"] ?? bestThirds[7]],
   ];
 
+  // 4. Knockout rounds — XG del lookup pre-calculado (modelo Python real), Poisson local
   onProgress?.("Ronda de 32", 0);
-  const r32Matches = r32Fixtures.map(([t1, t2]) =>
-    simulateKnockoutMatch(t1, t2, variant, stats)
-  );
+  const r32Matches = r32Fixtures.map(([t1, t2]) => {
+    const { xg1, xg2 } = getKnockoutXG(t1, t2, variant);
+    return simulateKnockoutMatch(t1, t2, variant, xg1, xg2);
+  });
   const r32Winners = r32Matches.map(m => m.score1 > m.score2 ? m.team1 : m.team2);
   onProgress?.("Ronda de 32", 100);
 
-  // Sweet 16 fixture order mirrors Python's create_sweet16()
   const s16Fixtures: [string, string][] = [
     [r32Winners[0], r32Winners[3]], [r32Winners[2], r32Winners[5]],
     [r32Winners[1], r32Winners[4]], [r32Winners[6], r32Winners[7]],
@@ -275,50 +270,51 @@ export function simulateTournament(
     [r32Winners[14], r32Winners[13]], [r32Winners[12], r32Winners[15]],
   ];
   onProgress?.("Octavos de Final", 0);
-  const s16Matches = s16Fixtures.map(([t1, t2]) =>
-    simulateKnockoutMatch(t1, t2, variant, stats)
-  );
+  const s16Matches = s16Fixtures.map(([t1, t2]) => {
+    const { xg1, xg2 } = getKnockoutXG(t1, t2, variant);
+    return simulateKnockoutMatch(t1, t2, variant, xg1, xg2);
+  });
   const s16Winners = s16Matches.map(m => m.score1 > m.score2 ? m.team1 : m.team2);
   onProgress?.("Octavos de Final", 100);
 
-  // Elite 8 fixture order mirrors Python's create_elite8()
   const e8Fixtures: [string, string][] = [
     [s16Winners[0], s16Winners[1]], [s16Winners[4], s16Winners[5]],
     [s16Winners[2], s16Winners[3]], [s16Winners[6], s16Winners[7]],
   ];
   onProgress?.("Cuartos de Final", 0);
-  const e8Matches = e8Fixtures.map(([t1, t2]) =>
-    simulateKnockoutMatch(t1, t2, variant, stats)
-  );
+  const e8Matches = e8Fixtures.map(([t1, t2]) => {
+    const { xg1, xg2 } = getKnockoutXG(t1, t2, variant);
+    return simulateKnockoutMatch(t1, t2, variant, xg1, xg2);
+  });
   const e8Winners = e8Matches.map(m => m.score1 > m.score2 ? m.team1 : m.team2);
   onProgress?.("Cuartos de Final", 100);
 
-  // Semis mirrors Python's create_semis()
   onProgress?.("Semifinales", 0);
   const semiMatches = [
-    simulateKnockoutMatch(e8Winners[0], e8Winners[1], variant, stats),
-    simulateKnockoutMatch(e8Winners[2], e8Winners[3], variant, stats),
+    (() => { const { xg1, xg2 } = getKnockoutXG(e8Winners[0], e8Winners[1], variant); return simulateKnockoutMatch(e8Winners[0], e8Winners[1], variant, xg1, xg2); })(),
+    (() => { const { xg1, xg2 } = getKnockoutXG(e8Winners[2], e8Winners[3], variant); return simulateKnockoutMatch(e8Winners[2], e8Winners[3], variant, xg1, xg2); })(),
   ];
   const semiWinners = semiMatches.map(m => m.score1 > m.score2 ? m.team1 : m.team2);
   const semiLosers  = semiMatches.map(m => m.score1 > m.score2 ? m.team2 : m.team1);
   onProgress?.("Semifinales", 100);
 
-  // Final + 3rd place
   onProgress?.("Final", 0);
-  const thirdMatch = simulateKnockoutMatch(semiLosers[0], semiLosers[1], variant, stats);
-  const finalMatch = simulateKnockoutMatch(semiWinners[0], semiWinners[1], variant, stats);
+  const { xg1: txg1, xg2: txg2 } = getKnockoutXG(semiLosers[0], semiLosers[1], variant);
+  const thirdMatch = simulateKnockoutMatch(semiLosers[0], semiLosers[1], variant, txg1, txg2);
+  const { xg1: fxg1, xg2: fxg2 } = getKnockoutXG(semiWinners[0], semiWinners[1], variant);
+  const finalMatch  = simulateKnockoutMatch(semiWinners[0], semiWinners[1], variant, fxg1, fxg2);
   onProgress?.("Final", 100);
 
-  const champion  = finalMatch.score1 > finalMatch.score2 ? finalMatch.team1 : finalMatch.team2;
-  const runnerUp  = finalMatch.score1 > finalMatch.score2 ? finalMatch.team2 : finalMatch.team1;
+  const champion   = finalMatch.score1 > finalMatch.score2 ? finalMatch.team1 : finalMatch.team2;
+  const runnerUp   = finalMatch.score1 > finalMatch.score2 ? finalMatch.team2 : finalMatch.team1;
   const thirdPlace = thirdMatch.score1 > thirdMatch.score2 ? thirdMatch.team1 : thirdMatch.team2;
 
   return {
     groups,
     knockouts: [
-      { round: "r32",     label: "Ronda de 32",       matches: r32Matches },
-      { round: "sweet16", label: "Octavos de Final",   matches: s16Matches },
-      { round: "elite8",  label: "Cuartos de Final",   matches: e8Matches  },
+      { round: "r32",     label: "Ronda de 32",       matches: r32Matches  },
+      { round: "sweet16", label: "Octavos de Final",   matches: s16Matches  },
+      { round: "elite8",  label: "Cuartos de Final",   matches: e8Matches   },
       { round: "semis",   label: "Semifinales",        matches: semiMatches },
       { round: "third",   label: "3er y 4to Puesto",   matches: [thirdMatch] },
       { round: "final",   label: "Final",              matches: [finalMatch] },

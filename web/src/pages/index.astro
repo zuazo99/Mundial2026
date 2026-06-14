@@ -8,6 +8,7 @@ import { xgData } from '../data/xg';
 import { BASE_ELO, ELO_ADJUSTMENTS } from '../data/groups';
 import { computeAllStandings } from '../lib/computeStandings';
 import { buildBracket, getChampion, getRunnerUp } from '../lib/bracketBuilder';
+import { metadata } from '../data/metadata';
 
 const VARIANTS: Variant[] = ['misterclaude', 'gemaldini', 'dav_gpo'];
 const VARIANT_LABELS: Record<Variant, string> = {
@@ -338,6 +339,11 @@ const shocks = VARIANTS.map(v => {
     </section>
 
   </main>
+
+  <footer class="text-center py-4 mt-6 text-xs text-[var(--text-muted)] border-t border-[var(--border)]">
+    Predicciones basadas en datos hasta el <strong>{metadata.trainingCutoff}</strong>
+    &nbsp;·&nbsp; Generado el {metadata.generatedAt}
+  </footer>
 </Base>
 
 <script>

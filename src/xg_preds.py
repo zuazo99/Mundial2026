@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
@@ -176,6 +177,10 @@ def train_model(name):
     )
 
     model.fit(df_train[features], df_train[target], sample_weight=df_train["date_weight"])
+
+    # Persistir el modelo para el endpoint serverless de knockouts
+    os.makedirs("api/models", exist_ok=True)
+    model.save_model(f"api/models/xgb_{name}.json")
 
     # =====================================================================
     # 5. INFERENCIA DEL MUNDIAL (LA FOTO FIJA)
