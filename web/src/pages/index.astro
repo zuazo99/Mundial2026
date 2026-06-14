@@ -9,6 +9,7 @@ import { BASE_ELO, ELO_ADJUSTMENTS } from '../data/groups';
 import { computeAllStandings } from '../lib/computeStandings';
 import { buildBracket, getChampion, getRunnerUp } from '../lib/bracketBuilder';
 import { metadata } from '../data/metadata';
+import { realResults } from '../data/realResults';
 
 const VARIANTS: Variant[] = ['misterclaude', 'gemaldini', 'dav_gpo'];
 const VARIANT_LABELS: Record<Variant, string> = {
@@ -142,6 +143,7 @@ const shocks = VARIANTS.map(v => {
                 xgJ1={xgData[v].J1}
                 xgJ2={xgData[v].J2}
                 xgJ3={xgData[v].J3}
+                realResults={realResults}
               />
             ))}
           </div>

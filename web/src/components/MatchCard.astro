@@ -5,9 +5,13 @@ interface Props {
   team2: string; score2: number;
   xg1?: number;  xg2?: number;
   ko?: boolean;
+  realScore1?: number; realScore2?: number;
 }
-const { team1, score1, team2, score2, xg1, xg2, ko = false } = Astro.props;
-const winner = score1 > score2 ? team1 : score1 < score2 ? team2 : null;
+const { team1, score1, team2, score2, xg1, xg2, ko = false, realScore1, realScore2 } = Astro.props;
+const hasReal = realScore1 !== undefined && realScore2 !== undefined;
+const winner = hasReal
+  ? (realScore1 > realScore2 ? team1 : realScore1 < realScore2 ? team2 : null)
+  : (score1 > score2 ? team1 : score1 < score2 ? team2 : null);
 const maxXG = 2.5;
 const bar1 = xg1 != null ? Math.min(100, (xg1 / maxXG) * 100) : null;
 const bar2 = xg2 != null ? Math.min(100, (xg2 / maxXG) * 100) : null;
@@ -22,10 +26,27 @@ const bar2 = xg2 != null ? Math.min(100, (xg2 / maxXG) * 100) : null;
   </div>
 
   <!-- Score -->
-  <div class="flex items-center gap-1 shrink-0 font-mono text-base font-bold">
-    <span class={score1 > score2 ? 'text-[var(--gold)]' : ''}>{score1}</span>
-    <span class="text-[var(--text-muted)]">–</span>
-    <span class={score2 > score1 ? 'text-[var(--gold)]' : ''}>{score2}</span>
+  <div class="flex flex-col items-center shrink-0 font-mono font-bold">
+    {hasReal ? (
+      <>
+        <div class="flex items-center gap-1 text-base text-[var(--text-base)]">
+          <span class={realScore1! > realScore2! ? 'text-[var(--gold)]' : ''}>{realScore1}</span>
+          <span class="text-[var(--text-muted)]">–</span>
+          <span class={realScore2! > realScore1! ? 'text-[var(--gold)]' : ''}>{realScore2}</span>
+        </div>
+        <div class="flex items-center gap-1 text-[10px] text-[var(--text-muted)]">
+          <span>({score1}</span>
+          <span>–</span>
+          <span>{score2})</span>
+        </div>
+      </>
+    ) : (
+      <div class="flex items-center gap-1 text-base">
+        <span class={score1 > score2 ? 'text-[var(--gold)]' : ''}>{score1}</span>
+        <span class="text-[var(--text-muted)]">–</span>
+        <span class={score2 > score1 ? 'text-[var(--gold)]' : ''}>{score2}</span>
+      </div>
+    )}
   </div>
 
   <!-- Team 2 -->

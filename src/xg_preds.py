@@ -191,6 +191,21 @@ def train_model(name):
     df_historia.sort_values(by="date", inplace=True)
     foto_fija_equipos = df_historia.groupby("team")[['gf_prom_5', 'gc_prom_5', 'elo_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2', 'confed']].last().reset_index()
 
+    # Si existe una foto fija actualizada con resultados reales del Mundial,
+    # sobreescribimos las métricas de los equipos que ya han jugado.
+    _updated_path = os.path.join("data", "ai_models", "foto_fija_updated.csv")
+    if os.path.exists(_updated_path):
+        df_updated = pd.read_csv(_updated_path)
+        cols_to_update = ['gf_prom_5', 'gc_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2', 'confed']
+        df_updated_indexed = df_updated.set_index("team")
+        foto_fija_indexed  = foto_fija_equipos.set_index("team")
+        for col in cols_to_update:
+            if col in df_updated_indexed.columns:
+                foto_fija_indexed.loc[df_updated_indexed.index, col] = df_updated_indexed[col]
+        # Update ELO separately (it lives in df_mundial schedule, not in foto_fija_equipos)
+        foto_fija_equipos = foto_fija_indexed.reset_index()
+        print(f"  ✅ Foto fija actualizada con resultados reales de {len(df_updated)} equipos.")
+
     foto_fija_rivales = foto_fija_equipos.copy()
     foto_fija_rivales.columns = ['opponent', 'rival_gf_prom_5', 'rival_gc_prom_5', 'rival_elo_prom_5', 'rival_gf_prom_15', 'rival_gc_prom_15', 'rival_PCA_1', 'rival_PCA_2', 'rival_confed']
 
