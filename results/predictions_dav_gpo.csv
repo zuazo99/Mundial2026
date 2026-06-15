@@ -1,105 +1,105 @@
 Team_1,Score_1,Score_2,Team_2
 Mexico,2,1,South Africa
-South Korea,0,2,Czech Republic
-Mexico,2,0,South Korea
-Czech Republic,2,1,South Africa
-Czech Republic,0,2,Mexico
-South Africa,1,3,South Korea
-Canada,1,0,Bosnia and Herzegovina
-Qatar,0,2,Switzerland
+South Korea,1,1,Czech Republic
+Mexico,0,1,South Korea
+Czech Republic,1,1,South Africa
+Czech Republic,1,3,Mexico
+South Africa,2,2,South Korea
+Canada,3,0,Bosnia and Herzegovina
+Qatar,0,3,Switzerland
 Canada,2,0,Qatar
 Switzerland,2,1,Bosnia and Herzegovina
-Switzerland,1,0,Canada
+Switzerland,2,2,Canada
 Bosnia and Herzegovina,1,0,Qatar
-Brazil,1,0,Morocco
-Haiti,0,1,Scotland
-Brazil,4,1,Haiti
+Brazil,2,0,Morocco
+Haiti,0,2,Scotland
+Brazil,2,0,Haiti
 Scotland,1,1,Morocco
-Scotland,1,2,Brazil
-Morocco,2,0,Haiti
+Scotland,0,2,Brazil
+Morocco,2,1,Haiti
 United States,1,3,Paraguay
-Australia,0,1,Turkey
-United States,1,2,Australia
-Turkey,2,1,Paraguay
-Turkey,1,2,United States
-Paraguay,2,1,Australia
-Germany,2,1,Curaçao
-Ivory Coast,0,3,Ecuador
-Germany,0,1,Ivory Coast
-Ecuador,3,0,Curaçao
-Ecuador,2,1,Germany
+Australia,1,1,Turkey
+United States,1,1,Australia
+Turkey,2,2,Paraguay
+Turkey,2,2,United States
+Paraguay,0,0,Australia
+Germany,4,0,Curaçao
+Ivory Coast,1,1,Ecuador
+Germany,1,0,Ivory Coast
+Ecuador,2,0,Curaçao
+Ecuador,0,2,Germany
 Curaçao,0,1,Ivory Coast
-Netherlands,2,0,Japan
+Netherlands,2,1,Japan
 Sweden,2,1,Tunisia
-Netherlands,4,1,Sweden
-Tunisia,0,2,Japan
-Tunisia,0,2,Netherlands
-Japan,1,1,Sweden
-Belgium,1,2,Egypt
-Iran,2,1,New Zealand
-Belgium,0,1,Iran
-New Zealand,1,2,Egypt
-New Zealand,0,2,Belgium
-Egypt,0,2,Iran
-Spain,4,0,Cape Verde
+Netherlands,3,0,Sweden
+Tunisia,1,3,Japan
+Tunisia,2,3,Netherlands
+Japan,2,1,Sweden
+Belgium,1,1,Egypt
+Iran,2,0,New Zealand
+Belgium,2,2,Iran
+New Zealand,0,1,Egypt
+New Zealand,1,2,Belgium
+Egypt,2,1,Iran
+Spain,2,0,Cape Verde
 Saudi Arabia,0,3,Uruguay
-Spain,2,1,Saudi Arabia
+Spain,3,0,Saudi Arabia
 Uruguay,1,1,Cape Verde
-Uruguay,0,3,Spain
-Cape Verde,1,1,Saudi Arabia
-France,2,2,Senegal
-Iraq,0,1,Norway
+Uruguay,1,2,Spain
+Cape Verde,2,1,Saudi Arabia
+France,1,0,Senegal
+Iraq,1,2,Norway
 France,2,0,Iraq
-Norway,1,1,Senegal
-Norway,2,1,France
-Senegal,2,0,Iraq
+Norway,2,2,Senegal
+Norway,1,1,France
+Senegal,1,0,Iraq
 Argentina,1,1,Algeria
 Austria,2,1,Jordan
-Argentina,1,1,Austria
+Argentina,1,0,Austria
 Jordan,1,1,Algeria
-Jordan,0,1,Argentina
-Algeria,0,1,Austria
-Portugal,3,1,DR Congo
-Uzbekistan,0,2,Colombia
-Portugal,0,1,Uzbekistan
-Colombia,2,0,DR Congo
-Colombia,1,2,Portugal
-DR Congo,1,2,Uzbekistan
-England,2,1,Croatia
-Ghana,0,2,Panama
+Jordan,0,2,Argentina
+Algeria,1,1,Austria
+Portugal,2,0,DR Congo
+Uzbekistan,1,2,Colombia
+Portugal,1,1,Uzbekistan
+Colombia,4,0,DR Congo
+Colombia,2,1,Portugal
+DR Congo,0,0,Uzbekistan
+England,1,1,Croatia
+Ghana,1,2,Panama
 England,3,0,Ghana
-Panama,2,3,Croatia
-Panama,1,2,England
+Panama,1,1,Croatia
+Panama,2,2,England
 Croatia,2,0,Ghana
-Czech Republic,2,1,Canada
-Brazil,1,0,Japan
-Ecuador,1,0,Australia
-Netherlands,2,1,Morocco
-Ivory Coast,2,1,Senegal
-Norway,2,1,Sweden
-Mexico,2,1,Scotland
-England,3,2,Uzbekistan
-Iran,1,2,France
-Turkey,2,1,Germany
-Spain,2,1,Argentina
-Portugal,2,0,Croatia
-Switzerland,2,1,Belgium
-Paraguay,1,2,Egypt
-Austria,1,2,Uruguay
-Colombia,2,1,Panama
-Czech Republic,1,2,Netherlands
-Ecuador,2,1,Norway
-Brazil,3,2,Ivory Coast
-Mexico,0,1,England
-Spain,2,1,Portugal
-Turkey,1,3,France
-Uruguay,2,0,Egypt
-Switzerland,1,2,Colombia
-Netherlands,2,1,Ecuador
-Spain,0,1,France
-Brazil,2,3,England
-Uruguay,1,2,Colombia
-Netherlands,1,2,France
-England,1,2,Colombia
-Netherlands,2,3,England
-France,3,1,Colombia
+South Korea,2,1,Switzerland
+Brazil,2,1,Japan
+Germany,1,2,Morocco
+Netherlands,2,0,Scotland
+Ecuador,1,0,Norway
+France,2,1,Australia
+Mexico,3,2,Ivory Coast
+England,2,1,Senegal
+Egypt,1,0,Cape Verde
+Paraguay,2,1,Algeria
+Spain,2,1,Austria
+Portugal,2,1,Panama
+Canada,2,1,Iran
+Turkey,2,1,Belgium
+Argentina,1,0,Uruguay
+Colombia,2,1,Croatia
+South Korea,0,2,Netherlands
+Morocco,1,0,France
+Brazil,2,1,Ecuador
+Mexico,1,2,England
+Spain,0,2,Portugal
+Paraguay,2,1,Egypt
+Argentina,2,1,Turkey
+Canada,2,1,Colombia
+Netherlands,1,0,Morocco
+Portugal,2,1,Paraguay
+Brazil,1,2,England
+Argentina,0,1,Canada
+Netherlands,2,3,Portugal
+England,1,0,Canada
+Netherlands,2,1,Canada
+Portugal,1,2,England
