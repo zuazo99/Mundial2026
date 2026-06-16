@@ -1,0 +1,118 @@
+---
+import Flag from './Flag.astro';
+interface Props {
+  team1: string; score1: number;
+  team2: string; score2: number;
+  xg1?: number;  xg2?: number;
+  ko?: boolean;
+  realScore1?: number; realScore2?: number;
+}
+const { team1, score1, team2, score2, xg1, xg2, ko = false, realScore1, realScore2 } = Astro.props;
+const hasReal = realScore1 !== undefined && realScore2 !== undefined;
+const winner = hasReal
+  ? (realScore1 > realScore2 ? team1 : realScore1 < realScore2 ? team2 : null)
+  : (score1 > score2 ? team1 : score1 < score2 ? team2 : null);
+const maxXG = 2.5;
+const bar1 = xg1 != null ? Math.min(100, (xg1 / maxXG) * 100) : null;
+const bar2 = xg2 != null ? Math.min(100, (xg2 / maxXG) * 100) : null;
+
+// Poisson 1X2 probabilities + P(exact predicted score) — unplayed matches only
+let probBar: { p1: number; pd: number; p2: number } | null = null;
+let exactScoreProb: number | null = null;  // P(score1–score2 exactly)
+
+if (!hasReal && xg1 != null && xg2 != null) {
+  const MAX = 10;
+  const logF = [0];
+  for (let i = 1; i <= MAX; i++) logF[i] = logF[i - 1] + Math.log(i);
+  const pmf = (lam: number, k: number) => Math.exp(-lam + k * Math.log(lam || 1e-9) - logF[k]);
+  let p1 = 0, pd = 0;
+  for (let g1 = 0; g1 <= MAX; g1++) {
+    for (let g2 = 0; g2 <= MAX; g2++) {
+      const p = pmf(xg1, g1) * pmf(xg2, g2);
+      if (g1 > g2) p1 += p; else if (g1 === g2) pd += p;
+      if (g1 === score1 && g2 === score2) exactScoreProb = p;
+    }
+  }
+  probBar = { p1, pd, p2: Math.max(0, 1 - p1 - pd) };
+}
+---
+<div class="flex items-center gap-2 py-2 px-3 rounded-lg bg-[var(--bg-muted)] text-sm">
+  <!-- Team 1 -->
+  <div class={`flex items-center gap-1.5 flex-1 justify-end ${winner === team2 ? 'opacity-50' : ''}`}>
+    <span class={`text-right leading-tight ${winner === team1 ? 'font-semibold text-[var(--gold)]' : ''}`}>
+      {team1}
+    </span>
+    <Flag team={team1} />
+  </div>
+
+  <!-- Score -->
+  <div class="flex flex-col items-center shrink-0 font-mono font-bold">
+    {hasReal ? (
+      <>
+        <div class="flex items-center gap-1 text-base text-[var(--text-base)]">
+          <span class={realScore1! > realScore2! ? 'text-[var(--gold)]' : ''}>{realScore1}</span>
+          <span class="text-[var(--text-muted)]">–</span>
+          <span class={realScore2! > realScore1! ? 'text-[var(--gold)]' : ''}>{realScore2}</span>
+        </div>
+        <div class="flex items-center gap-1 text-[10px] text-[var(--text-muted)]">
+          <span>({score1}</span>
+          <span>–</span>
+          <span>{score2})</span>
+        </div>
+      </>
+    ) : (
+      <>
+        <div class="flex items-center gap-1 text-base">
+          <span class={score1 > score2 ? 'text-[var(--gold)]' : ''}>{score1}</span>
+          <span class="text-[var(--text-muted)]">–</span>
+          <span class={score2 > score1 ? 'text-[var(--gold)]' : ''}>{score2}</span>
+        </div>
+        {exactScoreProb != null && (
+          <div class="text-[9px] text-[var(--text-muted)] font-normal font-sans">
+            {(exactScoreProb * 100).toFixed(1)}% exacto
+          </div>
+        )}
+      </>
+    )}
+  </div>
+
+  <!-- Team 2 -->
+  <div class={`flex items-center gap-1.5 flex-1 ${winner === team1 ? 'opacity-50' : ''}`}>
+    <Flag team={team2} />
+    <span class={`leading-tight ${winner === team2 ? 'font-semibold text-[var(--gold)]' : ''}`}>
+      {team2}
+    </span>
+  </div>
+</div>
+
+<!-- XG bars -->
+{bar1 != null && bar2 != null && (
+  <div class="flex gap-1 px-3 pb-1">
+    <div class="flex-1 flex justify-end">
+      <div title={`XG ${team1}: ${xg1?.toFixed(2)}`}
+           class="xg-bar" style={`width:${bar1}%`}></div>
+    </div>
+    <div class="w-8 shrink-0"></div>
+    <div class="flex-1">
+      <div title={`XG ${team2}: ${xg2?.toFixed(2)}`}
+           class="xg-bar" style={`width:${bar2}%`}></div>
+    </div>
+  </div>
+)}
+
+<!-- 1X2 probability bar (unplayed matches only) -->
+{probBar && (
+  <div class="px-3 pb-2 mt-0.5">
+    <div class="flex rounded overflow-hidden h-1.5 w-full"
+         title={`${team1}: ${(probBar.p1*100).toFixed(0)}% · Empate: ${(probBar.pd*100).toFixed(0)}% · ${team2}: ${(probBar.p2*100).toFixed(0)}%`}>
+      <div class="bg-[var(--blue)] opacity-80" style={`width:${(probBar.p1*100).toFixed(1)}%`}></div>
+      <div class="bg-[var(--text-muted)] opacity-40" style={`width:${(probBar.pd*100).toFixed(1)}%`}></div>
+      <div class="bg-[var(--blue)] opacity-50" style={`width:${(probBar.p2*100).toFixed(1)}%`}></div>
+    </div>
+    <div class="flex justify-between text-[9px] text-[var(--text-muted)] mt-0.5 font-mono">
+      <span>{(probBar.p1*100).toFixed(0)}%</span>
+      <span>{(probBar.pd*100).toFixed(0)}%</span>
+      <span>{(probBar.p2*100).toFixed(0)}%</span>
+    </div>
+  </div>
+)}

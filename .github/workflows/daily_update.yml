@@ -1,0 +1,71 @@
+name: Daily Results Update
+
+on:
+  schedule:
+    # Every day at 08:00 UTC during the World Cup group stage
+    - cron: '0 8 * * *'
+  workflow_dispatch:   # allow manual trigger from GitHub Actions UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to push the updated data files
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch real World Cup results
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: python3 scripts/fetch_real_results.py
+
+      - name: Update foto fija with real results
+        run: python3 scripts/update_foto_fija.py
+
+      - name: Re-generate XG predictions with updated form
+        run: python src/xg_preds.py
+
+      - name: Re-simulate tournament bracket
+        run: python src/simulacion.py
+
+      - name: Export data to TypeScript
+        run: python3 scripts/export_data.py
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install Node dependencies & build
+        run: cd web && npm ci && npm run build
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/world_cup_results.csv \
+                  data/ai_models/foto_fija_updated.csv \
+                  data/ai_models/ \
+                  results/ \
+                  web/src/data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: daily update — real WC results $(date -u +%Y-%m-%d)"
+            git push
+          fi

@@ -70,7 +70,50 @@ results/               # Final tournament predictions (output of simulacion.py)
 - Feature vector (19 features): defined in `clases_simulacion.py:664–668` — must match the column set used during training in `xg_preds.py`
 - Training/World Cup split date: `2026-06-11` (hardcoded in `xg_preds.py`)
 - Group stage uses the real 2026 draw (12 groups A–L, 48 teams), hardcoded in `clases_simulacion.py`
+- Results CSV has 104 data rows: rows 0–71 = groups (6 per group × 12), rows 72–87 = R32, 88–95 = S16, 96–99 = E8, 100–101 = Semis, 102 = 3rd place, 103 = Final
 
-## Branch
+## Web Frontend (`web/`)
 
-Active development branch: `claude/claude-md-docs-ki81f7`
+Static Astro app that visualizes the simulation outputs. Deploy target: Vercel.
+
+### Running the web app
+
+```bash
+# From repo root — regenerate all XG + result CSVs and convert to TS
+python3 scripts/export_data.py   # requires the Python sim to have run first
+
+# Start dev server
+cd web && npm install && npm run dev
+
+# Production build
+cd web && npm run build
+```
+
+### Web data pipeline
+
+1. Python simulation outputs CSV files (`results/`, `data/ai_models/`)
+2. `scripts/export_data.py` converts them to typed TS modules in `web/src/data/`
+3. Astro imports those modules at build time — all data is static, no runtime API calls
+
+The generated files (`web/src/data/predictions.ts`, `xg.ts`, `teamStats.ts`, `mejoresTerceros.ts`) are committed to the repo. Re-run `scripts/export_data.py` after any Python simulation run.
+
+### Web architecture
+
+Single-page app (`web/src/pages/index.astro`) with 4 CSS-based tabs:
+- **Grupos** — 12 group cards with standings + XG match cards, variant toggle
+- **Cuadro** — scrollable bracket with divergence indicators per match
+- **Resultado** — champion podium × 3 variants, Shock del torneo, stats
+- **Simular** — runs a fresh simulation in-browser using the TS simulation engine
+
+Key libraries in `web/src/lib/`:
+- `computeStandings.ts` — group standings + Python-compatible tiebreaker
+- `bracketBuilder.ts` — parses flat result rows into bracket structure
+- `simulation.ts` — full Poisson simulation engine (port of Python logic)
+
+**Critical note on simulation port**: `get_multiplier()` in Python has dead code (lines 67–105 are overwritten unconditionally). The TS port implements only the executed second block.
+
+Knockout XG uses ELO-based approximation (`eloToXG()`) since XGBoost can't run in the browser.
+
+### Vercel deployment
+
+`vercel.json` at repo root; build command: `cd web && npm run build`.

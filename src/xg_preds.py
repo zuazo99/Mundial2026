@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
@@ -59,7 +60,7 @@ def train_model(name):
     df_historia["clean_ratio"] = (df_historia["goals_conceded"] == 0).astype(int)
     df_historia["clean_20"] = df_historia.groupby("team")["clean_ratio"].transform(lambda x: calculate_window(x, 20))
 
-    df_historia["dif_goals_elo"] = np.where(df_historia["opponent_elo"] > df_historia["elo"], df_historia["goals"] - df_historia["goals_conceded"], np.NaN)
+    df_historia["dif_goals_elo"] = np.where(df_historia["opponent_elo"] > df_historia["elo"], df_historia["goals"] - df_historia["goals_conceded"], np.nan)
     df_historia["underdog_20"] = df_historia.groupby("team")["dif_goals_elo"].transform(lambda x: calculate_window(x, 20))
     df_historia["underdog_20"].fillna(0, inplace=True)
 
@@ -72,8 +73,8 @@ def train_model(name):
     pca = PCA(n_components=2, random_state=42)
     pca_data = pca.fit_transform(scaled_data)
 
-    df_historia["PCA_1"] = np.NaN
-    df_historia["PCA_2"] = np.NaN
+    df_historia["PCA_1"] = np.nan
+    df_historia["PCA_2"] = np.nan
     df_historia.loc[no_nan_rows, "PCA_1"] = pca_data[:, 0]
     df_historia.loc[no_nan_rows, "PCA_2"] = pca_data[:, 1]
 
@@ -177,6 +178,10 @@ def train_model(name):
 
     model.fit(df_train[features], df_train[target], sample_weight=df_train["date_weight"])
 
+    # Persistir el modelo para el endpoint serverless de knockouts
+    os.makedirs("api/models", exist_ok=True)
+    model.save_model(f"api/models/xgb_{name}.json")
+
     # =====================================================================
     # 5. INFERENCIA DEL MUNDIAL (LA FOTO FIJA)
     # =====================================================================
@@ -185,6 +190,21 @@ def train_model(name):
     # Sacamos la FOTO FIJA (El último partido de cada equipo antes del Mundial)
     df_historia.sort_values(by="date", inplace=True)
     foto_fija_equipos = df_historia.groupby("team")[['gf_prom_5', 'gc_prom_5', 'elo_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2', 'confed']].last().reset_index()
+
+    # Si existe una foto fija actualizada con resultados reales del Mundial,
+    # sobreescribimos las métricas de los equipos que ya han jugado.
+    _updated_path = os.path.join("data", "ai_models", "foto_fija_updated.csv")
+    if os.path.exists(_updated_path):
+        df_updated = pd.read_csv(_updated_path)
+        cols_to_update = ['gf_prom_5', 'gc_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2', 'confed']
+        df_updated_indexed = df_updated.set_index("team")
+        foto_fija_indexed  = foto_fija_equipos.set_index("team")
+        for col in cols_to_update:
+            if col in df_updated_indexed.columns:
+                foto_fija_indexed.loc[df_updated_indexed.index, col] = df_updated_indexed[col]
+        # Update ELO separately (it lives in df_mundial schedule, not in foto_fija_equipos)
+        foto_fija_equipos = foto_fija_indexed.reset_index()
+        print(f"  ✅ Foto fija actualizada con resultados reales de {len(df_updated)} equipos.")
 
     foto_fija_rivales = foto_fija_equipos.copy()
     foto_fija_rivales.columns = ['opponent', 'rival_gf_prom_5', 'rival_gc_prom_5', 'rival_elo_prom_5', 'rival_gf_prom_15', 'rival_gc_prom_15', 'rival_PCA_1', 'rival_PCA_2', 'rival_confed']

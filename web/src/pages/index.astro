@@ -1,0 +1,690 @@
+---
+import Base from '../layouts/Base.astro';
+import Flag from '../components/Flag.astro';
+import GroupCard from '../components/GroupCard.astro';
+import BracketMatch from '../components/BracketMatch.astro';
+import { predictions, type Variant, type MatchResult } from '../data/predictions';
+import { xgData } from '../data/xg';
+import { BASE_ELO, ELO_ADJUSTMENTS } from '../data/groups';
+import { computeAllStandings } from '../lib/computeStandings';
+import { buildBracket, getChampion, getRunnerUp } from '../lib/bracketBuilder';
+import { metadata } from '../data/metadata';
+import { realResults } from '../data/realResults';
+import { probabilities } from '../data/probabilities';
+
+const VARIANTS: Variant[] = ['misterclaude', 'gemaldini', 'dav_gpo'];
+const VARIANT_LABELS: Record<Variant, string> = {
+  misterclaude: 'Mister Claude',
+  gemaldini:    'Gemaldini',
+  dav_gpo:      'Dav-GPO',
+};
+const VARIANT_SHORT: Record<Variant, string> = {
+  misterclaude: 'MC',
+  gemaldini:    'GEM',
+  dav_gpo:      'DAV',
+};
+
+// Pre-compute standings + bracket for each variant at build time
+const variantData = Object.fromEntries(
+  VARIANTS.map(v => {
+    const rounds = predictions[v];
+    const standings = computeAllStandings(rounds.grupos);
+    const bracket = buildBracket(rounds);
+    const champion = getChampion(rounds);
+    const runnerUp = getRunnerUp(rounds);
+    const third = rounds.third[0];
+    const thirdTeam = third.score1 > third.score2 ? third.team1 : third.team2;
+    return [v, { rounds, standings, bracket, champion, runnerUp, thirdTeam }];
+  })
+) as Record<Variant, ReturnType<typeof buildBracket> extends infer B ? {
+  rounds: typeof predictions[Variant];
+  standings: ReturnType<typeof computeAllStandings>;
+  bracket: B;
+  champion: string;
+  runnerUp: string;
+  thirdTeam: string;
+} : never>;
+
+// Consensus: do all 3 models agree on the champion?
+const champions = VARIANTS.map(v => variantData[v].champion);
+const allAgree = champions.every(c => c === champions[0]);
+
+// Cross-model R32 match winners for divergence indicators
+// Shape: { matchIndex: [winner_mc, winner_gem, winner_dav] }
+const r32Consensus: Record<number, string[]> = {};
+VARIANTS.forEach((v, vi) => {
+  predictions[v].r32.forEach((m: MatchResult, mi: number) => {
+    if (!r32Consensus[mi]) r32Consensus[mi] = [];
+    r32Consensus[mi][vi] = m.score1 > m.score2 ? m.team1 : m.team2;
+  });
+});
+
+// "Shock del torneo": match with the lowest ELO win probability for the actual winner
+function eloWinProb(winnerElo: number, loserElo: number): number {
+  return 1 / (1 + Math.pow(10, -(winnerElo - loserElo) / 400));
+}
+
+const shocks = VARIANTS.map(v => {
+  const rounds = predictions[v];
+  const koMatches = [...rounds.r32, ...rounds.sweet16, ...rounds.elite8, ...rounds.semis, ...rounds.final];
+  let minProb = 1, shockMatch: MatchResult | null = null;
+  for (const m of koMatches) {
+    const winner = m.score1 > m.score2 ? m.team1 : m.team2;
+    const loser  = m.score1 > m.score2 ? m.team2 : m.team1;
+    const wElo = (BASE_ELO[winner] ?? 1500) + (ELO_ADJUSTMENTS[v]?.[winner] ?? 0);
+    const lElo = (BASE_ELO[loser]  ?? 1500) + (ELO_ADJUSTMENTS[v]?.[loser]  ?? 0);
+    const prob = eloWinProb(wElo, lElo);
+    if (prob < minProb) { minProb = prob; shockMatch = m; }
+  }
+  return { match: shockMatch, prob: minProb };
+});
+---
+
+<Base>
+  <!-- ── Navigation ─────────────────────────────────────────────── -->
+  <header class="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg-base)]/90 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center gap-2 sm:gap-3 sm:flex-nowrap sm:justify-between py-2 sm:py-0 sm:h-14">
+      <!-- Logo — order 1 -->
+      <div class="flex items-center gap-3 order-1">
+        <span class="text-2xl">⚽</span>
+        <span class="font-black text-sm tracking-tight hidden sm:block">MUNDIAL 2026 ML</span>
+      </div>
+
+      <!-- Variant toggle — order 2 on mobile (right of logo), order 3 on sm+ -->
+      <div class="flex gap-1 bg-[var(--bg-muted)] p-1 rounded-lg order-2 sm:order-3 ml-auto sm:ml-0" id="variant-nav">
+        {VARIANTS.map(v => (
+          <button
+            data-variant-btn={v}
+            class={`variant-btn px-2.5 py-1 rounded text-xs font-semibold transition-colors
+              ${v === 'misterclaude'
+                ? 'bg-[var(--bg-card)] text-[var(--gold)] shadow-sm'
+                : 'text-[var(--text-muted)] hover:text-[var(--text-base)]'
+              }`}
+          >
+            <span class="sm:hidden">{VARIANT_SHORT[v]}</span>
+            <span class="hidden sm:inline">{VARIANT_LABELS[v]}</span>
+          </button>
+        ))}
+      </div>
+
+      <!-- Tab nav — order 3 on mobile (full-width row), order 2 on sm+ -->
+      <nav class="grid grid-cols-4 sm:flex gap-1 order-3 sm:order-2 w-full sm:w-auto" id="tab-nav">
+        {[
+          { id: 'grupos',    label: 'Grupos'    },
+          { id: 'cuadro',    label: 'Cuadro'    },
+          { id: 'resultado', label: 'Resultado' },
+          { id: 'simular',   label: 'Simular'   },
+        ].map(({ id, label }) => (
+          <button
+            data-tab={id}
+            class={`tab-btn px-3 py-2 sm:py-1.5 rounded-md text-xs font-semibold transition-colors
+              ${id === 'grupos'
+                ? 'bg-[var(--blue)] text-white'
+                : 'text-[var(--text-muted)] hover:text-[var(--text-base)] hover:bg-[var(--bg-muted)]'
+              }`}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6">
+
+    <!-- ── GRUPOS ──────────────────────────────────────────────── -->
+    <section id="grupos" data-tab-content class="active">
+      <h2 class="text-lg font-bold mb-4">Fase de Grupos</h2>
+      {VARIANTS.map(v => (
+        <div class="variant-block" data-variant={v}>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {variantData[v].standings.map((gs) => (
+              <GroupCard
+                standings={gs}
+                xgJ1={xgData[v].J1}
+                xgJ2={xgData[v].J2}
+                xgJ3={xgData[v].J3}
+                realResults={realResults}
+                teamProbs={probabilities[v].teams}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- ── CUADRO ──────────────────────────────────────────────── -->
+    <section id="cuadro" data-tab-content>
+      <h2 class="text-lg font-bold mb-4">Cuadro del Torneo</h2>
+      {VARIANTS.map((v, vi) => (
+        <div class="variant-block" data-variant={v}>
+          <div class="overflow-x-auto pb-4">
+            <div class="flex gap-5 min-w-max">
+              {variantData[v].bracket.map((round) => (
+                <div class="flex flex-col gap-2 w-44 sm:w-[210px]">
+                  <h3 class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] px-1 mb-1">
+                    {round.label}
+                  </h3>
+                  <div class={`flex flex-col ${
+                    round.name === 'r32'     ? 'gap-2' :
+                    round.name === 'sweet16' ? 'gap-3 sm:gap-6' :
+                    round.name === 'elite8'  ? 'gap-8 sm:gap-14' :
+                    round.name === 'semis'   ? 'gap-16 sm:gap-32' : 'gap-3 sm:gap-6'
+                  }`}>
+                    {round.matches.map((m, mi) => (
+                      <BracketMatch
+                        match={m}
+                        isHighlighted={
+                          (round.name === 'final' || round.name === 'semis') &&
+                          m.winner === variantData[v].champion
+                        }
+                        consensus={round.name === 'r32' ? r32Consensus[mi] : undefined}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- ── RESULTADO ───────────────────────────────────────────── -->
+    <section id="resultado" data-tab-content>
+      <h2 class="text-lg font-bold mb-6">Resultado Final</h2>
+
+      {/* Consensus banner */}
+      {allAgree && (
+        <div class="mb-6 rounded-xl border border-[var(--gold)] bg-[var(--gold)]/5 p-4 flex items-center gap-3">
+          <span class="text-2xl">🏆</span>
+          <div>
+            <p class="text-xs text-[var(--gold)] font-semibold uppercase tracking-wide mb-0.5">
+              Alta confianza — los 3 modelos coinciden
+            </p>
+            <p class="font-bold text-lg">{champions[0]} gana el Mundial</p>
+          </div>
+        </div>
+      )}
+
+      {/* Per-variant podium */}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        {VARIANTS.map(v => {
+          const { champion, runnerUp, thirdTeam } = variantData[v];
+          return (
+            <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-5">
+              <p class="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-3">
+                {VARIANT_LABELS[v]}
+              </p>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-lg">🥇</span>
+                <Flag team={champion} size="md" />
+                <span class="font-bold">{champion}</span>
+              </div>
+              <div class="flex items-center gap-2 mb-2 opacity-80">
+                <span class="text-lg">🥈</span>
+                <Flag team={runnerUp} size="md" />
+                <span>{runnerUp}</span>
+              </div>
+              <div class="flex items-center gap-2 opacity-60">
+                <span class="text-lg">🥉</span>
+                <Flag team={thirdTeam} size="md" />
+                <span>{thirdTeam}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Model divergence */}
+      {!allAgree && (
+        <div class="rounded-xl border border-[var(--amber)] bg-[var(--amber)]/5 p-4 mb-6">
+          <p class="text-xs font-semibold text-[var(--amber)] uppercase tracking-wide mb-2">
+            Los modelos no coinciden
+          </p>
+          <p class="text-sm text-[var(--text-muted)]">
+            Gemaldini favorece a las potencias europeas (+200 ELO). Dav-GPO apuesta por Sudamérica (+150–200 ELO).
+            El resultado final depende de qué sesgo reflejara mejor la realidad.
+          </p>
+        </div>
+      )}
+
+      {/* ── Probabilidades Monte Carlo ── */}
+      {VARIANTS.map(v => {
+        const probs = probabilities[v];
+        if (!probs || probs.nSims === 0) return null;
+        // Top 10 teams by P(champion)
+        const top = Object.entries(probs.teams)
+          .filter(([, t]) => t.pChampion > 0)
+          .sort((a, b) => b[1].pChampion - a[1].pChampion)
+          .slice(0, 12);
+        const maxPct = top[0]?.[1].pChampion ?? 0.01;
+        return (
+          <div class="variant-block mb-8" data-variant={v}>
+            <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-5">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-sm font-bold">Probabilidades de campeón</h3>
+                <span class="text-[10px] text-[var(--text-muted)] bg-[var(--bg-muted)] px-2 py-0.5 rounded">
+                  Monte Carlo · {probs.nSims.toLocaleString()} sims
+                </span>
+              </div>
+              <div class="space-y-1.5">
+                {top.map(([team, info]) => {
+                  const pct = Math.round(info.pChampion * 100);
+                  const barW = Math.round((info.pChampion / maxPct) * 100);
+                  return (
+                    <div class="flex items-center gap-2 text-xs">
+                      <Flag team={team} />
+                      <span class="w-28 truncate font-semibold">{team}</span>
+                      <div class="flex-1 h-3.5 rounded bg-[var(--bg-muted)] overflow-hidden">
+                        <div
+                          class="h-full rounded bg-[var(--blue)] transition-all"
+                          style={`width:${barW}%`}
+                        />
+                      </div>
+                      <span class="w-9 text-right font-mono text-[var(--text-muted)]">{pct}%</span>
+                      <span class="text-[10px] text-[var(--text-muted)] w-20 hidden sm:block">
+                        F:{Math.round(info.pFinal*100)}% · S:{Math.round(info.pSemis*100)}%
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* Shock del torneo */}
+      {VARIANTS.map((v, vi) => {
+        const { match, prob } = shocks[vi];
+        if (!match) return null;
+        const winner = match.score1 > match.score2 ? match.team1 : match.team2;
+        const loser  = match.score1 > match.score2 ? match.team2 : match.team1;
+        return (
+          <div class="variant-block mb-4" data-variant={v}>
+            <div class="rounded-xl border border-[var(--red)]/50 bg-[var(--red)]/5 p-4">
+              <p class="text-xs font-semibold text-[var(--red)] uppercase tracking-wide mb-1">
+                ⚡ Shock del torneo
+              </p>
+              <p class="font-bold">
+                <Flag team={winner} /> {winner} elimina a <Flag team={loser} /> {loser}
+              </p>
+              <p class="text-xs text-[var(--text-muted)] mt-1">
+                Solo un {(prob * 100).toFixed(0)}% de probabilidad según ELO · Resultado: {match.score1}–{match.score2}
+              </p>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* Stats section for active variant — shown via JS */}
+      {VARIANTS.map(v => {
+        const { rounds } = variantData[v];
+        const allMatches = [...rounds.grupos, ...rounds.r32, ...rounds.sweet16,
+                           ...rounds.elite8, ...rounds.semis, ...rounds.final, ...rounds.third];
+        const totalGoals = allMatches.reduce((s, m) => s + m.score1 + m.score2, 0);
+        const maxGame = allMatches.reduce((best, m) => {
+          const tot = m.score1 + m.score2;
+          return tot > (best.score1 + best.score2) ? m : best;
+        }, allMatches[0]);
+        return (
+          <div class="variant-block" data-variant={v}>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                { label: 'Goles totales',      value: totalGoals },
+                { label: 'Media goles/partido', value: (totalGoals / allMatches.length).toFixed(2) },
+                { label: 'Partido más loco',   value: `${maxGame.score1}–${maxGame.score2}` },
+                { label: 'Campeón',            value: variantData[v].champion },
+              ].map(({ label, value }) => (
+                <div class="rounded-lg bg-[var(--bg-card)] border border-[var(--border)] p-4">
+                  <p class="text-xs text-[var(--text-muted)] mb-1">{label}</p>
+                  <p class="font-bold text-lg text-[var(--gold)]">{value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </section>
+
+    <!-- ── SIMULAR ─────────────────────────────────────────────── -->
+    <section id="simular" data-tab-content>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-lg font-bold mb-2">Simulador Interactivo</h2>
+        <p class="text-sm text-[var(--text-muted)] mb-6">
+          Corre una simulación nueva en tu navegador usando los valores XG del modelo.
+          Cada partida se simula minuto a minuto con el mismo algoritmo que el modelo Python.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-6">
+          <button
+            id="sim-btn"
+            class="pulse-gold px-5 py-2.5 rounded-lg bg-[var(--gold)] text-black font-bold text-sm hover:brightness-110 transition-all"
+          >
+            ⚽ Simular torneo
+          </button>
+          <button
+            id="mc-btn"
+            class="px-4 py-2.5 rounded-lg bg-[var(--bg-muted)] text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--text-base)] transition-colors"
+          >
+            📊 Distribución (500 sims)
+          </button>
+          <button
+            id="share-btn"
+            class="px-4 py-2.5 rounded-lg bg-[var(--bg-muted)] text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--text-base)] hidden"
+          >
+            🔗 Compartir resultado
+          </button>
+        </div>
+        <!-- Monte Carlo distribution results -->
+        <div id="mc-results" class="mb-6"></div>
+
+        <!-- Progress bar -->
+        <div id="sim-progress" class="hidden mb-6">
+          <div class="flex items-center justify-between mb-1">
+            <span id="sim-stage" class="text-sm font-semibold"></span>
+            <span id="sim-pct" class="text-xs text-[var(--text-muted)]"></span>
+          </div>
+          <div class="h-2 rounded-full bg-[var(--bg-muted)] overflow-hidden">
+            <div id="sim-bar" class="h-full rounded-full bg-[var(--blue)] transition-all duration-300" style="width:0%"></div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div id="sim-results" class="space-y-6"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-4 mt-6 text-xs text-[var(--text-muted)] border-t border-[var(--border)]">
+    Predicciones basadas en datos hasta el <strong>{metadata.trainingCutoff}</strong>
+    &nbsp;·&nbsp; Generado el {metadata.generatedAt}
+  </footer>
+</Base>
+
+<script>
+  // ─── Tab switching ────────────────────────────────────────────
+  const tabs = document.querySelectorAll<HTMLButtonElement>('[data-tab]');
+  const contents = document.querySelectorAll<HTMLElement>('[data-tab-content]');
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab!;
+      tabs.forEach(b => {
+        const active = b.dataset.tab === target;
+        b.classList.toggle('bg-[var(--blue)]', active);
+        b.classList.toggle('text-white', active);
+        b.classList.toggle('text-[var(--text-muted)]', !active);
+      });
+      contents.forEach(el => {
+        el.classList.toggle('active', el.id === target);
+      });
+    });
+  });
+
+  // ─── "Camino al título": highlight a team's full bracket journey ─
+  let activeJourneyTeam: string | null = null;
+
+  function highlightJourney(team: string | null) {
+    // Reset all matches
+    document.querySelectorAll<HTMLElement>('.bracket-match').forEach(el => {
+      el.style.opacity = '';
+      el.style.boxShadow = '';
+      el.style.border = '';
+    });
+    if (!team) { activeJourneyTeam = null; return; }
+    activeJourneyTeam = team;
+
+    document.querySelectorAll<HTMLElement>('.bracket-match').forEach(el => {
+      const t1 = el.dataset.team1;
+      const t2 = el.dataset.team2;
+      if (t1 === team || t2 === team) {
+        el.style.opacity = '1';
+        el.style.boxShadow = '0 0 0 2px var(--gold), 0 0 16px hsla(45,100%,50%,0.3)';
+      } else {
+        el.style.opacity = '0.25';
+      }
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    const row = (e.target as Element).closest<HTMLElement>('.team-row');
+    if (row) {
+      const team = row.dataset.team!;
+      highlightJourney(team === activeJourneyTeam ? null : team);
+      return;
+    }
+    // Click outside bracket → clear
+    if (!(e.target as Element).closest('.bracket-match')) {
+      highlightJourney(null);
+    }
+  });
+
+  // ─── Variant switching ────────────────────────────────────────
+  const variantBtns = document.querySelectorAll<HTMLButtonElement>('[data-variant-btn]');
+  variantBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.variantBtn!;
+      document.body.dataset.activeVariant = v;
+      variantBtns.forEach(b => {
+        const active = b.dataset.variantBtn === v;
+        b.classList.toggle('bg-[var(--bg-card)]', active);
+        b.classList.toggle('text-[var(--gold)]', active);
+        b.classList.toggle('shadow-sm', active);
+        b.classList.toggle('text-[var(--text-muted)]', !active);
+      });
+    });
+  });
+
+  // ─── Simulator ───────────────────────────────────────────────
+  // Dynamic import so the heavy simulation code only loads on demand
+  const simBtn = document.getElementById('sim-btn')!;
+  const shareBtn = document.getElementById('share-btn')!;
+  const progressEl = document.getElementById('sim-progress')!;
+  const stageEl = document.getElementById('sim-stage')!;
+  const pctEl = document.getElementById('sim-pct')!;
+  const barEl = document.getElementById('sim-bar')!;
+  const resultsEl = document.getElementById('sim-results')!;
+
+  function setProgress(stage: string, pct: number) {
+    stageEl.textContent = stage;
+    pctEl.textContent = `${pct}%`;
+    barEl.style.width = `${pct}%`;
+  }
+
+  simBtn.addEventListener('click', async () => {
+    simBtn.disabled = true;
+    simBtn.classList.remove('pulse-gold');
+    simBtn.textContent = '⏳ Simulando…';
+    progressEl.classList.remove('hidden');
+    resultsEl.innerHTML = '';
+    shareBtn.classList.add('hidden');
+
+    // Lazy import to avoid loading heavy data on initial page load
+    const [{ simulateTournament }, { xgData }, { teamStats }, { predictions }] = await Promise.all([
+      import('../lib/simulation'),
+      import('../data/xg'),
+      import('../data/teamStats'),
+      import('../data/predictions'),
+    ]);
+
+    const variant = (document.body.dataset.activeVariant ?? 'misterclaude') as 'misterclaude' | 'gemaldini' | 'dav_gpo';
+
+    // Run simulation in a macrotask to allow UI repaint
+    await new Promise<void>(resolve => setTimeout(resolve, 0));
+
+    let stageIndex = 0;
+    const stageCount = 7;
+
+    const result = simulateTournament(
+      variant,
+      xgData[variant],
+      teamStats[variant],
+      (stage, pct) => {
+        if (pct === 0) stageIndex++;
+        const overall = Math.round((stageIndex / stageCount) * 100);
+        setProgress(stage, overall);
+      }
+    );
+
+    // ── Render results ──────────────────────────────────────────
+    const static_pred = predictions[variant];
+
+    // Champion celebration
+    resultsEl.innerHTML = `
+      <div class="rounded-xl border border-[var(--gold)] bg-[var(--gold)]/5 p-5 text-center animate-in">
+        <p class="text-xs text-[var(--gold)] uppercase tracking-widest font-semibold mb-1">🏆 Campeón simulado</p>
+        <p class="text-3xl font-black">${result.champion}</p>
+        <p class="text-sm text-[var(--text-muted)] mt-1">Subcampeón: ${result.runnerUp} · 3er lugar: ${result.thirdPlace}</p>
+        ${result.champion === static_pred.final[0].team1 || result.champion === static_pred.final[0].team2
+          ? '<p class="text-xs text-[var(--green)] mt-2">✓ Coincide con la predicción base del modelo</p>'
+          : '<p class="text-xs text-[var(--amber)] mt-2">⚡ Resultado diferente al modelo base — la aleatoriedad actúa</p>'
+        }
+      </div>
+    `;
+
+    // Group results summary
+    const groupsHtml = result.groups.map(g => {
+      const winner = g.standings.teams[0].team;
+      const runner = g.standings.teams[1].team;
+      return `<div class="text-xs">
+        <span class="text-[var(--text-muted)] mr-1">Grupo ${g.letter}:</span>
+        <span class="font-semibold mr-2">${winner}</span>
+        <span class="text-[var(--text-muted)]">${runner}</span>
+      </div>`;
+    }).join('');
+
+    resultsEl.innerHTML += `
+      <div class="animate-in" style="animation-delay:0.1s">
+        <h3 class="text-sm font-bold mb-3">Clasificados por grupos</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-y-1.5 gap-x-4">
+          ${groupsHtml}
+        </div>
+      </div>
+    `;
+
+    // Knockout summary
+    const koHtml = result.knockouts.filter(r => r.round !== 'third').map(r => `
+      <div>
+        <h4 class="text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-2">${r.label}</h4>
+        <div class="space-y-1">
+          ${r.matches.map(m => `
+            <div class="flex items-center gap-2 text-xs py-1 px-2 rounded bg-[var(--bg-muted)]">
+              <span class="${m.score1 > m.score2 ? 'font-bold text-[var(--gold)]' : 'opacity-50'} flex-1 text-right truncate">${m.team1}</span>
+              <span class="font-mono font-bold shrink-0">${m.score1}–${m.score2}</span>
+              <span class="${m.score2 > m.score1 ? 'font-bold text-[var(--gold)]' : 'opacity-50'} flex-1 truncate">${m.team2}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    resultsEl.innerHTML += `
+      <div class="animate-in space-y-4" style="animation-delay:0.2s">
+        <h3 class="text-sm font-bold">Fase eliminatoria</h3>
+        ${koHtml}
+      </div>
+    `;
+
+    // Encode result as URL hash for sharing
+    const simData = {
+      v: variant,
+      c: result.champion,
+      r: result.runnerUp,
+      t: result.thirdPlace,
+    };
+    const hash = btoa(JSON.stringify(simData));
+    window.location.hash = `sim=${hash}`;
+    shareBtn.classList.remove('hidden');
+
+    setProgress('Completado', 100);
+    simBtn.disabled = false;
+    simBtn.textContent = '⚽ Simular de nuevo';
+  });
+
+  // ─── Monte Carlo distribucion ─────────────────────────────
+  const mcBtn = document.getElementById('mc-btn')!;
+  const mcResultsEl = document.getElementById('mc-results')!;
+
+  mcBtn.addEventListener('click', async () => {
+    mcBtn.disabled = true;
+    mcBtn.textContent = '⏳ Calculando 500 torneos…';
+    mcResultsEl.innerHTML = '';
+
+    const [{ simulateTournament }, { xgData }, { teamStats }] = await Promise.all([
+      import('../lib/simulation'),
+      import('../data/xg'),
+      import('../data/teamStats'),
+    ]);
+
+    const variant = (document.body.dataset.activeVariant ?? 'misterclaude') as 'misterclaude' | 'gemaldini' | 'dav_gpo';
+    const N = 500;
+    const counts: Record<string, number> = {};
+
+    // Run N simulations yielding to UI every 50 to avoid freeze
+    for (let i = 0; i < N; i++) {
+      if (i % 50 === 0) await new Promise<void>(r => setTimeout(r, 0));
+      const res = simulateTournament(variant, xgData[variant], teamStats[variant]);
+      counts[res.champion] = (counts[res.champion] ?? 0) + 1;
+    }
+
+    const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const maxCount = sorted[0]?.[1] ?? 1;
+    const topTeams = sorted.slice(0, 15);
+
+    const rows = topTeams.map(([team, count]) => {
+      const pct = Math.round(count / N * 100);
+      const barW = Math.round(count / maxCount * 100);
+      return `<div class="flex items-center gap-2 text-xs">
+        <span class="w-28 text-right truncate font-semibold">${team}</span>
+        <div class="flex-1 h-3.5 rounded bg-[var(--bg-muted)] overflow-hidden">
+          <div class="h-full rounded bg-[var(--blue)]" style="width:${barW}%"></div>
+        </div>
+        <span class="w-9 font-mono text-[var(--text-muted)] text-right">${pct}%</span>
+        <span class="text-[10px] text-[var(--text-muted)] w-10 text-right">${count}/${N}</span>
+      </div>`;
+    }).join('');
+
+    mcResultsEl.innerHTML = `
+      <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-5 animate-in">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-bold">Distribución de campeones</h3>
+          <span class="text-[10px] text-[var(--text-muted)] bg-[var(--bg-muted)] px-2 py-0.5 rounded">
+            ${N} simulaciones · variante: ${variant}
+          </span>
+        </div>
+        <div class="space-y-1.5">${rows}</div>
+        <p class="text-[10px] text-[var(--text-muted)] mt-3">
+          Cada simulación es un Poisson independiente — resultados distintos cada vez.
+        </p>
+      </div>`;
+
+    mcBtn.disabled = false;
+    mcBtn.textContent = '🔄 Repetir distribución';
+  });
+
+  shareBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      shareBtn.textContent = '✓ Enlace copiado';
+      setTimeout(() => { shareBtn.textContent = '🔗 Compartir resultado'; }, 2000);
+    });
+  });
+
+  // Restore simulation from URL hash on load
+  if (window.location.hash.startsWith('#sim=')) {
+    try {
+      const data = JSON.parse(atob(window.location.hash.slice(5)));
+      if (data.c) {
+        resultsEl.innerHTML = `
+          <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-4 text-sm">
+            <p class="text-xs text-[var(--text-muted)] mb-2">🔗 Resultado compartido (variante: ${data.v})</p>
+            <p>🥇 <strong>${data.c}</strong> · 🥈 ${data.r} · 🥉 ${data.t}</p>
+          </div>
+        `;
+        shareBtn.classList.remove('hidden');
+      }
+    } catch { /* invalid hash */ }
+  }
+</script>

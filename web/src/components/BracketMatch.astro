@@ -1,0 +1,80 @@
+---
+import Flag from './Flag.astro';
+import type { BracketMatch } from '../lib/bracketBuilder';
+interface Props {
+  match: BracketMatch;
+  isHighlighted?: boolean;
+  consensus?: string[];
+}
+const { match, isHighlighted = false, consensus } = Astro.props;
+const { team1, score1, team2, score2, winner, id } = match;
+
+let consensusColor = '';
+let consensusLabel = '';
+let consensusTitle = '';
+if (consensus) {
+  const unique = [...new Set(consensus)];
+  if (unique.length === 1) {
+    consensusColor = 'var(--green)';
+    consensusLabel = 'Consenso 3/3';
+    consensusTitle = 'Los 3 modelos coinciden';
+  } else if (unique.length === 2) {
+    consensusColor = 'var(--amber)';
+    consensusLabel = 'Consenso 2/3';
+    consensusTitle = '2 de 3 modelos coinciden';
+  } else {
+    consensusColor = 'var(--red)';
+    consensusLabel = 'Consenso 0/3';
+    consensusTitle = 'Todos los modelos discrepan';
+  }
+}
+---
+
+<div
+  class={`bracket-match rounded-lg border overflow-hidden text-xs transition-all cursor-pointer ${
+    isHighlighted
+      ? 'border-[var(--gold)] shadow-[0_0_12px_hsla(45,100%,50%,0.2)]'
+      : 'border-[var(--border)] hover:border-[var(--text-muted)]'
+  }`}
+  data-match-id={id}
+  data-team1={team1}
+  data-team2={team2}
+>
+  {[
+    { team: team1, score: score1 },
+    { team: team2, score: score2 },
+  ].map(({ team, score }) => {
+    const isWinner = team === winner;
+    return (
+      <div
+        class={`flex items-center gap-2 px-2 py-1.5 team-row ${
+          isWinner ? 'bg-[var(--bg-muted)]' : 'bg-[var(--bg-card)] opacity-60'
+        }`}
+        data-team={team}
+      >
+        <Flag team={team} />
+        <span class={`flex-1 truncate ${isWinner ? 'font-semibold' : ''}`}>{team}</span>
+        <span class={`font-mono font-bold tabular-nums ${isWinner ? 'text-[var(--gold)]' : ''}`}>
+          {score}
+        </span>
+      </div>
+    );
+  })}
+  {consensus && (
+    <div
+      class="flex items-center gap-1.5 px-2 py-1 border-t border-[var(--border)] bg-[var(--bg-card)]"
+      title={consensusTitle}
+    >
+      <span
+        style={`background:${consensusColor}`}
+        class="w-1.5 h-1.5 rounded-full shrink-0"
+      />
+      <span
+        style={`color:${consensusColor}`}
+        class="text-[9px] uppercase tracking-wide font-semibold"
+      >
+        {consensusLabel}
+      </span>
+    </div>
+  )}
+</div>

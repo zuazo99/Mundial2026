@@ -1,0 +1,5 @@
+src/__pycache__/
+.vscode/
+web/README.md
+# XG CSVs intermedios generados por el modelo (eliminatorias)
+data/xg_preds_*.csv

@@ -1,0 +1,8 @@
+---
+import { TEAM_ISO } from '../data/groups';
+interface Props { team: string; size?: 'sm' | 'md' }
+const { team, size = 'sm' } = Astro.props;
+const iso = TEAM_ISO[team] ?? 'un';
+const cls = size === 'sm' ? 'w-5 h-4' : 'w-7 h-5';
+---
+<span class={`fi fi-${iso} rounded-sm inline-block ${cls} shrink-0`} title={team}></span>
