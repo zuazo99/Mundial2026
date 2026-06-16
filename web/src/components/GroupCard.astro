@@ -5,6 +5,7 @@ import type { GroupStandings } from '../lib/computeStandings';
 import type { XGEntry } from '../data/xg';
 import type { MatchResult } from '../data/predictions';
 import type { RealResult } from '../data/realResults';
+import type { TeamProb } from '../data/probabilities';
 
 interface Props {
   standings: GroupStandings;
@@ -12,8 +13,9 @@ interface Props {
   xgJ2: XGEntry[];
   xgJ3: XGEntry[];
   realResults: RealResult[];
+  teamProbs?: Record<string, TeamProb>;
 }
-const { standings, xgJ1, xgJ2, xgJ3, realResults } = Astro.props;
+const { standings, xgJ1, xgJ2, xgJ3, realResults, teamProbs } = Astro.props;
 
 function lookupXG(entries: XGEntry[], team: string) {
   return entries.find(e => e.team === team)?.xg;
@@ -61,6 +63,7 @@ const jornadas = [
           <th class="text-center pb-1 px-1 w-6">P</th>
           <th class="text-center pb-1 px-1 w-8">GD</th>
           <th class="text-center pb-1 px-1 w-7 font-bold">Pts</th>
+          {teamProbs && <th class="text-center pb-1 px-1 w-10 text-[var(--blue)]">Clas%</th>}
         </tr>
       </thead>
       <tbody>
@@ -76,6 +79,11 @@ const jornadas = [
             <td class="text-center">{t.lost}</td>
             <td class="text-center text-[var(--text-muted)]">{t.gd > 0 ? `+${t.gd}` : t.gd}</td>
             <td class="text-center font-bold text-[var(--gold)]">{t.pts}</td>
+            {teamProbs && (() => {
+              const pR32 = teamProbs[t.team]?.pR32 ?? 0;
+              const color = pR32 >= 0.7 ? 'text-[var(--green)]' : pR32 >= 0.4 ? 'text-[var(--amber)]' : 'text-[var(--text-muted)]';
+              return <td class={`text-center text-[10px] font-semibold ${color}`}>{(pR32 * 100).toFixed(0)}%</td>;
+            })()}
           </tr>
         ))}
       </tbody>
