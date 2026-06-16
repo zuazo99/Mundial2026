@@ -12,6 +12,7 @@ Este proyecto entrena un modelo XGBoost sobre datos históricos de partidos inte
 - [Ejecución](#ejecución)
 - [Los tres modelos: en qué se basa cada uno](#los-tres-modelos-en-qué-se-basa-cada-uno)
 - [Cómo leer los resultados en la web](#cómo-leer-los-resultados-en-la-web)
+- [Monte Carlo: qué es y para qué sirve aquí](#monte-carlo-qué-es-y-para-qué-sirve-aquí)
 - [Apartado técnico: cómo se entrena el modelo](#apartado-técnico-cómo-se-entrena-el-modelo)
 - [Limitaciones y cómo se podría mejorar](#limitaciones-y-cómo-se-podría-mejorar)
 - [Estructura de datos](#estructura-de-datos)
@@ -96,10 +97,32 @@ La web está pensada para que **cualquier persona** entienda las predicciones si
 
 ### 1. Fase de Grupos
 
-Muestra los **12 grupos (A–L)** con su clasificación final y el resultado predicho de cada partido.
+Muestra los **12 grupos (A–L)** con su clasificación final predicha y el resultado de cada partido. Cada tarjeta de partido (para partidos aún no jugados) contiene cuatro capas de información:
 
-- **El marcador que ves** (p. ej. `España 2 – 1 Uruguay`) es el resultado **más probable** de entre las 30 simulaciones de ese partido, **no una certeza**. El fútbol es aleatorio: el modelo dice "esto es lo que más veces pasa", no "esto pasará seguro".
-- **XG (goles esperados):** junto a cada equipo verás su XG. Es una medida de **cuántas ocasiones de gol de calidad** se espera que genere. Un XG de 2,1 significa "con las ocasiones que suele crear este equipo contra este rival, lo normal sería que marcase ~2 goles". Cuanto mayor el XG, más dominio ofensivo espera el modelo.
+#### A. Marcador del modelo (número grande)
+El resultado que el simulador Python extrae de **30 iteraciones** del partido. Cada iteración simula el partido **minuto a minuto**: `XG/90` es la tasa de Poisson por minuto, modulada por multiplicadores dinámicos según marcador y tiempo restante. De las 30 tiradas, se escoge el marcador más frecuente (la moda). Es el resultado más probable **según el simulador adaptativo completo**.
+
+#### B. Barras de XG
+Muestran el XG de cada equipo en ese partido: cuántos goles de calidad espera generar el modelo.
+
+#### C. Barra 1X2 + probabilidades por resultado
+Debajo de las barras XG, una barra tricolor muestra la **probabilidad de victoria del equipo local / empate / victoria del visitante**:
+- Calculada **analíticamente** con la distribución de Poisson: `P(g1, g2) = Poisson(xg1, g1) × Poisson(xg2, g2)` sumada sobre todos los marcadores con `g1 > g2`, `g1 = g2` o `g1 < g2`.
+- Es equivalente a ejecutar infinitas simulaciones Poisson puras — no es una estimación, es el valor **exacto** de la distribución.
+
+#### D. Marcador más probable (Poisson analítico) y comparación con el modelo
+```
+Marcador más probable   1–0  (8.4%)    ← argmax P(g1,g2), exacto matemáticamente
+Predicción modelo       2–0  (5.1%)    ← solo aparece si difiere del anterior
+```
+- **Marcador más probable** es el `argmax P(g1, g2)`, es decir, la combinación exacta de goles con mayor probabilidad. Para una Poisson con media λ, la moda es `floor(λ)`, así que suele coincidir con el marcador de goles "limpios" más bajos compatibles con el XG.
+- **¿Por qué no usar 500 simulaciones para este marcador?** Porque el Poisson analítico ya da el resultado exacto — correr 500 tiradas aleatorias converge al mismo valor, con algo de varianza extra. Las 500 simulaciones Monte Carlo se usan para otra cosa (ver más abajo).
+- **Predicción modelo** solo aparece cuando difiere del Poisson analítico. Eso ocurre porque el simulador Python usa multiplicadores adaptativos (más sofisticados que Poisson puro), lo que puede desplazar la moda a un marcador ligeramente distinto.
+
+#### E. Columna Clas% en la tabla de clasificación
+La probabilidad de que cada equipo **clasifique a octavos de final (R32)**, calculada con las **500 simulaciones Monte Carlo** (ver sección Monte Carlo más abajo). En verde ≥ 70 %, en ámbar ≥ 40 %, en gris por debajo.
+
+> Para partidos ya jugados, el marcador real sustituye al predicho y desaparecen las barras de probabilidad.
 
 ### 2. Cuadro del Torneo
 
@@ -117,15 +140,74 @@ Así, de un vistazo, sabes en qué partes del cuadro fiarte y en cuáles no.
 El resumen del torneo:
 
 - **Campeón** según cada uno de los tres modelos (puede haber tres campeones distintos).
+- **Probabilidades Monte Carlo:** para cada variante, un gráfico de barras muestra las **probabilidades de ser campeón** de los 12 mejores equipos según las 500 simulaciones Monte Carlo (ver sección Monte Carlo más abajo).
 - **Shock del torneo:** el mayor **batacazo**. Es el partido en el que el ganador tenía, según su ELO, la **menor probabilidad de ganar**: la sorpresa más grande de toda la simulación.
 - **Camino al título:** el recorrido completo del campeón, ronda a ronda.
 - Estadísticas como el **partido con más goles** del torneo.
 
 ### 4. Simulador Interactivo
 
-Permite **lanzar una simulación nueva en tu navegador** y ver un torneo distinto cada vez. Como el proceso es probabilístico, **cada ejecución da un resultado diferente** — esa es precisamente la gracia: ver el abanico de futuros posibles, no un único destino.
+Tiene dos modos:
 
-> Nota técnica: el simulador del navegador reproduce el motor de Poisson del Python, pero para el XG de las eliminatorias usa una **aproximación basada en ELO** (`eloToXG()`), porque el modelo XGBoost no puede ejecutarse en el navegador.
+**Simulación única** — Lanza un torneo completo en el navegador y muestra un resultado distinto cada vez. La variedad entre ejecuciones refleja la incertidumbre real del modelo: el fútbol es probabilístico, no determinista.
+
+**Distribución Monte Carlo (500 sims)** — Ejecuta 500 torneos completos en el navegador y muestra un ranking de campeones con la frecuencia con que ganó cada equipo (`N/500`). Se ejecuta en segundo plano (cediendo el hilo al navegador cada 50 sims) para no bloquear la interfaz.
+
+> Nota técnica: el simulador del navegador reproduce el motor de Poisson del Python, pero para el XG de las eliminatorias usa una **aproximación basada en ELO** (`eloToXG()`), porque el modelo XGBoost no puede ejecutarse en el navegador. Las probabilidades de Monte Carlo en la pestaña Resultado se generan con el modelo XGBoost real (en Python, fuera del navegador).
+
+---
+
+## Monte Carlo: qué es y para qué sirve aquí
+
+### El problema del marcador modal
+
+El simulador principal (`src/simulacion.py`) corre 30 iteraciones por partido y se queda con el **marcador más frecuente** (la moda). Es eficiente para obtener una predicción concreta, pero oculta la incertidumbre: no dice nada sobre la probabilidad de que España llegue a semifinales, solo dice "España llegó" o "no llegó" en ese único camino.
+
+### Qué hace el Monte Carlo
+
+`src/monte_carlo.py` simula el torneo completo **N veces** (por defecto 1 000, se puede ajustar) con **tiradas Poisson puras** (una sola por partido, sin multiplicadores adaptativos, para ser eficiente). En cada simulación:
+
+1. **Fase de grupos** — 6 partidos por grupo con Poisson(xg1) y Poisson(xg2), clasificación real.
+2. **Octavos (R32)** — emparejamiento según mejores terceros (`data/mejores_terceros.csv`), igual que el torneo real.
+3. **Sweet16 → Elite8 → Semis → Final** — brackets fijos; en eliminatorias, los empates van a prórroga y penaltis.
+4. Se registra en qué rondas llegó cada equipo.
+
+Al terminar las N simulaciones, se calcula la **frecuencia relativa** de cada ronda para cada equipo:
+
+| Probabilidad | Significado |
+|---|---|
+| `pR32` | % de torneos en que clasificó a octavos |
+| `pS16` | % de torneos en que pasó a dieciseisavos |
+| `pE8` | % de torneos en que llegó a cuartos |
+| `pSemis` | % de torneos en que llegó a semifinales |
+| `pFinal` | % de torneos en que llegó a la final |
+| `pChampion` | % de torneos en que ganó el Mundial |
+
+### Dónde se ven estas probabilidades
+
+- **Grupos → columna Clas%:** `pR32` de cada equipo, junto a su clasificación predicha.
+- **Resultado → "Probabilidades de campeón":** ranking con `pChampion` por variante.
+- **Simular → botón "Distribución (500 sims)":** versión en navegador (aproximación ELO).
+
+### ¿Por qué no usar Monte Carlo para el marcador de cada partido?
+
+El marcador más probable de un partido Poisson(xg1) vs Poisson(xg2) tiene solución **analítica exacta**: el argmax es `(floor(xg1), floor(xg2))` y su probabilidad se calcula en O(N²) directamente. Correr 500 simulaciones convergería al mismo resultado pero con varianza estadística. No hay ganancia. Por eso:
+
+- **Para marcadores** → Poisson analítico (exacto, instantáneo).
+- **Para probabilidades de avance** → Monte Carlo (necesario porque depende de *cómo se encadenan* los partidos a lo largo del torneo: los grupos determinan los emparejamientos de octavos, que determinan los de cuartos, etc.).
+
+### Cómo ejecutar el Monte Carlo
+
+```bash
+# Desde la raíz del repositorio (requiere haber ejecutado xg_preds.py antes)
+python3 src/monte_carlo.py         # 1 000 simulaciones por variante (por defecto)
+python3 src/monte_carlo.py 5000    # 5 000 simulaciones (más precisas, más lentas)
+
+# Luego regenerar los datos de la web:
+python3 scripts/export_data.py
+```
+
+Los resultados se guardan en `results/probabilities_<variante>.json` y se convierten a TypeScript en `web/src/data/probabilities.ts`.
 
 ---
 
@@ -209,15 +291,16 @@ El modelo es sólido como punto de partida, pero tiene márgenes claros de mejor
 **Limitaciones actuales**
 - **Sin datos de jugadores:** no contempla lesiones, sanciones, convocatorias ni el estado de forma de futbolistas concretos. Una baja clave no se refleja.
 - **Ajustes de ELO manuales:** los tres escenarios son hipótesis subjetivas, no aprendidas de los datos.
-- **Sesgo del "marcador más probable":** quedarse con la moda de 30 iteraciones tiende a favorecer resultados bajos y comunes (1-0, 1-1), infrarrepresentando goleadas.
-- **Goles independientes:** el Poisson asume que los goles de cada equipo son independientes, sin correlación entre ataques (lo que infravalora empates y resultados ajustados).
+- **Sesgo del "marcador más probable":** tanto la moda de 30 iteraciones como el Poisson analítico tienden a favorecer resultados bajos y comunes (1-0, 1-1), infrarrepresentando goleadas (un 4-0 puede ser posible pero su probabilidad puntual sigue siendo baja).
+- **Goles independientes:** el Poisson asume que los goles de cada equipo son independientes, sin correlación entre ataques (lo que infravalora empates y resultados ajustados). Una corrección conocida es el ajuste de **Dixon-Coles**.
 - **Sin calibración externa:** no se contrasta con cuotas de casas de apuestas ni con probabilidades de mercado.
+- **Monte Carlo con Poisson puro:** las probabilidades de avance usan Poisson puro (sin multiplicadores adaptativos) por eficiencia. El simulador principal (30 iter.) usa lógica minuto-a-minuto más refinada, pero es demasiado lento para miles de torneos.
 
 **Posibles mejoras**
 - **Reactivar la búsqueda de hiperparámetros** en cada reentrenamiento, en lugar de usar valores fijos, y reportar métricas de validación temporal.
 - **Incorporar datos de plantilla:** disponibilidad de titulares, minutos recientes, valor de mercado o un ELO por jugador.
 - **Modelo de goles correlacionado:** usar un Poisson bivariante o el ajuste de **Dixon-Coles** para capturar la dependencia entre los goles de ambos equipos.
-- **Trabajar con la distribución completa**, no solo con el marcador modal: mostrar probabilidades de victoria/empate/derrota y márgenes de incertidumbre.
+- **Calibrar el Monte Carlo contra el simulador adaptativo:** correr el Monte Carlo con los multiplicadores minuto-a-minuto (más preciso) aunque sea más lento, y comparar las probabilidades resultantes con las del Poisson puro para cuantificar el sesgo.
 - **Calibrar contra el mercado** (cuotas) para validar y corregir sesgos sistemáticos.
 - **Más iteraciones por partido** para estimaciones más estables.
 - **Features de tiro/xG real** (datos de disparos) en vez de derivar el XG solo de goles históricos.
@@ -231,16 +314,29 @@ El modelo es sólido como punto de partida, pero tiene márgenes claros de mejor
 data/
   models_csv/          # Históricos de entrenamiento (un CSV por variante, ~3M filas)
   ai_models/           # XG predichos para cada jornada de grupos (salida de xg_preds.py)
+    xg_preds_J{1,2,3}_<variante>.csv           # XG por jornada de grupos
+    xg_preds_J1_<variante>_complete.csv        # "Foto fija" con métricas completas por equipo
   mejores_terceros.csv # Cuadro de emparejamientos para los mejores terceros
+  world_cup_results.csv # Resultados reales (auto-actualizado por CI/CD)
 
-results/               # Predicciones finales del torneo (salida de simulacion.py)
-  predictions_misterclaude.csv
-  predictions_gemaldini.csv
-  predictions_dav_gpo.csv
-  predictions_definitive.csv
+api/models/            # Modelos XGBoost guardados (usados por Monte Carlo para XG de KO)
+  xgb_<variante>.json
+
+results/               # Salidas de simulacion.py y monte_carlo.py
+  predictions_<variante>.csv       # Bracket completo (104 filas)
+  probabilities_<variante>.json    # Probabilidades Monte Carlo por equipo y ronda
+
+src/
+  simulacion.py        # Simulación modal (30 iter/partido) → predictions CSV
+  clases_simulacion.py # Clases Team, Match, Group, Knockouts, Tournament
+  monte_carlo.py       # Monte Carlo (N torneos completos) → probabilities JSON
+  xg_preds.py          # Entrenamiento XGBoost + predicciones de XG por jornada
 
 web/                   # Web de visualización en Astro
-scripts/export_data.py # Convierte los CSV en módulos TypeScript para la web
+scripts/
+  export_data.py       # Convierte CSV/JSON en módulos TypeScript para la web
+  fetch_real_results.py # Obtiene resultados reales de football-data.org
+  update_foto_fija.py  # Actualiza métricas de equipos con resultados reales
 ```
 
 ---
