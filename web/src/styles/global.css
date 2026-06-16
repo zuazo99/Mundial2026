@@ -61,3 +61,12 @@ body[data-active-variant="dav_gpo"]      .variant-block[data-variant="dav_gpo"] 
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-base); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* --- Print (quiniela) -------------------------------------------------- */
+@media print {
+  header, footer, #tab-nav, [data-tab-content]:not(#porra),
+  button:not(#print-never-btn), #sim-btn, #share-btn { display: none !important; }
+  #porra { display: block !important; }
+  body { background: white !important; color: black !important; }
+  .rounded-xl, .rounded-lg { border: 1px solid #ddd !important; }
+}
