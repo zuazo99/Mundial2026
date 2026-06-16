@@ -110,14 +110,17 @@ Debajo de las barras XG, una barra tricolor muestra la **probabilidad de victori
 - Calculada **analíticamente** con la distribución de Poisson: `P(g1, g2) = Poisson(xg1, g1) × Poisson(xg2, g2)` sumada sobre todos los marcadores con `g1 > g2`, `g1 = g2` o `g1 < g2`.
 - Es equivalente a ejecutar infinitas simulaciones Poisson puras — no es una estimación, es el valor **exacto** de la distribución.
 
-#### D. Marcador más probable (Poisson analítico) y comparación con el modelo
+#### D. Probabilidad del marcador predicho
+Debajo del marcador (en pequeño) aparece el porcentaje de probabilidad de **ese marcador exacto**, calculado analíticamente con Poisson a partir del XG:
+
 ```
-Marcador más probable   1–0  (8.4%)    ← argmax P(g1,g2), exacto matemáticamente
-Predicción modelo       2–0  (5.1%)    ← solo aparece si difiere del anterior
+España  2 – 1  Uruguay
+           8.4% exacto
 ```
-- **Marcador más probable** es el `argmax P(g1, g2)`, es decir, la combinación exacta de goles con mayor probabilidad. Para una Poisson con media λ, la moda es `floor(λ)`, así que suele coincidir con el marcador de goles "limpios" más bajos compatibles con el XG.
-- **¿Por qué no usar 500 simulaciones para este marcador?** Porque el Poisson analítico ya da el resultado exacto — correr 500 tiradas aleatorias converge al mismo valor, con algo de varianza extra. Las 500 simulaciones Monte Carlo se usan para otra cosa (ver más abajo).
-- **Predicción modelo** solo aparece cuando difiere del Poisson analítico. Eso ocurre porque el simulador Python usa multiplicadores adaptativos (más sofisticados que Poisson puro), lo que puede desplazar la moda a un marcador ligeramente distinto.
+
+Esto responde a: *"el modelo dice 2-1, ¿pero cuántas veces de cada 100 pasaría eso?"*. Valores típicos: 5–12%. El fútbol es impredecible incluso cuando el modelo tiene claro quién gana.
+
+> **Nota técnica:** el marcador grande viene del simulador Python (30 iteraciones minuto a minuto con multiplicadores adaptativos). La probabilidad del `%  exacto` la calcula la web en tiempo de construcción usando la fórmula de Poisson directamente sobre el XG, sin necesidad de correr simulaciones adicionales — es el resultado matemático exacto.
 
 #### E. Columna Clas% en la tabla de clasificación
 La probabilidad de que cada equipo **clasifique a octavos de final (R32)**, calculada con las **500 simulaciones Monte Carlo** (ver sección Monte Carlo más abajo). En verde ≥ 70 %, en ámbar ≥ 40 %, en gris por debajo.
