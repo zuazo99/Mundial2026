@@ -10,6 +10,7 @@ import { computeAllStandings } from '../lib/computeStandings';
 import { buildBracket, getChampion, getRunnerUp } from '../lib/bracketBuilder';
 import { metadata } from '../data/metadata';
 import { realResults } from '../data/realResults';
+import { probabilities } from '../data/probabilities';
 
 const VARIANTS: Variant[] = ['misterclaude', 'gemaldini', 'dav_gpo'];
 const VARIANT_LABELS: Record<Variant, string> = {
@@ -247,6 +248,52 @@ const shocks = VARIANTS.map(v => {
         </div>
       )}
 
+      {/* ── Probabilidades Monte Carlo ── */}
+      {VARIANTS.map(v => {
+        const probs = probabilities[v];
+        if (!probs || probs.nSims === 0) return null;
+        // Top 10 teams by P(champion)
+        const top = Object.entries(probs.teams)
+          .filter(([, t]) => t.pChampion > 0)
+          .sort((a, b) => b[1].pChampion - a[1].pChampion)
+          .slice(0, 12);
+        const maxPct = top[0]?.[1].pChampion ?? 0.01;
+        return (
+          <div class="variant-block mb-8" data-variant={v}>
+            <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-5">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-sm font-bold">Probabilidades de campeón</h3>
+                <span class="text-[10px] text-[var(--text-muted)] bg-[var(--bg-muted)] px-2 py-0.5 rounded">
+                  Monte Carlo · {probs.nSims.toLocaleString()} sims
+                </span>
+              </div>
+              <div class="space-y-1.5">
+                {top.map(([team, info]) => {
+                  const pct = Math.round(info.pChampion * 100);
+                  const barW = Math.round((info.pChampion / maxPct) * 100);
+                  return (
+                    <div class="flex items-center gap-2 text-xs">
+                      <Flag team={team} />
+                      <span class="w-28 truncate font-semibold">{team}</span>
+                      <div class="flex-1 h-3.5 rounded bg-[var(--bg-muted)] overflow-hidden">
+                        <div
+                          class="h-full rounded bg-[var(--blue)] transition-all"
+                          style={`width:${barW}%`}
+                        />
+                      </div>
+                      <span class="w-9 text-right font-mono text-[var(--text-muted)]">{pct}%</span>
+                      <span class="text-[10px] text-[var(--text-muted)] w-20 hidden sm:block">
+                        F:{Math.round(info.pFinal*100)}% · S:{Math.round(info.pSemis*100)}%
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+
       {/* Shock del torneo */}
       {VARIANTS.map((v, vi) => {
         const { match, prob } = shocks[vi];
@@ -309,12 +356,18 @@ const shocks = VARIANTS.map(v => {
           Cada partida se simula minuto a minuto con el mismo algoritmo que el modelo Python.
         </p>
 
-        <div class="flex gap-3 mb-6">
+        <div class="flex flex-wrap gap-3 mb-6">
           <button
             id="sim-btn"
             class="pulse-gold px-5 py-2.5 rounded-lg bg-[var(--gold)] text-black font-bold text-sm hover:brightness-110 transition-all"
           >
             ⚽ Simular torneo
+          </button>
+          <button
+            id="mc-btn"
+            class="px-4 py-2.5 rounded-lg bg-[var(--bg-muted)] text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--text-base)] transition-colors"
+          >
+            📊 Distribución (500 sims)
           </button>
           <button
             id="share-btn"
@@ -323,6 +376,8 @@ const shocks = VARIANTS.map(v => {
             🔗 Compartir resultado
           </button>
         </div>
+        <!-- Monte Carlo distribution results -->
+        <div id="mc-results" class="mb-6"></div>
 
         <!-- Progress bar -->
         <div id="sim-progress" class="hidden mb-6">
@@ -546,6 +601,67 @@ const shocks = VARIANTS.map(v => {
     setProgress('Completado', 100);
     simBtn.disabled = false;
     simBtn.textContent = '⚽ Simular de nuevo';
+  });
+
+  // ─── Monte Carlo distribucion ─────────────────────────────
+  const mcBtn = document.getElementById('mc-btn')!;
+  const mcResultsEl = document.getElementById('mc-results')!;
+
+  mcBtn.addEventListener('click', async () => {
+    mcBtn.disabled = true;
+    mcBtn.textContent = '⏳ Calculando 500 torneos…';
+    mcResultsEl.innerHTML = '';
+
+    const [{ simulateTournament }, { xgData }, { teamStats }] = await Promise.all([
+      import('../lib/simulation'),
+      import('../data/xg'),
+      import('../data/teamStats'),
+    ]);
+
+    const variant = (document.body.dataset.activeVariant ?? 'misterclaude') as 'misterclaude' | 'gemaldini' | 'dav_gpo';
+    const N = 500;
+    const counts: Record<string, number> = {};
+
+    // Run N simulations yielding to UI every 50 to avoid freeze
+    for (let i = 0; i < N; i++) {
+      if (i % 50 === 0) await new Promise<void>(r => setTimeout(r, 0));
+      const res = simulateTournament(variant, xgData[variant], teamStats[variant]);
+      counts[res.champion] = (counts[res.champion] ?? 0) + 1;
+    }
+
+    const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const maxCount = sorted[0]?.[1] ?? 1;
+    const topTeams = sorted.slice(0, 15);
+
+    const rows = topTeams.map(([team, count]) => {
+      const pct = Math.round(count / N * 100);
+      const barW = Math.round(count / maxCount * 100);
+      return `<div class="flex items-center gap-2 text-xs">
+        <span class="w-28 text-right truncate font-semibold">${team}</span>
+        <div class="flex-1 h-3.5 rounded bg-[var(--bg-muted)] overflow-hidden">
+          <div class="h-full rounded bg-[var(--blue)]" style="width:${barW}%"></div>
+        </div>
+        <span class="w-9 font-mono text-[var(--text-muted)] text-right">${pct}%</span>
+        <span class="text-[10px] text-[var(--text-muted)] w-10 text-right">${count}/${N}</span>
+      </div>`;
+    }).join('');
+
+    mcResultsEl.innerHTML = `
+      <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-5 animate-in">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-sm font-bold">Distribución de campeones</h3>
+          <span class="text-[10px] text-[var(--text-muted)] bg-[var(--bg-muted)] px-2 py-0.5 rounded">
+            ${N} simulaciones · variante: ${variant}
+          </span>
+        </div>
+        <div class="space-y-1.5">${rows}</div>
+        <p class="text-[10px] text-[var(--text-muted)] mt-3">
+          Cada simulación es un Poisson independiente — resultados distintos cada vez.
+        </p>
+      </div>`;
+
+    mcBtn.disabled = false;
+    mcBtn.textContent = '🔄 Repetir distribución';
   });
 
   shareBtn.addEventListener('click', () => {
