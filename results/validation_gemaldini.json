@@ -1,0 +1,92 @@
+{
+  "variant": "gemaldini",
+  "cutoff": "2025-09-16",
+  "n_test_rows": 1156,
+  "n_test_matches": 578,
+  "regression": {
+    "model": {
+      "mae": 0.9634,
+      "rmse": 1.2896,
+      "poisson_deviance": 1.2197
+    },
+    "baseline_mean_goals": {
+      "mae": 1.1539,
+      "rmse": 1.5196,
+      "poisson_deviance": 1.6372
+    }
+  },
+  "match_1x2": {
+    "model": {
+      "brier": 0.4965,
+      "log_loss": 0.8452
+    },
+    "baseline_elo": {
+      "brier": 0.5255,
+      "log_loss": 0.8965
+    },
+    "baseline_uniform": {
+      "brier": 0.6667,
+      "log_loss": 1.0986
+    },
+    "ece": 0.0586,
+    "draw_rate": 0.2336
+  },
+  "calibration_curve": {
+    "prob_pred": [
+      0.0172,
+      0.0345,
+      0.1034,
+      0.1754,
+      0.3966,
+      0.3793,
+      0.4561,
+      0.5172,
+      0.5862,
+      0.8966
+    ],
+    "prob_true": [
+      0.0363,
+      0.0966,
+      0.1627,
+      0.2397,
+      0.3112,
+      0.3733,
+      0.436,
+      0.5262,
+      0.6657,
+      0.8432
+    ],
+    "strategy": "quantile",
+    "n_bins": 10
+  },
+  "per_confederation": {
+    "UEFA": {
+      "mae": 1.0256,
+      "n": 320
+    },
+    "CONMEBOL": {
+      "mae": 0.8198,
+      "n": 59
+    },
+    "CONCACAF": {
+      "mae": 0.944,
+      "n": 93
+    },
+    "CAF": {
+      "mae": 0.9428,
+      "n": 296
+    },
+    "AFC": {
+      "mae": 0.9707,
+      "n": 172
+    },
+    "OFC": {
+      "mae": 0.9332,
+      "n": 20
+    },
+    "OTHER": {
+      "mae": 0.942,
+      "n": 196
+    }
+  }
+}
