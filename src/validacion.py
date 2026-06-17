@@ -54,8 +54,9 @@ def _elo_1x2(elo_home: float, elo_away: float, draw_rate: float):
             (1.0 - p_win_raw) * (1.0 - draw_rate))
 
 
-def validate_model(name: str, cutoff: str = "2025-09-16") -> dict:
+def validate_model(name: str, cutoff: str = "2025-09-16", params: dict = None) -> dict:
     cutoff_dt = pd.to_datetime(cutoff)
+    params = params or _DEFAULT_PARAMS
     print(f"\n{'='*60}")
     print(f"[{name}] Validación — corte: {cutoff}")
 
@@ -91,7 +92,7 @@ def validate_model(name: str, cutoff: str = "2025-09-16") -> dict:
     df_test  = df_test.dropna(subset=[TARGET]).copy()
 
     # 6. Train
-    model = xgb.XGBRegressor(**_DEFAULT_PARAMS)
+    model = xgb.XGBRegressor(**params)
     model.fit(df_train[FEATURES], df_train[TARGET],
               sample_weight=df_train["date_weight"])
 
