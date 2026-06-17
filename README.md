@@ -314,6 +314,8 @@ Es la pieza más importante. Mide de forma **honesta** si el modelo es bueno, im
 
 > **En cristiano:** el modelo predice goles un **17 % mejor** que "tirar siempre la media", y sus probabilidades de 1X2 superan a un baseline basado solo en ELO. Un ECE de 0,059 significa que cuando dice "60 % de victoria local", acierta cerca del 60 % de las veces — es decir, está bien **calibrado**.
 
+> **Qué mide (y qué NO mide) esta tabla:** compara el modelo contra *baselines* (la media de goles, un baseline de solo-ELO y el azar) para responder *"¿es bueno el modelo?"*. **No** es un "antes vs después" de estos cambios: estas cifras ya eran ciertas del modelo previo. La aportación de esta sección no es un modelo más preciso, sino **poder medirlo por primera vez** (y detectar regresiones en el futuro).
+
 ```bash
 python3 src/validacion.py                          # las 3 variantes, corte por defecto
 python3 src/validacion.py misterclaude 2025-09-16  # una variante, corte concreto
@@ -341,18 +343,20 @@ El mejor CV-MAE de la búsqueda (0,9355) **no generalizó** al test honesto (0,9
 
 ### 3. Corrección de bugs
 
-- **`underdog_20` (bug de pandas 3.0):** la línea original `df["underdog_20"].fillna(0, inplace=True)` **fallaba en silencio** bajo pandas 3.0 (por *copy-on-write*), dejando `NaN` donde debía haber ceros. Esos `NaN` **excluían 785 partidos** del cálculo del PCA. Corregida a `df["underdog_20"] = df["underdog_20"].fillna(0)`, el PCA ahora se ajusta sobre **19.257 filas en vez de 18.472**, recuperando el comportamiento que el autor original pretendía. Esto **cambia (mejora) el modelo**, porque aprovecha más datos.
+- **`underdog_20` (bug de pandas 3.0):** la línea original `df["underdog_20"].fillna(0, inplace=True)` **fallaba en silencio** bajo pandas 3.0 (por *copy-on-write*), dejando `NaN` donde debía haber ceros. Esos `NaN` **excluían 785 partidos** del cálculo del PCA. Corregida a `df["underdog_20"] = df["underdog_20"].fillna(0)`, el PCA ahora se ajusta sobre **19.257 filas en vez de 18.472**, recuperando el comportamiento que el autor original pretendía. Es una corrección de **corrección**, no de rendimiento: **cambia** el modelo (usa más datos y elimina un bug silencioso), pero medido en el hold-out las métricas quedan **prácticamente igual** (≈ +0,06 % de MAE frente al modelo anterior, dentro del ruido). En otras palabras: el modelo no predice mejor, simplemente es código correcto y reproducible.
 - **Código muerto en `get_multiplier()`:** 36 líneas que se sobrescribían incondicionalmente (`mult1 = mult2 = 1.3`) y nunca llegaban a ejecutarse. Eliminadas; el Python queda alineado con el *port* de TypeScript de la web.
 - **"Foto fija" más estable:** en lugar de tomar **solo el último** partido de cada equipo como instantánea pre-Mundial, ahora promedia los **últimos 3**. Reduce el ruido de un único partido atípico. Su efecto neto recae sobre `elo_prom_5`, ya que las demás columnas se sobrescriben por equipo con los resultados reales (`foto_fija_updated.csv`).
 
 ### En qué mejora todo esto
 
+Importante: estas mejoras son de **fiabilidad, medición y corrección de código**, no de capacidad predictiva. El modelo predice esencialmente igual que antes; lo que cambia es que ahora **sabemos** lo bueno que es y el código es correcto.
+
 | Antes | Ahora |
 |---|---|
 | Se entrenaba sin métricas: imposible saber si el modelo era bueno | Validación temporal honesta, con números concretos frente a baselines |
-| Hiperparámetros fijos "porque sí" | Hiperparámetros **validados** contra una búsqueda guiada por datos |
-| Un bug de pandas dejaba 785 partidos fuera del PCA | El PCA aprovecha todo el histórico disponible |
-| Instantánea pre-Mundial basada en un solo partido | Promedio de los 3 últimos, más robusto frente a partidos atípicos |
+| Hiperparámetros fijos "porque sí" | Hiperparámetros **validados** contra una búsqueda guiada por datos (resultaron buenos) |
+| Un bug de pandas dejaba 785 partidos fuera del PCA | El PCA aprovecha todo el histórico disponible (métricas iguales, código correcto) |
+| Instantánea pre-Mundial basada en un solo partido | Promedio de los 3 últimos, más estable frente a partidos atípicos |
 
 ---
 
