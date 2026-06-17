@@ -5,7 +5,7 @@ import GroupCard from '../components/GroupCard.astro';
 import BracketMatch from '../components/BracketMatch.astro';
 import { predictions, type Variant, type MatchResult } from '../data/predictions';
 import { xgData } from '../data/xg';
-import { BASE_ELO, ELO_ADJUSTMENTS } from '../data/groups';
+import { GROUPS, BASE_ELO, ELO_ADJUSTMENTS } from '../data/groups';
 import { computeAllStandings } from '../lib/computeStandings';
 import { buildBracket, getChampion, getRunnerUp } from '../lib/bracketBuilder';
 import { metadata } from '../data/metadata';
@@ -59,6 +59,68 @@ VARIANTS.forEach((v, vi) => {
   });
 });
 
+// ── PORRA: compute accuracy ─────────────────────────────────────────────
+type MatchOutcome = 'team1' | 'draw' | 'team2';
+function calcOutcome(s1: number, s2: number): MatchOutcome {
+  return s1 > s2 ? 'team1' : s1 < s2 ? 'team2' : 'draw';
+}
+
+interface PlayedComp {
+  team1: string; team2: string;
+  realScore1: number; realScore2: number; realOutcome: MatchOutcome;
+  group: string; jornada: number;
+  preds: Record<Variant, { score1: number; score2: number; outcome: MatchOutcome; correct1X2: boolean; exactScore: boolean }>;
+}
+
+const allGroupPreds = variantData['misterclaude'].rounds.grupos;
+const playedSet = new Set(realResults.map(r => `${r.homeTeam}|${r.awayTeam}`));
+
+function isPlayed(team1: string, team2: string): boolean {
+  return playedSet.has(`${team1}|${team2}`) || playedSet.has(`${team2}|${team1}`);
+}
+
+const playedComparisons: PlayedComp[] = [];
+
+for (const rr of realResults) {
+  const idx = allGroupPreds.findIndex(m =>
+    (m.team1 === rr.homeTeam && m.team2 === rr.awayTeam) ||
+    (m.team1 === rr.awayTeam && m.team2 === rr.homeTeam)
+  );
+  if (idx < 0) continue;
+
+  const base = allGroupPreds[idx];
+  const flipped = base.team1 === rr.awayTeam;
+  const realScore1 = flipped ? rr.awayGoals : rr.homeGoals;
+  const realScore2 = flipped ? rr.homeGoals : rr.awayGoals;
+  const realOutcome = calcOutcome(realScore1, realScore2);
+
+  const groupIdx = Math.floor(idx / 6);
+  const inGroup   = idx % 6;
+  const jornada   = inGroup < 2 ? 1 : inGroup < 4 ? 2 : 3;
+
+  const preds = Object.fromEntries(VARIANTS.map(v => {
+    const m = variantData[v].rounds.grupos[idx];
+    const outcome = calcOutcome(m.score1, m.score2);
+    return [v, { score1: m.score1, score2: m.score2, outcome,
+                 correct1X2: outcome === realOutcome,
+                 exactScore: m.score1 === realScore1 && m.score2 === realScore2 }];
+  })) as Record<Variant, PlayedComp['preds'][Variant]>;
+
+  playedComparisons.push({
+    team1: base.team1, team2: base.team2,
+    realScore1, realScore2, realOutcome,
+    group: GROUPS[groupIdx]?.letter ?? '?',
+    jornada,
+    preds,
+  });
+}
+
+const modelScores = Object.fromEntries(VARIANTS.map(v => [v, {
+  correct1X2: playedComparisons.filter(c => c.preds[v].correct1X2).length,
+  exactScore:  playedComparisons.filter(c => c.preds[v].exactScore).length,
+  total:       playedComparisons.length,
+}])) as Record<Variant, { correct1X2: number; exactScore: number; total: number }>;
+
 // "Shock del torneo": match with the lowest ELO win probability for the actual winner
 function eloWinProb(winnerElo: number, loserElo: number): number {
   return 1 / (1 + Math.pow(10, -(winnerElo - loserElo) / 400));
@@ -108,16 +170,17 @@ const shocks = VARIANTS.map(v => {
       </div>
 
       <!-- Tab nav — order 3 on mobile (full-width row), order 2 on sm+ -->
-      <nav class="grid grid-cols-4 sm:flex gap-1 order-3 sm:order-2 w-full sm:w-auto" id="tab-nav">
+      <nav class="flex gap-1 order-3 sm:order-2 w-full sm:w-auto overflow-x-auto" id="tab-nav">
         {[
           { id: 'grupos',    label: 'Grupos'    },
           { id: 'cuadro',    label: 'Cuadro'    },
           { id: 'resultado', label: 'Resultado' },
           { id: 'simular',   label: 'Simular'   },
+          { id: 'porra',     label: 'Porra'     },
         ].map(({ id, label }) => (
           <button
             data-tab={id}
-            class={`tab-btn px-3 py-2 sm:py-1.5 rounded-md text-xs font-semibold transition-colors
+            class={`tab-btn px-3 py-2 sm:py-1.5 flex-shrink-0 rounded-md text-xs font-semibold transition-colors
               ${id === 'grupos'
                 ? 'bg-[var(--blue)] text-white'
                 : 'text-[var(--text-muted)] hover:text-[var(--text-base)] hover:bg-[var(--bg-muted)]'
@@ -393,6 +456,157 @@ const shocks = VARIANTS.map(v => {
 
         <!-- Results -->
         <div id="sim-results" class="space-y-6"></div>
+      </div>
+    </section>
+
+    <!-- ── PORRA ──────────────────────────────────────────────── -->
+    <section id="porra" data-tab-content>
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-start justify-between mb-6 flex-wrap gap-3">
+          <div>
+            <h2 class="text-lg font-bold">Porra del Mundial</h2>
+            <p class="text-sm text-[var(--text-muted)] mt-1">
+              {playedComparisons.length} partido{playedComparisons.length !== 1 ? 's' : ''} jugado{playedComparisons.length !== 1 ? 's' : ''} · Marcador en vivo
+            </p>
+          </div>
+          <button
+            onclick="window.print()"
+            class="px-4 py-2 rounded-lg bg-[var(--bg-muted)] text-sm font-semibold hover:bg-[var(--border)] transition-colors"
+          >
+            🖨️ Imprimir quiniela
+          </button>
+        </div>
+
+        {/* ── Marcador de modelos ── */}
+        <div class="grid grid-cols-3 gap-3 mb-8">
+          {VARIANTS.map((v) => {
+            const s = modelScores[v];
+            const pct = s.total > 0 ? Math.round((s.correct1X2 / s.total) * 100) : 0;
+            const rank = [...VARIANTS].sort((a, b) => modelScores[b].correct1X2 - modelScores[a].correct1X2).indexOf(v);
+            return (
+              <div class={`rounded-xl border p-4 ${rank === 0 ? 'border-[var(--gold)] bg-[var(--gold)]/5' : 'border-[var(--border)] bg-[var(--bg-card)]'}`}>
+                {rank === 0 && <p class="text-[9px] text-[var(--gold)] font-bold uppercase tracking-widest mb-1">Líder</p>}
+                <p class="text-xs text-[var(--text-muted)] font-semibold mb-2">{VARIANT_LABELS[v]}</p>
+                <p class="text-3xl font-black text-[var(--gold)]">{pct}<span class="text-base font-normal">%</span></p>
+                <p class="text-xs text-[var(--text-muted)] mt-0.5">{s.correct1X2}/{s.total} pronósticos 1X2</p>
+                <div class="mt-2 h-1.5 rounded-full bg-[var(--bg-muted)] overflow-hidden">
+                  <div class="h-full rounded-full bg-[var(--gold)]" style={`width:${pct}%`}></div>
+                </div>
+                <p class="text-[10px] text-[var(--text-muted)] mt-2">Marcador exacto: <span class="font-bold text-[var(--text-base)]">{s.exactScore}</span></p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── Partidos jugados ── */}
+        {playedComparisons.length > 0 && (
+          <div class="mb-8">
+            <h3 class="text-sm font-bold mb-3">Partidos jugados</h3>
+            <div class="rounded-xl border border-[var(--border)] overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-xs">
+                  <thead>
+                    <tr class="bg-[var(--bg-muted)] text-[var(--text-muted)] uppercase tracking-wide">
+                      <th class="text-left px-3 py-2">Partido</th>
+                      <th class="text-center px-3 py-2 font-bold text-[var(--text-base)]">Real</th>
+                      {VARIANTS.map(v => (
+                        <th class="text-center px-3 py-2">{VARIANT_SHORT[v]}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {playedComparisons.map((c, i) => (
+                      <tr class={`border-t border-[var(--border)] ${i % 2 === 0 ? '' : 'bg-[var(--bg-muted)]/30'}`}>
+                        <td class="px-3 py-2">
+                          <span class="text-[10px] text-[var(--text-muted)] mr-1">Gr.{c.group} J{c.jornada}</span>
+                          <span class="font-semibold">{c.team1}</span>
+                          <span class="text-[var(--text-muted)] mx-1">vs</span>
+                          <span class="font-semibold">{c.team2}</span>
+                        </td>
+                        <td class="text-center px-3 py-2 font-mono font-bold">
+                          {c.realScore1}–{c.realScore2}
+                        </td>
+                        {VARIANTS.map(v => {
+                          const p = c.preds[v];
+                          return (
+                            <td class="text-center px-3 py-2">
+                              <span class={`font-mono ${p.exactScore ? 'text-[var(--gold)] font-bold' : p.correct1X2 ? 'text-[var(--green)]' : 'text-[var(--red)]'}`}>
+                                {p.score1}–{p.score2}
+                              </span>
+                              <span class="ml-1 text-[10px]">
+                                {p.exactScore ? '★' : p.correct1X2 ? '✓' : '✗'}
+                              </span>
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <p class="text-[10px] text-[var(--text-muted)] mt-2">
+              <span class="text-[var(--gold)]">★</span> marcador exacto ·
+              <span class="text-[var(--green)]">✓</span> 1X2 correcto ·
+              <span class="text-[var(--red)]">✗</span> incorrecto
+            </p>
+          </div>
+        )}
+
+        {/* ── Quiniela por grupos ── */}
+        <div id="quiniela-section">
+          <h3 class="text-sm font-bold mb-4">Quiniela — partidos por jugar</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {GROUPS.map((g, gi) => {
+              const groupPreds = allGroupPreds.slice(gi * 6, gi * 6 + 6);
+              const futurePreds = groupPreds.filter(m => !isPlayed(m.team1, m.team2));
+              if (futurePreds.length === 0) return null;
+              return (
+                <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] overflow-hidden">
+                  <div class="bg-[var(--bg-muted)] px-3 py-1.5 flex items-center gap-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-[var(--gold)]">Grupo</span>
+                    <span class="text-base font-black">{g.letter}</span>
+                  </div>
+                  <div class="divide-y divide-[var(--border)]">
+                    {futurePreds.map((m) => {
+                      const inGroupIdx = groupPreds.indexOf(m);
+                      const jornada = inGroupIdx < 2 ? 1 : inGroupIdx < 4 ? 2 : 3;
+                      return (
+                        <div class="px-3 py-2">
+                          <div class="flex items-center justify-between mb-1">
+                            <span class="text-[10px] text-[var(--text-muted)]">J{jornada}</span>
+                            <span class="text-[10px] text-[var(--text-muted)] font-semibold">TU PICK</span>
+                          </div>
+                          <div class="flex items-center gap-1 text-xs">
+                            <span class="flex-1 text-right font-semibold truncate">{m.team1}</span>
+                            <span class="text-[var(--text-muted)] shrink-0 mx-1">–</span>
+                            <span class="flex-1 font-semibold truncate">{m.team2}</span>
+                            <span class="ml-2 text-[10px] border-b border-dashed border-[var(--text-muted)] w-10 shrink-0 print:w-16"></span>
+                          </div>
+                          <div class="flex gap-2 mt-1">
+                            {VARIANTS.map(v => {
+                              const pred = variantData[v].rounds.grupos[gi * 6 + inGroupIdx];
+                              return (
+                                <span class="text-[9px] text-[var(--text-muted)]">
+                                  {VARIANT_SHORT[v]}: <span class="font-mono">{pred.score1}–{pred.score2}</span>
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {GROUPS.every((g, gi) => allGroupPreds.slice(gi * 6, gi * 6 + 6).every(m => isPlayed(m.team1, m.team2))) && (
+            <p class="text-sm text-[var(--text-muted)] text-center py-8">
+              Todos los partidos de la fase de grupos han sido jugados.
+            </p>
+          )}
+        </div>
       </div>
     </section>
 
