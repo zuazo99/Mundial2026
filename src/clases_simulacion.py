@@ -67,42 +67,6 @@ class Match:
     def get_multiplier(self, minute, g1, g2):
         better_team = 1 if self.s1.elo >= self.s2.elo else 2
 
-        mult1 = 1.0
-        mult2 = 1.0
-
-        if better_team == 1:
-            if minute > 59:
-                # Con empate -> desempata equipo bueno
-                if g1 == g2:
-                    mult1 = 1.1
-                # Con derrota -> equipo bueno ataca, peor se encierra
-                elif g2 > g1:
-                    mult1 = 1.2
-                    mult2 = 0.7
-                # Con mucha ventaja -> peor equipo gol del honor
-                elif g1 > g2 + 2:
-                    mult2 = 1.1
-            elif minute > 45:
-                # Con derrota -> equipo bueno ataca, peor se encierra
-                if g2 > g1:
-                    mult1 = 1.1
-        else:
-            if minute > 59:
-                # Con empate -> desempata equipo bueno
-                if g1 == g2:
-                    mult2 = 1.1
-                # Con derrota -> equipo bueno ataca, peor se encierra
-                elif g1 > g2:
-                    mult2 = 1.2
-                    mult1 = 0.7
-                # Con mucha ventaja -> peor equipo gol del honor
-                elif g2 > g1 + 2:
-                    mult1 = 1.1
-            elif minute > 45:
-                # Con derrota -> equipo bueno ataca, peor se encierra
-                if g1 > g2:
-                    mult1 = 1.1
-
         goal_diff = g1 - g2
         mult1 = 1.3
         mult2 = 1.3

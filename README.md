@@ -14,6 +14,7 @@ Este proyecto entrena un modelo XGBoost sobre datos históricos de partidos inte
 - [Cómo leer los resultados en la web](#cómo-leer-los-resultados-en-la-web)
 - [Monte Carlo: qué es y para qué sirve aquí](#monte-carlo-qué-es-y-para-qué-sirve-aquí)
 - [Apartado técnico: cómo se entrena el modelo](#apartado-técnico-cómo-se-entrena-el-modelo)
+- [Validación del modelo y mejoras recientes](#validación-del-modelo-y-mejoras-recientes)
 - [Limitaciones y cómo se podría mejorar](#limitaciones-y-cómo-se-podría-mejorar)
 - [Estructura de datos](#estructura-de-datos)
 - [Formato de grupos (Mundial 2026)](#formato-de-grupos-mundial-2026)
@@ -287,6 +288,78 @@ Todo este proceso se ejecuta **automáticamente cada día a las 8:00 UTC** media
 
 ---
 
+## Validación del modelo y mejoras recientes
+
+Hasta ahora el modelo se entrenaba sobre **todo** el histórico y se daba por bueno sin ninguna métrica que lo respaldara: no había forma de saber si acertaba más que tirar una moneda. Esta tanda de cambios añade el **marco de validación que faltaba**, reactiva la búsqueda de hiperparámetros guiada por esa misma métrica, y corrige varios bugs. La idea de fondo: **dejar de optimizar a ciegas**.
+
+### 1. Validación temporal y calibración (`src/validacion.py`)
+
+Es la pieza más importante. Mide de forma **honesta** si el modelo es bueno, imitando lo que pasaría en la realidad: entrena solo con el pasado y se evalúa sobre partidos que **no ha visto**.
+
+**Cómo funciona (sin trampas):**
+- **Corte temporal:** entrena con los partidos anteriores al **16 de septiembre de 2025** (18.394 filas) y se evalúa sobre los posteriores (1.156 filas → 578 partidos reales).
+- **Sin fuga de datos:** el PCA y el escalado se ajustan **solo con los datos de entrenamiento** y luego se aplican al test. Si se ajustaran con todo el histórico, el modelo estaría "viendo" el futuro y las métricas saldrían infladas.
+- **Reconstrucción 1X2:** empareja las dos filas espejo de cada partido y calcula la probabilidad de victoria local / empate / visitante con la distribución de Poisson, comparándola con el resultado real.
+
+**Resultados (corte 2025-09-16):** el modelo bate a todos los baselines.
+
+| Métrica | Modelo | Baseline | Qué mide |
+|---|---|---|---|
+| MAE goles | **0,963** | 1,154 (media) | error medio al predecir goles; más bajo = mejor |
+| RMSE goles | **1,290** | 1,520 | igual que MAE pero penaliza más los errores grandes |
+| Poisson deviance | **1,220** | 1,637 | bondad de ajuste específica para conteos |
+| Brier 1X2 | **0,497** | 0,526 (ELO) / 0,667 (azar) | calidad de las probabilidades 1X2 |
+| Log-loss 1X2 | **0,845** | 0,897 (ELO) / 1,099 (azar) | penaliza la sobreconfianza |
+| ECE (calibración) | **0,059** | — | desviación entre la probabilidad dicha y la real |
+
+> **En cristiano:** el modelo predice goles un **17 % mejor** que "tirar siempre la media", y sus probabilidades de 1X2 superan a un baseline basado solo en ELO. Un ECE de 0,059 significa que cuando dice "60 % de victoria local", acierta cerca del 60 % de las veces — es decir, está bien **calibrado**.
+
+> **Qué mide (y qué NO mide) esta tabla:** compara el modelo contra *baselines* (la media de goles, un baseline de solo-ELO y el azar) para responder *"¿es bueno el modelo?"*. **No** es un "antes vs después" de estos cambios: estas cifras ya eran ciertas del modelo previo. La aportación de esta sección no es un modelo más preciso, sino **poder medirlo por primera vez** (y detectar regresiones en el futuro).
+
+```bash
+python3 src/validacion.py                          # las 3 variantes, corte por defecto
+python3 src/validacion.py misterclaude 2025-09-16  # una variante, corte concreto
+```
+
+Cada ejecución genera `results/validation_<variante>.json` con todas las métricas, la curva de calibración y el desglose de error por confederación.
+
+> Las tres variantes dan métricas idénticas porque comparten el mismo histórico: los ajustes de ELO de cada escenario solo afectan a las 144 filas del Mundial 2026 (partidos futuros), no al pasado con el que se entrena y valida.
+
+### 2. Búsqueda de hiperparámetros reactivada (`tune_hyperparameters`)
+
+La búsqueda `RandomizedSearchCV` que estaba comentada vuelve a estar disponible, ahora **guiada por la misma métrica de validación** (MAE) y con adopción **controlada**.
+
+- Lanza 20 combinaciones × 5 *folds* temporales (`TimeSeriesSplit`) y guarda el resultado en `results/tuning_<variante>.json` (mejores parámetros + importancia de cada *feature*).
+- **No adopta nada automáticamente.** Por defecto `train_model()` sigue usando los parámetros fijos; para probar los nuevos hay que llamar a `train_model(name, use_tuned=True)`.
+
+**¿Mejoraron los parámetros buscados?** No. Al evaluarlos en el mismo hold-out:
+
+| | MAE | Log-loss 1X2 | ECE |
+|---|---|---|---|
+| Fijos (actuales) | **0,963** | **0,845** | 0,059 |
+| Tuneados | 0,965 | 0,846 | **0,041** |
+
+El mejor CV-MAE de la búsqueda (0,9355) **no generalizó** al test honesto (0,965 > 0,963). Como la regla de adopción era "solo cambiar si mejora MAE **y** log-loss", **se mantienen los parámetros fijos**. Esto no es un fracaso: ahora **sabemos** que los parámetros que ya teníamos eran buenos, en lugar de suponerlo.
+
+### 3. Corrección de bugs
+
+- **`underdog_20` (bug de pandas 3.0):** la línea original `df["underdog_20"].fillna(0, inplace=True)` **fallaba en silencio** bajo pandas 3.0 (por *copy-on-write*), dejando `NaN` donde debía haber ceros. Esos `NaN` **excluían 785 partidos** del cálculo del PCA. Corregida a `df["underdog_20"] = df["underdog_20"].fillna(0)`, el PCA ahora se ajusta sobre **19.257 filas en vez de 18.472**, recuperando el comportamiento que el autor original pretendía. Es una corrección de **corrección**, no de rendimiento: **cambia** el modelo (usa más datos y elimina un bug silencioso), pero medido en el hold-out las métricas quedan **prácticamente igual** (≈ +0,06 % de MAE frente al modelo anterior, dentro del ruido). En otras palabras: el modelo no predice mejor, simplemente es código correcto y reproducible.
+- **Código muerto en `get_multiplier()`:** 36 líneas que se sobrescribían incondicionalmente (`mult1 = mult2 = 1.3`) y nunca llegaban a ejecutarse. Eliminadas; el Python queda alineado con el *port* de TypeScript de la web.
+- **"Foto fija" más estable:** en lugar de tomar **solo el último** partido de cada equipo como instantánea pre-Mundial, ahora promedia los **últimos 3**. Reduce el ruido de un único partido atípico. Su efecto neto recae sobre `elo_prom_5`, ya que las demás columnas se sobrescriben por equipo con los resultados reales (`foto_fija_updated.csv`).
+
+### En qué mejora todo esto
+
+Importante: estas mejoras son de **fiabilidad, medición y corrección de código**, no de capacidad predictiva. El modelo predice esencialmente igual que antes; lo que cambia es que ahora **sabemos** lo bueno que es y el código es correcto.
+
+| Antes | Ahora |
+|---|---|
+| Se entrenaba sin métricas: imposible saber si el modelo era bueno | Validación temporal honesta, con números concretos frente a baselines |
+| Hiperparámetros fijos "porque sí" | Hiperparámetros **validados** contra una búsqueda guiada por datos (resultaron buenos) |
+| Un bug de pandas dejaba 785 partidos fuera del PCA | El PCA aprovecha todo el histórico disponible (métricas iguales, código correcto) |
+| Instantánea pre-Mundial basada en un solo partido | Promedio de los 3 últimos, más estable frente a partidos atípicos |
+
+---
+
 ## Limitaciones y cómo se podría mejorar
 
 El modelo es sólido como punto de partida, pero tiene márgenes claros de mejora:
@@ -299,8 +372,10 @@ El modelo es sólido como punto de partida, pero tiene márgenes claros de mejor
 - **Sin calibración externa:** no se contrasta con cuotas de casas de apuestas ni con probabilidades de mercado.
 - **Monte Carlo con Poisson puro:** las probabilidades de avance usan Poisson puro (sin multiplicadores adaptativos) por eficiencia. El simulador principal (30 iter.) usa lógica minuto-a-minuto más refinada, pero es demasiado lento para miles de torneos.
 
+> **Ya resuelto:** la falta de validación y la búsqueda de hiperparámetros desactivada (que figuraban aquí como pendientes) se abordaron en [Validación del modelo y mejoras recientes](#validación-del-modelo-y-mejoras-recientes). Hoy existe un marco de validación temporal con métricas frente a baselines, y la búsqueda de hiperparámetros está reactivada con adopción controlada.
+
 **Posibles mejoras**
-- **Reactivar la búsqueda de hiperparámetros** en cada reentrenamiento, en lugar de usar valores fijos, y reportar métricas de validación temporal.
+- **Adoptar los hiperparámetros tuneados solo cuando mejoren la validación:** la búsqueda ya está disponible (`tune_hyperparameters`); falta automatizar su evaluación en el hold-out dentro del reentrenamiento para adoptar nuevos valores únicamente si baten MAE **y** log-loss.
 - **Incorporar datos de plantilla:** disponibilidad de titulares, minutos recientes, valor de mercado o un ELO por jugador.
 - **Modelo de goles correlacionado:** usar un Poisson bivariante o el ajuste de **Dixon-Coles** para capturar la dependencia entre los goles de ambos equipos.
 - **Calibrar el Monte Carlo contra el simulador adaptativo:** correr el Monte Carlo con los multiplicadores minuto-a-minuto (más preciso) aunque sea más lento, y comparar las probabilidades resultantes con las del Poisson puro para cuantificar el sesgo.
@@ -325,15 +400,18 @@ data/
 api/models/            # Modelos XGBoost guardados (usados por Monte Carlo para XG de KO)
   xgb_<variante>.json
 
-results/               # Salidas de simulacion.py y monte_carlo.py
+results/               # Salidas de simulacion.py, monte_carlo.py y validacion.py
   predictions_<variante>.csv       # Bracket completo (104 filas)
   probabilities_<variante>.json    # Probabilidades Monte Carlo por equipo y ronda
+  validation_<variante>.json       # Métricas de validación temporal + calibración
+  tuning_<variante>.json           # Mejores hiperparámetros de la búsqueda (no adoptados)
 
 src/
   simulacion.py        # Simulación modal (30 iter/partido) → predictions CSV
   clases_simulacion.py # Clases Team, Match, Group, Knockouts, Tournament
   monte_carlo.py       # Monte Carlo (N torneos completos) → probabilities JSON
   xg_preds.py          # Entrenamiento XGBoost + predicciones de XG por jornada
+  validacion.py        # Validación temporal sin fuga + calibración 1X2 vs baselines
 
 web/                   # Web de visualización en Astro
 scripts/

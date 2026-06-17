@@ -1,0 +1,62 @@
+{
+  "variant": "misterclaude",
+  "best_params": {
+    "tweedie_variance_power": 1.5,
+    "subsample": 0.8,
+    "n_estimators": 100,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "colsample_bytree": 0.8
+  },
+  "best_cv_mae": 0.9355,
+  "cv": "TimeSeriesSplit(5)",
+  "scoring": "neg_mean_absolute_error",
+  "n_iter": 20,
+  "feature_importances": {
+    "elo": 0.121572,
+    "opponent_elo": 0.132036,
+    "is_home": 0.134336,
+    "tournament_num": 0.016084,
+    "confed": 0.025827,
+    "rival_confed": 0.048878,
+    "gf_prom_5": 0.025975,
+    "gc_prom_5": 0.019717,
+    "elo_prom_5": 0.028131,
+    "gf_prom_15": 0.084989,
+    "gc_prom_15": 0.037552,
+    "PCA_1": 0.034936,
+    "PCA_2": 0.020982,
+    "rival_gf_prom_5": 0.016579,
+    "rival_gc_prom_5": 0.035881,
+    "rival_elo_prom_5": 0.028468,
+    "rival_gf_prom_15": 0.014558,
+    "rival_gc_prom_15": 0.095714,
+    "rival_PCA_1": 0.061334,
+    "rival_PCA_2": 0.01645
+  },
+  "holdout_evaluation": {
+    "note": "Evaluado en hold-out temporal 2025-09-16 (mismo test set que validacion.py).",
+    "cutoff": "2025-09-16",
+    "default_params": {
+      "mae": 0.9634,
+      "rmse": 1.2896,
+      "poisson_deviance": 1.2197,
+      "brier_1x2": 0.4965,
+      "log_loss_1x2": 0.8452,
+      "ece": 0.0586
+    },
+    "tuned_params": {
+      "mae": 0.9653,
+      "rmse": 1.2948,
+      "poisson_deviance": 1.2248,
+      "brier_1x2": 0.4969,
+      "log_loss_1x2": 0.8455,
+      "ece": 0.0407
+    }
+  },
+  "adoption": {
+    "adopted": false,
+    "gate": "Adoptar solo si mejoran MAE Y log-loss 1X2 en el hold-out.",
+    "verdict": "NO adoptar: tuned peor en MAE, RMSE, Poisson deviance, Brier y log-loss (~0.2%); solo mejora ECE. CV-MAE menor (0.9355) no generalizo al hold-out (0.9653 > 0.9634 default). Los params fijos actuales quedan validados."
+  }
+}
