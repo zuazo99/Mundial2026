@@ -13,8 +13,22 @@ import { GROUPS, getElo } from '../data/groups';
 import { mejoresTerceros } from '../data/mejoresTerceros';
 import { computeGroupStandings, getBestThirds, type GroupStandings } from './computeStandings';
 import { knockoutXg } from '../data/knockoutXg';
+import { rho } from '../data/rho';
 
 const NUM_ITERATIONS = 30;
+
+// ─── Dixon-Coles correction ───────────────────────────────────────────────────
+// tau reshapes the simulated score distribution toward the DC-corrected joint
+// pmf (rho < 0 → draws and 1-1 weighted up, 1-0/0-1 down). Applied as an
+// importance weight on the 90' regulation score; non low-scoring cells = 1.
+function dcTau(g1: number, g2: number, xg1: number, xg2: number): number {
+  if (rho === 0) return 1;
+  if (g1 === 0 && g2 === 0) return Math.max(0, 1 - xg1 * xg2 * rho);
+  if (g1 === 1 && g2 === 0) return Math.max(0, 1 + xg2 * rho);
+  if (g1 === 0 && g2 === 1) return Math.max(0, 1 + xg1 * rho);
+  if (g1 === 1 && g2 === 1) return Math.max(0, 1 - rho);
+  return 1;
+}
 
 // ─── Multiplier logic (port of the actually-executed code in clases_simulacion.py) ───
 
@@ -73,10 +87,12 @@ function simulatePenalties(): [number, number] {
   return [p1, p2];
 }
 
+/** Returns [finalG1, finalG2, regulationG1, regulationG2]. */
 function simulateOnce(
   xg1: number, xg2: number, ko: boolean, betterTeam: 1 | 2
-): [number, number] {
+): [number, number, number, number] {
   let [g1, g2] = playMinutes(xg1, xg2, 95, betterTeam);
+  const [reg1, reg2] = [g1, g2];
   if (ko && g1 === g2) {
     [g1, g2] = playMinutes(xg1, xg2, 30, betterTeam, g1, g2);
     if (g1 === g2) {
@@ -84,21 +100,23 @@ function simulateOnce(
       if (p1 > p2) g1++; else g2++;
     }
   }
-  return [g1, g2];
+  return [g1, g2, reg1, reg2];
 }
 
-/** Runs NUM_ITERATIONS simulations and returns the modal result. */
+/** Runs NUM_ITERATIONS simulations and returns the Dixon-Coles weighted modal result. */
 function simulateMatch(
   xg1: number, xg2: number, ko: boolean, team1Elo: number, team2Elo: number
 ): [number, number] {
   const betterTeam: 1 | 2 = team1Elo >= team2Elo ? 1 : 2;
   const freq = new Map<string, number>();
   for (let i = 0; i < NUM_ITERATIONS; i++) {
-    const [g1, g2] = simulateOnce(xg1, xg2, ko, betterTeam);
+    const [g1, g2, reg1, reg2] = simulateOnce(xg1, xg2, ko, betterTeam);
+    // Importance-weight each sample by the DC tau of its regulation score.
+    const w = dcTau(reg1, reg2, xg1, xg2);
     const key = `${g1}-${g2}`;
-    freq.set(key, (freq.get(key) ?? 0) + 1);
+    freq.set(key, (freq.get(key) ?? 0) + w);
   }
-  let best = "0-0", bestCount = 0;
+  let best = "0-0", bestCount = -1;
   for (const [k, v] of freq) {
     if (v > bestCount) { best = k; bestCount = v; }
   }

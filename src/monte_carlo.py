@@ -64,10 +64,49 @@ def read_csv(path):
         return list(csv.DictReader(f))
 
 
+# ─── Dixon-Coles correction ──────────────────────────────────────────────────
+# rho corrects the four low-scoring cells (0-0, 1-0, 0-1, 1-1) of the joint
+# score matrix to capture the goal correlation that an independent Poisson pair
+# misses (rho < 0 → draws and 1-1 slightly more likely). Set per variant from
+# api/models/rho_<variant>.json in run_monte_carlo().
+_RHO = 0.0
+_DC_MAX_GOALS = 10
+_DC_KS = np.arange(_DC_MAX_GOALS + 1)
+_DC_LOGFACT = np.cumsum(np.concatenate(([0.0], np.log(np.maximum(_DC_KS[1:], 1)))))
+
+
+def load_rho(variant: str) -> float:
+    """Load the trained Dixon-Coles rho for a variant (0.0 if missing)."""
+    path = os.path.join(ROOT, "api", "models", f"rho_{variant}.json")
+    if not os.path.exists(path):
+        return 0.0
+    with open(path, encoding="utf-8") as f:
+        return float(json.load(f)["rho"])
+
+
+def _poisson_pmf(lam: float) -> np.ndarray:
+    lam = max(lam, 1e-9)
+    return np.exp(_DC_KS * np.log(lam) - lam - _DC_LOGFACT)
+
+
+def _dc_sample(xg1: float, xg2: float, rho: float):
+    """Sample a regulation score from the Dixon-Coles corrected joint pmf."""
+    if rho == 0.0:
+        return int(np.random.poisson(xg1)), int(np.random.poisson(xg2))
+    lam, mu = max(xg1, 1e-9), max(xg2, 1e-9)
+    joint = np.outer(_poisson_pmf(lam), _poisson_pmf(mu))
+    joint[0, 0] *= max(0.0, 1.0 - lam * mu * rho)
+    joint[1, 0] *= max(0.0, 1.0 + mu * rho)
+    joint[0, 1] *= max(0.0, 1.0 + lam * rho)
+    joint[1, 1] *= max(0.0, 1.0 - rho)
+    flat = np.maximum(joint, 0.0).ravel()
+    idx = int(np.searchsorted(np.cumsum(flat), np.random.random() * flat.sum()))
+    return divmod(min(idx, flat.size - 1), _DC_MAX_GOALS + 1)
+
+
 def simulate_match(xg1: float, xg2: float, ko: bool = False):
-    """Single Poisson draw. KO adds extra time + penalties on draw."""
-    g1 = int(np.random.poisson(xg1))
-    g2 = int(np.random.poisson(xg2))
+    """Single Dixon-Coles draw. KO adds extra time + penalties on draw."""
+    g1, g2 = _dc_sample(xg1, xg2, _RHO)
     if ko and g1 == g2:
         g1 += int(np.random.poisson(xg1 / 3))
         g2 += int(np.random.poisson(xg2 / 3))
@@ -281,7 +320,14 @@ def run_tournament(group_xg: dict, ko_xg: dict, mejores_terceros: dict) -> dict:
 # ─── main ────────────────────────────────────────────────────────────────────
 
 def run_monte_carlo(variant: str, n_sims: int) -> dict:
+    global _RHO
+    # Deterministic seed → reproducible probabilities; only real-result and
+    # model changes move the numbers, not RNG noise between runs.
+    np.random.seed(20260611)
+
     print(f"\n[{variant}] Cargando datos...")
+    _RHO         = load_rho(variant)
+    print(f"[{variant}] Dixon-Coles rho = {_RHO:.4f}")
     group_xg     = load_group_xg(variant)
     ko_xg        = load_knockout_xg(variant)
     mejores_terc = load_mejores_terceros()

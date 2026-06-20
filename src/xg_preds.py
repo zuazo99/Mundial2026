@@ -146,6 +146,10 @@ def estimate_rho(model, df_train: pd.DataFrame) -> float:
     DC corrects P(0-0), P(1-0), P(0-1), P(1-1) to capture the positive
     correlation between goals scored by each team (draws more likely than
     independent Poisson predicts). rho < 0 → more draws.
+
+    The optimisation is bounded symmetrically around 0 so the data — not a
+    hard-coded prior — decides the sign and magnitude of rho. The tau>0 guard
+    keeps the search inside the region where the corrected pmf stays valid.
     """
     xg_pred = np.maximum(model.predict(df_train[FEATURES]).astype(float), 1e-6)
     df_p = df_train.copy()
@@ -178,7 +182,7 @@ def estimate_rho(model, df_train: pd.DataFrame) -> float:
             return 1e10
         return -np.sum(np.log(tau))
 
-    res = minimize_scalar(neg_log_tau, bounds=(-0.99, -0.001), method="bounded")
+    res = minimize_scalar(neg_log_tau, bounds=(-0.2, 0.2), method="bounded")
     return float(res.x)
 
 
