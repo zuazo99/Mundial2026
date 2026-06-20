@@ -3,6 +3,7 @@
   "cutoff": "2025-09-16",
   "n_test_rows": 1156,
   "n_test_matches": 578,
+  "dixon_coles_rho": -0.0408,
   "regression": {
     "model": {
       "mae": 0.9634,
@@ -16,9 +17,15 @@
     }
   },
   "match_1x2": {
-    "model": {
+    "poisson": {
       "brier": 0.4965,
-      "log_loss": 0.8452
+      "log_loss": 0.8452,
+      "ece": 0.0586
+    },
+    "dixon_coles": {
+      "brier": 0.496,
+      "log_loss": 0.8439,
+      "ece": 0.0593
     },
     "baseline_elo": {
       "brier": 0.5255,
@@ -28,10 +35,9 @@
       "brier": 0.6667,
       "log_loss": 1.0986
     },
-    "ece": 0.0586,
     "draw_rate": 0.2336
   },
-  "calibration_curve": {
+  "calibration_curve_dc": {
     "prob_pred": [
       0.0172,
       0.0345,
@@ -45,16 +51,16 @@
       0.8966
     ],
     "prob_true": [
-      0.0363,
-      0.0966,
-      0.1627,
-      0.2397,
-      0.3112,
-      0.3733,
-      0.436,
-      0.5262,
-      0.6657,
-      0.8432
+      0.0345,
+      0.0933,
+      0.1584,
+      0.2347,
+      0.306,
+      0.368,
+      0.4308,
+      0.5214,
+      0.6618,
+      0.8425
     ],
     "strategy": "quantile",
     "n_bins": 10

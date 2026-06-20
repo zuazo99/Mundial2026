@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import xgboost as xgb
 from sklearn.model_selection import TimeSeriesSplit, RandomizedSearchCV
+from scipy.optimize import minimize_scalar
 
 
 # ─── module-level constants ───────────────────────────────────────────────────
@@ -137,6 +138,50 @@ def engineer_features(df_historia, *, scaler=None, pca=None, fit_transformers=Tr
     return df, scaler, pca, FEATURES
 
 
+# ─── Dixon-Coles rho estimation ──────────────────────────────────────────────
+
+def estimate_rho(model, df_train: pd.DataFrame) -> float:
+    """Estimate Dixon-Coles rho via MLE on training data.
+
+    DC corrects P(0-0), P(1-0), P(0-1), P(1-1) to capture the positive
+    correlation between goals scored by each team (draws more likely than
+    independent Poisson predicts). rho < 0 → more draws.
+    """
+    xg_pred = np.maximum(model.predict(df_train[FEATURES]).astype(float), 1e-6)
+    df_p = df_train.copy()
+    df_p["xg_pred"] = xg_pred
+
+    df_A = df_p[df_p["team"] < df_p["opponent"]].copy()
+    df_B = (df_p[df_p["team"] > df_p["opponent"]]
+            [["date", "team", "opponent", "xg_pred"]]
+            .rename(columns={"team": "opponent", "opponent": "team", "xg_pred": "xg_away"}))
+
+    matches = pd.merge(
+        df_A[["date", "team", "opponent", "goals", "goals_conceded", "xg_pred"]]
+            .rename(columns={"xg_pred": "xg_home"}),
+        df_B, on=["date", "team", "opponent"], how="inner",
+    )
+    low = matches[(matches["goals"] <= 1) & (matches["goals_conceded"] <= 1)].copy()
+
+    lams = low["xg_home"].values
+    mus  = low["xg_away"].values
+    xs   = low["goals"].astype(int).values
+    ys   = low["goals_conceded"].astype(int).values
+
+    def neg_log_tau(rho):
+        tau = np.ones(len(low))
+        tau[(xs == 0) & (ys == 0)] -= lams[(xs == 0) & (ys == 0)] * mus[(xs == 0) & (ys == 0)] * rho
+        tau[(xs == 1) & (ys == 0)] += mus[(xs == 1) & (ys == 0)] * rho
+        tau[(xs == 0) & (ys == 1)] += lams[(xs == 0) & (ys == 1)] * rho
+        tau[(xs == 1) & (ys == 1)] -= rho
+        if np.any(tau <= 0):
+            return 1e10
+        return -np.sum(np.log(tau))
+
+    res = minimize_scalar(neg_log_tau, bounds=(-0.99, -0.001), method="bounded")
+    return float(res.x)
+
+
 # ─── model training ──────────────────────────────────────────────────────────
 
 def train_model(name, use_tuned=False):
@@ -170,6 +215,13 @@ def train_model(name, use_tuned=False):
 
     os.makedirs("api/models", exist_ok=True)
     model.save_model(f"api/models/xgb_{name}.json")
+
+    print("3b. Estimando corrección Dixon-Coles (rho)...")
+    rho = estimate_rho(model, df_train)
+    rho_path = f"api/models/rho_{name}.json"
+    with open(rho_path, "w", encoding="utf-8") as f:
+        json.dump({"variant": name, "rho": rho}, f)
+    print(f"  ρ = {rho:.4f}  →  {rho_path}")
 
     print("4. Generando predicciones para el Mundial 2026...")
 
