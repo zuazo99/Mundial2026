@@ -1,6 +1,18 @@
 import pandas as pd
 import random as rd
+import os
+import json
 from xg_preds import train_model
+
+# Dixon-Coles rho — goal-correlation correction applied to the four low-scoring
+# cells (0-0, 1-0, 0-1, 1-1). Set once per tournament from the variant's
+# api/models/rho_<variant>.json via set_dc_rho().
+_DC_RHO = 0.0
+
+
+def set_dc_rho(rho: float):
+    global _DC_RHO
+    _DC_RHO = rho
 
 class Team:
     # Añadir stats de ventana como atributos
@@ -38,11 +50,31 @@ class Match:
     def __init__(self, s1, s2, xg1, xg2, ko=False):
         self.s1: Team = s1
         self.s2: Team = s2
+        self.xg1 = xg1
+        self.xg2 = xg2
         self.xg1_min = xg1 / 90
         self.xg2_min = xg2 / 90
+        self.rho = _DC_RHO
         self.results = {}
         self.num_iterations = 30 # 30
         self.ko = ko
+
+    def _tau(self, g1, g2):
+        """Dixon-Coles tau multiplier (importance weight) for a
+        regulation score (g1, g2). rho < 0 weights draws and 1-1 up,
+        1-0/0-1 down; all other cells are unaffected (weight 1.0)."""
+        rho = self.rho
+        if rho == 0.0:
+            return 1.0
+        if g1 == 0 and g2 == 0:
+            return max(0.0, 1.0 - self.xg1 * self.xg2 * rho)
+        if g1 == 1 and g2 == 0:
+            return max(0.0, 1.0 + self.xg2 * rho)
+        if g1 == 0 and g2 == 1:
+            return max(0.0, 1.0 + self.xg1 * rho)
+        if g1 == 1 and g2 == 1:
+            return max(0.0, 1.0 - rho)
+        return 1.0
 
     # def update_elo(self, g1, g2):
     #     w_home = 1.0 if g1 > g2 else (0.5 if g1 == g2 else 0.0)
@@ -101,6 +133,9 @@ class Match:
                 g1 += 1
             if rd.random() < (self.xg2_min * mult2):
                 g2 += 1
+        # Dixon-Coles importance weight on the 90' regulation score, before any
+        # extra time / penalties reshape a knockout tie.
+        weight = self._tau(g1, g2)
         if self.ko and g1 == g2:
             for min in range(30):
                 mult1, mult2 = self.get_multiplier(min, g1, g2)
@@ -117,10 +152,7 @@ class Match:
                     g2 += 1
                     # print(f"{self.s2.name} gana en penaltis {p2} - {p1}")
 
-        if (g1, g2) not in self.results:
-            self.results[(g1, g2)] = 1
-        else:
-            self.results[(g1, g2)] += 1
+        self.results[(g1, g2)] = self.results.get((g1, g2), 0.0) + weight
 
     def simulate_penalties(self):
         prob_pen = 0.75
@@ -147,12 +179,13 @@ class Match:
             self.simulate_match()
 
         result_max = max(self.results, key=self.results.get)
+        total_w = sum(self.results.values()) or 1.0
 
         if not self.ko:
             self.s1.update_result(result_max[0], result_max[1])
             self.s2.update_result(result_max[1], result_max[0])
 
-        print(f"{self.s1.name} {result_max[0]} - {result_max[1]} {self.s2.name} - {round(self.results[result_max]*100/self.num_iterations, 2)}%")
+        print(f"{self.s1.name} {result_max[0]} - {result_max[1]} {self.s2.name} - {round(self.results[result_max]*100/total_w, 2)}%")
 
         return {self.s1: result_max[0], self.s2: result_max[1]}
 
@@ -676,10 +709,22 @@ class Tournament:
         self.group_orders: list[list[Team]] = []
         self.thirds: list[Team] = []
         self.thirds_letters = ""
-        self.model = train_model(name=name)
+        self.model = train_model(name=name)  # also writes api/models/rho_<name>.json
         self.match_history = []
         self.name = name
+        set_dc_rho(self._load_rho(name))
+        # Deterministic seed → reproducible bracket; only model/real-result
+        # changes move the predictions, not RNG noise between runs.
+        rd.seed(20260611)
         self.GROUPS = self.create_groups()
+
+    @staticmethod
+    def _load_rho(name):
+        path = os.path.join("api", "models", f"rho_{name}.json")
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                return float(json.load(f)["rho"])
+        return 0.0
 
     def create_groups(self):
         df_metrics = pd.read_csv(f"data/ai_models/xg_preds_J1_{self.name}_complete.csv")

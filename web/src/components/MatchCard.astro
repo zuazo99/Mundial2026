@@ -1,5 +1,6 @@
 ---
 import Flag from './Flag.astro';
+import { rho } from '../data/rho';
 interface Props {
   team1: string; score1: number;
   team2: string; score2: number;
@@ -16,19 +17,38 @@ const maxXG = 2.5;
 const bar1 = xg1 != null ? Math.min(100, (xg1 / maxXG) * 100) : null;
 const bar2 = xg2 != null ? Math.min(100, (xg2 / maxXG) * 100) : null;
 
-// Poisson 1X2 probabilities + P(exact predicted score) — unplayed matches only
+// Dixon-Coles corrected 1X2 probabilities + P(exact predicted score)
+// DC adjusts P(0-0), P(1-0), P(0-1), P(1-1) via the τ multiplier (rho < 0 → more draws)
 let probBar: { p1: number; pd: number; p2: number } | null = null;
-let exactScoreProb: number | null = null;  // P(score1–score2 exactly)
+let exactScoreProb: number | null = null;
 
 if (!hasReal && xg1 != null && xg2 != null) {
   const MAX = 10;
   const logF = [0];
   for (let i = 1; i <= MAX; i++) logF[i] = logF[i - 1] + Math.log(i);
   const pmf = (lam: number, k: number) => Math.exp(-lam + k * Math.log(lam || 1e-9) - logF[k]);
+
+  // τ correction for low-scoring cells (DC only touches g1+g2 ≤ 1)
+  const tau = (g1: number, g2: number): number => {
+    if (g1 === 0 && g2 === 0) return Math.max(0, 1 - xg1 * xg2 * rho);
+    if (g1 === 1 && g2 === 0) return Math.max(0, 1 + xg2 * rho);
+    if (g1 === 0 && g2 === 1) return Math.max(0, 1 + xg1 * rho);
+    if (g1 === 1 && g2 === 1) return Math.max(0, 1 - rho);
+    return 1;
+  };
+
+  // Build full joint matrix with DC correction, then renormalize
+  const joint: number[][] = Array.from({ length: MAX + 1 }, (_, g1) =>
+    Array.from({ length: MAX + 1 }, (_, g2) =>
+      Math.max(0, pmf(xg1, g1) * pmf(xg2, g2) * tau(g1, g2))
+    )
+  );
+  const total = joint.flat().reduce((s, v) => s + v, 0);
+
   let p1 = 0, pd = 0;
   for (let g1 = 0; g1 <= MAX; g1++) {
     for (let g2 = 0; g2 <= MAX; g2++) {
-      const p = pmf(xg1, g1) * pmf(xg2, g2);
+      const p = joint[g1][g2] / total;
       if (g1 > g2) p1 += p; else if (g1 === g2) pd += p;
       if (g1 === score1 && g2 === score2) exactScoreProb = p;
     }

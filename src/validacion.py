@@ -29,7 +29,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 import xgboost as xgb
 from xg_preds import (FEATURES, TARGET, _CONFED_NUMERIC, _DEFAULT_PARAMS,
-                       _add_rolling_and_style, _apply_pca_merge_decay)
+                       _add_rolling_and_style, _apply_pca_merge_decay, estimate_rho)
 
 VARIANTS = ["misterclaude", "gemaldini", "dav_gpo"]
 
@@ -40,6 +40,30 @@ def _poisson_1x2(xg_home: float, xg_away: float, max_goals: int = 10):
     pmf_h = scipy_poisson.pmf(ks, max(xg_home, 1e-9))
     pmf_a = scipy_poisson.pmf(ks, max(xg_away, 1e-9))
     joint  = np.outer(pmf_h, pmf_a)
+    p_home = float(np.tril(joint, -1).sum())
+    p_draw = float(np.trace(joint))
+    p_away = max(0.0, 1.0 - p_home - p_draw)
+    return p_home, p_draw, p_away
+
+
+def _dc_1x2(xg_home: float, xg_away: float, rho: float, max_goals: int = 10):
+    """Dixon-Coles corrected 1X2 probabilities.
+
+    Applies the τ multiplier to cells (0-0), (1-0), (0-1), (1-1) to capture
+    the positive correlation between each team's goals (rho < 0 → more draws).
+    After correction the matrix is renormalized so probabilities still sum to 1.
+    """
+    lam = max(xg_home, 1e-9)
+    mu  = max(xg_away, 1e-9)
+    ks = np.arange(0, max_goals + 1)
+    joint = np.outer(scipy_poisson.pmf(ks, lam), scipy_poisson.pmf(ks, mu))
+    # τ corrections for low-scoring cells
+    joint[0, 0] *= max(0.0, 1.0 - lam * mu * rho)
+    joint[1, 0] *= max(0.0, 1.0 + mu * rho)
+    joint[0, 1] *= max(0.0, 1.0 + lam * rho)
+    joint[1, 1] *= max(0.0, 1.0 - rho)
+    joint  = np.maximum(joint, 0.0)
+    joint /= joint.sum()
     p_home = float(np.tril(joint, -1).sum())
     p_draw = float(np.trace(joint))
     p_away = max(0.0, 1.0 - p_home - p_draw)
@@ -96,6 +120,10 @@ def validate_model(name: str, cutoff: str = "2025-09-16", params: dict = None) -
     model.fit(df_train[FEATURES], df_train[TARGET],
               sample_weight=df_train["date_weight"])
 
+    # 6b. Estimate Dixon-Coles rho from train only (no leakage)
+    rho = estimate_rho(model, df_train)
+    print(f"  Dixon-Coles ρ (train): {rho:.4f}")
+
     # 7. Predict
     y_true = df_test[TARGET].values.astype(float)
     y_pred = np.maximum(model.predict(df_test[FEATURES]).astype(float), 1e-6)
@@ -138,11 +166,15 @@ def validate_model(name: str, cutoff: str = "2025-09-16", params: dict = None) -
     true_hw = (matches["goals"] > matches["goals_conceded"]).astype(int).values
     true_d  = (matches["goals"] == matches["goals_conceded"]).astype(int).values
     true_aw = (matches["goals"] < matches["goals_conceded"]).astype(int).values
-    y_cat   = np.where(true_hw, "home", np.where(true_d, "draw", "away"))
     onehot  = np.column_stack([true_hw, true_d, true_aw]).astype(float)
 
+    # Poisson (independent) probabilities
     proba_rows = [_poisson_1x2(r.xg_home, r.xg_away) for r in matches.itertuples()]
     proba = np.clip(np.array(proba_rows), 1e-9, 1.0)
+
+    # Dixon-Coles corrected probabilities
+    proba_dc_rows = [_dc_1x2(r.xg_home, r.xg_away, rho) for r in matches.itertuples()]
+    proba_dc = np.clip(np.array(proba_dc_rows), 1e-9, 1.0)
 
     draw_rate = float(true_d.mean())
     proba_elo = np.clip(
@@ -150,22 +182,35 @@ def validate_model(name: str, cutoff: str = "2025-09-16", params: dict = None) -
         1e-9, 1.0,
     )
 
-    brier_model   = float(np.mean(np.sum((proba - onehot) ** 2, axis=1)))
-    brier_elo     = float(np.mean(np.sum((proba_elo - onehot) ** 2, axis=1)))
-    brier_uniform = float(np.mean(np.sum((np.full_like(onehot, 1/3) - onehot) ** 2, axis=1)))
+    def _brier(p): return float(np.mean(np.sum((p - onehot) ** 2, axis=1)))
+    def _logloss(p):
+        tp = np.where(true_hw, p[:, 0], np.where(true_d, p[:, 1], p[:, 2]))
+        return -float(np.mean(np.log(np.maximum(tp, 1e-9))))
 
-    # Manual log_loss to avoid sklearn's label-ordering issues
-    true_p_model = np.where(true_hw, proba[:, 0], np.where(true_d, proba[:, 1], proba[:, 2]))
-    true_p_elo   = np.where(true_hw, proba_elo[:, 0], np.where(true_d, proba_elo[:, 1], proba_elo[:, 2]))
-    ll_model = -float(np.mean(np.log(np.maximum(true_p_model, 1e-9))))
-    ll_elo   = -float(np.mean(np.log(np.maximum(true_p_elo,   1e-9))))
+    brier_poisson = _brier(proba)
+    brier_dc      = _brier(proba_dc)
+    brier_elo     = _brier(proba_elo)
+    brier_uniform = _brier(np.full_like(onehot, 1/3))
 
+    ll_poisson = _logloss(proba)
+    ll_dc      = _logloss(proba_dc)
+    ll_elo     = _logloss(proba_elo)
+
+    # Calibration on DC probs (our best model)
     prob_pred_cal, prob_true_cal = calibration_curve(
-        true_hw, proba[:, 0], n_bins=10, strategy="quantile")
-    bin_counts  = np.bincount(
-        np.searchsorted(prob_pred_cal, proba[:, 0]).clip(0, len(prob_pred_cal) - 1),
+        true_hw, proba_dc[:, 0], n_bins=10, strategy="quantile")
+    bin_counts = np.bincount(
+        np.searchsorted(prob_pred_cal, proba_dc[:, 0]).clip(0, len(prob_pred_cal) - 1),
         minlength=len(prob_pred_cal))
-    ece = float(np.sum(bin_counts / max(n_matches, 1) * np.abs(prob_true_cal - prob_pred_cal)))
+    ece_dc = float(np.sum(bin_counts / max(n_matches, 1) * np.abs(prob_true_cal - prob_pred_cal)))
+
+    # ECE on plain Poisson for comparison
+    prob_pred_p, prob_true_p = calibration_curve(
+        true_hw, proba[:, 0], n_bins=10, strategy="quantile")
+    bin_counts_p = np.bincount(
+        np.searchsorted(prob_pred_p, proba[:, 0]).clip(0, len(prob_pred_p) - 1),
+        minlength=len(prob_pred_p))
+    ece_poisson = float(np.sum(bin_counts_p / max(n_matches, 1) * np.abs(prob_true_p - prob_pred_p)))
 
     # ─── Per-confederation breakdown ──────────────────────────────────────
     confed_inv = {v: k for k, v in _CONFED_NUMERIC.items()}
@@ -184,18 +229,19 @@ def validate_model(name: str, cutoff: str = "2025-09-16", params: dict = None) -
         "cutoff":         cutoff,
         "n_test_rows":    int(len(df_test)),
         "n_test_matches": int(n_matches),
+        "dixon_coles_rho": round(rho, 4),
         "regression": {
             "model":               reg,
             "baseline_mean_goals": reg_base,
         },
         "match_1x2": {
-            "model":           {"brier": round(brier_model, 4), "log_loss": round(ll_model, 4)},
-            "baseline_elo":    {"brier": round(brier_elo, 4),   "log_loss": round(ll_elo, 4)},
+            "poisson":         {"brier": round(brier_poisson, 4), "log_loss": round(ll_poisson, 4), "ece": round(ece_poisson, 4)},
+            "dixon_coles":     {"brier": round(brier_dc,      4), "log_loss": round(ll_dc,      4), "ece": round(ece_dc,      4)},
+            "baseline_elo":    {"brier": round(brier_elo,     4), "log_loss": round(ll_elo,     4)},
             "baseline_uniform":{"brier": round(brier_uniform, 4), "log_loss": round(float(np.log(3)), 4)},
-            "ece":             round(ece, 4),
             "draw_rate":       round(draw_rate, 4),
         },
-        "calibration_curve": {
+        "calibration_curve_dc": {
             "prob_pred": [round(float(v), 4) for v in prob_pred_cal],
             "prob_true": [round(float(v), 4) for v in prob_true_cal],
             "strategy":  "quantile",
@@ -212,10 +258,10 @@ def validate_model(name: str, cutoff: str = "2025-09-16", params: dict = None) -
     print(f"  {'RMSE goles':<{w}} {reg['rmse']:>10.4f} {reg_base['rmse']:>12.4f}")
     print(f"  {'Poisson deviance':<{w}} {reg['poisson_deviance']:>10.4f} {reg_base['poisson_deviance']:>12.4f}")
     print()
-    print(f"  {'':>{w}} {'Modelo':>10} {'ELO base':>10} {'Uniforme':>10}")
-    print(f"  {'Brier 1X2 (partido)':<{w}} {brier_model:>10.4f} {brier_elo:>10.4f} {brier_uniform:>10.4f}")
-    print(f"  {'Log-loss 1X2':<{w}} {ll_model:>10.4f} {ll_elo:>10.4f} {np.log(3):>10.4f}")
-    print(f"  {'ECE calibración':<{w}} {ece:>10.4f}")
+    print(f"  {'':>{w}} {'Poisson':>10} {'DC(ρ=' + f'{rho:.3f})':>12} {'ELO base':>10} {'Uniforme':>10}")
+    print(f"  {'Brier 1X2':<{w}} {brier_poisson:>10.4f} {brier_dc:>12.4f} {brier_elo:>10.4f} {brier_uniform:>10.4f}")
+    print(f"  {'Log-loss 1X2':<{w}} {ll_poisson:>10.4f} {ll_dc:>12.4f} {ll_elo:>10.4f} {np.log(3):>10.4f}")
+    print(f"  {'ECE calibración':<{w}} {ece_poisson:>10.4f} {ece_dc:>12.4f}")
     print()
     print("  Por confederación (MAE): " +
           "  ".join(f"{k}={v['mae']:.3f}(n={v['n']})" for k, v in per_confed.items()))

@@ -15,6 +15,7 @@ Este proyecto entrena un modelo XGBoost sobre datos históricos de partidos inte
 - [Monte Carlo: qué es y para qué sirve aquí](#monte-carlo-qué-es-y-para-qué-sirve-aquí)
 - [Apartado técnico: cómo se entrena el modelo](#apartado-técnico-cómo-se-entrena-el-modelo)
 - [Validación del modelo y mejoras recientes](#validación-del-modelo-y-mejoras-recientes)
+- [Corrección Dixon-Coles](#corrección-dixon-coles)
 - [Limitaciones y cómo se podría mejorar](#limitaciones-y-cómo-se-podría-mejorar)
 - [Estructura de datos](#estructura-de-datos)
 - [Formato de grupos (Mundial 2026)](#formato-de-grupos-mundial-2026)
@@ -360,6 +361,65 @@ Importante: estas mejoras son de **fiabilidad, medición y corrección de códig
 
 ---
 
+## Corrección Dixon-Coles
+
+### El problema que resuelve
+
+El modelo Poisson independiente asume que los goles de cada equipo no están correlacionados: que la probabilidad de que el local marque no depende de si el visitante también lo hace. En la práctica esto es falso para resultados muy ajustados: cuando ambos equipos van a por ello, es más probable un 1-1 que un 1-0 + un 0-1 por separado. El Poisson puro **infravalora los empates y los resultados de 0-0, 1-0, 0-1, 1-1**.
+
+Esta limitación, documentada en la literatura de predicción deportiva desde Dixon & Coles (1997), se puede corregir con un multiplicador τ que ajusta la probabilidad de esos cuatro resultados:
+
+| Resultado | τ (corrección) |
+|---|---|
+| 0-0 | `1 − λ × μ × ρ` |
+| 1-0 | `1 + μ × ρ` |
+| 0-1 | `1 + λ × ρ` |
+| 1-1 | `1 − ρ` |
+| Resto | `1` (sin cambio) |
+
+Donde λ = XG local, μ = XG visitante, **ρ < 0** (negativo porque los empates son *más* frecuentes de lo que predice Poisson). Después de aplicar τ, la matriz se renormaliza para que las probabilidades sigan sumando 1.
+
+### Cómo se estima ρ
+
+El parámetro ρ se calcula con **máxima verosimilitud** sobre los datos de entrenamiento: para cada partido con resultado de baja puntuación (goleo ≤ 1 en total) se busca el ρ que maximiza el producto de las τ observadas. El resultado para este conjunto de datos:
+
+```
+ρ = −0.044
+```
+
+Un valor negativo confirma lo esperado: la distribución real de resultados tiene más empates de lo que Poisson puro predice.
+
+### Qué mejora exactamente
+
+| Métrica | Poisson puro | Dixon-Coles | Diferencia |
+|---|---|---|---|
+| Brier 1X2 | 0,4965 | **0,4960** | −0,0005 ✓ |
+| Log-loss 1X2 | 0,8452 | **0,8439** | −0,0013 ✓ |
+| ECE (calibración) | 0,0586 | 0,0593 | +0,0007 ≈ |
+
+La mejora en log-loss (−0.0013) es pequeña pero consistente y en la dirección esperada: al redistribuir probabilidad hacia los empates, el modelo penaliza menos las predicciones cuando el partido termina en tablas. El ECE (calibración de P(victoria local)) queda prácticamente igual.
+
+**Límite del alcance:** la corrección DC se aplica a las **probabilidades 1X2 analíticas** que se muestran en la web (`MatchCard`) y a las métricas de validación. El simulador principal (30 iteraciones, minuto a minuto) y el Monte Carlo (miles de torneos completos) usan muestreo directo de Poisson, donde aplicar DC requeriría un bivariate Poisson más complejo — queda para una mejora futura.
+
+### Dónde vive en el código
+
+| Archivo | Qué hace |
+|---|---|
+| `src/xg_preds.py` | `estimate_rho(model, df_train)` — MLE de ρ desde el train, sin tocar el test; lo guarda en `api/models/rho_{variante}.json` |
+| `src/validacion.py` | `_dc_1x2(xg_home, xg_away, rho)` — aplica τ y renormaliza; reporta Poisson vs DC lado a lado |
+| `scripts/export_data.py` | `build_rho()` — exporta `web/src/data/rho.ts` con el valor de ρ para el frontend |
+| `web/src/components/MatchCard.astro` | Importa `rho` y aplica la corrección τ en el cálculo JS de las probabilidades 1X2 |
+
+```bash
+# ρ se calcula automáticamente cuando se entrena el modelo:
+python3 src/simulacion.py
+
+# Para ver el impacto en el hold-out:
+python3 src/validacion.py
+```
+
+---
+
 ## Limitaciones y cómo se podría mejorar
 
 El modelo es sólido como punto de partida, pero tiene márgenes claros de mejora:
@@ -368,16 +428,15 @@ El modelo es sólido como punto de partida, pero tiene márgenes claros de mejor
 - **Sin datos de jugadores:** no contempla lesiones, sanciones, convocatorias ni el estado de forma de futbolistas concretos. Una baja clave no se refleja.
 - **Ajustes de ELO manuales:** los tres escenarios son hipótesis subjetivas, no aprendidas de los datos.
 - **Sesgo del "marcador más probable":** tanto la moda de 30 iteraciones como el Poisson analítico tienden a favorecer resultados bajos y comunes (1-0, 1-1), infrarrepresentando goleadas (un 4-0 puede ser posible pero su probabilidad puntual sigue siendo baja).
-- **Goles independientes:** el Poisson asume que los goles de cada equipo son independientes, sin correlación entre ataques (lo que infravalora empates y resultados ajustados). Una corrección conocida es el ajuste de **Dixon-Coles**.
 - **Sin calibración externa:** no se contrasta con cuotas de casas de apuestas ni con probabilidades de mercado.
 - **Monte Carlo con Poisson puro:** las probabilidades de avance usan Poisson puro (sin multiplicadores adaptativos) por eficiencia. El simulador principal (30 iter.) usa lógica minuto-a-minuto más refinada, pero es demasiado lento para miles de torneos.
 
-> **Ya resuelto:** la falta de validación y la búsqueda de hiperparámetros desactivada (que figuraban aquí como pendientes) se abordaron en [Validación del modelo y mejoras recientes](#validación-del-modelo-y-mejoras-recientes). Hoy existe un marco de validación temporal con métricas frente a baselines, y la búsqueda de hiperparámetros está reactivada con adopción controlada.
+> **Ya resuelto:** la falta de validación, la búsqueda de hiperparámetros desactivada y la independencia de goles (Poisson puro) se abordaron en secciones anteriores. Hoy existe un marco de validación temporal honesto, la búsqueda de hiperparámetros está reactivada con adopción controlada, y las probabilidades 1X2 usan la corrección Dixon-Coles.
 
 **Posibles mejoras**
 - **Adoptar los hiperparámetros tuneados solo cuando mejoren la validación:** la búsqueda ya está disponible (`tune_hyperparameters`); falta automatizar su evaluación en el hold-out dentro del reentrenamiento para adoptar nuevos valores únicamente si baten MAE **y** log-loss.
 - **Incorporar datos de plantilla:** disponibilidad de titulares, minutos recientes, valor de mercado o un ELO por jugador.
-- **Modelo de goles correlacionado:** usar un Poisson bivariante o el ajuste de **Dixon-Coles** para capturar la dependencia entre los goles de ambos equipos.
+- **DC en el simulador y Monte Carlo:** extender la corrección Dixon-Coles al muestreo directo (bivariate Poisson) para que las probabilidades de avance también la incorporen.
 - **Calibrar el Monte Carlo contra el simulador adaptativo:** correr el Monte Carlo con los multiplicadores minuto-a-minuto (más preciso) aunque sea más lento, y comparar las probabilidades resultantes con las del Poisson puro para cuantificar el sesgo.
 - **Calibrar contra el mercado** (cuotas) para validar y corregir sesgos sistemáticos.
 - **Más iteraciones por partido** para estimaciones más estables.
@@ -399,6 +458,7 @@ data/
 
 api/models/            # Modelos XGBoost guardados (usados por Monte Carlo para XG de KO)
   xgb_<variante>.json
+  rho_<variante>.json  # Parámetro Dixon-Coles ρ estimado por MLE (auto-generado)
 
 results/               # Salidas de simulacion.py, monte_carlo.py y validacion.py
   predictions_<variante>.csv       # Bracket completo (104 filas)
@@ -410,8 +470,8 @@ src/
   simulacion.py        # Simulación modal (30 iter/partido) → predictions CSV
   clases_simulacion.py # Clases Team, Match, Group, Knockouts, Tournament
   monte_carlo.py       # Monte Carlo (N torneos completos) → probabilities JSON
-  xg_preds.py          # Entrenamiento XGBoost + predicciones de XG por jornada
-  validacion.py        # Validación temporal sin fuga + calibración 1X2 vs baselines
+  xg_preds.py          # Entrenamiento XGBoost + predicciones de XG + estimación de ρ (DC)
+  validacion.py        # Validación temporal sin fuga + calibración Poisson vs Dixon-Coles
 
 web/                   # Web de visualización en Astro
 scripts/
