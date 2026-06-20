@@ -1,7 +1,6 @@
 date,home_team,away_team,home_goals,away_goals
 2026-06-11,Mexico,South Africa,2,0
 2026-06-12,South Korea,Czech Republic,2,1
-2026-06-12,Canada,Bosnia and Herzegovina,1,1
 2026-06-13,United States,Paraguay,4,1
 2026-06-13,Qatar,Switzerland,1,1
 2026-06-13,Brazil,Morocco,1,1
@@ -27,3 +26,7 @@ date,home_team,away_team,home_goals,away_goals
 2026-06-18,Switzerland,Bosnia and Herzegovina,4,1
 2026-06-18,Canada,Qatar,6,0
 2026-06-19,Mexico,South Korea,1,0
+2026-06-19,United States,Australia,2,0
+2026-06-19,Scotland,Morocco,0,1
+2026-06-20,Brazil,Haiti,3,0
+2026-06-20,Turkey,Paraguay,0,1
