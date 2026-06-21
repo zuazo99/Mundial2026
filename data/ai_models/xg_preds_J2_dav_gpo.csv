@@ -1,12 +1,12 @@
 date,team,opponent,xg_estimated
-2026-06-18,Bosnia and Herzegovina,Switzerland,0.75
-2026-06-18,Canada,Qatar,2.58
+2026-06-18,Bosnia and Herzegovina,Switzerland,0.78
+2026-06-18,Canada,Qatar,2.44
 2026-06-18,Czech Republic,South Africa,1.33
 2026-06-18,Mexico,South Korea,1.69
 2026-06-18,Qatar,Canada,0.51
 2026-06-18,South Africa,Czech Republic,0.79
 2026-06-18,South Korea,Mexico,0.74
-2026-06-18,Switzerland,Bosnia and Herzegovina,1.76
+2026-06-18,Switzerland,Bosnia and Herzegovina,1.61
 2026-06-19,Australia,United States,1.18
 2026-06-19,Brazil,Haiti,1.95
 2026-06-19,Haiti,Brazil,0.51
@@ -16,13 +16,13 @@ date,team,opponent,xg_estimated
 2026-06-19,Turkey,Paraguay,1.16
 2026-06-19,United States,Australia,1.26
 2026-06-20,Curaçao,Ecuador,0.32
-2026-06-20,Ecuador,Curaçao,2.52
-2026-06-20,Germany,Ivory Coast,1.39
-2026-06-20,Ivory Coast,Germany,0.78
-2026-06-20,Japan,Tunisia,1.59
-2026-06-20,Netherlands,Sweden,1.83
-2026-06-20,Sweden,Netherlands,0.88
-2026-06-20,Tunisia,Japan,0.58
+2026-06-20,Ecuador,Curaçao,2.39
+2026-06-20,Germany,Ivory Coast,1.41
+2026-06-20,Ivory Coast,Germany,0.8
+2026-06-20,Japan,Tunisia,1.7
+2026-06-20,Netherlands,Sweden,1.99
+2026-06-20,Sweden,Netherlands,0.87
+2026-06-20,Tunisia,Japan,0.56
 2026-06-21,Belgium,Iran,1.2
 2026-06-21,Cape Verde,Uruguay,0.6
 2026-06-21,Egypt,New Zealand,1.16
