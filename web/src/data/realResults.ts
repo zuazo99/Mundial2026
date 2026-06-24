@@ -313,5 +313,33 @@ export const realResults: RealResult[] = [
     "awayTeam": "Algeria",
     "homeGoals": 1,
     "awayGoals": 2
+  },
+  {
+    "date": "2026-06-23",
+    "homeTeam": "Portugal",
+    "awayTeam": "Uzbekistan",
+    "homeGoals": 5,
+    "awayGoals": 0
+  },
+  {
+    "date": "2026-06-23",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "homeGoals": 0,
+    "awayGoals": 0
+  },
+  {
+    "date": "2026-06-23",
+    "homeTeam": "Panama",
+    "awayTeam": "Croatia",
+    "homeGoals": 0,
+    "awayGoals": 1
+  },
+  {
+    "date": "2026-06-24",
+    "homeTeam": "Colombia",
+    "awayTeam": "DR Congo",
+    "homeGoals": 1,
+    "awayGoals": 0
   }
 ];
