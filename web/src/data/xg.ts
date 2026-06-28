@@ -170,17 +170,17 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Algeria",
         "opponent": "Argentina",
-        "xg": 0.77
+        "xg": 0.75
       },
       {
         "team": "Argentina",
         "opponent": "Algeria",
-        "xg": 1.46
+        "xg": 1.55
       },
       {
         "team": "Austria",
         "opponent": "Jordan",
-        "xg": 1.53
+        "xg": 1.51
       },
       {
         "team": "France",
@@ -195,7 +195,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Jordan",
         "opponent": "Austria",
-        "xg": 0.78
+        "xg": 0.79
       },
       {
         "team": "Norway",
@@ -210,27 +210,27 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Colombia",
         "opponent": "Uzbekistan",
-        "xg": 1.52
+        "xg": 1.55
       },
       {
         "team": "Croatia",
         "opponent": "England",
-        "xg": 1.0
+        "xg": 1.01
       },
       {
         "team": "DR Congo",
         "opponent": "Portugal",
-        "xg": 0.66
+        "xg": 0.67
       },
       {
         "team": "England",
         "opponent": "Croatia",
-        "xg": 1.55
+        "xg": 1.53
       },
       {
         "team": "Ghana",
         "opponent": "Panama",
-        "xg": 0.68
+        "xg": 0.69
       },
       {
         "team": "Panama",
@@ -240,7 +240,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Portugal",
         "opponent": "DR Congo",
-        "xg": 1.48
+        "xg": 1.41
       },
       {
         "team": "Uzbekistan",
@@ -412,17 +412,17 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Algeria",
         "opponent": "Jordan",
-        "xg": 1.36
+        "xg": 1.35
       },
       {
         "team": "Argentina",
         "opponent": "Austria",
-        "xg": 1.65
+        "xg": 1.74
       },
       {
         "team": "Austria",
         "opponent": "Argentina",
-        "xg": 0.86
+        "xg": 0.84
       },
       {
         "team": "France",
@@ -437,7 +437,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Jordan",
         "opponent": "Algeria",
-        "xg": 0.72
+        "xg": 0.73
       },
       {
         "team": "Norway",
@@ -452,12 +452,12 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Colombia",
         "opponent": "DR Congo",
-        "xg": 1.36
+        "xg": 1.34
       },
       {
         "team": "Croatia",
         "opponent": "Panama",
-        "xg": 1.5
+        "xg": 1.49
       },
       {
         "team": "DR Congo",
@@ -467,27 +467,27 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "England",
         "opponent": "Ghana",
-        "xg": 2.05
+        "xg": 2.06
       },
       {
         "team": "Ghana",
         "opponent": "England",
-        "xg": 0.46
+        "xg": 0.45
       },
       {
         "team": "Panama",
         "opponent": "Croatia",
-        "xg": 0.91
+        "xg": 0.9
       },
       {
         "team": "Portugal",
         "opponent": "Uzbekistan",
-        "xg": 1.65
+        "xg": 1.63
       },
       {
         "team": "Uzbekistan",
         "opponent": "Portugal",
-        "xg": 0.71
+        "xg": 0.72
       }
     ],
     "J3": [
@@ -674,22 +674,22 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Algeria",
         "opponent": "Austria",
-        "xg": 1.0
+        "xg": 1.02
       },
       {
         "team": "Argentina",
         "opponent": "Jordan",
-        "xg": 2.01
+        "xg": 2.03
       },
       {
         "team": "Austria",
         "opponent": "Algeria",
-        "xg": 1.03
+        "xg": 1.07
       },
       {
         "team": "Colombia",
         "opponent": "Portugal",
-        "xg": 1.24
+        "xg": 1.19
       },
       {
         "team": "Croatia",
@@ -699,7 +699,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "DR Congo",
         "opponent": "Uzbekistan",
-        "xg": 0.82
+        "xg": 0.85
       },
       {
         "team": "England",
@@ -709,27 +709,27 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Ghana",
         "opponent": "Croatia",
-        "xg": 0.69
+        "xg": 0.68
       },
       {
         "team": "Jordan",
         "opponent": "Argentina",
-        "xg": 0.63
+        "xg": 0.62
       },
       {
         "team": "Panama",
         "opponent": "England",
-        "xg": 0.62
+        "xg": 0.61
       },
       {
         "team": "Portugal",
         "opponent": "Colombia",
-        "xg": 1.31
+        "xg": 1.25
       },
       {
         "team": "Uzbekistan",
         "opponent": "DR Congo",
-        "xg": 0.92
+        "xg": 0.91
       }
     ]
   },
@@ -898,17 +898,17 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Algeria",
         "opponent": "Argentina",
-        "xg": 0.77
+        "xg": 0.75
       },
       {
         "team": "Argentina",
         "opponent": "Algeria",
-        "xg": 1.46
+        "xg": 1.55
       },
       {
         "team": "Austria",
         "opponent": "Jordan",
-        "xg": 1.8
+        "xg": 1.78
       },
       {
         "team": "France",
@@ -923,7 +923,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Jordan",
         "opponent": "Austria",
-        "xg": 0.74
+        "xg": 0.76
       },
       {
         "team": "Norway",
@@ -938,7 +938,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Colombia",
         "opponent": "Uzbekistan",
-        "xg": 1.52
+        "xg": 1.55
       },
       {
         "team": "Croatia",
@@ -948,17 +948,17 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "DR Congo",
         "opponent": "Portugal",
-        "xg": 0.62
+        "xg": 0.63
       },
       {
         "team": "England",
         "opponent": "Croatia",
-        "xg": 1.56
+        "xg": 1.54
       },
       {
         "team": "Ghana",
         "opponent": "Panama",
-        "xg": 0.68
+        "xg": 0.69
       },
       {
         "team": "Panama",
@@ -968,7 +968,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Portugal",
         "opponent": "DR Congo",
-        "xg": 1.54
+        "xg": 1.46
       },
       {
         "team": "Uzbekistan",
@@ -1140,17 +1140,17 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Algeria",
         "opponent": "Jordan",
-        "xg": 1.36
+        "xg": 1.35
       },
       {
         "team": "Argentina",
         "opponent": "Austria",
-        "xg": 1.47
+        "xg": 1.56
       },
       {
         "team": "Austria",
         "opponent": "Argentina",
-        "xg": 1.1
+        "xg": 1.08
       },
       {
         "team": "France",
@@ -1165,7 +1165,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Jordan",
         "opponent": "Algeria",
-        "xg": 0.72
+        "xg": 0.73
       },
       {
         "team": "Norway",
@@ -1180,7 +1180,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Colombia",
         "opponent": "DR Congo",
-        "xg": 1.36
+        "xg": 1.34
       },
       {
         "team": "Croatia",
@@ -1195,7 +1195,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "England",
         "opponent": "Ghana",
-        "xg": 2.08
+        "xg": 2.09
       },
       {
         "team": "Ghana",
@@ -1205,17 +1205,17 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Panama",
         "opponent": "Croatia",
-        "xg": 0.86
+        "xg": 0.85
       },
       {
         "team": "Portugal",
         "opponent": "Uzbekistan",
-        "xg": 1.69
+        "xg": 1.66
       },
       {
         "team": "Uzbekistan",
         "opponent": "Portugal",
-        "xg": 0.67
+        "xg": 0.68
       }
     ],
     "J3": [
@@ -1402,62 +1402,62 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Algeria",
         "opponent": "Austria",
-        "xg": 0.93
+        "xg": 0.95
       },
       {
         "team": "Argentina",
         "opponent": "Jordan",
-        "xg": 2.01
+        "xg": 2.03
       },
       {
         "team": "Austria",
         "opponent": "Algeria",
-        "xg": 1.3
+        "xg": 1.37
       },
       {
         "team": "Colombia",
         "opponent": "Portugal",
-        "xg": 1.16
+        "xg": 1.13
       },
       {
         "team": "Croatia",
         "opponent": "Ghana",
-        "xg": 2.03
+        "xg": 2.02
       },
       {
         "team": "DR Congo",
         "opponent": "Uzbekistan",
-        "xg": 0.82
+        "xg": 0.85
       },
       {
         "team": "England",
         "opponent": "Panama",
-        "xg": 1.56
+        "xg": 1.57
       },
       {
         "team": "Ghana",
         "opponent": "Croatia",
-        "xg": 0.65
+        "xg": 0.64
       },
       {
         "team": "Jordan",
         "opponent": "Argentina",
-        "xg": 0.63
+        "xg": 0.62
       },
       {
         "team": "Panama",
         "opponent": "England",
-        "xg": 0.57
+        "xg": 0.56
       },
       {
         "team": "Portugal",
         "opponent": "Colombia",
-        "xg": 1.38
+        "xg": 1.3
       },
       {
         "team": "Uzbekistan",
         "opponent": "DR Congo",
-        "xg": 0.92
+        "xg": 0.91
       }
     ]
   },
@@ -1626,17 +1626,17 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Algeria",
         "opponent": "Argentina",
-        "xg": 0.73
+        "xg": 0.72
       },
       {
         "team": "Argentina",
         "opponent": "Algeria",
-        "xg": 1.47
+        "xg": 1.56
       },
       {
         "team": "Austria",
         "opponent": "Jordan",
-        "xg": 1.53
+        "xg": 1.51
       },
       {
         "team": "France",
@@ -1651,7 +1651,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Jordan",
         "opponent": "Austria",
-        "xg": 0.78
+        "xg": 0.79
       },
       {
         "team": "Norway",
@@ -1666,37 +1666,37 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Colombia",
         "opponent": "Uzbekistan",
-        "xg": 1.55
+        "xg": 1.58
       },
       {
         "team": "Croatia",
         "opponent": "England",
-        "xg": 1.0
+        "xg": 1.01
       },
       {
         "team": "DR Congo",
         "opponent": "Portugal",
-        "xg": 0.66
+        "xg": 0.67
       },
       {
         "team": "England",
         "opponent": "Croatia",
-        "xg": 1.55
+        "xg": 1.53
       },
       {
         "team": "Ghana",
         "opponent": "Panama",
-        "xg": 0.63
+        "xg": 0.64
       },
       {
         "team": "Panama",
         "opponent": "Ghana",
-        "xg": 1.62
+        "xg": 1.61
       },
       {
         "team": "Portugal",
         "opponent": "DR Congo",
-        "xg": 1.48
+        "xg": 1.41
       },
       {
         "team": "Uzbekistan",
@@ -1868,17 +1868,17 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Algeria",
         "opponent": "Jordan",
-        "xg": 1.36
+        "xg": 1.35
       },
       {
         "team": "Argentina",
         "opponent": "Austria",
-        "xg": 1.65
+        "xg": 1.74
       },
       {
         "team": "Austria",
         "opponent": "Argentina",
-        "xg": 0.83
+        "xg": 0.82
       },
       {
         "team": "France",
@@ -1893,7 +1893,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Jordan",
         "opponent": "Algeria",
-        "xg": 0.72
+        "xg": 0.73
       },
       {
         "team": "Norway",
@@ -1908,7 +1908,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Colombia",
         "opponent": "DR Congo",
-        "xg": 1.41
+        "xg": 1.39
       },
       {
         "team": "Croatia",
@@ -1923,27 +1923,27 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "England",
         "opponent": "Ghana",
-        "xg": 2.05
+        "xg": 2.06
       },
       {
         "team": "Ghana",
         "opponent": "England",
-        "xg": 0.46
+        "xg": 0.45
       },
       {
         "team": "Panama",
         "opponent": "Croatia",
-        "xg": 1.06
+        "xg": 1.04
       },
       {
         "team": "Portugal",
         "opponent": "Uzbekistan",
-        "xg": 1.65
+        "xg": 1.63
       },
       {
         "team": "Uzbekistan",
         "opponent": "Portugal",
-        "xg": 0.71
+        "xg": 0.72
       }
     ],
     "J3": [
@@ -2130,22 +2130,22 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Algeria",
         "opponent": "Austria",
-        "xg": 1.0
+        "xg": 1.02
       },
       {
         "team": "Argentina",
         "opponent": "Jordan",
-        "xg": 2.02
+        "xg": 2.04
       },
       {
         "team": "Austria",
         "opponent": "Algeria",
-        "xg": 1.03
+        "xg": 1.07
       },
       {
         "team": "Colombia",
         "opponent": "Portugal",
-        "xg": 1.31
+        "xg": 1.27
       },
       {
         "team": "Croatia",
@@ -2155,7 +2155,7 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "DR Congo",
         "opponent": "Uzbekistan",
-        "xg": 0.82
+        "xg": 0.85
       },
       {
         "team": "England",
@@ -2165,12 +2165,12 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Ghana",
         "opponent": "Croatia",
-        "xg": 0.69
+        "xg": 0.68
       },
       {
         "team": "Jordan",
         "opponent": "Argentina",
-        "xg": 0.6
+        "xg": 0.58
       },
       {
         "team": "Panama",
@@ -2180,12 +2180,12 @@ export const xgData: Record<Variant, { J1: XGEntry[]; J2: XGEntry[]; J3: XGEntry
       {
         "team": "Portugal",
         "opponent": "Colombia",
-        "xg": 1.22
+        "xg": 1.19
       },
       {
         "team": "Uzbekistan",
         "opponent": "DR Congo",
-        "xg": 0.92
+        "xg": 0.91
       }
     ]
   }
