@@ -880,3 +880,55 @@ class Tournament:
         self.create_knockouts()
         self.simulate_knockouts()
         self.export_results()
+
+    def simulate_real_bracket(self):
+        """Predict the OFFICIAL knockout bracket.
+
+        Uses the real qualifiers and finishing positions from
+        data/cuadro_real_clasificados.csv (so the R32 pairings are the official
+        ones) and predicts every tie with the same engine as the simulated
+        Cuadro (modal Match + Dixon-Coles + trained model). Writes the 32
+        knockout rows to results/real_bracket_<name>.csv. Returns True on
+        success, False if the qualifiers file is missing/incomplete.
+        """
+        path = "data/cuadro_real_clasificados.csv"
+        if not os.path.exists(path):
+            print("  (cuadro real) faltan los clasificados oficiales; se omite.")
+            return False
+
+        df = pd.read_csv(path)
+        pos = {(r["group"], int(r["position"])): r["team"] for _, r in df.iterrows()}
+
+        LETTERS = list("ABCDEFGHIJKL")
+        # Every group needs 1st and 2nd to build the bracket.
+        if any((L, 1) not in pos or (L, 2) not in pos for L in LETTERS):
+            print("  (cuadro real) clasificados incompletos; se omite.")
+            return False
+
+        # Fresh Team objects (clean group state) with the pre-WC foto fija.
+        team_by_name = {}
+        for g in self.create_groups():
+            for t in (g.s1, g.s2, g.s3, g.s4):
+                team_by_name[t.name] = t
+
+        group_orders = []
+        for L in LETTERS:
+            first  = team_by_name[pos[(L, 1)]]
+            second = team_by_name[pos[(L, 2)]]
+            third  = team_by_name[pos[(L, 3)]] if (L, 3) in pos else None
+            group_orders.append([first, second, third, None])
+
+        thirds = [team_by_name[pos[(L, 3)]] for L in LETTERS if (L, 3) in pos]
+        third_letters = "".join(sorted(t.group for t in thirds))
+
+        # Deterministic, independent of the prior simulation run.
+        rd.seed(20260611)
+        ko = Knockouts(group_orders, thirds, third_letters, self.model, self.name)
+        ko.simulate_knockouts()
+        ko.print_winner()
+
+        rows = ko.export_results()
+        df_out = pd.DataFrame(rows, columns=["Team_1", "Score_1", "Score_2", "Team_2"])
+        df_out.to_csv(f"results/real_bracket_{self.name}.csv", index=False)
+        print(f"  ✅ results/real_bracket_{self.name}.csv ({len(df_out)} filas)")
+        return True
