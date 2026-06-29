@@ -1,5 +1,5 @@
 Team_1,Score_1,Score_2,Team_2
-Mexico,1,1,South Africa
+Mexico,2,0,South Africa
 South Korea,1,1,Czech Republic
 Mexico,2,2,South Korea
 Czech Republic,2,0,South Africa
@@ -7,9 +7,9 @@ Czech Republic,1,1,Mexico
 South Africa,0,2,South Korea
 Canada,2,1,Bosnia and Herzegovina
 Qatar,1,4,Switzerland
-Canada,1,0,Qatar
+Canada,2,0,Qatar
 Switzerland,2,0,Bosnia and Herzegovina
-Switzerland,1,1,Canada
+Switzerland,0,0,Canada
 Bosnia and Herzegovina,1,0,Qatar
 Brazil,2,1,Morocco
 Haiti,0,2,Scotland
@@ -71,35 +71,35 @@ England,3,1,Ghana
 Panama,1,2,Croatia
 Panama,0,2,England
 Croatia,3,1,Ghana
-Czech Republic,3,2,Canada
-Brazil,1,0,Japan
+South Korea,2,0,Canada
+Brazil,0,1,Japan
 Germany,2,1,United States
-Netherlands,1,0,Scotland
-Ecuador,0,1,Norway
+Netherlands,2,1,Scotland
+Ecuador,2,0,Norway
 France,3,1,Sweden
-South Korea,1,2,Morocco
+Mexico,0,2,Morocco
 England,1,0,DR Congo
-Belgium,2,1,Mexico
-Turkey,3,2,Bosnia and Herzegovina
+Belgium,3,1,Czech Republic
+Turkey,2,1,Bosnia and Herzegovina
 Spain,3,1,Austria
 Colombia,3,2,Croatia
 Switzerland,3,2,Algeria
 Australia,1,2,Iran
 Argentina,2,0,Uruguay
 Portugal,2,1,Ivory Coast
-Czech Republic,1,2,Netherlands
+South Korea,2,1,Netherlands
 Germany,1,2,France
-Brazil,2,1,Norway
-Morocco,0,1,England
-Spain,2,0,Colombia
-Turkey,2,1,Belgium
+Japan,1,0,Ecuador
+Morocco,2,1,England
+Spain,1,2,Colombia
+Turkey,3,1,Belgium
 Argentina,3,1,Iran
 Switzerland,3,2,Portugal
-Netherlands,2,1,France
-Spain,3,2,Turkey
-Brazil,2,1,England
-Argentina,3,1,Switzerland
-Netherlands,2,1,Spain
-Brazil,2,3,Argentina
-Spain,2,3,Brazil
-Netherlands,1,2,Argentina
+South Korea,1,2,France
+Colombia,2,1,Turkey
+Japan,2,1,Morocco
+Argentina,2,1,Switzerland
+France,2,1,Colombia
+Japan,1,2,Argentina
+Colombia,1,0,Japan
+France,3,2,Argentina
