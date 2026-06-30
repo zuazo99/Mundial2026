@@ -1,33 +1,33 @@
 Team_1,Score_1,Score_2,Team_2
 South Africa,0,1,Canada
-Brazil,1,0,Japan
-Germany,1,2,Paraguay
+Brazil,2,1,Japan
+Germany,2,1,Paraguay
 Netherlands,1,2,Morocco
-Ivory Coast,1,2,Norway
-France,2,0,Sweden
+Ivory Coast,2,1,Norway
+France,2,1,Sweden
 Mexico,1,2,Ecuador
-England,2,0,DR Congo
-Belgium,2,1,Senegal
+England,2,1,DR Congo
+Belgium,1,0,Senegal
 United States,2,1,Bosnia and Herzegovina
-Spain,1,0,Austria
-Portugal,2,1,Croatia
-Switzerland,2,1,Algeria
-Australia,2,1,Egypt
-Argentina,2,1,Cape Verde
-Colombia,4,1,Ghana
-Canada,2,1,Morocco
-Paraguay,0,2,France
-Brazil,2,1,Norway
+Spain,3,0,Austria
+Portugal,4,1,Croatia
+Switzerland,1,2,Algeria
+Australia,1,2,Egypt
+Argentina,2,0,Cape Verde
+Colombia,3,0,Ghana
+Canada,1,2,Morocco
+Germany,0,3,France
+Brazil,2,1,Ivory Coast
 Ecuador,0,1,England
 Spain,2,1,Portugal
-United States,3,2,Belgium
-Argentina,0,1,Australia
-Switzerland,1,2,Colombia
-Canada,0,2,France
+United States,4,3,Belgium
+Argentina,2,1,Egypt
+Algeria,2,1,Colombia
+Morocco,1,2,France
 Spain,2,1,United States
-Brazil,1,2,England
-Australia,2,1,Colombia
-France,2,3,Spain
-England,2,0,Australia
-France,2,1,Australia
-Spain,0,2,England
+Brazil,3,2,England
+Argentina,2,1,Algeria
+France,1,0,Spain
+Brazil,1,2,Argentina
+Spain,1,0,Brazil
+France,1,2,Argentina

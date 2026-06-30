@@ -11,13 +11,13 @@ Canada,2,0,Qatar
 Switzerland,2,0,Bosnia and Herzegovina
 Switzerland,0,0,Canada
 Bosnia and Herzegovina,1,0,Qatar
-Brazil,2,1,Morocco
+Brazil,3,1,Morocco
 Haiti,0,2,Scotland
 Brazil,2,0,Haiti
-Scotland,2,1,Morocco
+Scotland,1,1,Morocco
 Scotland,1,3,Brazil
 Morocco,4,1,Haiti
-United States,1,1,Paraguay
+United States,1,2,Paraguay
 Australia,0,1,Turkey
 United States,1,2,Australia
 Turkey,1,0,Paraguay
@@ -27,14 +27,14 @@ Germany,2,1,Curaçao
 Ivory Coast,1,1,Ecuador
 Germany,2,1,Ivory Coast
 Ecuador,3,0,Curaçao
-Ecuador,1,1,Germany
+Ecuador,2,1,Germany
 Curaçao,0,2,Ivory Coast
 Netherlands,1,1,Japan
 Sweden,1,1,Tunisia
 Netherlands,3,1,Sweden
 Tunisia,0,1,Japan
 Tunisia,0,3,Netherlands
-Japan,2,1,Sweden
+Japan,3,2,Sweden
 Belgium,2,1,Egypt
 Iran,2,0,New Zealand
 Belgium,2,2,Iran
@@ -73,33 +73,33 @@ Panama,0,2,England
 Croatia,3,1,Ghana
 South Korea,2,0,Canada
 Brazil,0,1,Japan
-Germany,2,1,United States
-Netherlands,2,1,Scotland
-Ecuador,2,0,Norway
+Ecuador,2,1,Australia
+Netherlands,0,1,Morocco
+Germany,3,2,Norway
 France,3,1,Sweden
-Mexico,0,2,Morocco
-England,1,0,DR Congo
-Belgium,3,1,Czech Republic
-Turkey,2,1,Bosnia and Herzegovina
-Spain,3,1,Austria
-Colombia,3,2,Croatia
-Switzerland,3,2,Algeria
-Australia,1,2,Iran
-Argentina,2,0,Uruguay
-Portugal,2,1,Ivory Coast
-South Korea,2,1,Netherlands
-Germany,1,2,France
-Japan,1,0,Ecuador
-Morocco,2,1,England
-Spain,1,2,Colombia
-Turkey,3,1,Belgium
-Argentina,3,1,Iran
-Switzerland,3,2,Portugal
-South Korea,1,2,France
-Colombia,2,1,Turkey
-Japan,2,1,Morocco
+Mexico,2,1,Scotland
+England,3,0,DR Congo
+Belgium,1,2,Czech Republic
+Turkey,1,0,Bosnia and Herzegovina
+Spain,1,2,Austria
+Colombia,1,2,Croatia
+Switzerland,1,0,Algeria
+Paraguay,1,2,Iran
+Argentina,2,1,Uruguay
+Portugal,1,2,Ivory Coast
+South Korea,2,1,Morocco
+Ecuador,2,3,France
+Japan,2,1,Germany
+Mexico,3,2,England
+Austria,3,4,Croatia
+Turkey,2,0,Czech Republic
+Argentina,2,1,Iran
+Switzerland,2,1,Ivory Coast
+South Korea,0,2,France
+Croatia,2,1,Turkey
+Japan,2,1,Mexico
 Argentina,2,1,Switzerland
-France,2,1,Colombia
+France,3,2,Croatia
 Japan,1,2,Argentina
-Colombia,1,0,Japan
-France,3,2,Argentina
+Croatia,0,1,Japan
+France,1,2,Argentina
