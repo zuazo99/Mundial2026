@@ -23,11 +23,11 @@ Spain,2,1,Portugal
 United States,4,3,Belgium
 Argentina,2,1,Egypt
 Algeria,2,1,Colombia
-Morocco,1,2,France
+Morocco,0,1,France
 Spain,2,1,United States
-Brazil,3,2,England
-Argentina,2,1,Algeria
-France,1,0,Spain
-Brazil,1,2,Argentina
-Spain,1,0,Brazil
-France,1,2,Argentina
+Brazil,1,2,England
+Argentina,2,0,Algeria
+France,2,3,Spain
+England,1,2,Argentina
+France,2,1,England
+Spain,0,2,Argentina

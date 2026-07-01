@@ -160,8 +160,8 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
     "elite8": [
       {
         "team1": "Morocco",
-        "score1": 1,
-        "score2": 2,
+        "score1": 0,
+        "score2": 1,
         "team2": "France"
       },
       {
@@ -172,26 +172,26 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Brazil",
-        "score1": 3,
+        "score1": 1,
         "score2": 2,
         "team2": "England"
       },
       {
         "team1": "Argentina",
         "score1": 2,
-        "score2": 1,
+        "score2": 0,
         "team2": "Algeria"
       }
     ],
     "semis": [
       {
         "team1": "France",
-        "score1": 1,
-        "score2": 0,
+        "score1": 2,
+        "score2": 3,
         "team2": "Spain"
       },
       {
-        "team1": "Brazil",
+        "team1": "England",
         "score1": 1,
         "score2": 2,
         "team2": "Argentina"
@@ -199,16 +199,16 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
     ],
     "third": [
       {
-        "team1": "Spain",
-        "score1": 1,
-        "score2": 0,
-        "team2": "Brazil"
+        "team1": "France",
+        "score1": 2,
+        "score2": 1,
+        "team2": "England"
       }
     ],
     "final": [
       {
-        "team1": "France",
-        "score1": 1,
+        "team1": "Spain",
+        "score1": 0,
         "score2": 2,
         "team2": "Argentina"
       }
@@ -367,8 +367,8 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
     "elite8": [
       {
         "team1": "Morocco",
-        "score1": 1,
-        "score2": 2,
+        "score1": 0,
+        "score2": 1,
         "team2": "France"
       },
       {
@@ -379,26 +379,26 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Brazil",
-        "score1": 3,
+        "score1": 1,
         "score2": 2,
         "team2": "England"
       },
       {
         "team1": "Argentina",
         "score1": 2,
-        "score2": 1,
+        "score2": 0,
         "team2": "Algeria"
       }
     ],
     "semis": [
       {
         "team1": "France",
-        "score1": 1,
-        "score2": 0,
+        "score1": 2,
+        "score2": 3,
         "team2": "Spain"
       },
       {
-        "team1": "Brazil",
+        "team1": "England",
         "score1": 1,
         "score2": 2,
         "team2": "Argentina"
@@ -406,16 +406,16 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
     ],
     "third": [
       {
-        "team1": "Spain",
-        "score1": 1,
-        "score2": 0,
-        "team2": "Brazil"
+        "team1": "France",
+        "score1": 2,
+        "score2": 1,
+        "team2": "England"
       }
     ],
     "final": [
       {
-        "team1": "France",
-        "score1": 1,
+        "team1": "Spain",
+        "score1": 0,
         "score2": 2,
         "team2": "Argentina"
       }
@@ -574,8 +574,8 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
     "elite8": [
       {
         "team1": "Morocco",
-        "score1": 1,
-        "score2": 2,
+        "score1": 0,
+        "score2": 1,
         "team2": "France"
       },
       {
@@ -586,26 +586,26 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Brazil",
-        "score1": 3,
+        "score1": 1,
         "score2": 2,
         "team2": "England"
       },
       {
         "team1": "Argentina",
         "score1": 2,
-        "score2": 1,
+        "score2": 0,
         "team2": "Algeria"
       }
     ],
     "semis": [
       {
         "team1": "France",
-        "score1": 1,
-        "score2": 0,
+        "score1": 2,
+        "score2": 3,
         "team2": "Spain"
       },
       {
-        "team1": "Brazil",
+        "team1": "England",
         "score1": 1,
         "score2": 2,
         "team2": "Argentina"
@@ -613,16 +613,16 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
     ],
     "third": [
       {
-        "team1": "Spain",
-        "score1": 1,
-        "score2": 0,
-        "team2": "Brazil"
+        "team1": "France",
+        "score1": 2,
+        "score2": 1,
+        "team2": "England"
       }
     ],
     "final": [
       {
-        "team1": "France",
-        "score1": 1,
+        "team1": "Spain",
+        "score1": 0,
         "score2": 2,
         "team2": "Argentina"
       }
