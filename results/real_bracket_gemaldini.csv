@@ -6,28 +6,28 @@ Netherlands,1,2,Morocco
 Ivory Coast,2,1,Norway
 France,2,1,Sweden
 Mexico,1,2,Ecuador
-England,2,1,DR Congo
-Belgium,1,0,Senegal
+England,1,0,DR Congo
+Belgium,2,1,Senegal
 United States,2,1,Bosnia and Herzegovina
-Spain,3,0,Austria
-Portugal,4,1,Croatia
-Switzerland,1,2,Algeria
-Australia,1,2,Egypt
-Argentina,2,0,Cape Verde
-Colombia,3,0,Ghana
+Spain,2,1,Austria
+Portugal,2,3,Croatia
+Switzerland,2,1,Algeria
+Australia,2,1,Egypt
+Argentina,2,1,Cape Verde
+Colombia,4,1,Ghana
 Canada,1,2,Morocco
-Germany,0,3,France
+Germany,1,2,France
 Brazil,2,1,Ivory Coast
-Ecuador,0,1,England
-Spain,2,1,Portugal
-United States,4,3,Belgium
-Argentina,2,1,Egypt
-Algeria,2,1,Colombia
-Morocco,0,1,France
-Spain,2,1,United States
-Brazil,1,2,England
-Argentina,2,0,Algeria
-France,2,3,Spain
-England,1,2,Argentina
-France,2,1,England
-Spain,0,2,Argentina
+Ecuador,2,1,England
+Spain,2,1,Croatia
+United States,3,2,Belgium
+Argentina,2,1,Australia
+Switzerland,3,2,Colombia
+Morocco,1,0,France
+Spain,2,0,United States
+Brazil,2,1,Ecuador
+Argentina,2,1,Switzerland
+Morocco,1,2,Spain
+Brazil,1,0,Argentina
+Morocco,1,2,Argentina
+Spain,2,1,Brazil
