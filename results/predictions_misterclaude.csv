@@ -55,11 +55,11 @@ Norway,2,0,France
 Senegal,1,0,Iraq
 Argentina,2,1,Algeria
 Austria,1,1,Jordan
-Argentina,4,1,Austria
+Argentina,2,1,Austria
 Jordan,2,3,Algeria
 Jordan,0,4,Argentina
 Algeria,1,1,Austria
-Portugal,3,1,DR Congo
+Portugal,2,1,DR Congo
 Uzbekistan,1,3,Colombia
 Portugal,2,1,Uzbekistan
 Colombia,1,1,DR Congo
@@ -81,25 +81,25 @@ Mexico,3,2,Ivory Coast
 England,3,0,DR Congo
 Belgium,3,1,Czech Republic
 Turkey,2,1,Bosnia and Herzegovina
-Spain,3,1,Algeria
-Colombia,2,3,Croatia
-Switzerland,1,0,Austria
+Spain,3,0,Algeria
+Colombia,2,1,Croatia
+Switzerland,0,1,Austria
 Australia,1,2,Iran
-Argentina,1,2,Uruguay
-Portugal,1,2,Senegal
-South Korea,1,2,Morocco
+Argentina,2,1,Uruguay
+Portugal,3,1,Senegal
+South Korea,2,1,Morocco
 Ecuador,2,1,Sweden
 Japan,0,1,France
-Mexico,1,2,England
-Spain,2,3,Croatia
-Turkey,1,0,Belgium
-Uruguay,1,2,Iran
-Switzerland,1,2,Senegal
-Morocco,1,2,Ecuador
-Croatia,3,2,Turkey
+Mexico,2,3,England
+Spain,2,1,Colombia
+Turkey,2,1,Belgium
+Argentina,2,1,Iran
+Austria,1,2,Portugal
+South Korea,2,1,Ecuador
+Spain,3,2,Turkey
 France,2,1,England
-Iran,1,2,Senegal
-Ecuador,3,2,Croatia
-France,3,1,Senegal
-Croatia,2,1,Senegal
-Ecuador,1,2,France
+Argentina,2,1,Portugal
+South Korea,1,2,Spain
+France,1,2,Argentina
+South Korea,1,2,France
+Spain,1,2,Argentina

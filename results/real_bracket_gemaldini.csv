@@ -11,23 +11,23 @@ Belgium,2,1,Senegal
 United States,2,1,Bosnia and Herzegovina
 Spain,2,1,Austria
 Portugal,2,3,Croatia
-Switzerland,2,1,Algeria
+Switzerland,3,2,Algeria
 Australia,2,1,Egypt
-Argentina,2,1,Cape Verde
-Colombia,4,1,Ghana
-Canada,1,2,Morocco
+Argentina,4,0,Cape Verde
+Colombia,2,0,Ghana
+Canada,0,1,Morocco
 Germany,1,2,France
-Brazil,2,1,Ivory Coast
-Ecuador,2,1,England
+Brazil,1,0,Ivory Coast
+Ecuador,1,2,England
 Spain,2,1,Croatia
 United States,3,2,Belgium
 Argentina,2,1,Australia
-Switzerland,3,2,Colombia
+Switzerland,1,2,Colombia
 Morocco,1,0,France
-Spain,2,0,United States
-Brazil,2,1,Ecuador
-Argentina,2,1,Switzerland
+Spain,2,1,United States
+Brazil,3,1,England
+Argentina,1,0,Colombia
 Morocco,1,2,Spain
-Brazil,1,0,Argentina
-Morocco,1,2,Argentina
-Spain,2,1,Brazil
+Brazil,1,2,Argentina
+Morocco,1,2,Brazil
+Spain,2,1,Argentina
