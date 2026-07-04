@@ -7,14 +7,14 @@ date,team,opponent,xg_estimated
 2026-06-12,Canada,Bosnia and Herzegovina,1.72
 2026-06-12,Paraguay,United States,1.22
 2026-06-12,United States,Paraguay,1.25
-2026-06-13,Australia,Turkey,0.96
+2026-06-13,Australia,Turkey,0.95
 2026-06-13,Brazil,Morocco,1.25
 2026-06-13,Haiti,Scotland,0.64
 2026-06-13,Morocco,Brazil,0.92
 2026-06-13,Qatar,Switzerland,0.5
 2026-06-13,Scotland,Haiti,1.57
 2026-06-13,Switzerland,Qatar,2.25
-2026-06-13,Turkey,Australia,1.35
+2026-06-13,Turkey,Australia,1.47
 2026-06-14,Curaçao,Germany,0.43
 2026-06-14,Ecuador,Ivory Coast,1.1
 2026-06-14,Germany,Curaçao,2.7
@@ -23,15 +23,15 @@ date,team,opponent,xg_estimated
 2026-06-14,Netherlands,Japan,1.17
 2026-06-14,Sweden,Tunisia,1.51
 2026-06-14,Tunisia,Sweden,0.89
-2026-06-15,Belgium,Egypt,1.2
-2026-06-15,Cape Verde,Spain,0.58
-2026-06-15,Egypt,Belgium,0.89
+2026-06-15,Belgium,Egypt,1.22
+2026-06-15,Cape Verde,Spain,0.59
+2026-06-15,Egypt,Belgium,0.93
 2026-06-15,Iran,New Zealand,1.65
 2026-06-15,New Zealand,Iran,0.68
 2026-06-15,Saudi Arabia,Uruguay,0.61
-2026-06-15,Spain,Cape Verde,1.89
+2026-06-15,Spain,Cape Verde,1.87
 2026-06-15,Uruguay,Saudi Arabia,1.5
-2026-06-16,Algeria,Argentina,0.74
+2026-06-16,Algeria,Argentina,0.75
 2026-06-16,Argentina,Algeria,1.6
 2026-06-16,Austria,Jordan,1.49
 2026-06-16,France,Senegal,1.59
@@ -39,11 +39,11 @@ date,team,opponent,xg_estimated
 2026-06-16,Jordan,Austria,0.82
 2026-06-16,Norway,Iraq,1.51
 2026-06-16,Senegal,France,0.87
-2026-06-17,Colombia,Uzbekistan,1.55
+2026-06-17,Colombia,Uzbekistan,1.56
 2026-06-17,Croatia,England,1.0
 2026-06-17,DR Congo,Portugal,0.63
 2026-06-17,England,Croatia,1.55
-2026-06-17,Ghana,Panama,0.69
-2026-06-17,Panama,Ghana,1.38
+2026-06-17,Ghana,Panama,0.67
+2026-06-17,Panama,Ghana,1.35
 2026-06-17,Portugal,DR Congo,1.48
-2026-06-17,Uzbekistan,Colombia,0.7
+2026-06-17,Uzbekistan,Colombia,0.69
