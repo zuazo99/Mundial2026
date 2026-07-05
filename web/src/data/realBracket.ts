@@ -36,37 +36,37 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Ivory Coast",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "Norway"
       },
       {
         "team1": "France",
         "score1": 2,
-        "score2": 1,
+        "score2": 0,
         "team2": "Sweden"
       },
       {
         "team1": "Mexico",
-        "score1": 1,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Ecuador"
       },
       {
         "team1": "England",
-        "score1": 1,
+        "score1": 2,
         "score2": 0,
         "team2": "DR Congo"
       },
       {
         "team1": "Belgium",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "Senegal"
       },
       {
         "team1": "United States",
-        "score1": 2,
+        "score1": 3,
         "score2": 1,
         "team2": "Bosnia and Herzegovina"
       },
@@ -78,14 +78,14 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Portugal",
-        "score1": 2,
-        "score2": 3,
+        "score1": 4,
+        "score2": 2,
         "team2": "Croatia"
       },
       {
         "team1": "Switzerland",
-        "score1": 3,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Algeria"
       },
       {
@@ -96,53 +96,53 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Argentina",
-        "score1": 2,
-        "score2": 1,
+        "score1": 4,
+        "score2": 0,
         "team2": "Cape Verde"
       },
       {
         "team1": "Colombia",
-        "score1": 4,
-        "score2": 1,
+        "score1": 2,
+        "score2": 0,
         "team2": "Ghana"
       }
     ],
     "sweet16": [
       {
         "team1": "Canada",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "Morocco"
       },
       {
         "team1": "Germany",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "France"
       },
       {
         "team1": "Brazil",
         "score1": 2,
         "score2": 1,
-        "team2": "Ivory Coast"
+        "team2": "Norway"
       },
       {
-        "team1": "Ecuador",
+        "team1": "Mexico",
         "score1": 0,
-        "score2": 1,
+        "score2": 2,
         "team2": "England"
       },
       {
         "team1": "Spain",
-        "score1": 1,
-        "score2": 0,
-        "team2": "Croatia"
+        "score1": 2,
+        "score2": 1,
+        "team2": "Portugal"
       },
       {
         "team1": "United States",
-        "score1": 3,
+        "score1": 0,
         "score2": 2,
-        "team2": "Belgium"
+        "team2": "Senegal"
       },
       {
         "team1": "Argentina",
@@ -152,65 +152,65 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Switzerland",
-        "score1": 2,
+        "score1": 1,
         "score2": 3,
         "team2": "Colombia"
       }
     ],
     "elite8": [
       {
-        "team1": "Canada",
-        "score1": 2,
-        "score2": 3,
-        "team2": "Germany"
+        "team1": "Morocco",
+        "score1": 0,
+        "score2": 2,
+        "team2": "France"
       },
       {
         "team1": "Spain",
         "score1": 3,
-        "score2": 2,
-        "team2": "United States"
+        "score2": 1,
+        "team2": "Senegal"
       },
       {
         "team1": "Brazil",
-        "score1": 3,
-        "score2": 2,
+        "score1": 2,
+        "score2": 3,
         "team2": "England"
       },
       {
         "team1": "Argentina",
         "score1": 1,
-        "score2": 0,
+        "score2": 2,
         "team2": "Colombia"
       }
     ],
     "semis": [
       {
-        "team1": "Germany",
-        "score1": 0,
-        "score2": 2,
+        "team1": "France",
+        "score1": 2,
+        "score2": 1,
         "team2": "Spain"
       },
       {
-        "team1": "Brazil",
+        "team1": "England",
         "score1": 1,
         "score2": 2,
-        "team2": "Argentina"
+        "team2": "Colombia"
       }
     ],
     "third": [
       {
-        "team1": "Germany",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Brazil"
+        "team1": "Spain",
+        "score1": 2,
+        "score2": 1,
+        "team2": "England"
       }
     ],
     "final": [
       {
-        "team1": "Spain",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Argentina"
+        "team1": "France",
+        "score1": 2,
+        "score2": 1,
+        "team2": "Colombia"
       }
     ]
   },
@@ -243,37 +243,37 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Ivory Coast",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "Norway"
       },
       {
         "team1": "France",
         "score1": 2,
-        "score2": 1,
+        "score2": 0,
         "team2": "Sweden"
       },
       {
         "team1": "Mexico",
-        "score1": 1,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Ecuador"
       },
       {
         "team1": "England",
-        "score1": 1,
+        "score1": 2,
         "score2": 0,
         "team2": "DR Congo"
       },
       {
         "team1": "Belgium",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "Senegal"
       },
       {
         "team1": "United States",
-        "score1": 2,
+        "score1": 3,
         "score2": 1,
         "team2": "Bosnia and Herzegovina"
       },
@@ -285,14 +285,14 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Portugal",
-        "score1": 2,
-        "score2": 3,
+        "score1": 4,
+        "score2": 2,
         "team2": "Croatia"
       },
       {
         "team1": "Switzerland",
-        "score1": 3,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Algeria"
       },
       {
@@ -303,53 +303,53 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Argentina",
-        "score1": 2,
-        "score2": 1,
+        "score1": 4,
+        "score2": 0,
         "team2": "Cape Verde"
       },
       {
         "team1": "Colombia",
-        "score1": 4,
-        "score2": 1,
+        "score1": 2,
+        "score2": 0,
         "team2": "Ghana"
       }
     ],
     "sweet16": [
       {
         "team1": "Canada",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "Morocco"
       },
       {
         "team1": "Germany",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "France"
       },
       {
         "team1": "Brazil",
         "score1": 2,
         "score2": 1,
-        "team2": "Ivory Coast"
+        "team2": "Norway"
       },
       {
-        "team1": "Ecuador",
+        "team1": "Mexico",
         "score1": 0,
-        "score2": 1,
+        "score2": 2,
         "team2": "England"
       },
       {
         "team1": "Spain",
-        "score1": 1,
-        "score2": 0,
-        "team2": "Croatia"
+        "score1": 2,
+        "score2": 1,
+        "team2": "Portugal"
       },
       {
         "team1": "United States",
-        "score1": 3,
+        "score1": 0,
         "score2": 2,
-        "team2": "Belgium"
+        "team2": "Senegal"
       },
       {
         "team1": "Argentina",
@@ -359,65 +359,65 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Switzerland",
-        "score1": 2,
+        "score1": 1,
         "score2": 3,
         "team2": "Colombia"
       }
     ],
     "elite8": [
       {
-        "team1": "Canada",
-        "score1": 2,
-        "score2": 3,
-        "team2": "Germany"
+        "team1": "Morocco",
+        "score1": 0,
+        "score2": 2,
+        "team2": "France"
       },
       {
         "team1": "Spain",
         "score1": 3,
-        "score2": 2,
-        "team2": "United States"
+        "score2": 1,
+        "team2": "Senegal"
       },
       {
         "team1": "Brazil",
-        "score1": 3,
-        "score2": 2,
+        "score1": 2,
+        "score2": 3,
         "team2": "England"
       },
       {
         "team1": "Argentina",
         "score1": 1,
-        "score2": 0,
+        "score2": 2,
         "team2": "Colombia"
       }
     ],
     "semis": [
       {
-        "team1": "Germany",
-        "score1": 0,
-        "score2": 2,
+        "team1": "France",
+        "score1": 2,
+        "score2": 1,
         "team2": "Spain"
       },
       {
-        "team1": "Brazil",
+        "team1": "England",
         "score1": 1,
         "score2": 2,
-        "team2": "Argentina"
+        "team2": "Colombia"
       }
     ],
     "third": [
       {
-        "team1": "Germany",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Brazil"
+        "team1": "Spain",
+        "score1": 2,
+        "score2": 1,
+        "team2": "England"
       }
     ],
     "final": [
       {
-        "team1": "Spain",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Argentina"
+        "team1": "France",
+        "score1": 2,
+        "score2": 1,
+        "team2": "Colombia"
       }
     ]
   },
@@ -450,37 +450,37 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Ivory Coast",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "Norway"
       },
       {
         "team1": "France",
         "score1": 2,
-        "score2": 1,
+        "score2": 0,
         "team2": "Sweden"
       },
       {
         "team1": "Mexico",
-        "score1": 1,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Ecuador"
       },
       {
         "team1": "England",
-        "score1": 1,
+        "score1": 2,
         "score2": 0,
         "team2": "DR Congo"
       },
       {
         "team1": "Belgium",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "Senegal"
       },
       {
         "team1": "United States",
-        "score1": 2,
+        "score1": 3,
         "score2": 1,
         "team2": "Bosnia and Herzegovina"
       },
@@ -492,14 +492,14 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Portugal",
-        "score1": 2,
-        "score2": 3,
+        "score1": 4,
+        "score2": 2,
         "team2": "Croatia"
       },
       {
         "team1": "Switzerland",
-        "score1": 3,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Algeria"
       },
       {
@@ -510,53 +510,53 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Argentina",
-        "score1": 2,
-        "score2": 1,
+        "score1": 4,
+        "score2": 0,
         "team2": "Cape Verde"
       },
       {
         "team1": "Colombia",
-        "score1": 4,
-        "score2": 1,
+        "score1": 2,
+        "score2": 0,
         "team2": "Ghana"
       }
     ],
     "sweet16": [
       {
         "team1": "Canada",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "Morocco"
       },
       {
         "team1": "Germany",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 2,
         "team2": "France"
       },
       {
         "team1": "Brazil",
         "score1": 2,
         "score2": 1,
-        "team2": "Ivory Coast"
+        "team2": "Norway"
       },
       {
-        "team1": "Ecuador",
+        "team1": "Mexico",
         "score1": 0,
-        "score2": 1,
+        "score2": 2,
         "team2": "England"
       },
       {
         "team1": "Spain",
-        "score1": 1,
-        "score2": 0,
-        "team2": "Croatia"
+        "score1": 2,
+        "score2": 1,
+        "team2": "Portugal"
       },
       {
         "team1": "United States",
-        "score1": 3,
+        "score1": 0,
         "score2": 2,
-        "team2": "Belgium"
+        "team2": "Senegal"
       },
       {
         "team1": "Argentina",
@@ -566,65 +566,65 @@ export const realBracket: Partial<Record<Variant, TournamentRounds>> = {
       },
       {
         "team1": "Switzerland",
-        "score1": 2,
+        "score1": 1,
         "score2": 3,
         "team2": "Colombia"
       }
     ],
     "elite8": [
       {
-        "team1": "Canada",
-        "score1": 2,
-        "score2": 3,
-        "team2": "Germany"
+        "team1": "Morocco",
+        "score1": 0,
+        "score2": 2,
+        "team2": "France"
       },
       {
         "team1": "Spain",
         "score1": 3,
-        "score2": 2,
-        "team2": "United States"
+        "score2": 1,
+        "team2": "Senegal"
       },
       {
         "team1": "Brazil",
-        "score1": 3,
-        "score2": 2,
+        "score1": 2,
+        "score2": 3,
         "team2": "England"
       },
       {
         "team1": "Argentina",
         "score1": 1,
-        "score2": 0,
+        "score2": 2,
         "team2": "Colombia"
       }
     ],
     "semis": [
       {
-        "team1": "Germany",
-        "score1": 0,
-        "score2": 2,
+        "team1": "France",
+        "score1": 2,
+        "score2": 1,
         "team2": "Spain"
       },
       {
-        "team1": "Brazil",
+        "team1": "England",
         "score1": 1,
         "score2": 2,
-        "team2": "Argentina"
+        "team2": "Colombia"
       }
     ],
     "third": [
       {
-        "team1": "Germany",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Brazil"
+        "team1": "Spain",
+        "score1": 2,
+        "score2": 1,
+        "team2": "England"
       }
     ],
     "final": [
       {
-        "team1": "Spain",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Argentina"
+        "team1": "France",
+        "score1": 2,
+        "score2": 1,
+        "team2": "Colombia"
       }
     ]
   }
