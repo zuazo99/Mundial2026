@@ -74,10 +74,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "United States": {
       "elo": 1674.0,
-      "gfProm5": 2.0,
-      "gcProm5": 1.2,
-      "gfProm15": 1.9333333333333331,
-      "gcProm15": 1.4666666666666666,
+      "gfProm5": 2.2,
+      "gcProm5": 1.6,
+      "gfProm15": 1.8666666666666667,
+      "gcProm15": 1.6,
       "pca1": -0.1767804909518889,
       "pca2": 0.7634008807517694
     },
@@ -227,10 +227,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Belgium": {
       "elo": 1835.0,
-      "gfProm5": 2.0,
+      "gfProm5": 2.6,
       "gcProm5": 1.0,
-      "gfProm15": 3.1333333333333333,
-      "gcProm15": 0.9333333333333332,
+      "gfProm15": 3.2,
+      "gcProm15": 1.0,
       "pca1": -0.2503965980777771,
       "pca2": 1.0244536275379597
     },
@@ -281,10 +281,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Spain": {
       "elo": 2071.0,
-      "gfProm5": 1.6,
+      "gfProm5": 1.8,
       "gcProm5": 0.0,
-      "gfProm15": 2.8,
-      "gcProm15": 0.7333333333333333,
+      "gfProm15": 2.6666666666666665,
+      "gcProm15": 0.5333333333333333,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
     },
@@ -425,10 +425,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Portugal": {
       "elo": 1914.0,
-      "gfProm5": 2.0,
-      "gcProm5": 0.4,
-      "gfProm15": 2.6,
-      "gcProm15": 0.9333333333333332,
+      "gfProm5": 1.6,
+      "gcProm5": 0.6,
+      "gfProm15": 2.2666666666666666,
+      "gcProm15": 0.8666666666666667,
       "pca1": 0.575614208339525,
       "pca2": 0.5087023962005716
     },
@@ -508,10 +508,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "United States": {
       "elo": 1674.0,
-      "gfProm5": 2.0,
-      "gcProm5": 1.2,
-      "gfProm15": 1.9333333333333331,
-      "gcProm15": 1.4666666666666666,
+      "gfProm5": 2.2,
+      "gcProm5": 1.6,
+      "gfProm15": 1.8666666666666667,
+      "gcProm15": 1.6,
       "pca1": -0.1767804909518889,
       "pca2": 0.7634008807517694
     },
@@ -661,10 +661,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Belgium": {
       "elo": 1935.0,
-      "gfProm5": 2.0,
+      "gfProm5": 2.6,
       "gcProm5": 1.0,
-      "gfProm15": 3.1333333333333333,
-      "gcProm15": 0.9333333333333332,
+      "gfProm15": 3.2,
+      "gcProm15": 1.0,
       "pca1": -0.2503965980777771,
       "pca2": 1.0244536275379597
     },
@@ -715,10 +715,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Spain": {
       "elo": 2221.0,
-      "gfProm5": 1.6,
+      "gfProm5": 1.8,
       "gcProm5": 0.0,
-      "gfProm15": 2.8,
-      "gcProm15": 0.7333333333333333,
+      "gfProm15": 2.6666666666666665,
+      "gcProm15": 0.5333333333333333,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
     },
@@ -859,10 +859,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Portugal": {
       "elo": 2064.0,
-      "gfProm5": 2.0,
-      "gcProm5": 0.4,
-      "gfProm15": 2.6,
-      "gcProm15": 0.9333333333333332,
+      "gfProm5": 1.6,
+      "gcProm5": 0.6,
+      "gfProm15": 2.2666666666666666,
+      "gcProm15": 0.8666666666666667,
       "pca1": 0.575614208339525,
       "pca2": 0.5087023962005716
     },
@@ -942,10 +942,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "United States": {
       "elo": 1674.0,
-      "gfProm5": 2.0,
-      "gcProm5": 1.2,
-      "gfProm15": 1.9333333333333331,
-      "gcProm15": 1.4666666666666666,
+      "gfProm5": 2.2,
+      "gcProm5": 1.6,
+      "gfProm15": 1.8666666666666667,
+      "gcProm15": 1.6,
       "pca1": -0.1767804909518889,
       "pca2": 0.7634008807517694
     },
@@ -1095,10 +1095,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Belgium": {
       "elo": 1835.0,
-      "gfProm5": 2.0,
+      "gfProm5": 2.6,
       "gcProm5": 1.0,
-      "gfProm15": 3.1333333333333333,
-      "gcProm15": 0.9333333333333332,
+      "gfProm15": 3.2,
+      "gcProm15": 1.0,
       "pca1": -0.2503965980777771,
       "pca2": 1.0244536275379597
     },
@@ -1149,10 +1149,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Spain": {
       "elo": 2071.0,
-      "gfProm5": 1.6,
+      "gfProm5": 1.8,
       "gcProm5": 0.0,
-      "gfProm15": 2.8,
-      "gcProm15": 0.7333333333333333,
+      "gfProm15": 2.6666666666666665,
+      "gcProm15": 0.5333333333333333,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
     },
@@ -1293,10 +1293,10 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Portugal": {
       "elo": 1914.0,
-      "gfProm5": 2.0,
-      "gcProm5": 0.4,
-      "gfProm15": 2.6,
-      "gcProm15": 0.9333333333333332,
+      "gfProm5": 1.6,
+      "gcProm5": 0.6,
+      "gfProm15": 2.2666666666666666,
+      "gcProm15": 0.8666666666666667,
       "pca1": 0.575614208339525,
       "pca2": 0.5087023962005716
     },

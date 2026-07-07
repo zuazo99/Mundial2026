@@ -59,7 +59,7 @@ Argentina,2,1,Austria
 Jordan,2,3,Algeria
 Jordan,0,4,Argentina
 Algeria,1,1,Austria
-Portugal,2,1,DR Congo
+Portugal,3,1,DR Congo
 Uzbekistan,1,3,Colombia
 Portugal,2,1,Uzbekistan
 Colombia,1,0,DR Congo
@@ -94,12 +94,12 @@ Mexico,2,1,England
 Spain,3,2,Croatia
 Turkey,2,3,Iran
 Argentina,2,1,Australia
-Egypt,1,2,Portugal
+Egypt,3,2,Portugal
 Netherlands,2,1,Ecuador
-Spain,2,1,Iran
+Spain,1,0,Iran
 Japan,2,1,Mexico
-Argentina,2,1,Portugal
-Netherlands,2,3,Spain
+Argentina,2,1,Egypt
+Netherlands,1,2,Spain
 Japan,1,2,Argentina
 Netherlands,2,1,Japan
-Spain,2,1,Argentina
+Spain,1,3,Argentina

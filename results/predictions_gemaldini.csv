@@ -76,30 +76,30 @@ Brazil,0,1,Japan
 Germany,4,1,Scotland
 Netherlands,3,2,Morocco
 Ecuador,1,0,France
-Norway,2,1,United States
+Norway,1,2,United States
 Mexico,2,1,Ivory Coast
-Croatia,1,2,Austria
+Croatia,3,2,Austria
 Belgium,3,2,Czech Republic
-Turkey,1,0,Bosnia and Herzegovina
+Turkey,2,1,Bosnia and Herzegovina
 Spain,2,1,Algeria
-Colombia,1,0,England
-Switzerland,3,2,Egypt
+Colombia,2,1,England
+Switzerland,1,0,Egypt
 Australia,1,2,Iran
 Argentina,2,1,Uruguay
 Portugal,2,1,Senegal
 South Korea,0,3,Netherlands
-Germany,1,2,Norway
-Japan,1,2,Ecuador
-Mexico,1,2,Austria
-Spain,3,2,Colombia
-Turkey,1,0,Belgium
-Argentina,2,1,Iran
-Switzerland,0,1,Portugal
-Netherlands,1,2,Norway
-Spain,2,1,Turkey
-Ecuador,1,2,Austria
-Argentina,2,1,Portugal
-Norway,1,2,Spain
-Austria,2,1,Argentina
-Norway,2,1,Argentina
-Spain,3,2,Austria
+Germany,2,1,United States
+Japan,1,0,Ecuador
+Mexico,3,2,Croatia
+Spain,4,2,Colombia
+Turkey,2,0,Belgium
+Argentina,1,0,Iran
+Switzerland,2,1,Portugal
+Netherlands,1,2,Germany
+Spain,1,2,Turkey
+Japan,2,1,Mexico
+Argentina,2,1,Switzerland
+Germany,1,2,Turkey
+Japan,1,2,Argentina
+Germany,2,1,Japan
+Turkey,3,2,Argentina

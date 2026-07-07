@@ -8,26 +8,26 @@ France,2,1,Sweden
 Mexico,1,2,Ecuador
 England,2,0,DR Congo
 Belgium,1,0,Senegal
-United States,3,1,Bosnia and Herzegovina
+United States,3,2,Bosnia and Herzegovina
 Spain,2,1,Austria
-Portugal,4,2,Croatia
-Switzerland,1,0,Algeria
+Portugal,2,3,Croatia
+Switzerland,2,1,Algeria
 Australia,2,1,Egypt
 Argentina,4,0,Cape Verde
 Colombia,2,0,Ghana
 Canada,1,2,Morocco
-Germany,2,1,France
+Germany,1,2,France
 Brazil,2,1,Ivory Coast
-Ecuador,2,1,England
-Spain,1,2,Portugal
-United States,5,4,Belgium
-Argentina,2,1,Australia
-Switzerland,1,3,Colombia
-Morocco,2,1,Germany
-Portugal,2,1,United States
-Brazil,2,1,Ecuador
-Argentina,1,2,Colombia
-Morocco,1,0,Portugal
-Brazil,2,1,Colombia
-Portugal,1,2,Colombia
-Morocco,0,2,Brazil
+Ecuador,0,1,England
+Spain,2,1,Croatia
+United States,3,2,Belgium
+Argentina,1,2,Australia
+Switzerland,3,2,Colombia
+Morocco,1,2,France
+Spain,2,1,United States
+Brazil,1,3,England
+Australia,0,1,Switzerland
+France,2,3,Spain
+England,2,1,Switzerland
+France,2,1,Switzerland
+Spain,0,2,England
