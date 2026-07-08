@@ -13,21 +13,21 @@ Spain,2,1,Austria
 Portugal,2,3,Croatia
 Switzerland,2,1,Algeria
 Australia,2,1,Egypt
-Argentina,4,0,Cape Verde
-Colombia,2,0,Ghana
-Canada,1,2,Morocco
-Germany,1,2,France
+Argentina,3,1,Cape Verde
+Colombia,5,1,Ghana
+Canada,2,1,Morocco
+Germany,0,1,France
 Brazil,2,1,Ivory Coast
 Ecuador,0,1,England
 Spain,2,1,Croatia
-United States,3,2,Belgium
-Argentina,1,2,Australia
-Switzerland,3,2,Colombia
-Morocco,1,2,France
-Spain,2,1,United States
-Brazil,1,3,England
-Australia,0,1,Switzerland
-France,2,3,Spain
-England,2,1,Switzerland
-France,2,1,Switzerland
-Spain,0,2,England
+United States,1,2,Belgium
+Argentina,1,0,Australia
+Switzerland,1,2,Colombia
+Canada,2,1,France
+Spain,2,1,Belgium
+Brazil,1,2,England
+Argentina,2,1,Colombia
+Canada,3,2,Spain
+England,2,1,Argentina
+Spain,2,1,Argentina
+Canada,0,3,England
