@@ -14,7 +14,7 @@ Bosnia and Herzegovina,1,1,Qatar
 Brazil,2,0,Morocco
 Haiti,1,1,Scotland
 Brazil,2,0,Haiti
-Scotland,2,1,Morocco
+Scotland,1,2,Morocco
 Scotland,0,2,Brazil
 Morocco,4,1,Haiti
 United States,2,1,Paraguay
@@ -49,7 +49,7 @@ Uruguay,1,2,Spain
 Cape Verde,1,1,Saudi Arabia
 France,3,1,Senegal
 Iraq,0,1,Norway
-France,2,1,Iraq
+France,3,0,Iraq
 Norway,2,1,Senegal
 Norway,2,0,France
 Senegal,1,0,Iraq
@@ -74,32 +74,32 @@ Croatia,2,1,Ghana
 South Korea,2,0,Canada
 Brazil,0,1,Japan
 Ecuador,1,0,United States
-Netherlands,3,2,Scotland
-Germany,0,2,France
+Netherlands,2,1,Morocco
+Germany,2,1,France
 Norway,1,0,Sweden
-Mexico,1,2,Morocco
-England,3,0,Senegal
-Iran,2,3,Czech Republic
+Mexico,3,2,Ivory Coast
+England,4,0,Jordan
+Iran,3,2,Czech Republic
 Turkey,2,1,Bosnia and Herzegovina
 Spain,2,1,Algeria
 Colombia,2,1,Croatia
 Switzerland,3,2,Egypt
-Australia,1,2,Belgium
+Australia,2,1,Belgium
 Argentina,2,0,Uruguay
-Portugal,2,1,Ivory Coast
-South Korea,2,3,Netherlands
-Ecuador,2,1,Norway
-Japan,2,1,France
-Morocco,1,0,England
-Spain,1,2,Colombia
-Turkey,3,2,Czech Republic
-Argentina,2,1,Belgium
-Switzerland,2,3,Portugal
-Netherlands,0,1,Ecuador
-Colombia,2,3,Turkey
-Japan,2,1,Morocco
+Portugal,2,1,Senegal
+South Korea,1,3,Netherlands
+Ecuador,3,1,Norway
+Japan,1,0,Germany
+Mexico,2,1,England
+Spain,1,0,Colombia
+Turkey,0,1,Iran
+Argentina,1,0,Australia
+Switzerland,1,2,Portugal
+Netherlands,1,0,Ecuador
+Spain,2,1,Iran
+Japan,1,0,Mexico
 Argentina,2,1,Portugal
-Ecuador,1,2,Turkey
-Japan,2,1,Argentina
-Ecuador,0,1,Argentina
-Turkey,2,1,Japan
+Netherlands,2,1,Spain
+Japan,1,2,Argentina
+Spain,2,1,Japan
+Netherlands,2,3,Argentina

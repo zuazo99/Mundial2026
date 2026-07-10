@@ -8,9 +8,9 @@ date,team,opponent,xg_estimated
 2026-06-12,Paraguay,United States,1.25
 2026-06-12,United States,Paraguay,1.2
 2026-06-13,Australia,Turkey,0.87
-2026-06-13,Brazil,Morocco,1.21
+2026-06-13,Brazil,Morocco,1.25
 2026-06-13,Haiti,Scotland,0.58
-2026-06-13,Morocco,Brazil,0.92
+2026-06-13,Morocco,Brazil,0.91
 2026-06-13,Qatar,Switzerland,0.45
 2026-06-13,Scotland,Haiti,1.77
 2026-06-13,Switzerland,Qatar,2.41
@@ -34,7 +34,7 @@ date,team,opponent,xg_estimated
 2026-06-16,Algeria,Argentina,0.78
 2026-06-16,Argentina,Algeria,1.58
 2026-06-16,Austria,Jordan,1.76
-2026-06-16,France,Senegal,1.61
+2026-06-16,France,Senegal,1.54
 2026-06-16,Iraq,Norway,0.54
 2026-06-16,Jordan,Austria,0.79
 2026-06-16,Norway,Iraq,1.81
