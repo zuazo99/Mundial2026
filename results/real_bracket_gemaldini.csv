@@ -10,24 +10,24 @@ England,2,0,DR Congo
 Belgium,1,2,Senegal
 United States,2,1,Bosnia and Herzegovina
 Spain,2,1,Austria
-Portugal,2,3,Croatia
-Switzerland,2,1,Algeria
-Australia,2,1,Egypt
-Argentina,3,1,Cape Verde
+Portugal,3,2,Croatia
+Switzerland,3,0,Algeria
+Australia,1,2,Egypt
+Argentina,2,1,Cape Verde
 Colombia,5,1,Ghana
 Canada,1,2,Netherlands
-Germany,0,1,France
+Germany,0,2,France
 Brazil,2,1,Norway
-Ecuador,0,1,England
-Spain,3,2,Croatia
+Ecuador,1,2,England
+Spain,2,1,Portugal
 United States,2,1,Senegal
-Argentina,3,1,Australia
-Switzerland,2,1,Colombia
-Netherlands,2,3,France
-Spain,2,0,United States
-Brazil,3,1,England
-Argentina,3,2,Switzerland
-France,0,1,Spain
-Brazil,1,2,Argentina
-France,2,1,Brazil
+Argentina,2,1,Egypt
+Switzerland,1,2,Colombia
+Netherlands,2,1,France
+Spain,2,1,United States
+Brazil,1,2,England
+Argentina,2,1,Colombia
+Netherlands,1,0,Spain
+England,2,1,Argentina
 Spain,1,2,Argentina
+Netherlands,0,2,England
