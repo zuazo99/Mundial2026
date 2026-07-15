@@ -83,23 +83,23 @@ Iran,1,2,Czech Republic
 Turkey,2,1,Bosnia and Herzegovina
 Spain,2,1,Algeria
 Colombia,1,2,Croatia
-Switzerland,3,2,Egypt
-Australia,1,2,Belgium
-Argentina,1,0,Uruguay
-Portugal,1,2,Senegal
-South Korea,1,2,Morocco
-Ecuador,2,3,Norway
-Japan,0,1,France
-Mexico,1,2,England
+Switzerland,2,1,Egypt
+Australia,2,1,Belgium
+Argentina,2,1,Uruguay
+Portugal,2,1,Senegal
+South Korea,0,3,Morocco
+Ecuador,3,1,Norway
+Japan,2,1,France
+Mexico,2,1,England
 Spain,3,2,Croatia
 Turkey,3,0,Czech Republic
-Argentina,2,1,Belgium
-Switzerland,2,1,Senegal
-Morocco,1,2,Norway
-Spain,3,1,Turkey
-France,1,2,England
+Argentina,2,1,Australia
+Switzerland,2,1,Portugal
+Morocco,1,2,Ecuador
+Spain,2,1,Turkey
+Japan,1,0,Mexico
 Argentina,2,1,Switzerland
-Norway,0,2,Spain
-England,1,2,Argentina
-Norway,1,2,England
-Spain,3,2,Argentina
+Ecuador,0,1,Spain
+Japan,1,2,Argentina
+Ecuador,1,0,Japan
+Spain,1,2,Argentina

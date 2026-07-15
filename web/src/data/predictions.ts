@@ -522,52 +522,52 @@ export const predictions: Record<Variant, TournamentRounds> = {
       },
       {
         "team1": "Switzerland",
-        "score1": 3,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Egypt"
       },
       {
         "team1": "Australia",
-        "score1": 1,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Belgium"
       },
       {
         "team1": "Argentina",
-        "score1": 1,
-        "score2": 0,
+        "score1": 2,
+        "score2": 1,
         "team2": "Uruguay"
       },
       {
         "team1": "Portugal",
-        "score1": 1,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Senegal"
       }
     ],
     "sweet16": [
       {
         "team1": "South Korea",
-        "score1": 1,
-        "score2": 2,
+        "score1": 0,
+        "score2": 3,
         "team2": "Morocco"
       },
       {
         "team1": "Ecuador",
-        "score1": 2,
-        "score2": 3,
+        "score1": 3,
+        "score2": 1,
         "team2": "Norway"
       },
       {
         "team1": "Japan",
-        "score1": 0,
+        "score1": 2,
         "score2": 1,
         "team2": "France"
       },
       {
         "team1": "Mexico",
-        "score1": 1,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "England"
       },
       {
@@ -586,13 +586,13 @@ export const predictions: Record<Variant, TournamentRounds> = {
         "team1": "Argentina",
         "score1": 2,
         "score2": 1,
-        "team2": "Belgium"
+        "team2": "Australia"
       },
       {
         "team1": "Switzerland",
         "score1": 2,
         "score2": 1,
-        "team2": "Senegal"
+        "team2": "Portugal"
       }
     ],
     "elite8": [
@@ -600,19 +600,19 @@ export const predictions: Record<Variant, TournamentRounds> = {
         "team1": "Morocco",
         "score1": 1,
         "score2": 2,
-        "team2": "Norway"
+        "team2": "Ecuador"
       },
       {
         "team1": "Spain",
-        "score1": 3,
+        "score1": 2,
         "score2": 1,
         "team2": "Turkey"
       },
       {
-        "team1": "France",
+        "team1": "Japan",
         "score1": 1,
-        "score2": 2,
-        "team2": "England"
+        "score2": 0,
+        "team2": "Mexico"
       },
       {
         "team1": "Argentina",
@@ -623,13 +623,13 @@ export const predictions: Record<Variant, TournamentRounds> = {
     ],
     "semis": [
       {
-        "team1": "Norway",
+        "team1": "Ecuador",
         "score1": 0,
-        "score2": 2,
+        "score2": 1,
         "team2": "Spain"
       },
       {
-        "team1": "England",
+        "team1": "Japan",
         "score1": 1,
         "score2": 2,
         "team2": "Argentina"
@@ -637,16 +637,16 @@ export const predictions: Record<Variant, TournamentRounds> = {
     ],
     "third": [
       {
-        "team1": "Norway",
+        "team1": "Ecuador",
         "score1": 1,
-        "score2": 2,
-        "team2": "England"
+        "score2": 0,
+        "team2": "Japan"
       }
     ],
     "final": [
       {
         "team1": "Spain",
-        "score1": 3,
+        "score1": 1,
         "score2": 2,
         "team2": "Argentina"
       }
@@ -968,7 +968,7 @@ export const predictions: Record<Variant, TournamentRounds> = {
       },
       {
         "team1": "Norway",
-        "score1": 2,
+        "score1": 1,
         "score2": 1,
         "team2": "France"
       },
@@ -1116,12 +1116,12 @@ export const predictions: Record<Variant, TournamentRounds> = {
         "team1": "Ecuador",
         "score1": 1,
         "score2": 0,
-        "team2": "France"
+        "team2": "Norway"
       },
       {
-        "team1": "Norway",
-        "score1": 1,
-        "score2": 0,
+        "team1": "France",
+        "score1": 3,
+        "score2": 1,
         "team2": "United States"
       },
       {
@@ -1132,14 +1132,14 @@ export const predictions: Record<Variant, TournamentRounds> = {
       },
       {
         "team1": "Croatia",
-        "score1": 3,
+        "score1": 1,
         "score2": 2,
         "team2": "Algeria"
       },
       {
         "team1": "Belgium",
         "score1": 2,
-        "score2": 3,
+        "score2": 1,
         "team2": "Czech Republic"
       },
       {
@@ -1156,8 +1156,8 @@ export const predictions: Record<Variant, TournamentRounds> = {
       },
       {
         "team1": "Colombia",
-        "score1": 1,
-        "score2": 3,
+        "score1": 2,
+        "score2": 1,
         "team2": "England"
       },
       {
@@ -1189,38 +1189,38 @@ export const predictions: Record<Variant, TournamentRounds> = {
       {
         "team1": "South Korea",
         "score1": 1,
-        "score2": 3,
+        "score2": 2,
         "team2": "Netherlands"
       },
       {
         "team1": "Germany",
         "score1": 2,
         "score2": 1,
-        "team2": "Norway"
+        "team2": "France"
       },
       {
         "team1": "Japan",
-        "score1": 0,
+        "score1": 2,
         "score2": 1,
         "team2": "Ecuador"
       },
       {
         "team1": "Mexico",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Croatia"
+        "score1": 2,
+        "score2": 3,
+        "team2": "Algeria"
       },
       {
         "team1": "Spain",
-        "score1": 4,
+        "score1": 1,
         "score2": 2,
-        "team2": "England"
+        "team2": "Colombia"
       },
       {
         "team1": "Turkey",
-        "score1": 2,
-        "score2": 1,
-        "team2": "Czech Republic"
+        "score1": 1,
+        "score2": 0,
+        "team2": "Belgium"
       },
       {
         "team1": "Uruguay",
@@ -1230,8 +1230,8 @@ export const predictions: Record<Variant, TournamentRounds> = {
       },
       {
         "team1": "Switzerland",
-        "score1": 1,
-        "score2": 3,
+        "score1": 3,
+        "score2": 2,
         "team2": "Portugal"
       }
     ],
@@ -1243,52 +1243,52 @@ export const predictions: Record<Variant, TournamentRounds> = {
         "team2": "Germany"
       },
       {
-        "team1": "Spain",
-        "score1": 3,
+        "team1": "Colombia",
+        "score1": 1,
         "score2": 2,
         "team2": "Turkey"
       },
       {
-        "team1": "Ecuador",
-        "score1": 2,
+        "team1": "Japan",
+        "score1": 0,
         "score2": 1,
-        "team2": "Croatia"
+        "team2": "Algeria"
       },
       {
         "team1": "Uruguay",
-        "score1": 0,
-        "score2": 1,
-        "team2": "Portugal"
+        "score1": 1,
+        "score2": 0,
+        "team2": "Switzerland"
       }
     ],
     "semis": [
       {
         "team1": "Netherlands",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Spain"
+        "score1": 2,
+        "score2": 3,
+        "team2": "Turkey"
       },
       {
-        "team1": "Ecuador",
-        "score1": 3,
-        "score2": 2,
-        "team2": "Portugal"
+        "team1": "Algeria",
+        "score1": 2,
+        "score2": 1,
+        "team2": "Uruguay"
       }
     ],
     "third": [
       {
         "team1": "Netherlands",
         "score1": 2,
-        "score2": 3,
-        "team2": "Portugal"
+        "score2": 1,
+        "team2": "Uruguay"
       }
     ],
     "final": [
       {
-        "team1": "Spain",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Ecuador"
+        "team1": "Turkey",
+        "score1": 2,
+        "score2": 1,
+        "team2": "Algeria"
       }
     ]
   },
@@ -1790,7 +1790,7 @@ export const predictions: Record<Variant, TournamentRounds> = {
       },
       {
         "team1": "Spain",
-        "score1": 3,
+        "score1": 2,
         "score2": 1,
         "team2": "Algeria"
       },
@@ -1802,7 +1802,7 @@ export const predictions: Record<Variant, TournamentRounds> = {
       },
       {
         "team1": "Switzerland",
-        "score1": 1,
+        "score1": 3,
         "score2": 2,
         "team2": "Egypt"
       },
@@ -1814,14 +1814,14 @@ export const predictions: Record<Variant, TournamentRounds> = {
       },
       {
         "team1": "Argentina",
-        "score1": 1,
-        "score2": 2,
+        "score1": 2,
+        "score2": 0,
         "team2": "Uruguay"
       },
       {
         "team1": "Portugal",
-        "score1": 1,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "Senegal"
       }
     ],
@@ -1829,106 +1829,106 @@ export const predictions: Record<Variant, TournamentRounds> = {
       {
         "team1": "South Korea",
         "score1": 1,
-        "score2": 2,
+        "score2": 3,
         "team2": "Netherlands"
       },
       {
         "team1": "Ecuador",
-        "score1": 1,
-        "score2": 2,
+        "score1": 3,
+        "score2": 1,
         "team2": "Norway"
       },
       {
         "team1": "Japan",
-        "score1": 0,
-        "score2": 2,
+        "score1": 1,
+        "score2": 0,
         "team2": "Germany"
       },
       {
         "team1": "Mexico",
-        "score1": 1,
-        "score2": 2,
+        "score1": 2,
+        "score2": 1,
         "team2": "England"
       },
       {
         "team1": "Spain",
-        "score1": 2,
-        "score2": 1,
+        "score1": 1,
+        "score2": 0,
         "team2": "Colombia"
       },
       {
         "team1": "Turkey",
-        "score1": 1,
-        "score2": 0,
+        "score1": 0,
+        "score2": 1,
         "team2": "Iran"
       },
       {
-        "team1": "Uruguay",
-        "score1": 2,
-        "score2": 1,
+        "team1": "Argentina",
+        "score1": 1,
+        "score2": 0,
         "team2": "Australia"
       },
       {
-        "team1": "Egypt",
+        "team1": "Switzerland",
         "score1": 1,
-        "score2": 0,
-        "team2": "Senegal"
+        "score2": 3,
+        "team2": "Portugal"
       }
     ],
     "elite8": [
       {
         "team1": "Netherlands",
-        "score1": 2,
+        "score1": 0,
         "score2": 1,
-        "team2": "Norway"
+        "team2": "Ecuador"
       },
       {
         "team1": "Spain",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Turkey"
-      },
-      {
-        "team1": "Germany",
         "score1": 2,
-        "score2": 3,
-        "team2": "England"
+        "score2": 1,
+        "team2": "Iran"
       },
       {
-        "team1": "Uruguay",
-        "score1": 1,
-        "score2": 2,
-        "team2": "Egypt"
+        "team1": "Japan",
+        "score1": 2,
+        "score2": 1,
+        "team2": "Mexico"
+      },
+      {
+        "team1": "Argentina",
+        "score1": 2,
+        "score2": 1,
+        "team2": "Portugal"
       }
     ],
     "semis": [
       {
-        "team1": "Netherlands",
+        "team1": "Ecuador",
         "score1": 1,
-        "score2": 0,
-        "team2": "Turkey"
+        "score2": 2,
+        "team2": "Spain"
       },
       {
-        "team1": "England",
+        "team1": "Japan",
         "score1": 1,
-        "score2": 0,
-        "team2": "Egypt"
+        "score2": 2,
+        "team2": "Argentina"
       }
     ],
     "third": [
       {
-        "team1": "Turkey",
-        "score1": 3,
-        "score2": 2,
-        "team2": "Egypt"
+        "team1": "Ecuador",
+        "score1": 2,
+        "score2": 1,
+        "team2": "Japan"
       }
     ],
     "final": [
       {
-        "team1": "Netherlands",
-        "score1": 2,
-        "score2": 1,
-        "team2": "England"
+        "team1": "Spain",
+        "score1": 1,
+        "score2": 2,
+        "team2": "Argentina"
       }
     ]
   }

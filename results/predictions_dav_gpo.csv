@@ -81,25 +81,25 @@ Mexico,3,2,Ivory Coast
 England,4,0,Jordan
 Iran,3,2,Czech Republic
 Turkey,2,1,Bosnia and Herzegovina
-Spain,3,1,Algeria
+Spain,2,1,Algeria
 Colombia,2,1,Croatia
-Switzerland,1,2,Egypt
+Switzerland,3,2,Egypt
 Australia,2,1,Belgium
-Argentina,1,2,Uruguay
-Portugal,1,2,Senegal
-South Korea,1,2,Netherlands
-Ecuador,1,2,Norway
-Japan,0,2,Germany
-Mexico,1,2,England
-Spain,2,1,Colombia
-Turkey,1,0,Iran
-Uruguay,2,1,Australia
-Egypt,1,0,Senegal
-Netherlands,2,1,Norway
-Spain,1,2,Turkey
-Germany,2,3,England
-Uruguay,1,2,Egypt
-Netherlands,1,0,Turkey
-England,1,0,Egypt
-Turkey,3,2,Egypt
-Netherlands,2,1,England
+Argentina,2,0,Uruguay
+Portugal,2,1,Senegal
+South Korea,1,3,Netherlands
+Ecuador,3,1,Norway
+Japan,1,0,Germany
+Mexico,2,1,England
+Spain,1,0,Colombia
+Turkey,0,1,Iran
+Argentina,1,0,Australia
+Switzerland,1,3,Portugal
+Netherlands,0,1,Ecuador
+Spain,2,1,Iran
+Japan,2,1,Mexico
+Argentina,2,1,Portugal
+Ecuador,1,2,Spain
+Japan,1,2,Argentina
+Ecuador,2,1,Japan
+Spain,1,2,Argentina
