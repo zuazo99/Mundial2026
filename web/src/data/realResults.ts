@@ -712,5 +712,12 @@ export const realResults: RealResult[] = [
     "awayTeam": "Spain",
     "homeGoals": 0,
     "awayGoals": 2
+  },
+  {
+    "date": "2026-07-15",
+    "homeTeam": "England",
+    "awayTeam": "Argentina",
+    "homeGoals": 1,
+    "awayGoals": 2
   }
 ];

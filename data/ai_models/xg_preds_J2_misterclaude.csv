@@ -32,8 +32,8 @@ date,team,opponent,xg_estimated
 2026-06-21,Spain,Saudi Arabia,2.16
 2026-06-21,Uruguay,Cape Verde,1.4
 2026-06-22,Algeria,Jordan,1.33
-2026-06-22,Argentina,Austria,1.79
-2026-06-22,Austria,Argentina,0.88
+2026-06-22,Argentina,Austria,1.76
+2026-06-22,Austria,Argentina,0.91
 2026-06-22,France,Iraq,1.87
 2026-06-22,Iraq,France,0.55
 2026-06-22,Jordan,Algeria,0.76
@@ -42,7 +42,7 @@ date,team,opponent,xg_estimated
 2026-06-23,Colombia,DR Congo,1.43
 2026-06-23,Croatia,Panama,1.49
 2026-06-23,DR Congo,Colombia,0.63
-2026-06-23,England,Ghana,1.99
+2026-06-23,England,Ghana,1.98
 2026-06-23,Ghana,England,0.45
 2026-06-23,Panama,Croatia,0.91
 2026-06-23,Portugal,Uzbekistan,1.63

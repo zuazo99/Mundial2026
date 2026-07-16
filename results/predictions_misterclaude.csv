@@ -55,7 +55,7 @@ Norway,2,0,France
 Senegal,1,0,Iraq
 Argentina,2,1,Algeria
 Austria,1,1,Jordan
-Argentina,2,1,Austria
+Argentina,4,1,Austria
 Jordan,2,3,Algeria
 Jordan,1,1,Argentina
 Algeria,1,1,Austria
@@ -94,12 +94,12 @@ Mexico,2,1,England
 Spain,3,2,Croatia
 Turkey,3,0,Czech Republic
 Argentina,2,1,Australia
-Switzerland,2,1,Portugal
-Morocco,1,2,Ecuador
-Spain,2,1,Turkey
-Japan,1,0,Mexico
+Switzerland,3,2,Portugal
+Morocco,2,1,Ecuador
+Spain,1,2,Turkey
+Japan,2,1,Mexico
 Argentina,2,1,Switzerland
-Ecuador,0,1,Spain
-Japan,1,2,Argentina
-Ecuador,1,0,Japan
-Spain,1,2,Argentina
+Morocco,1,0,Turkey
+Japan,2,1,Argentina
+Turkey,1,3,Argentina
+Morocco,2,1,Japan
