@@ -26,11 +26,11 @@ date,team,opponent,xg_estimated
 2026-06-26,Belgium,New Zealand,1.95
 2026-06-26,Cape Verde,Saudi Arabia,1.12
 2026-06-26,Egypt,Iran,0.87
-2026-06-26,France,Norway,1.55
+2026-06-26,France,Norway,1.5
 2026-06-26,Iran,Egypt,1.06
 2026-06-26,Iraq,Senegal,0.61
 2026-06-26,New Zealand,Belgium,0.75
-2026-06-26,Norway,France,0.94
+2026-06-26,Norway,France,1.02
 2026-06-26,Saudi Arabia,Cape Verde,0.94
 2026-06-26,Senegal,Iraq,1.39
 2026-06-26,Spain,Uruguay,1.22
@@ -41,9 +41,9 @@ date,team,opponent,xg_estimated
 2026-06-27,Colombia,Portugal,1.31
 2026-06-27,Croatia,Ghana,1.85
 2026-06-27,DR Congo,Uzbekistan,0.82
-2026-06-27,England,Panama,1.47
+2026-06-27,England,Panama,1.56
 2026-06-27,Ghana,Croatia,0.67
 2026-06-27,Jordan,Argentina,0.62
-2026-06-27,Panama,England,0.7
+2026-06-27,Panama,England,0.75
 2026-06-27,Portugal,Colombia,1.19
 2026-06-27,Uzbekistan,DR Congo,0.95

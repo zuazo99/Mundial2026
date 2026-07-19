@@ -16,18 +16,18 @@ Australia,2,1,Egypt
 Argentina,2,1,Cape Verde
 Colombia,5,0,Ghana
 Canada,2,3,Netherlands
-Germany,1,2,France
+Germany,2,1,France
 Brazil,2,1,Norway
-Ecuador,1,2,England
+Ecuador,2,1,England
 Spain,2,1,Croatia
-United States,1,2,Belgium
+United States,3,2,Belgium
 Argentina,2,1,Australia
-Switzerland,1,0,Colombia
-Netherlands,3,2,France
-Spain,2,1,Belgium
-Brazil,1,2,England
-Argentina,2,1,Switzerland
-Netherlands,2,3,Spain
-England,1,2,Argentina
-Netherlands,1,2,England
-Spain,3,2,Argentina
+Switzerland,1,2,Colombia
+Netherlands,2,1,Germany
+Spain,2,1,United States
+Brazil,2,1,Ecuador
+Argentina,1,0,Colombia
+Netherlands,2,1,Spain
+Brazil,4,3,Argentina
+Spain,1,2,Argentina
+Netherlands,2,3,Brazil
