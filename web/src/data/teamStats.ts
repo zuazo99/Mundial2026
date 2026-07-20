@@ -283,7 +283,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 2071.0,
       "gfProm5": 1.8,
       "gcProm5": 0.2,
-      "gfProm15": 2.466666666666667,
+      "gfProm15": 2.333333333333333,
       "gcProm15": 0.2,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
@@ -308,9 +308,9 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Argentina": {
       "elo": 2048.0,
-      "gfProm5": 2.8,
+      "gfProm5": 2.2,
       "gcProm5": 1.4,
-      "gfProm15": 2.6,
+      "gfProm15": 2.533333333333333,
       "gcProm15": 0.6666666666666666,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
@@ -717,7 +717,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 2221.0,
       "gfProm5": 1.8,
       "gcProm5": 0.2,
-      "gfProm15": 2.466666666666667,
+      "gfProm15": 2.333333333333333,
       "gcProm15": 0.2,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
@@ -742,9 +742,9 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Argentina": {
       "elo": 2048.0,
-      "gfProm5": 2.8,
+      "gfProm5": 2.2,
       "gcProm5": 1.4,
-      "gfProm15": 2.6,
+      "gfProm15": 2.533333333333333,
       "gcProm15": 0.6666666666666666,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
@@ -1151,7 +1151,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 2071.0,
       "gfProm5": 1.8,
       "gcProm5": 0.2,
-      "gfProm15": 2.466666666666667,
+      "gfProm15": 2.333333333333333,
       "gcProm15": 0.2,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
@@ -1176,9 +1176,9 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
     },
     "Argentina": {
       "elo": 2248.0,
-      "gfProm5": 2.8,
+      "gfProm5": 2.2,
       "gcProm5": 1.4,
-      "gfProm15": 2.6,
+      "gfProm15": 2.533333333333333,
       "gcProm15": 0.6666666666666666,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
