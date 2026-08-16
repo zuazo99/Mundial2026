@@ -4,6 +4,6 @@ import type { Variant } from './predictions';
 
 // Dixon-Coles rho: correlation correction for low-scoring outcomes (0-0,1-0,0-1,1-1).
 // rho < 0 means draws are more common than independent Poisson predicts.
-export const rhoByVariant: Record<Variant, number> = {"misterclaude": -0.044431403214485334, "gemaldini": -0.044431403214485334, "dav_gpo": -0.044431403214485334};
+export const rhoByVariant: Record<Variant, number> = {"misterclaude": -0.04443140321443625, "gemaldini": -0.04443140321443625, "dav_gpo": -0.04443140321443625};
 
 export const rho: number = -0.044431;
