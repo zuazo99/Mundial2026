@@ -86,7 +86,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.0,
       "gcProm5": 1.6,
       "gfProm15": 1.4666666666666666,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 1.488443061923162,
       "pca2": 0.467351813400723
     },
@@ -139,7 +139,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1837.0,
       "gfProm5": 2.6,
       "gcProm5": 1.6,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 1.0,
       "pca1": 0.1843971767315491,
       "pca2": 0.8497090905549373
@@ -212,7 +212,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.0,
       "gcProm5": 2.4,
       "gfProm15": 1.8666666666666667,
-      "gcProm15": 1.9333333333333331,
+      "gcProm15": 1.9333333333333333,
       "pca1": -0.2807262020914015,
       "pca2": 0.673421647678982
     },
@@ -230,7 +230,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.6,
       "gcProm5": 1.2,
       "gfProm15": 3.2,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": -0.2503965980777771,
       "pca2": 1.0244536275379597
     },
@@ -239,7 +239,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.0,
       "gcProm5": 1.2,
       "gfProm15": 1.4666666666666666,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 0.8049908084397812,
       "pca2": -0.121500795314888
     },
@@ -257,7 +257,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.8,
       "gcProm5": 1.0,
       "gfProm15": 1.6666666666666667,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 1.4086126402216854,
       "pca2": 0.7303561658348746
     },
@@ -274,7 +274,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1550.0,
       "gfProm5": 0.4,
       "gcProm5": 2.2,
-      "gfProm15": 0.9333333333333332,
+      "gfProm15": 0.9333333333333333,
       "gcProm15": 1.4,
       "pca1": 0.3338069412133331,
       "pca2": -0.791292197198416
@@ -283,7 +283,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 2071.0,
       "gfProm5": 1.8,
       "gcProm5": 0.2,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 0.2,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
@@ -293,7 +293,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 0.8,
       "gcProm5": 1.0,
       "gfProm15": 0.8666666666666667,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 1.1810582232194555,
       "pca2": -1.0815786734613415
     },
@@ -302,7 +302,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.0,
       "gcProm5": 1.8,
       "gfProm15": 1.8666666666666667,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 1.5964780363506028,
       "pca2": 1.6117358736904208
     },
@@ -320,7 +320,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.4,
       "gcProm5": 1.8,
       "gfProm15": 2.2666666666666666,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 1.080117626545097,
       "pca2": 0.9929671187289556
     },
@@ -329,7 +329,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.0,
       "gcProm5": 1.6,
       "gfProm15": 2.6,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 0.969575804641949,
       "pca2": 1.1519830256629635
     },
@@ -364,7 +364,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1777.0,
       "gfProm5": 2.6,
       "gcProm5": 2.0,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 1.1333333333333333,
       "pca1": 2.560616043834865,
       "pca2": 1.3554950365656575
@@ -373,7 +373,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1907.0,
       "gfProm5": 1.6,
       "gcProm5": 1.0,
-      "gfProm15": 1.9333333333333331,
+      "gfProm15": 1.9333333333333333,
       "gcProm15": 1.0,
       "pca1": 0.8182417733778079,
       "pca2": 0.4651635444040333
@@ -382,7 +382,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1874.0,
       "gfProm5": 1.4,
       "gcProm5": 2.0,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 1.1333333333333333,
       "pca1": 0.5769022576789682,
       "pca2": 0.8316886088423607
@@ -401,7 +401,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.8,
       "gcProm5": 2.0,
       "gfProm15": 2.533333333333333,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 2.643673065164845,
       "pca2": 1.587447246742078
     },
@@ -410,7 +410,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 0.6,
       "gcProm5": 1.0,
       "gfProm15": 1.3333333333333333,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 0.1613769955320855,
       "pca2": 0.2281988607875314
     },
@@ -419,7 +419,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 0.6,
       "gcProm5": 1.2,
       "gfProm15": 1.2,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 0.5755546911142203,
       "pca2": 0.6796246493567383
     },
@@ -520,7 +520,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.0,
       "gcProm5": 1.6,
       "gfProm15": 1.4666666666666666,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 1.488443061923162,
       "pca2": 0.467351813400723
     },
@@ -573,7 +573,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1937.0,
       "gfProm5": 2.6,
       "gcProm5": 1.6,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 1.0,
       "pca1": 0.1843971767315491,
       "pca2": 0.8497090905549373
@@ -646,7 +646,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.0,
       "gcProm5": 2.4,
       "gfProm15": 1.8666666666666667,
-      "gcProm15": 1.9333333333333331,
+      "gcProm15": 1.9333333333333333,
       "pca1": -0.2807262020914015,
       "pca2": 0.673421647678982
     },
@@ -664,7 +664,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.6,
       "gcProm5": 1.2,
       "gfProm15": 3.2,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": -0.2503965980777771,
       "pca2": 1.0244536275379597
     },
@@ -673,7 +673,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.0,
       "gcProm5": 1.2,
       "gfProm15": 1.4666666666666666,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 0.8049908084397812,
       "pca2": -0.121500795314888
     },
@@ -691,7 +691,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.8,
       "gcProm5": 1.0,
       "gfProm15": 1.6666666666666667,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 1.4086126402216854,
       "pca2": 0.7303561658348746
     },
@@ -708,7 +708,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1550.0,
       "gfProm5": 0.4,
       "gcProm5": 2.2,
-      "gfProm15": 0.9333333333333332,
+      "gfProm15": 0.9333333333333333,
       "gcProm15": 1.4,
       "pca1": 0.3338069412133331,
       "pca2": -0.791292197198416
@@ -717,7 +717,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 2221.0,
       "gfProm5": 1.8,
       "gcProm5": 0.2,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 0.2,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
@@ -727,7 +727,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 0.8,
       "gcProm5": 1.0,
       "gfProm15": 0.8666666666666667,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 1.1810582232194555,
       "pca2": -1.0815786734613415
     },
@@ -736,7 +736,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.0,
       "gcProm5": 1.8,
       "gfProm15": 1.8666666666666667,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 1.5964780363506028,
       "pca2": 1.6117358736904208
     },
@@ -754,7 +754,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.4,
       "gcProm5": 1.8,
       "gfProm15": 2.2666666666666666,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 1.080117626545097,
       "pca2": 0.9929671187289556
     },
@@ -763,7 +763,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.0,
       "gcProm5": 1.6,
       "gfProm15": 2.6,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 0.969575804641949,
       "pca2": 1.1519830256629635
     },
@@ -798,7 +798,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1777.0,
       "gfProm5": 2.6,
       "gcProm5": 2.0,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 1.1333333333333333,
       "pca1": 2.560616043834865,
       "pca2": 1.3554950365656575
@@ -807,7 +807,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1907.0,
       "gfProm5": 1.6,
       "gcProm5": 1.0,
-      "gfProm15": 1.9333333333333331,
+      "gfProm15": 1.9333333333333333,
       "gcProm15": 1.0,
       "pca1": 0.8182417733778079,
       "pca2": 0.4651635444040333
@@ -816,7 +816,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1974.0,
       "gfProm5": 1.4,
       "gcProm5": 2.0,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 1.1333333333333333,
       "pca1": 0.5769022576789682,
       "pca2": 0.8316886088423607
@@ -835,7 +835,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.8,
       "gcProm5": 2.0,
       "gfProm15": 2.533333333333333,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 2.643673065164845,
       "pca2": 1.587447246742078
     },
@@ -844,7 +844,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 0.6,
       "gcProm5": 1.0,
       "gfProm15": 1.3333333333333333,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 0.1613769955320855,
       "pca2": 0.2281988607875314
     },
@@ -853,7 +853,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 0.6,
       "gcProm5": 1.2,
       "gfProm15": 1.2,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 0.5755546911142203,
       "pca2": 0.6796246493567383
     },
@@ -954,7 +954,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.0,
       "gcProm5": 1.6,
       "gfProm15": 1.4666666666666666,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 1.488443061923162,
       "pca2": 0.467351813400723
     },
@@ -1007,7 +1007,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1837.0,
       "gfProm5": 2.6,
       "gcProm5": 1.6,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 1.0,
       "pca1": 0.1843971767315491,
       "pca2": 0.8497090905549373
@@ -1080,7 +1080,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.0,
       "gcProm5": 2.4,
       "gfProm15": 1.8666666666666667,
-      "gcProm15": 1.9333333333333331,
+      "gcProm15": 1.9333333333333333,
       "pca1": -0.2807262020914015,
       "pca2": 0.673421647678982
     },
@@ -1098,7 +1098,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.6,
       "gcProm5": 1.2,
       "gfProm15": 3.2,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": -0.2503965980777771,
       "pca2": 1.0244536275379597
     },
@@ -1107,7 +1107,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.0,
       "gcProm5": 1.2,
       "gfProm15": 1.4666666666666666,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 0.8049908084397812,
       "pca2": -0.121500795314888
     },
@@ -1125,7 +1125,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.8,
       "gcProm5": 1.0,
       "gfProm15": 1.6666666666666667,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 1.4086126402216854,
       "pca2": 0.7303561658348746
     },
@@ -1142,7 +1142,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1550.0,
       "gfProm5": 0.4,
       "gcProm5": 2.2,
-      "gfProm15": 0.9333333333333332,
+      "gfProm15": 0.9333333333333333,
       "gcProm15": 1.4,
       "pca1": 0.3338069412133331,
       "pca2": -0.791292197198416
@@ -1151,7 +1151,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 2071.0,
       "gfProm5": 1.8,
       "gcProm5": 0.2,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 0.2,
       "pca1": -0.0007677266916213,
       "pca2": 0.0002437217326143
@@ -1161,7 +1161,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 0.8,
       "gcProm5": 1.0,
       "gfProm15": 0.8666666666666667,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 1.1810582232194555,
       "pca2": -1.0815786734613415
     },
@@ -1170,7 +1170,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.0,
       "gcProm5": 1.8,
       "gfProm15": 1.8666666666666667,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 1.5964780363506028,
       "pca2": 1.6117358736904208
     },
@@ -1188,7 +1188,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 1.4,
       "gcProm5": 1.8,
       "gfProm15": 2.2666666666666666,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 1.080117626545097,
       "pca2": 0.9929671187289556
     },
@@ -1197,7 +1197,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.0,
       "gcProm5": 1.6,
       "gfProm15": 2.6,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 0.969575804641949,
       "pca2": 1.1519830256629635
     },
@@ -1232,7 +1232,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1777.0,
       "gfProm5": 2.6,
       "gcProm5": 2.0,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 1.1333333333333333,
       "pca1": 2.560616043834865,
       "pca2": 1.3554950365656575
@@ -1241,7 +1241,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 2107.0,
       "gfProm5": 1.6,
       "gcProm5": 1.0,
-      "gfProm15": 1.9333333333333331,
+      "gfProm15": 1.9333333333333333,
       "gcProm15": 1.0,
       "pca1": 0.8182417733778079,
       "pca2": 0.4651635444040333
@@ -1250,7 +1250,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "elo": 1874.0,
       "gfProm5": 1.4,
       "gcProm5": 2.0,
-      "gfProm15": 2.333333333333333,
+      "gfProm15": 2.3333333333333335,
       "gcProm15": 1.1333333333333333,
       "pca1": 0.5769022576789682,
       "pca2": 0.8316886088423607
@@ -1269,7 +1269,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 2.8,
       "gcProm5": 2.0,
       "gfProm15": 2.533333333333333,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 2.643673065164845,
       "pca2": 1.587447246742078
     },
@@ -1278,7 +1278,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 0.6,
       "gcProm5": 1.0,
       "gfProm15": 1.3333333333333333,
-      "gcProm15": 1.0666666666666669,
+      "gcProm15": 1.0666666666666667,
       "pca1": 0.1613769955320855,
       "pca2": 0.2281988607875314
     },
@@ -1287,7 +1287,7 @@ export const teamStats: Record<Variant, Record<string, TeamStats>> = {
       "gfProm5": 0.6,
       "gcProm5": 1.2,
       "gfProm15": 1.2,
-      "gcProm15": 0.9333333333333332,
+      "gcProm15": 0.9333333333333333,
       "pca1": 0.5755546911142203,
       "pca2": 0.6796246493567383
     },
