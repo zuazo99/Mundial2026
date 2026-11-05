@@ -63,3 +63,17 @@ def test_pca_transform_with_fitted_objects_is_consistent():
     a, scaler, pca = xp._apply_pca_merge_decay(df.copy(), fit_transformers=True)
     b, _, _ = xp._apply_pca_merge_decay(df.copy(), scaler=scaler, pca=pca, fit_transformers=False)
     pd.testing.assert_series_equal(a["PCA_1"], b["PCA_1"])
+
+
+def test_decay_parameters_default_to_world_cup_constants_and_can_be_overridden():
+    h = _toy_history()
+    default, *_ = xp.engineer_features(h)
+    same, *_ = xp.engineer_features(h, decay_ref=xp.DECAY_REF_DATE, half_life_days=xp.DECAY_HALF_LIFE_DAYS)
+    pd.testing.assert_series_equal(default["date_weight"], same["date_weight"])
+
+    ref = h["date"].max()
+    custom, *_ = xp.engineer_features(h, decay_ref=ref, half_life_days=365)
+    assert custom.loc[custom["date"] == ref, "date_weight"].eq(1.0).all()
+    one_year = custom.loc[custom["date"] == ref - pd.Timedelta(days=365), "date_weight"]
+    if len(one_year):
+        assert one_year.iloc[0] == pytest.approx(0.5, abs=0.02)

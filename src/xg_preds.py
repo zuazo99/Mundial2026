@@ -83,7 +83,8 @@ def _add_rolling_and_style(df):
     return df
 
 
-def _apply_pca_merge_decay(df, *, scaler=None, pca=None, fit_transformers=True):
+def _apply_pca_merge_decay(df, *, scaler=None, pca=None, fit_transformers=True,
+                           decay_ref=None, half_life_days=None):
     """Fit or apply scaler+PCA, merge rival stats, add time-decay weight.
     fit_transformers=False requires non-None scaler and pca.
     Returns (df_engineered, scaler, pca)."""
@@ -116,21 +117,24 @@ def _apply_pca_merge_decay(df, *, scaler=None, pca=None, fit_transformers=True):
                      "rival_gf_prom_15", "rival_gc_prom_15", "rival_PCA_1", "rival_PCA_2"]
     df = pd.merge(df, rival, on=["date", "opponent"], how="left")
 
-    ref = pd.to_datetime(DECAY_REF_DATE)
+    ref = pd.to_datetime(DECAY_REF_DATE if decay_ref is None else decay_ref)
+    half_life = DECAY_HALF_LIFE_DAYS if half_life_days is None else half_life_days
     df["days_away"]   = (ref - df["date"]).dt.days.clip(lower=0)
-    df["date_weight"] = np.exp(-np.log(2) / DECAY_HALF_LIFE_DAYS * df["days_away"])
+    df["date_weight"] = np.exp(-np.log(2) / half_life * df["days_away"])
 
     return df, scaler, pca
 
 
-def engineer_features(df_historia, *, scaler=None, pca=None, fit_transformers=True):
+def engineer_features(df_historia, *, scaler=None, pca=None, fit_transformers=True,
+                      decay_ref=None, half_life_days=None):
     """Full pipeline: rolling windows → PCA → rival merge → time-decay.
     For no-leakage validation: call _add_rolling_and_style on full history, split,
     then call _apply_pca_merge_decay on each split independently.
     Returns (df_engineered, scaler, pca, FEATURES)."""
     df = _add_rolling_and_style(df_historia.copy())
     df, scaler, pca = _apply_pca_merge_decay(
-        df, scaler=scaler, pca=pca, fit_transformers=fit_transformers)
+        df, scaler=scaler, pca=pca, fit_transformers=fit_transformers,
+        decay_ref=decay_ref, half_life_days=half_life_days)
     return df, scaler, pca, FEATURES
 
 

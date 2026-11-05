@@ -127,7 +127,11 @@ Knockout XG uses ELO-based approximation (`eloToXG()`) since XGBoost can't run i
 
 ## La Liga (en construcción)
 
-Fase 1 — ingesta (`src/liga/ingest.py`, `scripts/download_liga.py`, ver `data/liga/README.md`): CSV de football-data → ELO propio → formato largo compatible con `xg_preds.engineer_features`. Los ascendidos se siembran con su ELO en Segunda (`SP2_*.csv`, `ELO_SP2_GAP`=100, supuesto sin calibrar); sin datos de SP2 reciben la media de los descendidos. La primera temporada arranca en frío (todos a 1500): excluirla o pesarla menos al entrenar. Pendiente para la fase del modelo: `DECAY_REF_DATE`/`confed`/`tournament_num` son específicos de selecciones (para clubes quedan constantes o con peso 1), y simular el resto de temporada sobre `pending_<aabb>.csv`.
+Fase 1 — ingesta (`src/liga/ingest.py`, `scripts/download_liga.py`, ver `data/liga/README.md`): CSV de football-data → ELO propio → formato largo compatible con `xg_preds.engineer_features`. Los ascendidos se siembran con su ELO en Segunda (`SP2_*.csv`, `ELO_SP2_GAP`=100, supuesto sin calibrar); sin datos de SP2 reciben la media de los descendidos. La primera temporada arranca en frío (todos a 1500): excluirla o pesarla menos al entrenar. 
+
+Fase 2 — modelo (`src/liga/model.py`, `python src/liga/model.py` tras la ingesta): reutiliza el pipeline de `xg_preds` con decaimiento anclado a la última fecha (`HALF_LIFE_DAYS`=730, elección sin calibrar), sin la primera temporada en el ajuste (ELO en frío), `is_home` real y `confed`/`tournament_num` constantes. Un único modelo `api/models/xgb_liga.json` (no está en `VARIANTS`). Predice XG de los partidos pendientes con el estado de cada equipo congelado tras su último partido (`data/liga/xg_pending_<aabb>.csv`) y valida con hold-out temporal frente a baselines (`results/validation_liga.json`). `train_liga` rechaza datos donde un equipo juega dos veces el mismo día (el cruce con el rival es por fecha). Los partidos de SP2 no están en el formato largo, así que las ventanas de un recién ascendido salen de su última etapa en Primera o se rellenan con la media. Probado solo con una liga sintética (`tests/test_liga_model.py`); falta validar con datos reales.
+
+Pendiente: simular el resto de temporada sobre `xg_pending_<aabb>.csv` (probabilidades de campeón, Champions, descenso), actualizando el estado jornada a jornada.
 
 ### Pendiente: acceso a las APIs de datos (bloqueado hasta que el dueño lo habilite)
 

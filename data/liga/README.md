@@ -14,3 +14,6 @@ de football-data.
 Si hay ficheros `SP2_<aabb>.csv`, los ascendidos se siembran con su ELO en Segunda
 (media de Segunda anclada `ELO_SP2_GAP`=100 puntos por debajo de la de Primera, supuesto
 ajustable); si un ascendido no aparece en SP2, recibe la media de los descendidos.
+
+3. `python src/liga/model.py` entrena el modelo de clubes y genera `xg_pending_<aabb>.csv`
+   (XG esperado de local y visitante de cada partido pendiente) y `results/validation_liga.json`.
