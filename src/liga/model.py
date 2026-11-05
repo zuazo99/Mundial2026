@@ -64,6 +64,15 @@ def _check_unique_dates(df: pd.DataFrame) -> None:
                          f"(p. ej. {dup.iloc[0]['team']} el {dup.iloc[0]['date'].date()}); revisa los CSV.")
 
 
+def _force_club_constants(df: pd.DataFrame) -> pd.DataFrame:
+    """confed/tournament_num se derivan del nombre del equipo o del torneo (selecciones);
+    para clubes deben ser constantes también al entrenar (p. ej. 'Andorra' está en la lista UEFA)."""
+    df["confed"] = _CONFED_CONST
+    df["rival_confed"] = _CONFED_CONST
+    df["tournament_num"] = _TOURNAMENT_CONST
+    return df
+
+
 def _fit_xgb(df_train: pd.DataFrame, feat_means: pd.Series) -> xgb.XGBRegressor:
     x = df_train[FEATURES].fillna(feat_means)
     m = xgb.XGBRegressor(**_DEFAULT_PARAMS)
@@ -79,7 +88,7 @@ def train_liga(long_df: pd.DataFrame, half_life_days: int = HALF_LIFE_DAYS) -> L
     decay_ref = df["date"].max()
     eng, scaler, pca, _ = engineer_features(df, fit_transformers=True,
                                             decay_ref=decay_ref, half_life_days=half_life_days)
-    train = eng[eng["season"] != seasons[0]].dropna(subset=[TARGET]).copy()
+    train = _force_club_constants(eng[eng["season"] != seasons[0]].dropna(subset=[TARGET]).copy())
     feat_means = train[FEATURES].mean()
     train[FEATURES] = train[FEATURES].fillna(feat_means)
     model = _fit_xgb(train, feat_means)
@@ -164,8 +173,8 @@ def holdout_validation(long_df: pd.DataFrame, test_season: str = None,
                                              decay_ref=cutoff, half_life_days=half_life_days)
     te, _, _ = _apply_pca_merge_decay(f_te, scaler=scaler, pca=pca, fit_transformers=False,
                                       decay_ref=cutoff, half_life_days=half_life_days)
-    tr = tr[tr["season"] != prev[0]].dropna(subset=[TARGET])
-    te = te.dropna(subset=[TARGET])
+    tr = _force_club_constants(tr[tr["season"] != prev[0]].dropna(subset=[TARGET]).copy())
+    te = _force_club_constants(te.dropna(subset=[TARGET]).copy())
     means = tr[FEATURES].mean()
     m = _fit_xgb(tr, means)
 

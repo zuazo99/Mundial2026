@@ -158,3 +158,27 @@ def test_train_rejects_team_playing_twice_on_the_same_date(world):
     bad = pd.concat([world["long"], world["long"].iloc[[0]]], ignore_index=True)
     with pytest.raises(ValueError, match="misma fecha"):
         lm.train_liga(bad)
+
+
+def test_country_like_club_name_does_not_leak_confederation_into_training():
+    """'Andorra' está en la lista UEFA de selecciones: el entrenamiento no debe verlo."""
+    seasons = make_seasons()
+    renamed = {c: df.replace({"T05": "Andorra"}) for c, df in seasons.items()}
+    long = ingest.to_long(ingest.add_elo(renamed))
+    seen = {}
+    orig = lm._fit_xgb
+
+    def spy(df_train, feat_means):
+        seen["confed"] = set(df_train["confed"]) | set(df_train["rival_confed"])
+        seen["tournament_num"] = set(df_train["tournament_num"])
+        return orig(df_train, feat_means)
+
+    try:
+        lm._fit_xgb = spy
+        lm.train_liga(long)
+        assert seen == {"confed": {0}, "tournament_num": {1}}
+        seen.clear()
+        lm.holdout_validation(long)
+        assert seen == {"confed": {0}, "tournament_num": {1}}
+    finally:
+        lm._fit_xgb = orig

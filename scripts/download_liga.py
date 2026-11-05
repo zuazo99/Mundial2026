@@ -1,7 +1,7 @@
 """Descarga los CSV de La Liga (SP1) y Segunda (SP2) de football-data.co.uk a data/liga/raw/.
 
 Uso (en local, con red):
-    python scripts/download_liga.py              # últimas 5 temporadas
+    python scripts/download_liga.py              # últimas 6 temporadas (la más antigua es solo de arranque en frío del ELO)
     python scripts/download_liga.py --seasons 8  # más historia
     python scripts/download_liga.py --refresh    # vuelve a bajar también las ya existentes
 
@@ -64,7 +64,7 @@ def download(codes: list, raw_dir: str = RAW_DIR, refresh: bool = False, fetcher
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--seasons", type=int, default=5)
+    ap.add_argument("--seasons", type=int, default=6)
     ap.add_argument("--refresh", action="store_true")
     ap.add_argument("--no-segunda", action="store_true", help="no bajar SP2 (siembra de ascendidos)")
     a = ap.parse_args()
