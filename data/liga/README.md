@@ -1,5 +1,7 @@
 # Datos de La Liga
 
+0. (Alternativa recomendada en el entorno cloud) `python scripts/fetch_liga_openfootball.py` descarga y limpia
+   openfootball/football.json (11 temporadas de Primera y Segunda) y escribe `raw/` + `cleaning_report.json`.
 1. `python scripts/download_liga.py` (en local, con red) baja `SP1_<aabb>.csv` de
    football-data.co.uk a `data/liga/raw/` (Primera `SP1_*` y Segunda `SP2_*`; `--no-segunda` para omitir SP2). También sirve copiarlos a mano.
 2. `python src/liga/ingest.py` genera:

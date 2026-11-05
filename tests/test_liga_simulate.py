@@ -200,6 +200,7 @@ def test_run_writes_probabilities_in_given_dir(tmp_path, world):
     out = json.load(open(tmp_path / "results" / "liga_probabilities.json"))
     assert out["meta"]["season"] == world["last"]
     assert set(out["teams"]) == set(TEAMS)
+    assert out["meta"]["data_as_of"] == str(world["long"].loc[world["long"]["season"] == world["last"], "date"].max())[:10]
 
 
 def test_run_without_model_artifacts_points_to_model_py(tmp_path):

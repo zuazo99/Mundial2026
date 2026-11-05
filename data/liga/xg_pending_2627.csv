@@ -1,0 +1,317 @@
+home,away,xg_home,xg_away
+Athletic Club,CA Osasuna,1.835,1.262
+Athletic Club,Deportivo Alavés,1.742,1.293
+Athletic Club,FC Barcelona,1.081,2.549
+Athletic Club,Getafe CF,1.5,1.0
+Athletic Club,Levante UD,1.604,1.187
+Athletic Club,Málaga CF,2.232,1.028
+Athletic Club,RC Celta de Vigo,1.751,1.24
+Athletic Club,RC Deportivo La Coruña,1.728,1.224
+Athletic Club,RCD Espanyol de Barcelona,1.829,1.263
+Athletic Club,Rayo Vallecano de Madrid,1.667,1.247
+Athletic Club,Real Betis Balompié,1.331,1.46
+Athletic Club,Real Madrid CF,1.269,1.87
+Athletic Club,Real Racing Club de Santander,2.415,0.812
+Athletic Club,Real Sociedad de Fútbol,2.024,1.224
+Athletic Club,Valencia CF,1.714,1.219
+Athletic Club,Villarreal CF,1.558,1.38
+CA Osasuna,Athletic Club,1.447,1.323
+CA Osasuna,Club Atlético de Madrid,1.091,1.517
+CA Osasuna,Deportivo Alavés,1.327,1.308
+CA Osasuna,Elche CF,1.433,1.22
+CA Osasuna,FC Barcelona,1.026,2.18
+CA Osasuna,Levante UD,1.314,1.208
+CA Osasuna,Málaga CF,1.561,0.949
+CA Osasuna,RC Celta de Vigo,1.347,1.228
+CA Osasuna,RC Deportivo La Coruña,1.346,1.252
+CA Osasuna,Real Betis Balompié,1.112,1.513
+CA Osasuna,Real Madrid CF,1.016,1.861
+CA Osasuna,Real Racing Club de Santander,1.793,0.783
+CA Osasuna,Real Sociedad de Fútbol,1.538,1.2
+CA Osasuna,Sevilla FC,1.427,1.214
+CA Osasuna,Valencia CF,1.367,1.167
+CA Osasuna,Villarreal CF,1.137,1.367
+Club Atlético de Madrid,Athletic Club,2.07,1.017
+Club Atlético de Madrid,Deportivo Alavés,2.158,1.055
+Club Atlético de Madrid,Elche CF,2.208,1.087
+Club Atlético de Madrid,FC Barcelona,1.132,2.192
+Club Atlético de Madrid,Getafe CF,1.859,0.65
+Club Atlético de Madrid,Levante UD,1.841,1.032
+Club Atlético de Madrid,RC Celta de Vigo,2.155,1.026
+Club Atlético de Madrid,RC Deportivo La Coruña,2.083,0.985
+Club Atlético de Madrid,RCD Espanyol de Barcelona,2.203,0.955
+Club Atlético de Madrid,Rayo Vallecano de Madrid,1.806,0.965
+Club Atlético de Madrid,Real Betis Balompié,1.719,1.262
+Club Atlético de Madrid,Real Racing Club de Santander,2.451,0.837
+Club Atlético de Madrid,Real Sociedad de Fútbol,2.409,1.076
+Club Atlético de Madrid,Sevilla FC,2.13,0.947
+Club Atlético de Madrid,Valencia CF,2.097,0.926
+Deportivo Alavés,Athletic Club,1.656,1.43
+Deportivo Alavés,Club Atlético de Madrid,1.352,1.727
+Deportivo Alavés,Elche CF,1.74,1.269
+Deportivo Alavés,FC Barcelona,1.26,2.768
+Deportivo Alavés,Levante UD,1.569,1.189
+Deportivo Alavés,Málaga CF,2.012,0.945
+Deportivo Alavés,RC Celta de Vigo,1.655,1.385
+Deportivo Alavés,RC Deportivo La Coruña,1.623,1.29
+Deportivo Alavés,RCD Espanyol de Barcelona,1.717,1.259
+Deportivo Alavés,Rayo Vallecano de Madrid,1.556,1.332
+Deportivo Alavés,Real Betis Balompié,1.32,1.717
+Deportivo Alavés,Real Madrid CF,1.365,2.013
+Deportivo Alavés,Real Racing Club de Santander,2.203,0.859
+Deportivo Alavés,Real Sociedad de Fútbol,1.915,1.263
+Deportivo Alavés,Sevilla FC,1.668,1.286
+Elche CF,Athletic Club,1.592,1.383
+Elche CF,CA Osasuna,1.563,1.219
+Elche CF,Club Atlético de Madrid,1.368,1.608
+Elche CF,Deportivo Alavés,1.498,1.331
+Elche CF,Getafe CF,1.338,0.969
+Elche CF,Levante UD,1.439,1.297
+Elche CF,Málaga CF,1.911,0.997
+Elche CF,RC Celta de Vigo,1.571,1.281
+Elche CF,RC Deportivo La Coruña,1.546,1.265
+Elche CF,RCD Espanyol de Barcelona,1.592,1.192
+Elche CF,Rayo Vallecano de Madrid,1.525,1.336
+Elche CF,Real Betis Balompié,1.332,1.625
+Elche CF,Real Racing Club de Santander,2.004,0.897
+Elche CF,Sevilla FC,1.604,1.242
+Elche CF,Valencia CF,1.512,1.217
+Elche CF,Villarreal CF,1.407,1.424
+FC Barcelona,CA Osasuna,2.686,0.832
+FC Barcelona,Club Atlético de Madrid,2.239,1.151
+FC Barcelona,Deportivo Alavés,2.886,0.996
+FC Barcelona,Elche CF,2.848,1.029
+FC Barcelona,Getafe CF,2.351,0.526
+FC Barcelona,Levante UD,2.556,0.953
+FC Barcelona,Málaga CF,2.723,0.576
+FC Barcelona,RC Celta de Vigo,2.833,0.928
+FC Barcelona,RC Deportivo La Coruña,2.739,0.917
+FC Barcelona,RCD Espanyol de Barcelona,2.874,0.881
+FC Barcelona,Real Betis Balompié,2.336,1.029
+FC Barcelona,Real Madrid CF,2.609,1.376
+FC Barcelona,Real Sociedad de Fútbol,3.386,1.029
+FC Barcelona,Sevilla FC,2.802,0.866
+FC Barcelona,Valencia CF,2.631,0.859
+FC Barcelona,Villarreal CF,3.129,1.112
+Getafe CF,Athletic Club,1.244,1.094
+Getafe CF,CA Osasuna,1.318,0.953
+Getafe CF,Club Atlético de Madrid,0.84,1.333
+Getafe CF,Deportivo Alavés,1.183,1.117
+Getafe CF,Elche CF,1.245,0.994
+Getafe CF,FC Barcelona,0.667,1.98
+Getafe CF,Levante UD,1.194,0.887
+Getafe CF,RCD Espanyol de Barcelona,1.343,1.049
+Getafe CF,Rayo Vallecano de Madrid,1.191,0.983
+Getafe CF,Real Betis Balompié,0.869,1.318
+Getafe CF,Real Madrid CF,0.804,1.621
+Getafe CF,Real Sociedad de Fútbol,1.301,0.896
+Getafe CF,Sevilla FC,1.25,1.024
+Getafe CF,Valencia CF,1.225,0.955
+Getafe CF,Villarreal CF,1.011,1.234
+Levante UD,Athletic Club,1.617,1.306
+Levante UD,CA Osasuna,1.658,1.239
+Levante UD,Club Atlético de Madrid,1.338,1.441
+Levante UD,Deportivo Alavés,1.486,1.324
+Levante UD,Elche CF,1.733,1.257
+Levante UD,Getafe CF,1.292,1.017
+Levante UD,Málaga CF,1.958,1.116
+Levante UD,RC Celta de Vigo,1.563,1.295
+Levante UD,RC Deportivo La Coruña,1.596,1.2
+Levante UD,RCD Espanyol de Barcelona,1.648,1.264
+Levante UD,Rayo Vallecano de Madrid,1.565,1.245
+Levante UD,Real Madrid CF,1.352,1.856
+Levante UD,Real Racing Club de Santander,2.173,0.947
+Levante UD,Real Sociedad de Fútbol,1.862,1.305
+Levante UD,Sevilla FC,1.601,1.333
+Levante UD,Valencia CF,1.54,1.277
+Levante UD,Villarreal CF,1.477,1.403
+Málaga CF,Athletic Club,1.118,1.444
+Málaga CF,CA Osasuna,1.104,1.244
+Málaga CF,Club Atlético de Madrid,0.759,1.503
+Málaga CF,Deportivo Alavés,0.977,1.378
+Málaga CF,Elche CF,1.129,1.325
+Málaga CF,FC Barcelona,0.642,1.998
+Málaga CF,Getafe CF,0.943,1.107
+Málaga CF,Levante UD,1.138,1.254
+Málaga CF,RC Celta de Vigo,1.043,1.306
+Málaga CF,RCD Espanyol de Barcelona,1.099,1.261
+Málaga CF,Rayo Vallecano de Madrid,1.137,1.376
+Málaga CF,Real Betis Balompié,0.778,1.474
+Málaga CF,Real Madrid CF,0.704,1.839
+Málaga CF,Real Racing Club de Santander,1.233,0.82
+Málaga CF,Real Sociedad de Fútbol,1.125,1.264
+Málaga CF,Sevilla FC,1.1,1.277
+Málaga CF,Valencia CF,1.064,1.236
+RC Celta de Vigo,Club Atlético de Madrid,1.367,1.65
+RC Celta de Vigo,Deportivo Alavés,1.724,1.364
+RC Celta de Vigo,Elche CF,1.768,1.303
+RC Celta de Vigo,FC Barcelona,1.22,2.652
+RC Celta de Vigo,Getafe CF,1.498,1.033
+RC Celta de Vigo,Levante UD,1.609,1.204
+RC Celta de Vigo,RC Deportivo La Coruña,1.625,1.286
+RC Celta de Vigo,RCD Espanyol de Barcelona,1.723,1.222
+RC Celta de Vigo,Rayo Vallecano de Madrid,1.579,1.315
+RC Celta de Vigo,Real Betis Balompié,1.333,1.631
+RC Celta de Vigo,Real Madrid CF,1.344,1.973
+RC Celta de Vigo,Real Sociedad de Fútbol,1.988,1.263
+RC Celta de Vigo,Sevilla FC,1.67,1.259
+RC Celta de Vigo,Valencia CF,1.616,1.204
+RC Celta de Vigo,Villarreal CF,1.667,1.421
+RC Deportivo La Coruña,Athletic Club,1.466,1.32
+RC Deportivo La Coruña,CA Osasuna,1.555,1.171
+RC Deportivo La Coruña,Club Atlético de Madrid,1.165,1.549
+RC Deportivo La Coruña,Deportivo Alavés,1.431,1.272
+RC Deportivo La Coruña,FC Barcelona,1.098,2.445
+RC Deportivo La Coruña,Getafe CF,1.353,0.967
+RC Deportivo La Coruña,Levante UD,1.333,1.193
+RC Deportivo La Coruña,Málaga CF,1.82,0.947
+RC Deportivo La Coruña,RC Celta de Vigo,1.464,1.216
+RC Deportivo La Coruña,RCD Espanyol de Barcelona,1.54,1.166
+RC Deportivo La Coruña,Rayo Vallecano de Madrid,1.377,1.258
+RC Deportivo La Coruña,Real Madrid CF,1.151,1.846
+RC Deportivo La Coruña,Real Racing Club de Santander,1.88,0.777
+RC Deportivo La Coruña,Real Sociedad de Fútbol,1.64,1.2
+RC Deportivo La Coruña,Villarreal CF,1.288,1.368
+RCD Espanyol de Barcelona,Athletic Club,1.516,1.394
+RCD Espanyol de Barcelona,CA Osasuna,1.463,1.214
+RCD Espanyol de Barcelona,Club Atlético de Madrid,1.177,1.622
+RCD Espanyol de Barcelona,Deportivo Alavés,1.411,1.371
+RCD Espanyol de Barcelona,FC Barcelona,1.1,2.6
+RCD Espanyol de Barcelona,Getafe CF,1.306,1.086
+RCD Espanyol de Barcelona,Málaga CF,1.667,0.981
+RCD Espanyol de Barcelona,RC Celta de Vigo,1.415,1.298
+RCD Espanyol de Barcelona,RC Deportivo La Coruña,1.41,1.294
+RCD Espanyol de Barcelona,Rayo Vallecano de Madrid,1.433,1.31
+RCD Espanyol de Barcelona,Real Betis Balompié,1.167,1.596
+RCD Espanyol de Barcelona,Real Racing Club de Santander,1.827,0.837
+RCD Espanyol de Barcelona,Real Sociedad de Fútbol,1.579,1.22
+RCD Espanyol de Barcelona,Valencia CF,1.418,1.223
+RCD Espanyol de Barcelona,Villarreal CF,1.255,1.405
+Rayo Vallecano de Madrid,Athletic Club,1.738,1.274
+Rayo Vallecano de Madrid,CA Osasuna,1.749,1.197
+Rayo Vallecano de Madrid,Club Atlético de Madrid,1.301,1.373
+Rayo Vallecano de Madrid,Elche CF,1.836,1.245
+Rayo Vallecano de Madrid,FC Barcelona,1.034,2.233
+Rayo Vallecano de Madrid,Getafe CF,1.439,0.95
+Rayo Vallecano de Madrid,Levante UD,1.563,1.212
+Rayo Vallecano de Madrid,Málaga CF,2.259,1.04
+Rayo Vallecano de Madrid,RC Celta de Vigo,1.745,1.183
+Rayo Vallecano de Madrid,RC Deportivo La Coruña,1.709,1.162
+Rayo Vallecano de Madrid,Real Betis Balompié,1.311,1.348
+Rayo Vallecano de Madrid,Real Madrid CF,1.3,1.654
+Rayo Vallecano de Madrid,Real Sociedad de Fútbol,1.956,1.221
+Rayo Vallecano de Madrid,Sevilla FC,1.737,1.254
+Rayo Vallecano de Madrid,Valencia CF,1.684,1.192
+Rayo Vallecano de Madrid,Villarreal CF,1.555,1.29
+Real Betis Balompié,Athletic Club,2.088,1.007
+Real Betis Balompié,CA Osasuna,2.257,0.945
+Real Betis Balompié,Club Atlético de Madrid,1.664,1.269
+Real Betis Balompié,Deportivo Alavés,2.239,1.025
+Real Betis Balompié,Elche CF,2.29,1.053
+Real Betis Balompié,FC Barcelona,1.072,2.184
+Real Betis Balompié,Levante UD,1.94,0.988
+Real Betis Balompié,Málaga CF,2.494,0.718
+Real Betis Balompié,RC Celta de Vigo,2.214,0.994
+Real Betis Balompié,RC Deportivo La Coruña,2.107,0.96
+Real Betis Balompié,RCD Espanyol de Barcelona,2.237,0.954
+Real Betis Balompié,Rayo Vallecano de Madrid,1.863,0.953
+Real Betis Balompié,Real Racing Club de Santander,2.569,0.751
+Real Betis Balompié,Sevilla FC,2.148,0.96
+Real Betis Balompié,Valencia CF,2.177,0.923
+Real Betis Balompié,Villarreal CF,2.103,1.102
+Real Madrid CF,Athletic Club,2.682,0.974
+Real Madrid CF,CA Osasuna,2.647,0.863
+Real Madrid CF,Club Atlético de Madrid,2.045,1.349
+Real Madrid CF,Deportivo Alavés,2.695,1.042
+Real Madrid CF,Elche CF,2.716,1.033
+Real Madrid CF,FC Barcelona,1.463,2.501
+Real Madrid CF,Getafe CF,2.359,0.632
+Real Madrid CF,Levante UD,2.42,0.979
+Real Madrid CF,RC Celta de Vigo,2.706,0.989
+Real Madrid CF,RC Deportivo La Coruña,2.606,0.964
+Real Madrid CF,RCD Espanyol de Barcelona,2.702,0.942
+Real Madrid CF,Real Betis Balompié,2.078,1.229
+Real Madrid CF,Real Racing Club de Santander,3.311,0.833
+Real Madrid CF,Sevilla FC,2.706,0.921
+Real Madrid CF,Valencia CF,2.595,0.895
+Real Madrid CF,Villarreal CF,2.814,1.153
+Real Racing Club de Santander,Athletic Club,1.012,1.7
+Real Racing Club de Santander,CA Osasuna,0.958,1.433
+Real Racing Club de Santander,Club Atlético de Madrid,1.05,1.841
+Real Racing Club de Santander,FC Barcelona,1.112,3.004
+Real Racing Club de Santander,Getafe CF,0.758,1.1
+Real Racing Club de Santander,Levante UD,1.077,1.576
+Real Racing Club de Santander,Málaga CF,1.128,1.106
+Real Racing Club de Santander,RC Celta de Vigo,1.029,1.642
+Real Racing Club de Santander,RC Deportivo La Coruña,0.955,1.501
+Real Racing Club de Santander,RCD Espanyol de Barcelona,1.02,1.38
+Real Racing Club de Santander,Rayo Vallecano de Madrid,1.007,1.569
+Real Racing Club de Santander,Real Betis Balompié,0.946,1.877
+Real Racing Club de Santander,Real Madrid CF,1.082,2.409
+Real Racing Club de Santander,Real Sociedad de Fútbol,1.262,1.698
+Real Racing Club de Santander,Sevilla FC,0.943,1.593
+Real Racing Club de Santander,Valencia CF,0.901,1.546
+Real Sociedad de Fútbol,Athletic Club,1.583,1.649
+Real Sociedad de Fútbol,CA Osasuna,1.564,1.438
+Real Sociedad de Fútbol,Deportivo Alavés,1.538,1.586
+Real Sociedad de Fútbol,Elche CF,1.716,1.516
+Real Sociedad de Fútbol,FC Barcelona,1.31,3.151
+Real Sociedad de Fútbol,Getafe CF,1.23,1.08
+Real Sociedad de Fútbol,Levante UD,1.555,1.493
+Real Sociedad de Fútbol,Málaga CF,1.875,1.097
+Real Sociedad de Fútbol,RC Celta de Vigo,1.573,1.556
+Real Sociedad de Fútbol,RC Deportivo La Coruña,1.541,1.471
+Real Sociedad de Fútbol,Rayo Vallecano de Madrid,1.551,1.551
+Real Sociedad de Fútbol,Real Betis Balompié,1.318,1.919
+Real Sociedad de Fútbol,Real Madrid CF,1.324,2.511
+Real Sociedad de Fútbol,Real Racing Club de Santander,2.254,1.102
+Real Sociedad de Fútbol,Sevilla FC,1.566,1.481
+Real Sociedad de Fútbol,Valencia CF,1.542,1.414
+Real Sociedad de Fútbol,Villarreal CF,1.501,1.814
+Sevilla FC,Athletic Club,1.536,1.349
+Sevilla FC,CA Osasuna,1.566,1.24
+Sevilla FC,Deportivo Alavés,1.432,1.308
+Sevilla FC,Elche CF,1.521,1.276
+Sevilla FC,Getafe CF,1.331,1.011
+Sevilla FC,Levante UD,1.474,1.175
+Sevilla FC,Málaga CF,1.745,1.008
+Sevilla FC,RC Celta de Vigo,1.464,1.247
+Sevilla FC,RC Deportivo La Coruña,1.435,1.238
+Sevilla FC,RCD Espanyol de Barcelona,1.561,1.257
+Sevilla FC,Real Betis Balompié,1.167,1.511
+Sevilla FC,Real Madrid CF,1.109,1.882
+Sevilla FC,Real Racing Club de Santander,2.126,0.751
+Sevilla FC,Real Sociedad de Fútbol,1.691,1.21
+Sevilla FC,Villarreal CF,1.287,1.395
+Valencia CF,Athletic Club,1.35,1.337
+Valencia CF,CA Osasuna,1.353,1.2
+Valencia CF,Club Atlético de Madrid,1.053,1.548
+Valencia CF,Deportivo Alavés,1.264,1.297
+Valencia CF,Elche CF,1.373,1.259
+Valencia CF,Getafe CF,1.134,0.995
+Valencia CF,Levante UD,1.289,1.183
+Valencia CF,Málaga CF,1.487,0.98
+Valencia CF,RC Celta de Vigo,1.294,1.24
+Valencia CF,RC Deportivo La Coruña,1.286,1.242
+Valencia CF,RCD Espanyol de Barcelona,1.361,1.186
+Valencia CF,Rayo Vallecano de Madrid,1.322,1.263
+Valencia CF,Real Madrid CF,1.025,1.891
+Valencia CF,Real Racing Club de Santander,1.85,0.747
+Valencia CF,Sevilla FC,1.339,1.247
+Valencia CF,Villarreal CF,1.145,1.378
+Villarreal CF,Athletic Club,1.862,1.283
+Villarreal CF,CA Osasuna,1.926,1.036
+Villarreal CF,Club Atlético de Madrid,1.555,1.758
+Villarreal CF,Deportivo Alavés,1.922,1.318
+Villarreal CF,Elche CF,1.984,1.203
+Villarreal CF,FC Barcelona,1.409,3.118
+Villarreal CF,Getafe CF,1.625,0.84
+Villarreal CF,Málaga CF,2.499,0.764
+Villarreal CF,RC Celta de Vigo,1.816,1.357
+Villarreal CF,RCD Espanyol de Barcelona,1.851,1.102
+Villarreal CF,Rayo Vallecano de Madrid,1.665,1.227
+Villarreal CF,Real Madrid CF,1.543,2.212
+Villarreal CF,Real Racing Club de Santander,2.603,0.978
+Villarreal CF,Real Sociedad de Fútbol,2.356,1.248
+Villarreal CF,Sevilla FC,1.842,1.155
+Villarreal CF,Valencia CF,1.838,1.08

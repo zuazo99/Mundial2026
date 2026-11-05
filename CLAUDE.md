@@ -135,11 +135,8 @@ Fase 3 — simulación (`src/liga/simulate.py`, `python src/liga/simulate.py [n_
 
 Pendiente: validar con datos reales y, opcionalmente, actualizar el estado (p. ej. solo el ELO) jornada a jornada dentro de la simulación.
 
-### Pendiente: acceso a las APIs de datos (bloqueado hasta que el dueño lo habilite)
+### Fuentes de datos de La Liga (openfootball, abiertas)
 
-El entorno cloud solo permite los hosts de su allowlist. Para que Claude descargue los datos directamente (lo ideal, en vez de subir CSV a mano) hay que añadir en los ajustes del entorno ("predicción mundial" → Red) estos hosts exactos:
+football-data.co.uk sigue bloqueado en el entorno cloud, pero `raw.githubusercontent.com` es alcanzable. `python scripts/fetch_liga_openfootball.py` descarga [openfootball/football.json](https://github.com/openfootball/football.json) (CC0), lo limpia (`src/liga/sources.py`) y escribe `data/liga/raw/SP1_/SP2_<aabb>.csv` + `data/liga/cleaning_report.json` (caché del JSON original en `data/liga/source/`, ignorada por git). Limpieza: solo partidos con `ft` válido (0-12 goles, `ht ≤ ft`), sin resultados con fecha futura, errores ante duplicados / auto-partidos / mismo equipo el mismo día, alias de nombres (la fuente renombró 10 clubes en 2020/21) y guarda en la ingesta (`check_transitions`: >3 entradas en Primera = posible renombre). Validación cruzada con [footballcsv/cache.footballdata](https://github.com/footballcsv/cache.footballdata): 100 % de acuerdo de marcadores en 2016/17-2023/24 (3.040 partidos).
 
-- `www.football-data.co.uk` (resultados SP1/SP2)
-- `api.clubelo.com` (opcional: ELO de clubes; hoy se usa ELO propio)
-
-Esto no se puede hacer desde el móvil; hay que hacerlo desde el navegador de escritorio (claude.ai → Ajustes del entorno) o Claude lo propondrá con `update_environment` cuando se pueda aprobar. Mientras tanto: `python scripts/download_liga.py` en local, o dejar los CSV en `data/liga/raw/`.
+Limitaciones de la fuente: la temporada en curso llega solo hasta `data_as_of` (hoy 2026-09-20, ~6 semanas de retraso; `openfootball/espana` en `.txt` tiene los mismos resultados); faltan resultados en 2024/25 (10) y 2025/26 (15); Segunda ausente en 2021/22-2023/24 (los ascendidos de 2022/23-2024/25 se siembran con la media de los descendidos) y Segunda 2025/26 solo al 25 %. Otras ligas existen en la misma fuente pero exigirían una feature de liga y un ELO entre ligas. Para football-data directo: permitir `www.football-data.co.uk` en los ajustes del entorno (desde escritorio) y usar `scripts/download_liga.py`.

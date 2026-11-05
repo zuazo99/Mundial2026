@@ -1,0 +1,454 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP2,15/08/2024,Granada CF,Albacete,1,2
+SP2,16/08/2024,CD Mirandés,Córdoba CF,1,0
+SP2,16/08/2024,Cádiz CF,Real Zaragoza,0,4
+SP2,17/08/2024,Racing Ferrol,Málaga CF,2,2
+SP2,17/08/2024,SD Eibar,CD Castellón,1,0
+SP2,17/08/2024,RC Deportivo La Coruña,Real Oviedo,0,1
+SP2,18/08/2024,Real Racing Club de Santander,UD Almería,2,2
+SP2,18/08/2024,Sporting Gijón,Levante UD,1,2
+SP2,18/08/2024,Burgos CF,FC Cartagena,3,1
+SP2,18/08/2024,Elche CF,SD Huesca,0,1
+SP2,19/08/2024,CD Eldense,CD Tenerife,2,1
+SP2,23/08/2024,Real Racing Club de Santander,SD Eibar,2,2
+SP2,23/08/2024,SD Huesca,RC Deportivo La Coruña,2,1
+SP2,24/08/2024,Racing Ferrol,Granada CF,0,1
+SP2,24/08/2024,Sporting Gijón,CD Eldense,0,0
+SP2,24/08/2024,Levante UD,Cádiz CF,1,1
+SP2,24/08/2024,Málaga CF,CD Mirandés,1,1
+SP2,24/08/2024,CD Tenerife,UD Almería,0,1
+SP2,25/08/2024,Albacete,Elche CF,1,0
+SP2,25/08/2024,CD Castellón,Real Oviedo,0,0
+SP2,26/08/2024,FC Cartagena,Real Zaragoza,1,2
+SP2,26/08/2024,Córdoba CF,Burgos CF,2,2
+SP2,30/08/2024,Granada CF,SD Huesca,1,3
+SP2,30/08/2024,Real Oviedo,Real Racing Club de Santander,1,3
+SP2,31/08/2024,Cádiz CF,CD Tenerife,2,2
+SP2,31/08/2024,UD Almería,Sporting Gijón,1,1
+SP2,31/08/2024,Málaga CF,Albacete,2,1
+SP2,01/09/2024,Burgos CF,CD Castellón,0,2
+SP2,01/09/2024,RC Deportivo La Coruña,Racing Ferrol,1,0
+SP2,01/09/2024,CD Mirandés,Real Zaragoza,0,0
+SP2,01/09/2024,CD Eldense,FC Cartagena,1,2
+SP2,02/09/2024,SD Eibar,Levante UD,2,2
+SP2,02/09/2024,Elche CF,Córdoba CF,3,1
+SP2,06/09/2024,CD Tenerife,Real Racing Club de Santander,0,1
+SP2,07/09/2024,Granada CF,RC Deportivo La Coruña,1,1
+SP2,07/09/2024,SD Huesca,Burgos CF,0,1
+SP2,07/09/2024,Sporting Gijón,Real Oviedo,3,1
+SP2,07/09/2024,Córdoba CF,Málaga CF,0,0
+SP2,08/09/2024,Racing Ferrol,CD Mirandés,0,0
+SP2,08/09/2024,FC Cartagena,Levante UD,0,1
+SP2,08/09/2024,CD Eldense,UD Almería,1,0
+SP2,08/09/2024,Real Zaragoza,Elche CF,3,0
+SP2,09/09/2024,Albacete,SD Eibar,0,1
+SP2,09/09/2024,CD Castellón,Cádiz CF,1,3
+SP2,13/09/2024,Córdoba CF,RC Deportivo La Coruña,2,0
+SP2,14/09/2024,SD Eibar,CD Tenerife,1,0
+SP2,14/09/2024,Levante UD,CD Eldense,3,1
+SP2,14/09/2024,Real Racing Club de Santander,Sporting Gijón,1,0
+SP2,14/09/2024,Málaga CF,SD Huesca,1,0
+SP2,15/09/2024,CD Mirandés,Albacete,2,0
+SP2,15/09/2024,Real Oviedo,FC Cartagena,1,0
+SP2,15/09/2024,Burgos CF,Real Zaragoza,1,0
+SP2,15/09/2024,Cádiz CF,Racing Ferrol,0,0
+SP2,15/09/2024,Elche CF,Granada CF,2,2
+SP2,16/09/2024,UD Almería,CD Castellón,2,5
+SP2,20/09/2024,Granada CF,Málaga CF,2,2
+SP2,21/09/2024,Racing Ferrol,Albacete,1,4
+SP2,21/09/2024,CD Eldense,Real Oviedo,1,1
+SP2,21/09/2024,RC Deportivo La Coruña,Burgos CF,0,2
+SP2,21/09/2024,Real Zaragoza,Levante UD,2,1
+SP2,22/09/2024,CD Tenerife,Sporting Gijón,1,1
+SP2,22/09/2024,CD Castellón,Real Racing Club de Santander,0,1
+SP2,22/09/2024,FC Cartagena,Cádiz CF,1,2
+SP2,22/09/2024,Elche CF,CD Mirandés,1,0
+SP2,22/09/2024,UD Almería,SD Eibar,2,2
+SP2,23/09/2024,SD Huesca,Córdoba CF,4,1
+SP2,27/09/2024,Albacete,RC Deportivo La Coruña,2,5
+SP2,28/09/2024,Cádiz CF,CD Eldense,1,2
+SP2,28/09/2024,CD Mirandés,SD Huesca,1,0
+SP2,28/09/2024,Sporting Gijón,Real Zaragoza,1,0
+SP2,28/09/2024,Málaga CF,Elche CF,0,3
+SP2,29/09/2024,Levante UD,UD Almería,4,2
+SP2,29/09/2024,Burgos CF,Granada CF,2,2
+SP2,29/09/2024,CD Castellón,CD Tenerife,2,1
+SP2,29/09/2024,Córdoba CF,Racing Ferrol,3,1
+SP2,29/09/2024,Real Oviedo,SD Eibar,1,0
+SP2,30/09/2024,Real Racing Club de Santander,FC Cartagena,1,2
+SP2,04/10/2024,SD Huesca,Cádiz CF,3,1
+SP2,05/10/2024,Racing Ferrol,Elche CF,1,0
+SP2,05/10/2024,SD Eibar,Sporting Gijón,1,3
+SP2,05/10/2024,CD Mirandés,Granada CF,0,1
+SP2,05/10/2024,UD Almería,Burgos CF,2,0
+SP2,05/10/2024,Real Zaragoza,Real Racing Club de Santander,2,3
+SP2,05/10/2024,CD Tenerife,FC Cartagena,2,0
+SP2,06/10/2024,RC Deportivo La Coruña,Málaga CF,0,0
+SP2,06/10/2024,CD Eldense,CD Castellón,2,3
+SP2,06/10/2024,Levante UD,Real Oviedo,0,0
+SP2,06/10/2024,Albacete,Córdoba CF,1,1
+SP2,11/10/2024,CD Tenerife,Real Zaragoza,2,3
+SP2,12/10/2024,FC Cartagena,Racing Ferrol,0,1
+SP2,12/10/2024,Cádiz CF,Málaga CF,2,2
+SP2,12/10/2024,SD Eibar,CD Eldense,1,0
+SP2,13/10/2024,SD Huesca,Albacete,2,2
+SP2,13/10/2024,Real Oviedo,UD Almería,3,2
+SP2,13/10/2024,Real Racing Club de Santander,Levante UD,1,0
+SP2,13/10/2024,Burgos CF,CD Mirandés,0,1
+SP2,13/10/2024,Granada CF,Córdoba CF,1,0
+SP2,13/10/2024,Elche CF,RC Deportivo La Coruña,0,0
+SP2,14/10/2024,Sporting Gijón,CD Castellón,2,1
+SP2,18/10/2024,Córdoba CF,FC Cartagena,2,1
+SP2,19/10/2024,RC Deportivo La Coruña,CD Eldense,1,1
+SP2,19/10/2024,Málaga CF,Real Oviedo,0,0
+SP2,19/10/2024,CD Castellón,Levante UD,2,0
+SP2,19/10/2024,Granada CF,CD Tenerife,4,0
+SP2,19/10/2024,CD Mirandés,SD Eibar,1,0
+SP2,20/10/2024,Cádiz CF,Real Racing Club de Santander,0,1
+SP2,20/10/2024,Racing Ferrol,SD Huesca,0,0
+SP2,20/10/2024,Elche CF,Sporting Gijón,2,1
+SP2,20/10/2024,Real Zaragoza,UD Almería,1,2
+SP2,21/10/2024,Albacete,Burgos CF,2,0
+SP2,22/10/2024,Real Oviedo,CD Mirandés,4,1
+SP2,22/10/2024,CD Castellón,Granada CF,2,3
+SP2,23/10/2024,CD Eldense,Real Zaragoza,2,3
+SP2,23/10/2024,SD Eibar,Cádiz CF,1,0
+SP2,23/10/2024,FC Cartagena,Elche CF,0,0
+SP2,23/10/2024,Real Racing Club de Santander,Córdoba CF,2,0
+SP2,24/10/2024,UD Almería,Albacete,3,1
+SP2,24/10/2024,Levante UD,RC Deportivo La Coruña,2,1
+SP2,24/10/2024,Burgos CF,Racing Ferrol,1,1
+SP2,24/10/2024,Sporting Gijón,SD Huesca,2,1
+SP2,24/10/2024,CD Tenerife,Málaga CF,0,0
+SP2,26/10/2024,Cádiz CF,Real Oviedo,2,0
+SP2,26/10/2024,CD Mirandés,FC Cartagena,3,1
+SP2,26/10/2024,Córdoba CF,CD Eldense,2,0
+SP2,26/10/2024,Real Zaragoza,CD Castellón,1,2
+SP2,27/10/2024,Málaga CF,SD Eibar,1,0
+SP2,27/10/2024,RC Deportivo La Coruña,Real Racing Club de Santander,1,2
+SP2,27/10/2024,Elche CF,Burgos CF,1,0
+SP2,27/10/2024,Albacete,Sporting Gijón,3,3
+SP2,27/10/2024,SD Huesca,UD Almería,2,2
+SP2,27/10/2024,Granada CF,Levante UD,1,2
+SP2,28/10/2024,Racing Ferrol,CD Tenerife,1,1
+SP2,02/11/2024,SD Eibar,Elche CF,0,2
+SP2,02/11/2024,FC Cartagena,RC Deportivo La Coruña,1,5
+SP2,02/11/2024,Sporting Gijón,Cádiz CF,2,0
+SP2,02/11/2024,Real Racing Club de Santander,Albacete,1,1
+SP2,02/11/2024,Real Zaragoza,Granada CF,2,1
+SP2,03/11/2024,Real Oviedo,Burgos CF,3,1
+SP2,03/11/2024,CD Tenerife,CD Mirandés,1,0
+SP2,08/11/2024,Elche CF,UD Almería,1,2
+SP2,09/11/2024,CD Mirandés,Cádiz CF,2,2
+SP2,09/11/2024,SD Huesca,Real Zaragoza,1,1
+SP2,09/11/2024,Granada CF,CD Eldense,3,2
+SP2,09/11/2024,Málaga CF,FC Cartagena,1,0
+SP2,10/11/2024,Córdoba CF,CD Castellón,2,2
+SP2,10/11/2024,Burgos CF,Sporting Gijón,0,2
+SP2,10/11/2024,Racing Ferrol,Real Racing Club de Santander,1,2
+SP2,10/11/2024,Albacete,Real Oviedo,2,2
+SP2,11/11/2024,RC Deportivo La Coruña,SD Eibar,1,0
+SP2,16/11/2024,SD Eibar,Racing Ferrol,2,0
+SP2,16/11/2024,CD Castellón,CD Mirandés,1,3
+SP2,16/11/2024,CD Eldense,Albacete,2,0
+SP2,16/11/2024,Real Racing Club de Santander,Burgos CF,2,0
+SP2,16/11/2024,Levante UD,Elche CF,1,1
+SP2,16/11/2024,Sporting Gijón,Granada CF,1,2
+SP2,17/11/2024,Cádiz CF,Córdoba CF,2,0
+SP2,17/11/2024,Real Oviedo,CD Tenerife,3,1
+SP2,17/11/2024,UD Almería,RC Deportivo La Coruña,2,1
+SP2,17/11/2024,FC Cartagena,SD Huesca,1,0
+SP2,17/11/2024,Real Zaragoza,Málaga CF,0,0
+SP2,20/11/2024,CD Eldense,SD Huesca,2,1
+SP2,22/11/2024,Racing Ferrol,Levante UD,0,0
+SP2,23/11/2024,FC Cartagena,UD Almería,1,2
+SP2,23/11/2024,Granada CF,Cádiz CF,0,0
+SP2,23/11/2024,Burgos CF,SD Eibar,1,0
+SP2,23/11/2024,Córdoba CF,Real Zaragoza,2,2
+SP2,23/11/2024,Málaga CF,Real Racing Club de Santander,0,0
+SP2,24/11/2024,Albacete,CD Tenerife,2,1
+SP2,24/11/2024,RC Deportivo La Coruña,Sporting Gijón,1,1
+SP2,24/11/2024,CD Mirandés,CD Eldense,1,0
+SP2,24/11/2024,SD Huesca,CD Castellón,1,1
+SP2,24/11/2024,Elche CF,Real Oviedo,4,0
+SP2,26/11/2024,UD Almería,Córdoba CF,4,0
+SP2,27/11/2024,CD Castellón,Racing Ferrol,0,0
+SP2,27/11/2024,Levante UD,Málaga CF,4,2
+SP2,29/11/2024,Real Oviedo,SD Huesca,0,3
+SP2,30/11/2024,UD Almería,Granada CF,2,1
+SP2,30/11/2024,Real Zaragoza,Albacete,0,1
+SP2,30/11/2024,Cádiz CF,RC Deportivo La Coruña,2,4
+SP2,30/11/2024,Real Racing Club de Santander,CD Mirandés,0,1
+SP2,30/11/2024,CD Tenerife,Elche CF,1,1
+SP2,01/12/2024,CD Castellón,Málaga CF,2,0
+SP2,01/12/2024,CD Eldense,Racing Ferrol,0,0
+SP2,01/12/2024,Levante UD,Burgos CF,3,1
+SP2,01/12/2024,Sporting Gijón,Córdoba CF,2,0
+SP2,02/12/2024,SD Eibar,FC Cartagena,1,0
+SP2,06/12/2024,CD Mirandés,Levante UD,2,1
+SP2,07/12/2024,Elche CF,Cádiz CF,2,1
+SP2,07/12/2024,Granada CF,Real Racing Club de Santander,3,0
+SP2,07/12/2024,RC Deportivo La Coruña,Real Zaragoza,1,1
+SP2,07/12/2024,SD Huesca,SD Eibar,2,1
+SP2,08/12/2024,Racing Ferrol,Real Oviedo,1,5
+SP2,08/12/2024,Málaga CF,UD Almería,1,1
+SP2,08/12/2024,Albacete,CD Castellón,0,0
+SP2,08/12/2024,Burgos CF,CD Eldense,1,0
+SP2,08/12/2024,Córdoba CF,CD Tenerife,3,0
+SP2,09/12/2024,FC Cartagena,Sporting Gijón,1,0
+SP2,13/12/2024,UD Almería,CD Mirandés,1,0
+SP2,14/12/2024,Levante UD,Córdoba CF,2,2
+SP2,14/12/2024,Cádiz CF,Albacete,1,0
+SP2,14/12/2024,CD Castellón,FC Cartagena,4,1
+SP2,14/12/2024,SD Eibar,Real Zaragoza,2,1
+SP2,14/12/2024,CD Eldense,Elche CF,0,0
+SP2,14/12/2024,Real Oviedo,Granada CF,2,0
+SP2,15/12/2024,Sporting Gijón,Racing Ferrol,1,3
+SP2,15/12/2024,Burgos CF,Málaga CF,0,0
+SP2,15/12/2024,Real Racing Club de Santander,SD Huesca,0,1
+SP2,17/12/2024,Albacete,Levante UD,0,0
+SP2,17/12/2024,Granada CF,FC Cartagena,4,1
+SP2,17/12/2024,Córdoba CF,SD Eibar,2,1
+SP2,17/12/2024,Real Zaragoza,Real Oviedo,2,3
+SP2,18/12/2024,Racing Ferrol,UD Almería,1,4
+SP2,18/12/2024,CD Mirandés,Sporting Gijón,1,1
+SP2,18/12/2024,Málaga CF,CD Eldense,3,0
+SP2,19/12/2024,Elche CF,Real Racing Club de Santander,3,0
+SP2,19/12/2024,Cádiz CF,Burgos CF,1,1
+SP2,19/12/2024,SD Huesca,CD Tenerife,1,0
+SP2,19/12/2024,RC Deportivo La Coruña,CD Castellón,5,1
+SP2,20/12/2024,FC Cartagena,Albacete,0,0
+SP2,21/12/2024,SD Eibar,Granada CF,1,1
+SP2,21/12/2024,Real Oviedo,Córdoba CF,2,3
+SP2,21/12/2024,Real Zaragoza,Racing Ferrol,1,0
+SP2,21/12/2024,Sporting Gijón,Málaga CF,1,3
+SP2,22/12/2024,Burgos CF,CD Tenerife,1,0
+SP2,22/12/2024,CD Castellón,Elche CF,0,2
+SP2,22/12/2024,UD Almería,Cádiz CF,1,1
+SP2,22/12/2024,Real Racing Club de Santander,CD Eldense,2,2
+SP2,22/12/2024,RC Deportivo La Coruña,CD Mirandés,0,4
+SP2,22/12/2024,Levante UD,SD Huesca,1,1
+SP2,07/01/2025,CD Tenerife,Levante UD,0,3
+SP2,10/01/2025,Granada CF,Burgos CF,0,0
+SP2,11/01/2025,Racing Ferrol,FC Cartagena,0,0
+SP2,11/01/2025,Albacete,Real Racing Club de Santander,2,2
+SP2,11/01/2025,SD Huesca,CD Mirandés,1,0
+SP2,11/01/2025,CD Tenerife,CD Castellón,2,0
+SP2,11/01/2025,Málaga CF,RC Deportivo La Coruña,1,1
+SP2,11/01/2025,Real Oviedo,Sporting Gijón,1,1
+SP2,12/01/2025,Córdoba CF,UD Almería,0,3
+SP2,12/01/2025,Cádiz CF,Levante UD,0,0
+SP2,12/01/2025,Elche CF,Real Zaragoza,1,0
+SP2,13/01/2025,CD Eldense,SD Eibar,1,3
+SP2,17/01/2025,FC Cartagena,Real Oviedo,0,1
+SP2,18/01/2025,CD Eldense,Cádiz CF,1,4
+SP2,18/01/2025,SD Eibar,Albacete,1,1
+SP2,18/01/2025,Sporting Gijón,Elche CF,1,1
+SP2,18/01/2025,Levante UD,Granada CF,3,1
+SP2,19/01/2025,Burgos CF,RC Deportivo La Coruña,0,1
+SP2,19/01/2025,Real Racing Club de Santander,Racing Ferrol,6,0
+SP2,19/01/2025,CD Castellón,Córdoba CF,1,2
+SP2,19/01/2025,Real Zaragoza,CD Tenerife,2,2
+SP2,19/01/2025,UD Almería,SD Huesca,0,0
+SP2,20/01/2025,CD Mirandés,Málaga CF,3,2
+SP2,24/01/2025,Elche CF,SD Eibar,2,0
+SP2,25/01/2025,Córdoba CF,Real Racing Club de Santander,1,2
+SP2,25/01/2025,RC Deportivo La Coruña,Levante UD,1,2
+SP2,25/01/2025,SD Huesca,FC Cartagena,4,0
+SP2,25/01/2025,CD Tenerife,CD Eldense,0,1
+SP2,26/01/2025,Granada CF,Sporting Gijón,3,1
+SP2,26/01/2025,Albacete,UD Almería,2,1
+SP2,26/01/2025,Real Oviedo,CD Castellón,1,0
+SP2,26/01/2025,Málaga CF,Real Zaragoza,1,2
+SP2,27/01/2025,Cádiz CF,CD Mirandés,3,1
+SP2,29/01/2025,CD Tenerife,RC Deportivo La Coruña,0,0
+SP2,31/01/2025,CD Eldense,Granada CF,0,3
+SP2,01/02/2025,CD Mirandés,Elche CF,3,0
+SP2,01/02/2025,Sporting Gijón,Burgos CF,2,0
+SP2,01/02/2025,UD Almería,Real Oviedo,1,1
+SP2,01/02/2025,Real Racing Club de Santander,Málaga CF,2,1
+SP2,02/02/2025,CD Castellón,SD Huesca,0,1
+SP2,02/02/2025,SD Eibar,RC Deportivo La Coruña,0,1
+SP2,02/02/2025,FC Cartagena,Córdoba CF,0,1
+SP2,02/02/2025,Real Zaragoza,Cádiz CF,0,0
+SP2,02/02/2025,CD Tenerife,Albacete,3,1
+SP2,03/02/2025,Levante UD,Racing Ferrol,0,1
+SP2,07/02/2025,Albacete,Real Zaragoza,2,1
+SP2,08/02/2025,Racing Ferrol,CD Castellón,1,3
+SP2,08/02/2025,Granada CF,CD Mirandés,0,0
+SP2,08/02/2025,Sporting Gijón,SD Eibar,0,0
+SP2,08/02/2025,Málaga CF,Levante UD,1,1
+SP2,09/02/2025,Elche CF,CD Tenerife,2,0
+SP2,09/02/2025,Burgos CF,Real Racing Club de Santander,2,1
+SP2,09/02/2025,Córdoba CF,SD Huesca,1,2
+SP2,09/02/2025,Cádiz CF,FC Cartagena,5,2
+SP2,09/02/2025,RC Deportivo La Coruña,UD Almería,3,1
+SP2,10/02/2025,Real Oviedo,CD Eldense,0,0
+SP2,14/02/2025,CD Mirandés,Racing Ferrol,4,1
+SP2,15/02/2025,CD Castellón,SD Eibar,2,0
+SP2,15/02/2025,FC Cartagena,Málaga CF,0,1
+SP2,15/02/2025,Real Racing Club de Santander,Cádiz CF,2,3
+SP2,15/02/2025,CD Tenerife,Córdoba CF,2,3
+SP2,16/02/2025,Levante UD,Sporting Gijón,0,0
+SP2,16/02/2025,CD Eldense,RC Deportivo La Coruña,2,0
+SP2,16/02/2025,SD Huesca,Granada CF,1,1
+SP2,16/02/2025,Real Zaragoza,Burgos CF,0,1
+SP2,16/02/2025,Real Oviedo,Albacete,1,0
+SP2,17/02/2025,UD Almería,Elche CF,1,1
+SP2,21/02/2025,Málaga CF,CD Tenerife,1,0
+SP2,22/02/2025,Racing Ferrol,Córdoba CF,0,1
+SP2,22/02/2025,Burgos CF,Real Oviedo,1,2
+SP2,22/02/2025,SD Eibar,Real Racing Club de Santander,2,2
+SP2,22/02/2025,Granada CF,Real Zaragoza,2,2
+SP2,22/02/2025,Sporting Gijón,UD Almería,1,1
+SP2,23/02/2025,RC Deportivo La Coruña,SD Huesca,0,0
+SP2,23/02/2025,Elche CF,FC Cartagena,2,1
+SP2,23/02/2025,Albacete,CD Eldense,0,1
+SP2,23/02/2025,Levante UD,CD Mirandés,1,0
+SP2,23/02/2025,Cádiz CF,CD Castellón,0,0
+SP2,28/02/2025,FC Cartagena,SD Eibar,0,2
+SP2,01/03/2025,CD Castellón,Burgos CF,2,1
+SP2,01/03/2025,SD Huesca,Racing Ferrol,3,1
+SP2,01/03/2025,Real Zaragoza,Sporting Gijón,1,1
+SP2,01/03/2025,UD Almería,Málaga CF,2,2
+SP2,02/03/2025,Córdoba CF,Granada CF,5,0
+SP2,02/03/2025,Real Oviedo,RC Deportivo La Coruña,1,2
+SP2,02/03/2025,Albacete,Cádiz CF,3,0
+SP2,02/03/2025,CD Eldense,Levante UD,1,2
+SP2,02/03/2025,Real Racing Club de Santander,Elche CF,2,0
+SP2,03/03/2025,CD Mirandés,CD Tenerife,2,0
+SP2,05/03/2025,Racing Ferrol,Burgos CF,0,1
+SP2,07/03/2025,SD Eibar,UD Almería,1,0
+SP2,07/03/2025,RC Deportivo La Coruña,Córdoba CF,1,1
+SP2,08/03/2025,CD Mirandés,Real Oviedo,1,0
+SP2,08/03/2025,Elche CF,CD Castellón,3,1
+SP2,08/03/2025,Sporting Gijón,Real Racing Club de Santander,1,1
+SP2,08/03/2025,Real Zaragoza,CD Eldense,2,4
+SP2,09/03/2025,CD Tenerife,SD Huesca,2,0
+SP2,09/03/2025,Málaga CF,Cádiz CF,0,2
+SP2,09/03/2025,Levante UD,FC Cartagena,3,0
+SP2,09/03/2025,Granada CF,Racing Ferrol,3,0
+SP2,10/03/2025,Burgos CF,Albacete,1,0
+SP2,14/03/2025,Real Oviedo,Elche CF,1,1
+SP2,15/03/2025,Racing Ferrol,SD Eibar,0,0
+SP2,15/03/2025,Albacete,Málaga CF,2,0
+SP2,15/03/2025,FC Cartagena,Burgos CF,0,1
+SP2,15/03/2025,UD Almería,Real Zaragoza,4,1
+SP2,15/03/2025,Córdoba CF,Sporting Gijón,1,1
+SP2,16/03/2025,CD Eldense,CD Mirandés,2,2
+SP2,16/03/2025,SD Huesca,Levante UD,1,2
+SP2,16/03/2025,Real Racing Club de Santander,CD Tenerife,2,1
+SP2,16/03/2025,Cádiz CF,Granada CF,1,0
+SP2,17/03/2025,CD Castellón,RC Deportivo La Coruña,2,2
+SP2,21/03/2025,Burgos CF,UD Almería,3,1
+SP2,22/03/2025,Elche CF,CD Eldense,2,0
+SP2,22/03/2025,CD Mirandés,Real Racing Club de Santander,2,1
+SP2,22/03/2025,Málaga CF,Racing Ferrol,2,0
+SP2,22/03/2025,Granada CF,Real Oviedo,1,0
+SP2,23/03/2025,Levante UD,CD Castellón,3,2
+SP2,23/03/2025,SD Eibar,SD Huesca,2,1
+SP2,23/03/2025,Sporting Gijón,Albacete,0,2
+SP2,23/03/2025,CD Tenerife,Cádiz CF,2,1
+SP2,23/03/2025,RC Deportivo La Coruña,FC Cartagena,2,2
+SP2,24/03/2025,Real Zaragoza,Córdoba CF,1,1
+SP2,28/03/2025,CD Tenerife,Granada CF,2,1
+SP2,29/03/2025,CD Eldense,Burgos CF,0,0
+SP2,29/03/2025,Racing Ferrol,RC Deportivo La Coruña,0,1
+SP2,29/03/2025,FC Cartagena,CD Castellón,2,2
+SP2,29/03/2025,Real Racing Club de Santander,Real Zaragoza,2,0
+SP2,29/03/2025,UD Almería,Levante UD,1,0
+SP2,30/03/2025,Córdoba CF,Elche CF,1,2
+SP2,30/03/2025,Real Oviedo,Málaga CF,2,1
+SP2,30/03/2025,Albacete,CD Mirandés,3,2
+SP2,30/03/2025,SD Huesca,Sporting Gijón,3,2
+SP2,31/03/2025,Cádiz CF,SD Eibar,0,0
+SP2,04/04/2025,CD Castellón,Albacete,2,2
+SP2,05/04/2025,SD Eibar,Real Oviedo,1,1
+SP2,05/04/2025,FC Cartagena,CD Eldense,0,1
+SP2,05/04/2025,Granada CF,UD Almería,3,1
+SP2,05/04/2025,Sporting Gijón,CD Tenerife,1,3
+SP2,06/04/2025,Real Zaragoza,CD Mirandés,1,0
+SP2,06/04/2025,Levante UD,Real Racing Club de Santander,3,1
+SP2,06/04/2025,Burgos CF,SD Huesca,2,1
+SP2,06/04/2025,Málaga CF,Córdoba CF,0,1
+SP2,06/04/2025,RC Deportivo La Coruña,Cádiz CF,1,0
+SP2,07/04/2025,Elche CF,Racing Ferrol,1,0
+SP2,11/04/2025,Córdoba CF,Levante UD,2,2
+SP2,12/04/2025,Real Zaragoza,SD Eibar,2,2
+SP2,12/04/2025,Cádiz CF,Elche CF,0,1
+SP2,12/04/2025,CD Tenerife,Burgos CF,0,0
+SP2,12/04/2025,Real Oviedo,Racing Ferrol,3,0
+SP2,13/04/2025,Albacete,Granada CF,0,2
+SP2,13/04/2025,Real Racing Club de Santander,CD Castellón,1,1
+SP2,13/04/2025,CD Eldense,Sporting Gijón,1,2
+SP2,13/04/2025,CD Mirandés,RC Deportivo La Coruña,2,2
+SP2,13/04/2025,UD Almería,FC Cartagena,2,1
+SP2,14/04/2025,SD Huesca,Málaga CF,1,0
+SP2,18/04/2025,Sporting Gijón,CD Mirandés,3,1
+SP2,18/04/2025,CD Castellón,UD Almería,4,1
+SP2,19/04/2025,Racing Ferrol,CD Eldense,1,0
+SP2,19/04/2025,SD Huesca,Real Racing Club de Santander,1,3
+SP2,19/04/2025,Levante UD,Real Zaragoza,5,2
+SP2,19/04/2025,Burgos CF,Cádiz CF,2,2
+SP2,20/04/2025,FC Cartagena,Granada CF,2,3
+SP2,20/04/2025,Córdoba CF,Real Oviedo,0,0
+SP2,20/04/2025,Elche CF,Albacete,2,2
+SP2,20/04/2025,RC Deportivo La Coruña,CD Tenerife,0,0
+SP2,21/04/2025,SD Eibar,Málaga CF,2,2
+SP2,25/04/2025,Cádiz CF,Sporting Gijón,1,0
+SP2,26/04/2025,Albacete,FC Cartagena,3,1
+SP2,26/04/2025,CD Eldense,Córdoba CF,1,1
+SP2,26/04/2025,Real Oviedo,Levante UD,1,0
+SP2,26/04/2025,CD Mirandés,Burgos CF,2,1
+SP2,26/04/2025,Granada CF,Elche CF,1,1
+SP2,27/04/2025,Real Racing Club de Santander,RC Deportivo La Coruña,2,1
+SP2,27/04/2025,Málaga CF,CD Castellón,1,0
+SP2,27/04/2025,CD Tenerife,SD Eibar,1,1
+SP2,27/04/2025,Real Zaragoza,SD Huesca,1,1
+SP2,29/04/2025,UD Almería,Racing Ferrol,2,1
+SP2,02/05/2025,Córdoba CF,Cádiz CF,4,2
+SP2,03/05/2025,SD Huesca,Real Oviedo,1,2
+SP2,03/05/2025,SD Eibar,CD Mirandés,0,1
+SP2,03/05/2025,Málaga CF,Granada CF,1,0
+SP2,03/05/2025,Burgos CF,Elche CF,0,1
+SP2,04/05/2025,Levante UD,CD Tenerife,1,1
+SP2,04/05/2025,Racing Ferrol,Real Zaragoza,1,2
+SP2,04/05/2025,UD Almería,CD Eldense,5,0
+SP2,04/05/2025,FC Cartagena,Real Racing Club de Santander,1,0
+SP2,04/05/2025,RC Deportivo La Coruña,Albacete,5,1
+SP2,05/05/2025,CD Castellón,Sporting Gijón,4,3
+SP2,09/05/2025,Cádiz CF,UD Almería,2,1
+SP2,10/05/2025,CD Mirandés,CD Castellón,3,2
+SP2,10/05/2025,Sporting Gijón,RC Deportivo La Coruña,2,1
+SP2,10/05/2025,Burgos CF,Córdoba CF,3,2
+SP2,10/05/2025,Elche CF,Levante UD,1,3
+SP2,10/05/2025,Real Zaragoza,FC Cartagena,3,2
+SP2,11/05/2025,Real Racing Club de Santander,Real Oviedo,1,1
+SP2,11/05/2025,Albacete,SD Huesca,3,2
+SP2,11/05/2025,CD Eldense,Málaga CF,1,0
+SP2,11/05/2025,CD Tenerife,Racing Ferrol,0,0
+SP2,12/05/2025,Granada CF,SD Eibar,0,2
+SP2,16/05/2025,Levante UD,Albacete,1,0
+SP2,17/05/2025,RC Deportivo La Coruña,Granada CF,2,3
+SP2,17/05/2025,SD Eibar,Burgos CF,1,0
+SP2,17/05/2025,FC Cartagena,CD Tenerife,1,0
+SP2,17/05/2025,SD Huesca,Elche CF,2,1
+SP2,17/05/2025,Málaga CF,Sporting Gijón,2,1
+SP2,18/05/2025,Racing Ferrol,Cádiz CF,1,0
+SP2,18/05/2025,CD Castellón,CD Eldense,1,1
+SP2,18/05/2025,Real Oviedo,Real Zaragoza,1,0
+SP2,18/05/2025,UD Almería,Real Racing Club de Santander,2,0
+SP2,19/05/2025,Córdoba CF,CD Mirandés,1,2
+SP2,24/05/2025,Albacete,Racing Ferrol,2,0
+SP2,25/05/2025,Burgos CF,Levante UD,2,3
+SP2,25/05/2025,Cádiz CF,SD Huesca,4,0
+SP2,25/05/2025,Elche CF,Málaga CF,2,0
+SP2,25/05/2025,CD Eldense,Real Racing Club de Santander,3,3
+SP2,25/05/2025,CD Mirandés,UD Almería,0,0
+SP2,25/05/2025,Sporting Gijón,FC Cartagena,3,2
+SP2,25/05/2025,Granada CF,CD Castellón,2,1
+SP2,25/05/2025,SD Eibar,Córdoba CF,4,1
+SP2,25/05/2025,Real Zaragoza,RC Deportivo La Coruña,1,0
+SP2,25/05/2025,CD Tenerife,Real Oviedo,0,1
+SP2,30/05/2025,CD Castellón,Real Zaragoza,4,1
+SP2,31/05/2025,Racing Ferrol,Sporting Gijón,0,2

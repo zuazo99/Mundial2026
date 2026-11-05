@@ -227,18 +227,21 @@ def load_inputs(data_dir: str, model_dir: str):
                            "hg": cur["goals"].astype(int), "ag": cur["goals_conceded"].astype(int)}).reset_index(drop=True)
     rho = float(json.load(open(rho_path, encoding="utf-8"))["rho"])
     teams = sorted(set(played["home"]) | set(played["away"]) | set(xg["home"]) | set(xg["away"]))
-    return last, teams, played, xg, rho
+    data_as_of = str(pd.to_datetime(cur["date"]).max().date())
+    return last, teams, played, xg, rho, data_as_of
 
 
 def run(data_dir: str, model_dir: str, results_dir: str, n_sims: int = DEFAULT_N_SIMS,
         seed: int = DEFAULT_SEED) -> dict:
-    last, teams, played, xg, rho = load_inputs(data_dir, model_dir)
+    last, teams, played, xg, rho, data_as_of = load_inputs(data_dir, model_dir)
     out = simulate_season(teams, played, xg, rho, n_sims, seed)
     out["meta"]["season"] = last
+    out["meta"]["data_as_of"] = data_as_of      # fecha del último resultado: las probabilidades valen a esa fecha
     os.makedirs(results_dir, exist_ok=True)
     with open(os.path.join(results_dir, "liga_probabilities.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
     top = sorted(out["teams"].items(), key=lambda kv: -kv[1]["p_champion"])[:5]
+    print(f"   (datos a fecha {data_as_of})")
     print(f"✅ {n_sims} simulaciones de {last} ({out['meta']['pending_matches']} partidos pendientes) → liga_probabilities.json")
     for t, v in top:
         print(f"   {t:<20} campeón {v['p_champion']:.1%}  Champions {v['p_champions']:.1%}  descenso {v['p_relegation']:.1%}")

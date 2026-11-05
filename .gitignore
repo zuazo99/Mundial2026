@@ -5,3 +5,6 @@ web/README.md
 data/xg_preds_*.csv
 __pycache__/
 .pytest_cache/
+
+# Caché del JSON/CSV original de las fuentes abiertas (se regenera con scripts/fetch_liga_openfootball.py)
+data/liga/source/

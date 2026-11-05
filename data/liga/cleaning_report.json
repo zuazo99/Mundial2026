@@ -1,0 +1,529 @@
+{
+  "generated_for": "2026-11-05",
+  "data_as_of": "2026-09-20",
+  "seasons": {
+    "1617": {
+      "SP1": {
+        "calendar": 380,
+        "played": 380,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "calendar": 462,
+        "played": 462,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "crosscheck": {
+        "available": true,
+        "agreement": 1.0,
+        "n": 380,
+        "n_other": 380,
+        "mismatched_dates": 0
+      }
+    },
+    "1718": {
+      "SP1": {
+        "calendar": 380,
+        "played": 380,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "calendar": 462,
+        "played": 462,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "crosscheck": {
+        "available": true,
+        "agreement": 1.0,
+        "n": 380,
+        "n_other": 380,
+        "mismatched_dates": 0
+      }
+    },
+    "1819": {
+      "SP1": {
+        "calendar": 380,
+        "played": 380,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "calendar": 462,
+        "played": 462,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "crosscheck": {
+        "available": true,
+        "agreement": 1.0,
+        "n": 380,
+        "n_other": 380,
+        "mismatched_dates": 0
+      }
+    },
+    "1920": {
+      "SP1": {
+        "calendar": 380,
+        "played": 380,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "calendar": 462,
+        "played": 462,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "crosscheck": {
+        "available": true,
+        "agreement": 1.0,
+        "n": 380,
+        "n_other": 380,
+        "mismatched_dates": 0
+      }
+    },
+    "2021": {
+      "SP1": {
+        "calendar": 380,
+        "played": 380,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "calendar": 462,
+        "played": 462,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "crosscheck": {
+        "available": true,
+        "agreement": 1.0,
+        "n": 380,
+        "n_other": 380,
+        "mismatched_dates": 0
+      }
+    },
+    "2122": {
+      "SP1": {
+        "calendar": 380,
+        "played": 380,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "available": false
+      },
+      "crosscheck": {
+        "available": true,
+        "agreement": 1.0,
+        "n": 380,
+        "n_other": 380,
+        "mismatched_dates": 0
+      }
+    },
+    "2223": {
+      "SP1": {
+        "calendar": 380,
+        "played": 380,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "available": false
+      },
+      "crosscheck": {
+        "available": true,
+        "agreement": 1.0,
+        "n": 380,
+        "n_other": 380,
+        "mismatched_dates": 0
+      }
+    },
+    "2324": {
+      "SP1": {
+        "calendar": 380,
+        "played": 380,
+        "unplayed": 0,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "available": false
+      },
+      "crosscheck": {
+        "available": true,
+        "agreement": 1.0,
+        "n": 380,
+        "n_other": 380,
+        "mismatched_dates": 0
+      }
+    },
+    "2425": {
+      "SP1": {
+        "calendar": 380,
+        "played": 370,
+        "unplayed": 10,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "calendar": 462,
+        "played": 453,
+        "unplayed": 9,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "crosscheck": {
+        "available": false
+      }
+    },
+    "2526": {
+      "SP1": {
+        "calendar": 380,
+        "played": 365,
+        "unplayed": 15,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "SP2": {
+        "calendar": 462,
+        "played": 115,
+        "unplayed": 347,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": true,
+        "available": true
+      },
+      "crosscheck": {
+        "available": false
+      }
+    },
+    "2627": {
+      "SP1": {
+        "calendar": 380,
+        "played": 64,
+        "unplayed": 316,
+        "dropped_future": 0,
+        "dropped_bad_score": 0,
+        "finished": false,
+        "available": true
+      },
+      "SP2": {
+        "available": false
+      },
+      "crosscheck": {
+        "available": false
+      }
+    }
+  },
+  "transitions": [
+    {
+      "from": "1617",
+      "to": "1718",
+      "out": [
+        "CA Osasuna",
+        "Granada CF",
+        "Sporting Gijón"
+      ],
+      "in": [
+        "Getafe CF",
+        "Girona FC",
+        "Levante UD"
+      ]
+    },
+    {
+      "from": "1718",
+      "to": "1819",
+      "out": [
+        "Málaga CF",
+        "RC Deportivo La Coruña",
+        "UD Las Palmas"
+      ],
+      "in": [
+        "Rayo Vallecano de Madrid",
+        "Real Valladolid CF",
+        "SD Huesca"
+      ]
+    },
+    {
+      "from": "1819",
+      "to": "1920",
+      "out": [
+        "Girona FC",
+        "Rayo Vallecano de Madrid",
+        "SD Huesca"
+      ],
+      "in": [
+        "CA Osasuna",
+        "Granada CF",
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "from": "1920",
+      "to": "2021",
+      "out": [
+        "CD Leganés",
+        "RCD Espanyol de Barcelona",
+        "RCD Mallorca"
+      ],
+      "in": [
+        "Cádiz CF",
+        "Elche CF",
+        "SD Huesca"
+      ]
+    },
+    {
+      "from": "2021",
+      "to": "2122",
+      "out": [
+        "Real Valladolid CF",
+        "SD Eibar",
+        "SD Huesca"
+      ],
+      "in": [
+        "RCD Espanyol de Barcelona",
+        "RCD Mallorca",
+        "Rayo Vallecano de Madrid"
+      ]
+    },
+    {
+      "from": "2122",
+      "to": "2223",
+      "out": [
+        "Deportivo Alavés",
+        "Granada CF",
+        "Levante UD"
+      ],
+      "in": [
+        "Girona FC",
+        "Real Valladolid CF",
+        "UD Almería"
+      ]
+    },
+    {
+      "from": "2223",
+      "to": "2324",
+      "out": [
+        "Elche CF",
+        "RCD Espanyol de Barcelona",
+        "Real Valladolid CF"
+      ],
+      "in": [
+        "Deportivo Alavés",
+        "Granada CF",
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "from": "2324",
+      "to": "2425",
+      "out": [
+        "Cádiz CF",
+        "Granada CF",
+        "UD Almería"
+      ],
+      "in": [
+        "CD Leganés",
+        "RCD Espanyol de Barcelona",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "from": "2425",
+      "to": "2526",
+      "out": [
+        "CD Leganés",
+        "Real Valladolid CF",
+        "UD Las Palmas"
+      ],
+      "in": [
+        "Elche CF",
+        "Levante UD",
+        "Real Oviedo"
+      ]
+    },
+    {
+      "from": "2526",
+      "to": "2627",
+      "out": [
+        "Girona FC",
+        "RCD Mallorca",
+        "Real Oviedo"
+      ],
+      "in": [
+        "Málaga CF",
+        "RC Deportivo La Coruña",
+        "Real Racing Club de Santander"
+      ]
+    }
+  ],
+  "promoted_coverage": {
+    "1718": {
+      "promoted": [
+        "Getafe CF",
+        "Girona FC",
+        "Levante UD"
+      ],
+      "found_in_sp2": [
+        "Getafe CF",
+        "Girona FC",
+        "Levante UD"
+      ],
+      "sp2_available": true
+    },
+    "1819": {
+      "promoted": [
+        "Rayo Vallecano de Madrid",
+        "Real Valladolid CF",
+        "SD Huesca"
+      ],
+      "found_in_sp2": [
+        "Rayo Vallecano de Madrid",
+        "Real Valladolid CF",
+        "SD Huesca"
+      ],
+      "sp2_available": true
+    },
+    "1920": {
+      "promoted": [
+        "CA Osasuna",
+        "Granada CF",
+        "RCD Mallorca"
+      ],
+      "found_in_sp2": [
+        "CA Osasuna",
+        "Granada CF",
+        "RCD Mallorca"
+      ],
+      "sp2_available": true
+    },
+    "2021": {
+      "promoted": [
+        "Cádiz CF",
+        "Elche CF",
+        "SD Huesca"
+      ],
+      "found_in_sp2": [
+        "Cádiz CF",
+        "Elche CF",
+        "SD Huesca"
+      ],
+      "sp2_available": true
+    },
+    "2122": {
+      "promoted": [
+        "RCD Espanyol de Barcelona",
+        "RCD Mallorca",
+        "Rayo Vallecano de Madrid"
+      ],
+      "found_in_sp2": [
+        "RCD Espanyol de Barcelona",
+        "RCD Mallorca",
+        "Rayo Vallecano de Madrid"
+      ],
+      "sp2_available": true
+    },
+    "2223": {
+      "promoted": [
+        "Girona FC",
+        "Real Valladolid CF",
+        "UD Almería"
+      ],
+      "found_in_sp2": [],
+      "sp2_available": false
+    },
+    "2324": {
+      "promoted": [
+        "Deportivo Alavés",
+        "Granada CF",
+        "UD Las Palmas"
+      ],
+      "found_in_sp2": [],
+      "sp2_available": false
+    },
+    "2425": {
+      "promoted": [
+        "CD Leganés",
+        "RCD Espanyol de Barcelona",
+        "Real Valladolid CF"
+      ],
+      "found_in_sp2": [],
+      "sp2_available": false
+    },
+    "2526": {
+      "promoted": [
+        "Elche CF",
+        "Levante UD",
+        "Real Oviedo"
+      ],
+      "found_in_sp2": [
+        "Elche CF",
+        "Levante UD",
+        "Real Oviedo"
+      ],
+      "sp2_available": true
+    },
+    "2627": {
+      "promoted": [
+        "Málaga CF",
+        "RC Deportivo La Coruña",
+        "Real Racing Club de Santander"
+      ],
+      "found_in_sp2": [
+        "Málaga CF",
+        "RC Deportivo La Coruña",
+        "Real Racing Club de Santander"
+      ],
+      "sp2_available": true
+    }
+  }
+}

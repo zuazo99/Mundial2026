@@ -181,6 +181,21 @@ def pending_fixtures(season_df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows, columns=["home", "away"])
 
 
+# ─── control de calidad entre temporadas ─────────────────────────────────────
+
+def check_transitions(seasons: dict, max_changes: int = 3) -> None:
+    """En Primera cambian como mucho 3 equipos por temporada. Más entradas indican un renombre
+    de clubes (p. ej. 'Real Madrid' → 'Real Madrid CF') o mezclar fuentes con nombres distintos,
+    y rompería el arrastre del ELO sin avisar. No aplicar a Segunda (22 equipos, hasta 7 cambios)."""
+    codes = list(seasons)
+    for a, b in zip(codes, codes[1:]):
+        ta, tb = set(seasons[a]["home"]) | set(seasons[a]["away"]), set(seasons[b]["home"]) | set(seasons[b]["away"])
+        entering = sorted(tb - ta)
+        if len(entering) > max_changes:
+            raise ValueError(f"{a}→{b}: entran {len(entering)} equipos nuevos (máx. {max_changes}); posible renombre/alias. "
+                             f"Salen {sorted(ta - tb)}; entran {entering}.")
+
+
 # ─── CLI ─────────────────────────────────────────────────────────────────────
 
 def build_dataset(raw_dir: str, out_dir: str) -> None:
@@ -191,6 +206,7 @@ def build_dataset(raw_dir: str, out_dir: str) -> None:
     second = load_seasons(raw_dir, division="SP2")
     if second:
         print(f"ℹ️  Sembrando ascendidos con {len(second)} temporada(s) de Segunda (SP2)")
+    check_transitions(seasons)
     matches = add_elo(seasons, second_div=second)
     long = to_long(matches)
     os.makedirs(out_dir, exist_ok=True)

@@ -1,0 +1,27 @@
+{
+  "test_season": "2526",
+  "train_seasons": [
+    "1718",
+    "1819",
+    "1920",
+    "2021",
+    "2122",
+    "2223",
+    "2324",
+    "2425"
+  ],
+  "n_test_rows": 730,
+  "half_life_days": 730,
+  "model": {
+    "mae": 0.79,
+    "poisson_deviance": 0.9
+  },
+  "baseline_constant": {
+    "mae": 0.8713,
+    "poisson_deviance": 1.0118
+  },
+  "baseline_home_away": {
+    "mae": 0.845,
+    "poisson_deviance": 0.974
+  }
+}
