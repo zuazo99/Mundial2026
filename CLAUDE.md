@@ -128,3 +128,12 @@ Knockout XG uses ELO-based approximation (`eloToXG()`) since XGBoost can't run i
 ## La Liga (en construcción)
 
 Fase 1 — ingesta (`src/liga/ingest.py`, `scripts/download_liga.py`, ver `data/liga/README.md`): CSV de football-data → ELO propio → formato largo compatible con `xg_preds.engineer_features`. Los ascendidos se siembran con su ELO en Segunda (`SP2_*.csv`, `ELO_SP2_GAP`=100, supuesto sin calibrar); sin datos de SP2 reciben la media de los descendidos. La primera temporada arranca en frío (todos a 1500): excluirla o pesarla menos al entrenar. Pendiente para la fase del modelo: `DECAY_REF_DATE`/`confed`/`tournament_num` son específicos de selecciones (para clubes quedan constantes o con peso 1), y simular el resto de temporada sobre `pending_<aabb>.csv`.
+
+### Pendiente: acceso a las APIs de datos (bloqueado hasta que el dueño lo habilite)
+
+El entorno cloud solo permite los hosts de su allowlist. Para que Claude descargue los datos directamente (lo ideal, en vez de subir CSV a mano) hay que añadir en los ajustes del entorno ("predicción mundial" → Red) estos hosts exactos:
+
+- `www.football-data.co.uk` (resultados SP1/SP2)
+- `api.clubelo.com` (opcional: ELO de clubes; hoy se usa ELO propio)
+
+Esto no se puede hacer desde el móvil; hay que hacerlo desde el navegador de escritorio (claude.ai → Ajustes del entorno) o Claude lo propondrá con `update_environment` cuando se pueda aprobar. Mientras tanto: `python scripts/download_liga.py` en local, o dejar los CSV en `data/liga/raw/`.
