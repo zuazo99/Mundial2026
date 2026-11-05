@@ -22,6 +22,10 @@ def test_read_season_handles_bom_blank_rows_and_both_date_formats():
     assert len(df) == 12                                  # fila vacía descartada
     assert df["date"].min() == pd.Timestamp("2021-08-15")  # dd/mm/yy
     assert (df["date"] == pd.Timestamp("2021-08-22")).sum() == 2  # dd/mm/yyyy
+    # fechas ambiguas (día <= 12): 05/09/21 es 5 de septiembre, no 9 de mayo
+    assert (df["date"] == pd.Timestamp("2021-09-05")).sum() == 2
+    assert (df["date"].dt.month == 5).sum() == 0
+    assert df["date"].is_monotonic_increasing
     assert list(df.columns) == ["date", "home", "away", "hg", "ag"]
     assert df["hg"].dtype.kind == "i" and df["ag"].dtype.kind == "i"
 
