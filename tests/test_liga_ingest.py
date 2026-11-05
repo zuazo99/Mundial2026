@@ -182,3 +182,25 @@ def test_promoted_team_missing_from_segunda_falls_back_to_relegated_mean(seasons
     f1, f0 = first(m), first(base)
     col = "elo_home" if f1["home"] == "Epsilón" else "elo_away"
     assert f1[col] == pytest.approx(f0[col])
+
+
+def test_build_dataset_with_segunda_seeds_but_excludes_sp2_rows(tmp_path):
+    import shutil
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    for f in ("SP1_2122.csv", "SP1_2223.csv", "SP2_2122.csv"):
+        shutil.copy(os.path.join(FIX, f), raw / f)
+    out = tmp_path / "out"
+    ingest.build_dataset(str(raw), str(out))
+
+    long = pd.read_csv(out / "df_liga.csv")
+    assert len(long) == 2 * (12 + 6)                       # ningún partido de Segunda
+    assert not {"Zeta", "Eta", "Theta"} & set(long["team"])
+
+    seasons = ingest.load_seasons(str(raw))
+    sp2 = ingest.load_seasons(str(raw), division="SP2")
+    expected = ingest.final_elos(seasons, second_div=sp2)
+    elo = pd.read_csv(out / "elo_actual.csv").set_index("team")["elo"]
+    assert elo["Epsilón"] == pytest.approx(round(expected["Epsilón"], 1))
+    # y difiere de la ejecución sin Segunda → la siembra se ha aplicado
+    assert expected["Epsilón"] != pytest.approx(ingest.final_elos(seasons)["Epsilón"])
