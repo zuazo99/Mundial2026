@@ -17,3 +17,6 @@ ajustable); si un ascendido no aparece en SP2, recibe la media de los descendido
 
 3. `python src/liga/model.py` entrena el modelo de clubes y genera `xg_pending_<aabb>.csv`
    (XG esperado de local y visitante de cada partido pendiente) y `results/validation_liga.json`.
+4. `python src/liga/simulate.py [n_sims]` simula el resto de la temporada y escribe
+   `results/liga_probabilities.json` (campeón, Champions, Europa League, descenso, posiciones).
+   Zonas y desempates documentados en la cabecera de `src/liga/simulate.py`.
