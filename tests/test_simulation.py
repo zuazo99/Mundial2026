@@ -103,3 +103,9 @@ def test_tie_break_uses_head_to_head_before_goal_difference():
                         ("D", "B", 0, 0), ("C", "D", 5, 0), ("A", "D", 1, 0)])
     names = [t.name for t in g.tie_break([g.s2, g.s3])]
     assert names == ["B", "C"]
+
+
+def test_is_host_only_flags_the_host_itself():
+    assert cs.is_host("Mexico") and cs.is_host("United States") and cs.is_host("Canada")
+    # regresión: el rival de un anfitrión NO es local
+    assert not cs.is_host("Brazil")

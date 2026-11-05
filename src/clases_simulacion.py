@@ -2,7 +2,7 @@ import pandas as pd
 import random as rd
 import os
 import json
-from config import FEATURES, path
+from config import FEATURES, WC_HOSTS, path
 from xg_preds import load_or_train_model
 
 # Dixon-Coles rho — goal-correlation correction applied to the four low-scoring
@@ -14,6 +14,11 @@ _DC_RHO = 0.0
 def set_dc_rho(rho: float):
     global _DC_RHO
     _DC_RHO = rho
+
+def is_host(team_name: str) -> bool:
+    """True si la selección es anfitriona (juega con ventaja de campo)."""
+    return team_name in WC_HOSTS
+
 
 class Team:
     # Añadir stats de ventana como atributos
@@ -627,7 +632,7 @@ class Knockouts:
         
         data_rows = []
         for m in self.fixtures:
-            is_home_1 = True if m.s1.name in ["United States", "Canada", "Mexico"] else False
+            is_home_1 = is_host(m.s1.name)
             data_rows.append({
                 'date': self.game_id, 'team': m.s1.name, 'opponent': m.s2.name, 'elo': m.s1.elo, 'opponent_elo': m.s2.elo, 'is_home': is_home_1, 'tournament_num': 5,
                 'confed': m.s1.confed, 'rival_confed': m.s2.confed,
@@ -637,7 +642,7 @@ class Knockouts:
                 'rival_gf_prom_15': m.s2.gf_prom_15, 'rival_gc_prom_15': m.s2.gc_prom_15, 'rival_PCA_1': m.s2.pca_1, 'rival_PCA_2': m.s2.pca_2
             })
             
-            is_home_2 = True if m.s1.name in ["United States", "Canada", "Mexico"] else False
+            is_home_2 = is_host(m.s2.name)
             data_rows.append({
                 'date': self.game_id, 'team': m.s2.name, 'opponent': m.s1.name, 'elo': m.s2.elo, 'opponent_elo': m.s1.elo, 'is_home': is_home_2, 'tournament_num': 5,
                 'confed': m.s2.confed, 'rival_confed': m.s1.confed,

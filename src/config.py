@@ -29,6 +29,9 @@ WC_START = "2026-06-11"
 WC_J2_START = "2026-06-18"
 WC_J3_START = "2026-06-24"
 
+# Selecciones anfitrionas del Mundial 2026 (únicas con is_home=1 en eliminatorias).
+WC_HOSTS = ("United States", "Canada", "Mexico")
+
 # Referencia y vida media (días) del peso temporal exponencial.
 DECAY_REF_DATE = "2024-06-01"
 DECAY_HALF_LIFE_DAYS = 1277
