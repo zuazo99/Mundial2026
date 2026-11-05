@@ -124,3 +124,7 @@ Knockout XG uses ELO-based approximation (`eloToXG()`) since XGBoost can't run i
 ### Vercel deployment
 
 `vercel.json` at repo root; build command: `cd web && npm run build`.
+
+## La Liga (en construcción)
+
+Fase 1 — ingesta (`src/liga/ingest.py`, `scripts/download_liga.py`, ver `data/liga/README.md`): CSV de football-data → ELO propio → formato largo compatible con `xg_preds.engineer_features`. Pendiente para la fase del modelo: `DECAY_REF_DATE`/`confed`/`tournament_num` son específicos de selecciones (para clubes quedan constantes o con peso 1), y simular el resto de temporada sobre `pending_<aabb>.csv`.

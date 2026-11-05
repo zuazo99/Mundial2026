@@ -1,0 +1,14 @@
+﻿Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+SP1,15/08/21,Alpha,Beta,2,0,H
+SP1,15/08/21,Gamma,Delta,1,1,D
+SP1,22/08/2021,Beta,Gamma,0,3,A
+SP1,22/08/2021,Delta,Alpha,1,2,A
+SP1,29/08/21,Alpha,Gamma,1,1,D
+SP1,29/08/21,Beta,Delta,2,2,D
+SP1,05/09/21,Gamma,Alpha,0,1,A
+SP1,05/09/21,Delta,Beta,0,1,A
+SP1,12/09/21,Alpha,Delta,3,0,H
+SP1,12/09/21,Gamma,Beta,2,1,H
+SP1,19/09/21,Beta,Alpha,1,1,D
+SP1,19/09/21,Delta,Gamma,0,2,A
+,,,,,,
