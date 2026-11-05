@@ -11,6 +11,7 @@ import { buildBracket, getChampion, getRunnerUp } from '../lib/bracketBuilder';
 import { metadata } from '../data/metadata';
 import { realResults } from '../data/realResults';
 import { probabilities } from '../data/probabilities';
+import { realBracket, realBracketReady } from '../data/realBracket';
 
 const VARIANTS: Variant[] = ['misterclaude', 'gemaldini', 'dav_gpo'];
 const VARIANT_LABELS: Record<Variant, string> = {
@@ -44,6 +45,18 @@ const variantData = Object.fromEntries(
   runnerUp: string;
   thirdTeam: string;
 } : never>;
+
+// Cuadro real — official knockout bracket (real qualifiers + real pairings),
+// outcomes predicted by the model. Same engine as the simulated Cuadro.
+const realVariantData = (realBracketReady
+  ? Object.fromEntries(
+      VARIANTS.filter(v => realBracket[v]).map(v => {
+        const rounds = realBracket[v]!;
+        return [v, { bracket: buildBracket(rounds), champion: getChampion(rounds) }];
+      })
+    )
+  : {}) as Record<Variant, { bracket: ReturnType<typeof buildBracket>; champion: string }>;
+const hasRealBracket = realBracketReady && VARIANTS.every(v => realVariantData[v]);
 
 // Consensus: do all 3 models agree on the champion?
 const champions = VARIANTS.map(v => variantData[v].champion);
@@ -172,11 +185,12 @@ const shocks = VARIANTS.map(v => {
       <!-- Tab nav — order 3 on mobile (full-width row), order 2 on sm+ -->
       <nav class="flex gap-1 order-3 sm:order-2 w-full sm:w-auto overflow-x-auto" id="tab-nav">
         {[
-          { id: 'grupos',    label: 'Grupos'    },
-          { id: 'cuadro',    label: 'Cuadro'    },
-          { id: 'resultado', label: 'Resultado' },
-          { id: 'simular',   label: 'Simular'   },
-          { id: 'porra',     label: 'Porra'     },
+          { id: 'grupos',      label: 'Grupos'      },
+          { id: 'cuadro',      label: 'Cuadro'      },
+          { id: 'cuadro-real', label: 'Cuadro real' },
+          { id: 'resultado',   label: 'Resultado'   },
+          { id: 'simular',     label: 'Simular'     },
+          { id: 'porra',       label: 'Porra'       },
         ].map(({ id, label }) => (
           <button
             data-tab={id}
@@ -251,6 +265,55 @@ const shocks = VARIANTS.map(v => {
           </div>
         </div>
       ))}
+    </section>
+
+    <!-- ── CUADRO REAL ─────────────────────────────────────────── -->
+    <section id="cuadro-real" data-tab-content>
+      <h2 class="text-lg font-bold mb-1">Cuadro Real del Torneo</h2>
+      <p class="text-xs text-[var(--text-muted)] mb-4 max-w-2xl">
+        Bracket <strong>oficial</strong> de eliminatorias (clasificados y cruces reales de la
+        fase de grupos). Los <strong>marcadores son el pronóstico del modelo</strong> para cada
+        cruce — la misma predicción que el Cuadro simulado, pero sobre el cuadro que de verdad
+        ha salido. Compara con la pestaña «Cuadro» para ver dónde acertó o falló la simulación.
+      </p>
+      {hasRealBracket ? (
+        VARIANTS.map((v) => (
+          <div class="variant-block" data-variant={v}>
+            <div class="overflow-x-auto pb-4">
+              <div class="flex gap-5 min-w-max">
+                {realVariantData[v].bracket.map((round) => (
+                  <div class="flex flex-col gap-2 w-44 sm:w-[210px]">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] px-1 mb-1">
+                      {round.label}
+                    </h3>
+                    <div class={`flex flex-col ${
+                      round.name === 'r32'     ? 'gap-2' :
+                      round.name === 'sweet16' ? 'gap-3 sm:gap-6' :
+                      round.name === 'elite8'  ? 'gap-8 sm:gap-14' :
+                      round.name === 'semis'   ? 'gap-16 sm:gap-32' : 'gap-3 sm:gap-6'
+                    }`}>
+                      {round.matches.map((m) => (
+                        <BracketMatch
+                          match={m}
+                          isHighlighted={
+                            (round.name === 'final' || round.name === 'semis') &&
+                            m.winner === realVariantData[v].champion
+                          }
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      ) : (
+        <div class="rounded-lg border border-[var(--border)] bg-[var(--bg-card)] p-6 text-sm text-[var(--text-muted)]">
+          El cuadro real se generará automáticamente en cuanto se complete la fase de grupos
+          y se conozcan los 32 clasificados oficiales.
+        </div>
+      )}
     </section>
 
     <!-- ── RESULTADO ───────────────────────────────────────────── -->
