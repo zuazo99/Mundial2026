@@ -213,13 +213,16 @@ def run(data_dir: str, model_dir: str, results_dir: str) -> None:
     out = predict_fixtures(lm, team_state(long, lm, elo_now), pending)
     out.to_csv(os.path.join(data_dir, f"xg_pending_{code}.csv"), index=False)
 
-    val = holdout_validation(long)
+    print(f"✅ modelo → {model_dir}/xgb_{MODEL_NAME}.json  (rho={lm.rho:.4f}, filas={lm.n_train_rows})")
+    print(f"✅ {len(out)} partidos pendientes → xg_pending_{code}.csv")
+    try:
+        val = holdout_validation(long)
+    except ValueError as e:   # pocas temporadas: los artefactos útiles ya están escritos
+        print(f"⚠️  Sin validación hold-out: {e} (descarga más temporadas con scripts/download_liga.py --seasons 6)")
+        return
     os.makedirs(results_dir, exist_ok=True)
     with open(os.path.join(results_dir, f"validation_{MODEL_NAME}.json"), "w", encoding="utf-8") as f:
         json.dump(val, f, indent=2, ensure_ascii=False)
-
-    print(f"✅ modelo → {model_dir}/xgb_{MODEL_NAME}.json  (rho={lm.rho:.4f}, filas={lm.n_train_rows})")
-    print(f"✅ {len(out)} partidos pendientes → xg_pending_{code}.csv")
     print(f"   hold-out {val['test_season']}: deviance modelo={val['model']['poisson_deviance']} "
           f"vs constante={val['baseline_constant']['poisson_deviance']}")
 

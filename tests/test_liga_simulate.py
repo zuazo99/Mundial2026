@@ -224,3 +224,25 @@ def test_run_aborts_without_rho_instead_of_assuming_zero(tmp_path, world):
     (tmp_path / "models" / "rho_liga.json").unlink()
     with pytest.raises(SystemExit, match="rho"):
         sim.run(data, models, results, n_sims=10)
+
+
+def test_full_chain_from_football_data_csv_to_probabilities(tmp_path):
+    """SP1_*.csv (formato football-data) → ingest → model → simulate, con los contratos reales entre fases."""
+    seasons = make_seasons()
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    for code, df in seasons.items():
+        pd.DataFrame({"Div": "SP1", "Date": df["date"].dt.strftime("%d/%m/%Y"), "HomeTeam": df["home"],
+                      "AwayTeam": df["away"], "FTHG": df["hg"], "FTAG": df["ag"]}).to_csv(raw / f"SP1_{code}.csv", index=False)
+    data, models, results = tmp_path / "liga", tmp_path / "models", tmp_path / "results"
+
+    ingest.build_dataset(str(raw), str(data))
+    lm.run(str(data), str(models), str(results))
+    out = sim.run(str(data), str(models), str(results), n_sims=300, seed=5)
+
+    last = list(seasons)[-1]
+    saved = json.load(open(results / "liga_probabilities.json"))
+    assert saved["meta"]["season"] == last == out["meta"]["season"]
+    assert set(saved["teams"]) == set(TEAMS)
+    assert sum(v["p_champion"] for v in saved["teams"].values()) == pytest.approx(1.0)
+    assert saved["meta"]["pending_matches"] == len(TEAMS) * (len(TEAMS) - 1) - len(seasons[last])

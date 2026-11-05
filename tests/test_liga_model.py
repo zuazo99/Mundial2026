@@ -149,3 +149,21 @@ def test_synthetic_calendar_is_a_valid_double_round_robin():
     for df in make_seasons(last_fraction=1.0).values():
         pairs = list(zip(df["home"], df["away"]))
         assert len(pairs) == len(set(pairs)) == N_TEAMS * (N_TEAMS - 1)
+
+
+def test_run_with_few_seasons_keeps_artifacts_but_skips_validation(tmp_path, world, capsys):
+    short = dict(list(world["seasons"].items())[-3:])       # 3 temporadas, la última parcial
+    long = ingest.to_long(ingest.add_elo(short))
+    last = list(short)[-1]
+    data_dir = tmp_path / "liga"
+    data_dir.mkdir()
+    long.to_csv(data_dir / "df_liga.csv", index=False)
+    ingest.pending_fixtures(short[last]).to_csv(data_dir / f"pending_{last}.csv", index=False)
+    pd.Series(ingest.final_elos(short), name="elo").rename_axis("team").to_csv(data_dir / "elo_actual.csv")
+
+    lm.run(str(data_dir), str(tmp_path / "models"), str(tmp_path / "results"))   # no debe lanzar
+
+    assert (data_dir / f"xg_pending_{last}.csv").exists()
+    assert (tmp_path / "models" / "xgb_liga.json").exists()
+    assert not (tmp_path / "results" / "validation_liga.json").exists()
+    assert "Sin validación" in capsys.readouterr().out
