@@ -16,14 +16,21 @@ python src/simulacion.py
 python src/xg_preds.py
 ```
 
-No build step, no test suite, no linter configuration. Dependencies (install manually): `pandas`, `numpy`, `scikit-learn`, `xgboost`.
+```bash
+pip install -r requirements-dev.txt   # runtime deps + pytest
+python -m pytest -q tests             # characterization tests (~1s)
+```
+
+No build step, no linter configuration. All paths are resolved from the repo root via `src/config.py` (`path(...)`), so scripts can be run from any directory. `python src/xg_preds.py [variant ...] [--tuned]` retrains and saves `api/models/` + `data/ai_models/`; `Tournament` loads the saved model (`load_or_train_model`) instead of retraining on every instantiation.
+
+The daily GitHub Action (`daily_update.yml`) is **paused** (only `workflow_dispatch`); re-enable its `schedule` block to resume updates.
 
 ## Architecture
 
 ### Pipeline: two distinct phases
 
 **Phase 1 — Model training (`src/xg_preds.py`)**
-- Loads historical match data from `data/models_csv/df_*.csv` (one CSV per model variant, ~3M rows each, from 2016 to present)
+- Loads historical match data from `data/models_csv/df_*.csv` (one CSV per model variant, ~19.7k rows each (two per match), from 2016 to present)
 - Engineers features: 5- and 15-game rolling averages for goals/goals-against/ELO, PCA (2 components from 4 play-style variables), confederation encoding, tournament importance weights (1–5; World Cup = 5), and exponential time-decay (λ = ln(2)/1277 days)
 - Trains an XGBoost Tweedie regressor (variance power 1.3) via `RandomizedSearchCV` with `TimeSeriesSplit`
 - Produces per-round XG prediction CSVs for group stage: `data/ai_models/xg_preds_J{1,2,3}_<variant>.csv`
@@ -67,8 +74,8 @@ results/               # Final tournament predictions (output of simulacion.py)
 
 ### Key constants to know
 
-- Feature vector (19 features): defined in `clases_simulacion.py:664–668` — must match the column set used during training in `xg_preds.py`
-- Training/World Cup split date: `2026-06-11` (hardcoded in `xg_preds.py`)
+- Feature vector (20 features), shared constants and paths: `src/config.py` (`FEATURES`, `VARIANTS`, `WC_START`, `path()`) — single source of truth for training, simulation, Monte Carlo and export
+- Training/World Cup split dates: `WC_START` / `WC_J2_START` / `WC_J3_START` in `src/config.py`
 - Group stage uses the real 2026 draw (12 groups A–L, 48 teams), hardcoded in `clases_simulacion.py`
 - Results CSV has 104 data rows: rows 0–71 = groups (6 per group × 12), rows 72–87 = R32, 88–95 = S16, 96–99 = E8, 100–101 = Semis, 102 = 3rd place, 103 = Final
 

@@ -1,9 +1,11 @@
 name: Daily Results Update
 
 on:
-  schedule:
-    # Every day at 08:00 UTC during the World Cup group stage
-    - cron: '0 8 * * *'
+  # PAUSADO: el Mundial 2026 ya terminó. Para reactivar la actualización diaria,
+  # descomenta el bloque `schedule`.
+  # schedule:
+  #   # Every day at 08:00 UTC
+  #   - cron: '0 8 * * *'
   workflow_dispatch:   # allow manual trigger from GitHub Actions UI
 
 jobs:

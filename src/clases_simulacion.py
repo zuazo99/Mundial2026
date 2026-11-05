@@ -2,7 +2,8 @@ import pandas as pd
 import random as rd
 import os
 import json
-from xg_preds import train_model
+from config import FEATURES, path
+from xg_preds import load_or_train_model
 
 # Dixon-Coles rho — goal-correlation correction applied to the four low-scoring
 # cells (0-0, 1-0, 0-1, 1-1). Set once per tournament from the variant's
@@ -76,25 +77,6 @@ class Match:
             return max(0.0, 1.0 - rho)
         return 1.0
 
-    # def update_elo(self, g1, g2):
-    #     w_home = 1.0 if g1 > g2 else (0.5 if g1 == g2 else 0.0)
-    #     w_away = 1.0 - w_home
-
-    #     elo_home = self.s1.elo
-    #     elo_away = self.s2.elo
-
-    #     we_home = 1 / (1 + 10 ** (((elo_away - (elo_home))) / 400))
-    #     we_away = 1 - we_home 
-
-    #     k = 60
-
-    #     elo1 = round(k * (w_home - we_home), 0)
-    #     elo2 = round(k * (w_away - we_away), 0)
-
-    #     self.s1.elo += elo1
-    #     self.s2.elo += elo2
-
-    #     # print(f"Cambios de ELO - {self.s1.name}: {elo1} - {self.s2.name}: {elo2}")
 
     def get_multiplier(self, minute, g1, g2):
         better_team = 1 if self.s1.elo >= self.s2.elo else 2
@@ -198,9 +180,9 @@ class Group:
         self.s4: Team = s4
         self.letter = letter
         self.matches: list[Match] = []
-        self.df_j1 = pd.read_csv(f"data/ai_models/xg_preds_J1_{name}.csv")
-        self.df_j2 = pd.read_csv(f"data/ai_models/xg_preds_J2_{name}.csv")
-        self.df_j3 = pd.read_csv(f"data/ai_models/xg_preds_J3_{name}.csv")
+        self.df_j1 = pd.read_csv(path("data", "ai_models", f"xg_preds_J1_{name}.csv"))
+        self.df_j2 = pd.read_csv(path("data", "ai_models", f"xg_preds_J2_{name}.csv"))
+        self.df_j3 = pd.read_csv(path("data", "ai_models", f"xg_preds_J3_{name}.csv"))
         self.results: list[dict] = []
 
     def search_matches_pandas(self):
@@ -331,7 +313,7 @@ class Knockouts:
         self.create_knockouts(group_orders, best_thirds, third_letters)
 
     def create_first_round(self, group_orders, best_thirds: list[Team], third_letters):
-        df_thirds = pd.read_csv("data/mejores_terceros.csv", sep=";")
+        df_thirds = pd.read_csv(path("data", "mejores_terceros.csv"), sep=";")
         thirds = df_thirds.loc[df_thirds["Combinación"] == third_letters]
 
         A1_rival = thirds["1A"].item()[1]
@@ -467,14 +449,6 @@ class Knockouts:
         self.matches.append(Match(J1, H2, J1_goals, H2_goals, True))
         self.matches.append(Match(K1, K1_rival, K1_goals, K1_rival_goals, True))
 
-    # def simulate_first_round(self):
-    #     for i, match in enumerate(self.matches):
-    #         result = match.simulate_common()
-    #         teams = list(result.keys())
-    #         scores = list(result.values())
-    #         self.winners[str(i+1)] = teams[0] if scores[0] > scores[1] else teams[1]
-        
-    #     self.matches.clear()
 
     def create_sweet16(self):
         # DAY 1
@@ -530,8 +504,6 @@ class Knockouts:
 
         self.winners.clear()
 
-    # def simulate_sweet16(self):
-    #     for i, match in enumerate(self.matches):
 
     def create_elite8(self):
         # DAY 1
@@ -567,8 +539,6 @@ class Knockouts:
 
         self.winners.clear()
 
-    # def simulate_elite8(self):
-    #     pass
 
     def create_semis(self):
         # DAY 1
@@ -592,10 +562,7 @@ class Knockouts:
 
         self.winners.clear()
 
-    # def simulate_semis(self):
-    #     pass
 
-    # + 3º y 4º puesto
     def create_final(self):
         # 3º 4º
         self.fixtures.append(Fixture(self.losers["1"], self.losers["2"]))
@@ -618,8 +585,6 @@ class Knockouts:
 
         self.winners.clear()
 
-    # def simulate_final(self):
-    #     pass
 
     def print_winner(self):
         winner = self.winners["2"]
@@ -658,11 +623,7 @@ class Knockouts:
         self.simulate_round("Final")
 
     def predict_xg_matches(self, round):  
-        features = [
-            'elo', 'opponent_elo', 'is_home', 'tournament_num', 'confed', 'rival_confed',
-            'gf_prom_5', 'gc_prom_5', 'elo_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2', 
-            'rival_gf_prom_5', 'rival_gc_prom_5', 'rival_elo_prom_5', 'rival_gf_prom_15', 'rival_gc_prom_15', 'rival_PCA_1', 'rival_PCA_2'
-        ]
+        features = FEATURES
         
         data_rows = []
         for m in self.fixtures:
@@ -695,7 +656,7 @@ class Knockouts:
 
         cols_export = ["date", "team", "opponent", "xg_estimated"]
         df_pred.sort_values(by=["date", "team"], inplace=True)
-        df_pred[cols_export].to_csv(f"data/xg_preds_{round}_{self.name}.csv", index=False)
+        df_pred[cols_export].to_csv(path("data", f"xg_preds_{round}_{self.name}.csv"), index=False)
         # print(f"✅ Predicciones de xg para {round} guardadas con éxito.")
 
         return df_pred
@@ -709,7 +670,8 @@ class Tournament:
         self.group_orders: list[list[Team]] = []
         self.thirds: list[Team] = []
         self.thirds_letters = ""
-        self.model = train_model(name=name)  # also writes api/models/rho_<name>.json
+        # Carga el modelo guardado por `python src/xg_preds.py`; si no existe, lo entrena.
+        self.model = load_or_train_model(name)
         self.match_history = []
         self.name = name
         set_dc_rho(self._load_rho(name))
@@ -720,14 +682,14 @@ class Tournament:
 
     @staticmethod
     def _load_rho(name):
-        path = os.path.join("api", "models", f"rho_{name}.json")
-        if os.path.exists(path):
-            with open(path, encoding="utf-8") as f:
+        rho_path = path("api", "models", f"rho_{name}.json")
+        if os.path.exists(rho_path):
+            with open(rho_path, encoding="utf-8") as f:
                 return float(json.load(f)["rho"])
         return 0.0
 
     def create_groups(self):
-        df_metrics = pd.read_csv(f"data/ai_models/xg_preds_J1_{self.name}_complete.csv")
+        df_metrics = pd.read_csv(path("data", "ai_models", f"xg_preds_J1_{self.name}_complete.csv"))
 
         # Group A
         MEXICO = Team(name="Mexico", elo=1818.0, group="A", df_metrics=df_metrics)
@@ -872,7 +834,7 @@ class Tournament:
         self.match_history.extend(results_knockouts)
 
         df_export = pd.DataFrame(self.match_history, columns=["Team_1", "Score_1", "Score_2", "Team_2"])
-        df_export.to_csv(f"results/predictions_{self.name}.csv", index=False)
+        df_export.to_csv(path("results", f"predictions_{self.name}.csv"), index=False)
 
     def simulate_tournament(self):
         self.simulate_groups()
@@ -891,12 +853,12 @@ class Tournament:
         knockout rows to results/real_bracket_<name>.csv. Returns True on
         success, False if the qualifiers file is missing/incomplete.
         """
-        path = "data/cuadro_real_clasificados.csv"
-        if not os.path.exists(path):
+        clasif_path = path("data", "cuadro_real_clasificados.csv")
+        if not os.path.exists(clasif_path):
             print("  (cuadro real) faltan los clasificados oficiales; se omite.")
             return False
 
-        df = pd.read_csv(path)
+        df = pd.read_csv(clasif_path)
         pos = {(r["group"], int(r["position"])): r["team"] for _, r in df.iterrows()}
 
         LETTERS = list("ABCDEFGHIJKL")
@@ -929,6 +891,6 @@ class Tournament:
 
         rows = ko.export_results()
         df_out = pd.DataFrame(rows, columns=["Team_1", "Score_1", "Score_2", "Team_2"])
-        df_out.to_csv(f"results/real_bracket_{self.name}.csv", index=False)
+        df_out.to_csv(path("results", f"real_bracket_{self.name}.csv"), index=False)
         print(f"  ✅ results/real_bracket_{self.name}.csv ({len(df_out)} filas)")
         return True

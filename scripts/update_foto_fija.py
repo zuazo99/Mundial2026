@@ -14,13 +14,16 @@ Usage:
 import csv
 import os
 import math
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
+from config import VARIANTS, WC_START  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 REAL_RESULTS = os.path.join(ROOT, "data", "world_cup_results.csv")
 OUT = os.path.join(ROOT, "data", "ai_models", "foto_fija_updated.csv")
 
-VARIANTS = ["misterclaude", "gemaldini", "dav_gpo"]
 
 # FIFA World Cup ELO K-factor
 ELO_K = 40
@@ -82,7 +85,7 @@ def load_recent_history(variant: str, window: int = 15) -> dict[str, list[dict]]
     # keep only pre-WC rows where goals are recorded
     history: dict[str, list] = {}
     for r in rows:
-        if r.get("date", "") >= "2026-06-11":
+        if r.get("date", "") >= WC_START:
             continue
         goals = r.get("goals", "")
         goals_c = r.get("goals_conceded", "")

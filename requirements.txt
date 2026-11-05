@@ -1,6 +1,5 @@
-pandas
-numpy
-scipy
-scikit-learn
-xgboost
-requests
+pandas>=3.0,<4
+numpy>=2.3,<3
+scipy>=1.16,<2
+scikit-learn>=1.7,<2
+xgboost>=3.0,<4

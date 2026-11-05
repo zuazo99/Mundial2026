@@ -21,9 +21,7 @@ import numpy as np
 import xgboost as xgb
 from collections import defaultdict
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-VARIANTS = ["misterclaude", "gemaldini", "dav_gpo"]
+from config import ROOT, VARIANTS, FEATURES
 
 # Group structure — mirrors groups.ts and clases_simulacion.py
 GROUPS = [
@@ -47,13 +45,6 @@ GROUP_FIXTURES = [
     (0, 1), (2, 3),   # J1
     (0, 2), (3, 1),   # J2
     (3, 0), (1, 2),   # J3
-]
-
-FEATURES = [
-    'elo', 'opponent_elo', 'is_home', 'tournament_num', 'confed', 'rival_confed',
-    'gf_prom_5', 'gc_prom_5', 'elo_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2',
-    'rival_gf_prom_5', 'rival_gc_prom_5', 'rival_elo_prom_5', 'rival_gf_prom_15',
-    'rival_gc_prom_15', 'rival_PCA_1', 'rival_PCA_2',
 ]
 
 

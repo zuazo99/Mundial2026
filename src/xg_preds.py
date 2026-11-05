@@ -8,16 +8,12 @@ import xgboost as xgb
 from sklearn.model_selection import TimeSeriesSplit, RandomizedSearchCV
 from scipy.optimize import minimize_scalar
 
+from config import (FEATURES, TARGET, WC_START, WC_J2_START, WC_J3_START,
+                    DECAY_REF_DATE, DECAY_HALF_LIFE_DAYS, path)
+
 
 # ─── module-level constants ───────────────────────────────────────────────────
 
-FEATURES = [
-    'elo', 'opponent_elo', 'is_home', 'tournament_num', 'confed', 'rival_confed',
-    'gf_prom_5', 'gc_prom_5', 'elo_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2',
-    'rival_gf_prom_5', 'rival_gc_prom_5', 'rival_elo_prom_5', 'rival_gf_prom_15',
-    'rival_gc_prom_15', 'rival_PCA_1', 'rival_PCA_2',
-]
-TARGET = "goals"
 
 _FOTO_NUMERIC = ['gf_prom_5', 'gc_prom_5', 'elo_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2']
 _N_FOTO = 3  # matches to average for the pre-WC snapshot
@@ -120,9 +116,9 @@ def _apply_pca_merge_decay(df, *, scaler=None, pca=None, fit_transformers=True):
                      "rival_gf_prom_15", "rival_gc_prom_15", "rival_PCA_1", "rival_PCA_2"]
     df = pd.merge(df, rival, on=["date", "opponent"], how="left")
 
-    ref = pd.to_datetime("2024-06-01")
+    ref = pd.to_datetime(DECAY_REF_DATE)
     df["days_away"]   = (ref - df["date"]).dt.days.clip(lower=0)
-    df["date_weight"] = np.exp(-np.log(2) / 1277 * df["days_away"])
+    df["date_weight"] = np.exp(-np.log(2) / DECAY_HALF_LIFE_DAYS * df["days_away"])
 
     return df, scaler, pca
 
@@ -190,12 +186,12 @@ def estimate_rho(model, df_train: pd.DataFrame) -> float:
 
 def train_model(name, use_tuned=False):
     print("1. Cargando datos...")
-    df = pd.read_csv(f"data/models_csv/df_{name}.csv")
+    df = pd.read_csv(path("data", "models_csv", f"df_{name}.csv"))
     df["date"] = pd.to_datetime(df["date"])
     df.sort_values(by=["team", "date"], inplace=True)
 
-    df_historia = df[df["date"] < "2026-06-11"].copy()
-    df_mundial  = df[df["date"] >= "2026-06-11"].copy()
+    df_historia = df[df["date"] < WC_START].copy()
+    df_mundial  = df[df["date"] >= WC_START].copy()
 
     print("2. Calculando ventanas, PCA y pesos...")
     df_eng, _, _, _ = engineer_features(df_historia, fit_transformers=True)
@@ -207,7 +203,7 @@ def train_model(name, use_tuned=False):
 
     params = _DEFAULT_PARAMS.copy()
     if use_tuned:
-        tuning_path = os.path.join("results", f"tuning_{name}.json")
+        tuning_path = path("results", f"tuning_{name}.json")
         if os.path.exists(tuning_path):
             with open(tuning_path, encoding="utf-8") as f:
                 params.update(json.load(f)["best_params"])
@@ -217,12 +213,12 @@ def train_model(name, use_tuned=False):
     model = xgb.XGBRegressor(**params)
     model.fit(df_train[FEATURES], df_train[TARGET], sample_weight=df_train["date_weight"])
 
-    os.makedirs("api/models", exist_ok=True)
-    model.save_model(f"api/models/xgb_{name}.json")
+    os.makedirs(path("api", "models"), exist_ok=True)
+    model.save_model(path("api", "models", f"xgb_{name}.json"))
 
     print("3b. Estimando corrección Dixon-Coles (rho)...")
     rho = estimate_rho(model, df_train)
-    rho_path = f"api/models/rho_{name}.json"
+    rho_path = path("api", "models", f"rho_{name}.json")
     with open(rho_path, "w", encoding="utf-8") as f:
         json.dump({"variant": name, "rho": rho}, f)
     print(f"  ρ = {rho:.4f}  →  {rho_path}")
@@ -236,7 +232,7 @@ def train_model(name, use_tuned=False):
     confed_part = df_eng.groupby("team")["confed"].last()
     foto_fija_equipos = avg_part.join(confed_part).reset_index()[["team", *_FOTO_NUMERIC, "confed"]]
 
-    _updated_path = os.path.join("data", "ai_models", "foto_fija_updated.csv")
+    _updated_path = path("data", "ai_models", "foto_fija_updated.csv")
     if os.path.exists(_updated_path):
         df_updated = pd.read_csv(_updated_path)
         cols_to_update = ['gf_prom_5', 'gc_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2', 'confed']
@@ -254,9 +250,9 @@ def train_model(name, use_tuned=False):
                                   'rival_confed']
 
     jornadas = {
-        "J1": df_mundial[df_mundial["date"] < "2026-06-18"].copy(),
-        "J2": df_mundial[(df_mundial["date"] >= "2026-06-18") & (df_mundial["date"] < "2026-06-24")].copy(),
-        "J3": df_mundial[df_mundial["date"] >= "2026-06-24"].copy(),
+        "J1": df_mundial[df_mundial["date"] < WC_J2_START].copy(),
+        "J2": df_mundial[(df_mundial["date"] >= WC_J2_START) & (df_mundial["date"] < WC_J3_START)].copy(),
+        "J3": df_mundial[df_mundial["date"] >= WC_J3_START].copy(),
     }
 
     for nombre_jornada, df_jornada in jornadas.items():
@@ -277,12 +273,23 @@ def train_model(name, use_tuned=False):
 
         cols_export = ["date", "team", "opponent", "xg_estimated"]
         df_jornada.sort_values(by=["date", "team"], inplace=True)
-        df_jornada[cols_export].to_csv(f"data/ai_models/xg_preds_{nombre_jornada}_{name}.csv", index=False)
-        df_jornada.to_csv(f"data/ai_models/xg_preds_{nombre_jornada}_{name}_complete.csv", index=False)
+        df_jornada[cols_export].to_csv(path("data", "ai_models", f"xg_preds_{nombre_jornada}_{name}.csv"), index=False)
+        df_jornada.to_csv(path("data", "ai_models", f"xg_preds_{nombre_jornada}_{name}_complete.csv"), index=False)
         print(f"✅ Predicciones para {nombre_jornada} guardadas con éxito.")
 
     print("\n¡Simulación completa! Revisa la carpeta 'data'.")
     return model
+
+
+def load_or_train_model(name):
+    """Carga api/models/xgb_<name>.json si existe; si no, entrena (y lo guarda).
+    Evita reentrenar en cada instancia de Tournament."""
+    model_path = path("api", "models", f"xgb_{name}.json")
+    if os.path.exists(model_path):
+        model = xgb.XGBRegressor()
+        model.load_model(model_path)
+        return model
+    return train_model(name)
 
 
 # ─── hyperparameter tuning (opt-in) ──────────────────────────────────────────
@@ -292,10 +299,10 @@ def tune_hyperparameters(name, n_iter=20, subsample_frac=1.0):
     Does NOT change production models. Adopt with train_model(name, use_tuned=True)."""
     print(f"\n[{name}] Buscando hiperparámetros ({n_iter} iteraciones × 5 folds)...")
 
-    df = pd.read_csv(f"data/models_csv/df_{name}.csv")
+    df = pd.read_csv(path("data", "models_csv", f"df_{name}.csv"))
     df["date"] = pd.to_datetime(df["date"])
     df.sort_values(by=["team", "date"], inplace=True)
-    df_historia = df[df["date"] < "2026-06-11"].copy()
+    df_historia = df[df["date"] < WC_START].copy()
 
     df_eng, _, _, _ = engineer_features(df_historia, fit_transformers=True)
     df_eng[FEATURES] = df_eng[FEATURES].fillna(df_eng[FEATURES].mean())
@@ -340,8 +347,8 @@ def tune_hyperparameters(name, n_iter=20, subsample_frac=1.0):
         "feature_importances": dict(zip(FEATURES, [round(float(v), 6) for v in best.feature_importances_])),
     }
 
-    os.makedirs("results", exist_ok=True)
-    out = os.path.join("results", f"tuning_{name}.json")
+    os.makedirs(path("results"), exist_ok=True)
+    out = path("results", f"tuning_{name}.json")
     with open(out, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
@@ -349,3 +356,16 @@ def tune_hyperparameters(name, n_iter=20, subsample_frac=1.0):
     print(f"  CV MAE: {result['best_cv_mae']:.4f}")
     print(f"  ✅ {out}")
     return result
+
+
+if __name__ == "__main__":
+    import argparse
+    from config import VARIANTS
+
+    ap = argparse.ArgumentParser(description="Reentrena el modelo XG y regenera data/ai_models/.")
+    ap.add_argument("variants", nargs="*", choices=VARIANTS,
+                    help="variantes a entrenar (por defecto, todas)")
+    ap.add_argument("--tuned", action="store_true", help="usar results/tuning_<variante>.json")
+    args = ap.parse_args()
+    for v in args.variants or VARIANTS:
+        train_model(v, use_tuned=args.tuned)
