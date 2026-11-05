@@ -147,3 +147,38 @@ def test_build_dataset_end_to_end(tmp_path):
 def test_build_dataset_without_raw_files_explains_how_to_get_them(tmp_path):
     with pytest.raises(SystemExit, match="download_liga"):
         ingest.build_dataset(str(tmp_path), str(tmp_path / "out"))
+
+
+# ─── siembra de ascendidos con Segunda (SP2) ───────────────────────────────
+
+def test_promoted_team_is_seeded_from_segunda_when_available(seasons):
+    sp2 = ingest.load_seasons(FIX, division="SP2")
+    assert list(sp2) == ["2122"]
+    sp2_final = ingest.final_elos(sp2)
+    sp2_mean = sum(sp2_final.values()) / len(sp2_final)
+    sp1_prev_mean = sum(ingest.final_elos({"2122": seasons["2122"]}).values()) / 4
+    expected = sp1_prev_mean - ingest.ELO_SP2_GAP + (sp2_final["Epsilón"] - sp2_mean)
+
+    m = ingest.add_elo(seasons, second_div=sp2)
+    first = m[(m["season"] == "2223") & ((m["home"] == "Epsilón") | (m["away"] == "Epsilón"))].sort_values("date").iloc[0]
+    got = first["elo_home"] if first["home"] == "Epsilón" else first["elo_away"]
+    assert got == pytest.approx(expected)
+    # el campeón de Segunda llega por encima de la media de Segunda → más que el piso (gap)
+    assert got > sp1_prev_mean - ingest.ELO_SP2_GAP
+
+
+def test_without_segunda_behaviour_is_unchanged(seasons):
+    a = ingest.add_elo(seasons)
+    b = ingest.add_elo(seasons, second_div={})
+    pd.testing.assert_frame_equal(a, b)
+
+
+def test_promoted_team_missing_from_segunda_falls_back_to_relegated_mean(seasons):
+    sp2 = ingest.load_seasons(FIX, division="SP2")
+    sp2_wo = {"2122": sp2["2122"][(sp2["2122"]["home"] != "Epsilón") & (sp2["2122"]["away"] != "Epsilón")]}
+    m = ingest.add_elo(seasons, second_div=sp2_wo)
+    base = ingest.add_elo(seasons)
+    first = lambda df: df[(df["season"] == "2223") & ((df["home"] == "Epsilón") | (df["away"] == "Epsilón"))].sort_values("date").iloc[0]
+    f1, f0 = first(m), first(base)
+    col = "elo_home" if f1["home"] == "Epsilón" else "elo_away"
+    assert f1[col] == pytest.approx(f0[col])

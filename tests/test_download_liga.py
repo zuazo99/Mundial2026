@@ -35,3 +35,10 @@ def test_download_rejects_non_csv_response_and_leaves_no_file(tmp_path):
     with pytest.raises(RuntimeError):
         dl.download(["2526"], str(tmp_path), fetcher=lambda u: b"<html>blocked</html>")
     assert os.listdir(tmp_path) == []
+
+
+def test_download_division_changes_url_and_filename(tmp_path):
+    seen = []
+    dl.download(["2526"], str(tmp_path), fetcher=lambda u: seen.append(u) or CSV, division="SP2")
+    assert seen[0].endswith("/2526/SP2.csv")
+    assert os.path.exists(tmp_path / "SP2_2526.csv")

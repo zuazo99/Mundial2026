@@ -1,4 +1,4 @@
-"""Descarga los CSV de La Liga (SP1) de football-data.co.uk a data/liga/raw/.
+"""Descarga los CSV de La Liga (SP1) y Segunda (SP2) de football-data.co.uk a data/liga/raw/.
 
 Uso (en local, con red):
     python scripts/download_liga.py              # últimas 5 temporadas
@@ -18,7 +18,7 @@ import urllib.request
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
 from config import path  # noqa: E402
 
-URL = "https://www.football-data.co.uk/mmz4281/{code}/SP1.csv"
+URL = "https://www.football-data.co.uk/mmz4281/{code}/{division}.csv"
 RAW_DIR = path("data", "liga", "raw")
 
 
@@ -39,24 +39,25 @@ def fetch(url: str) -> bytes:
         return r.read()
 
 
-def download(codes: list, raw_dir: str = RAW_DIR, refresh: bool = False, fetcher=fetch) -> list:
+def download(codes: list, raw_dir: str = RAW_DIR, refresh: bool = False, fetcher=fetch,
+             division: str = "SP1") -> list:
     """Descarga las temporadas que falten. Devuelve los códigos descargados."""
     os.makedirs(raw_dir, exist_ok=True)
     current = codes[-1]
     done = []
     for code in codes:
-        dest = os.path.join(raw_dir, f"SP1_{code}.csv")
+        dest = os.path.join(raw_dir, f"{division}_{code}.csv")
         if os.path.exists(dest) and not refresh and code != current:
-            print(f"  = SP1_{code}.csv ya existe")
+            print(f"  = {division}_{code}.csv ya existe")
             continue
-        data = fetcher(URL.format(code=code))
+        data = fetcher(URL.format(code=code, division=division))
         if b"HomeTeam" not in data[:2000]:
             raise RuntimeError(f"{code}: la respuesta no parece un CSV de football-data")
         fd, tmp = tempfile.mkstemp(dir=raw_dir)
         with os.fdopen(fd, "wb") as f:  # escritura atómica
             f.write(data)
         os.replace(tmp, dest)
-        print(f"  ✅ SP1_{code}.csv ({len(data)//1024} KB)")
+        print(f"  ✅ {division}_{code}.csv ({len(data)//1024} KB)")
         done.append(code)
     return done
 
@@ -65,5 +66,9 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--seasons", type=int, default=5)
     ap.add_argument("--refresh", action="store_true")
+    ap.add_argument("--no-segunda", action="store_true", help="no bajar SP2 (siembra de ascendidos)")
     a = ap.parse_args()
-    download(season_codes(datetime.date.today(), a.seasons), refresh=a.refresh)
+    codes = season_codes(datetime.date.today(), a.seasons)
+    download(codes, refresh=a.refresh)
+    if not a.no_segunda:
+        download(codes, refresh=a.refresh, division="SP2")
