@@ -17,7 +17,7 @@ Supuestos (documentados también en la salida):
     goles a favor generales. Con 3 o más empatados se hace UNA mini-liga entre todos
     ellos; no se vuelve a aplicar al subgrupo que siga empatado (supuesto).
 
-Uso:  python src/liga/simulate.py [n_sims]     # tras ingest.py y model.py
+Uso:  python src/liga/simulate.py [n_sims] [sigma]   # tras ingest.py y model.py
 """
 import glob
 import json
@@ -34,6 +34,8 @@ MAX_GOALS = 10
 DEFAULT_ZONES = {"champions": 4, "europa": (5, 6), "relegation": 3}
 DEFAULT_N_SIMS = 10_000
 DEFAULT_SEED = 2026
+STRENGTH_SIGMA_DEFAULT = 0.0     # incertidumbre en la fuerza de los equipos (desv. típica del log-factor)
+BATCH = 200                      # simulaciones por lote cuando hay incertidumbre (memoria acotada)
 _KS = np.arange(MAX_GOALS + 1)
 _LOGFACT = np.cumsum(np.concatenate(([0.0], np.log(np.maximum(_KS[1:], 1)))))
 
@@ -65,6 +67,22 @@ def sample_scores(xg_h, xg_a, rho: float, n_sims: int, rng: np.random.Generator)
     for j in range(m):
         idx[:, j] = np.minimum(np.searchsorted(cdf[j], u[:, j]), flat.shape[1] - 1)
     return (idx // (MAX_GOALS + 1)).astype(np.int16), (idx % (MAX_GOALS + 1)).astype(np.int16)
+
+
+def _sample_matrix(lam: np.ndarray, mu: np.ndarray, rho: float, rng: np.random.Generator):
+    """Como sample_scores pero con un λ/μ distinto por simulación: lam, mu de forma (B, M)."""
+    b, m = lam.shape
+    l, u_ = np.maximum(lam, 1e-9).ravel(), np.maximum(mu, 1e-9).ravel()
+    joint = _poisson_pmf(l)[:, :, None] * _poisson_pmf(u_)[:, None, :]
+    joint[:, 0, 0] *= np.maximum(0.0, 1.0 - l * u_ * rho)
+    joint[:, 1, 0] *= np.maximum(0.0, 1.0 + u_ * rho)
+    joint[:, 0, 1] *= np.maximum(0.0, 1.0 + l * rho)
+    joint[:, 1, 1] *= np.maximum(0.0, 1.0 - rho)
+    flat = np.maximum(joint, 0.0).reshape(b * m, -1)
+    cdf = np.cumsum(flat, axis=1)
+    cdf /= cdf[:, -1:]
+    idx = np.minimum((cdf < rng.random(b * m)[:, None]).sum(axis=1), flat.shape[1] - 1)
+    return (idx // (MAX_GOALS + 1)).reshape(b, m).astype(np.int16), (idx % (MAX_GOALS + 1)).reshape(b, m).astype(np.int16)
 
 
 # ─── clasificación y desempates ──────────────────────────────────────────────
@@ -133,8 +151,14 @@ def _validate(teams, played, pending):
 
 
 def simulate_season(teams, played: pd.DataFrame, pending_xg: pd.DataFrame, rho: float,
-                    n_sims: int, seed: int, zones: dict = None) -> dict:
-    """Monte Carlo del resto de la temporada. `played`: home, away, hg, ag; `pending_xg`: home, away, xg_home, xg_away."""
+                    n_sims: int, seed: int, zones: dict = None, strength_sigma: float = STRENGTH_SIGMA_DEFAULT) -> dict:
+    """Monte Carlo del resto de la temporada. `played`: home, away, hg, ag; `pending_xg`: home, away, xg_home, xg_away.
+
+    strength_sigma > 0: cada simulación sortea una fuerza por equipo s ~ N(0, σ), fija toda la temporada, y
+    escala los XG como xg_home·exp(s_h − s_a) y xg_away·exp(s_a − s_h). Con σ = 0 el camino es el de siempre.
+    """
+    if strength_sigma < 0:
+        raise ValueError("strength_sigma debe ser ≥ 0 (sigma negativa).")
     z = _zones(zones)
     teams = list(teams)
     n = len(teams)
@@ -149,10 +173,20 @@ def simulate_season(teams, played: pd.DataFrame, pending_xg: pd.DataFrame, rho: 
 
     rng = np.random.default_rng(seed)
     qh, qa = pending_xg["home"].map(pos_of).to_numpy(), pending_xg["away"].map(pos_of).to_numpy()
-    hg, ag = sample_scores(pending_xg["xg_home"].to_numpy(), pending_xg["xg_away"].to_numpy(), rho, n_sims, rng)
-    if len(qh):
-        HG[:, qh, qa] = hg
-        AG[:, qh, qa] = ag
+    xg_h, xg_a = pending_xg["xg_home"].to_numpy(dtype=float), pending_xg["xg_away"].to_numpy(dtype=float)
+    if strength_sigma == 0:
+        hg, ag = sample_scores(xg_h, xg_a, rho, n_sims, rng)
+        if len(qh):
+            HG[:, qh, qa] = hg
+            AG[:, qh, qa] = ag
+    elif len(qh):
+        for start in range(0, n_sims, BATCH):
+            b = min(BATCH, n_sims - start)
+            s = rng.normal(0.0, strength_sigma, size=(b, n))
+            f = np.exp(s[:, qh] - s[:, qa])
+            hg, ag = _sample_matrix(xg_h[None, :] * f, xg_a[None, :] / f, rho, rng)
+            HG[start:start + b, qh, qa] = hg
+            AG[start:start + b, qh, qa] = ag
 
     positions = np.empty((n_sims, n), dtype=np.int64)       # positions[s, equipo] = puesto (0-based)
     points = np.empty((n_sims, n), dtype=np.int64)
@@ -178,7 +212,7 @@ def simulate_season(teams, played: pd.DataFrame, pending_xg: pd.DataFrame, rho: 
             "position_dist": [float(x) for x in dist],
         }
     return {
-        "meta": {"n_sims": n_sims, "seed": seed, "rho": float(rho), "xg_frozen": True,
+        "meta": {"n_sims": n_sims, "seed": seed, "rho": float(rho), "xg_frozen": True, "strength_sigma": float(strength_sigma),
                  "zones": {"champions": z["champions"], "europa": list(z["europa"]), "relegation": z["relegation"]},
                  "pending_matches": int(len(pending_xg)), "played_matches": int(len(played)),
                  "tiebreak": "puntos > puntos directo > DG directo > DG general > GF general (mini-liga única)"},
@@ -232,9 +266,9 @@ def load_inputs(data_dir: str, model_dir: str):
 
 
 def run(data_dir: str, model_dir: str, results_dir: str, n_sims: int = DEFAULT_N_SIMS,
-        seed: int = DEFAULT_SEED) -> dict:
+        seed: int = DEFAULT_SEED, strength_sigma: float = STRENGTH_SIGMA_DEFAULT) -> dict:
     last, teams, played, xg, rho, data_as_of = load_inputs(data_dir, model_dir)
-    out = simulate_season(teams, played, xg, rho, n_sims, seed)
+    out = simulate_season(teams, played, xg, rho, n_sims, seed, strength_sigma=strength_sigma)
     out["meta"]["season"] = last
     out["meta"]["data_as_of"] = data_as_of      # fecha del último resultado: las probabilidades valen a esa fecha
     os.makedirs(results_dir, exist_ok=True)
@@ -250,4 +284,5 @@ def run(data_dir: str, model_dir: str, results_dir: str, n_sims: int = DEFAULT_N
 
 if __name__ == "__main__":
     run(path("data", "liga"), path("api", "models"), path("results"),
-        n_sims=int(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_N_SIMS)
+        n_sims=int(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_N_SIMS,
+        strength_sigma=float(sys.argv[2]) if len(sys.argv) > 2 else STRENGTH_SIGMA_DEFAULT)

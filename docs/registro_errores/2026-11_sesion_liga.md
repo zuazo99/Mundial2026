@@ -19,6 +19,7 @@
 | 15 | Mi comprobación de calibración usaba ventanas con partidos reales, pero la simulación usa el estado congelado | Regla 10: la prueba debe reproducir las condiciones de uso (backtest cortando la temporada) |
 | 16 | Al reescribir `CLAUDE.md` perdí la nota que el usuario pidió sobre las APIs | Regla 7: conservar las notas pedidas y verificar con un grep tras reescribir |
 | 17 | Interpreté "cuando se lo des ponte en `/loop`" como algo sobre permisos de red; el consejero señaló que era sobre su tarea | Regla 6: ante una instrucción ambigua, releerla literal o preguntar |
+| 18 | Un hook de parada me obligó a hacer push antes de recibir el resultado de los tests del subagente (commit `43c885e`) | Tests antes de commit; si un hook obliga a subir antes, verificar los tests y el CI justo después y decirlo |
 
 ## Hábitos nuevos acordados con el usuario
 - La suite de tests la lanza un subagente y devuelve solo el resultado final.
