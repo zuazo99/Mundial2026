@@ -32,6 +32,7 @@ from xg_preds import (_CONFED_NUMERIC, _DEFAULT_PARAMS, _add_rolling_and_style, 
 
 # Elecciones de modelado (ajustables):
 HALF_LIFE_DAYS = 730          # vida media del peso temporal (2 años)
+SHRINK_DEFAULT = None         # encogimiento de ventanas: None | ("fill"|"const", k)
 MODEL_NAME = "liga"
 _STATE_COLS = ["gf_prom_5", "gc_prom_5", "elo_prom_5", "gf_prom_15", "gc_prom_15", "PCA_1", "PCA_2"]
 _NEXT = "__NEXT__"
@@ -50,6 +51,8 @@ class LigaModel:
     half_life_days: int
     train_seasons: list = field(default_factory=list)
     n_train_rows: int = 0
+    priors: dict = None            # priors del encogimiento (ajustados solo con el train)
+    shrink: tuple = None           # None | ("fill"|"const", k)
 
 
 def _sorted(long_df: pd.DataFrame) -> pd.DataFrame:
@@ -73,6 +76,59 @@ def _force_club_constants(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+# ─── encogimiento de ventanas hacia un prior basado en ELO ───────────────────
+
+# columna → ventana (nº de partidos)
+_SHRINK_WINDOWS = {"gf_prom_5": 5, "gc_prom_5": 5, "elo_prom_5": 5, "gf_prom_15": 15, "gc_prom_15": 15,
+                   "pace_20": 20, "gf_ratio_20": 20, "clean_20": 20, "underdog_20": 20}
+_SHRINK_MEAN_COLS = ["elo_prom_5", "pace_20", "gf_ratio_20", "clean_20", "underdog_20"]
+
+
+def fit_priors(feat: pd.DataFrame) -> dict:
+    """Priors a partir de filas de ENTRENAMIENTO (salida de _add_rolling_and_style).
+
+    Goles a favor / en contra esperados como función lineal del ELO propio (a + b·elo);
+    para el resto de ventanas, su media.
+    """
+    f = feat.dropna(subset=[TARGET])
+    slope_f, icpt_f = np.polyfit(f["elo"], f["goals"], 1)
+    slope_c, icpt_c = np.polyfit(f["elo"], f["goals_conceded"], 1)
+    pri = {"gf": (float(icpt_f), float(slope_f)), "gc": (float(icpt_c), float(slope_c))}
+    for c in _SHRINK_MEAN_COLS:
+        pri[c] = float(f[c].mean())
+    return pri
+
+
+def _prior_for(col: str, feat: pd.DataFrame, priors: dict):
+    if col.startswith("gf_prom"):
+        a, b = priors["gf"]; return a + b * feat["elo"]
+    if col.startswith("gc_prom"):
+        a, b = priors["gc"]; return a + b * feat["elo"]
+    return pd.Series(priors[col], index=feat.index)
+
+
+def apply_shrink(feat: pd.DataFrame, priors: dict, shrink) -> pd.DataFrame:
+    """Añade n_prev (partidos previos del equipo) y encoge las ventanas hacia el prior.
+
+    valor = (n·media + k·prior) / (n + k), con n = min(n_prev, ventana).
+      * "const": k constante (también cuando la ventana está llena);
+      * "fill" : k = ventana − n (rellena la ventana con pseudo-partidos del prior; nada cambia
+                 cuando ya está llena).
+    shrink None o k = 0 → no cambia ninguna característica.
+    """
+    feat["n_prev"] = feat.groupby("team").cumcount()
+    if shrink is None or shrink[1] == 0:
+        return feat
+    mode, k = shrink
+    for col, w in _SHRINK_WINDOWS.items():
+        n = np.minimum(feat["n_prev"], w).astype(float)
+        kk = (w - n) if mode == "fill" else pd.Series(float(k), index=feat.index)
+        own = feat[col].fillna(0.0)
+        shrunk = (n * own + kk * _prior_for(col, feat, priors)) / (n + kk).where(n + kk > 0, 1.0)
+        feat[col] = np.where(kk > 0, shrunk, feat[col])
+    return feat
+
+
 def _fit_xgb(df_train: pd.DataFrame, feat_means: pd.Series) -> xgb.XGBRegressor:
     x = df_train[FEATURES].fillna(feat_means)
     m = xgb.XGBRegressor(**_DEFAULT_PARAMS)
@@ -80,20 +136,24 @@ def _fit_xgb(df_train: pd.DataFrame, feat_means: pd.Series) -> xgb.XGBRegressor:
     return m
 
 
-def train_liga(long_df: pd.DataFrame, half_life_days: int = HALF_LIFE_DAYS) -> LigaModel:
+def train_liga(long_df: pd.DataFrame, half_life_days: int = HALF_LIFE_DAYS, shrink=SHRINK_DEFAULT) -> LigaModel:
     """Ajusta el modelo con todas las temporadas menos la primera."""
     df = _sorted(long_df)
     _check_unique_dates(df)
     seasons = sorted(df["season"].unique())
     decay_ref = df["date"].max()
-    eng, scaler, pca, _ = engineer_features(df, fit_transformers=True,
-                                            decay_ref=decay_ref, half_life_days=half_life_days)
+    feat = _add_rolling_and_style(df.copy())
+    priors = fit_priors(feat[feat["season"] != seasons[0]])          # solo filas de entrenamiento
+    feat = apply_shrink(feat, priors, shrink)
+    eng, scaler, pca = _apply_pca_merge_decay(feat, fit_transformers=True,
+                                              decay_ref=decay_ref, half_life_days=half_life_days)
     train = _force_club_constants(eng[eng["season"] != seasons[0]].dropna(subset=[TARGET]).copy())
     feat_means = train[FEATURES].mean()
     train[FEATURES] = train[FEATURES].fillna(feat_means)
     model = _fit_xgb(train, feat_means)
     return LigaModel(model, scaler, pca, feat_means, estimate_rho(model, train), decay_ref,
-                     half_life_days, train_seasons=seasons[1:], n_train_rows=len(train))
+                     half_life_days, train_seasons=seasons[1:], n_train_rows=len(train),
+                     priors=priors, shrink=shrink)
 
 
 # ─── estado de cada equipo y predicción ──────────────────────────────────────
@@ -113,8 +173,9 @@ def team_state(long_df: pd.DataFrame, lm: LigaModel, elo_now: dict) -> pd.DataFr
         "tournament": df["tournament"].iloc[0], "season": "next",
     })
     both = _sorted(pd.concat([df, fut], ignore_index=True))
-    eng, *_ = engineer_features(both, scaler=lm.scaler, pca=lm.pca, fit_transformers=False,
-                                decay_ref=lm.decay_ref, half_life_days=lm.half_life_days)
+    feat = apply_shrink(_add_rolling_and_style(both.copy()), lm.priors, lm.shrink)
+    eng, _, _ = _apply_pca_merge_decay(feat, scaler=lm.scaler, pca=lm.pca, fit_transformers=False,
+                                       decay_ref=lm.decay_ref, half_life_days=lm.half_life_days)
     st = eng[eng["opponent"] == _NEXT].set_index("team")[_STATE_COLS + ["elo"]]
     return st.loc[teams]
 
@@ -150,7 +211,7 @@ def _scores(y, pred) -> dict:
 
 
 def holdout_validation(long_df: pd.DataFrame, test_season: str = None,
-                       half_life_days: int = HALF_LIFE_DAYS) -> dict:
+                       half_life_days: int = HALF_LIFE_DAYS, shrink=SHRINK_DEFAULT) -> dict:
     """Entrena con las temporadas anteriores (sin la primera) y evalúa en una posterior.
 
     Scaler, PCA y medias de relleno se ajustan solo con el train. Por defecto la
@@ -167,6 +228,8 @@ def holdout_validation(long_df: pd.DataFrame, test_season: str = None,
         raise ValueError("Se necesitan al menos 3 temporadas (1 de arranque en frío, 1 de train y 1 de test).")
 
     feat = _add_rolling_and_style(df.copy())        # ventanas causales (shift(1))
+    priors = fit_priors(feat[feat["season"].isin(prev[1:])])       # solo filas de entrenamiento
+    feat = apply_shrink(feat, priors, shrink)
     cutoff = df.loc[df["season"].isin(prev), "date"].max()
     f_tr, f_te = feat[feat["season"].isin(prev)].copy(), feat[feat["season"] == test_season].copy()
     tr, scaler, pca = _apply_pca_merge_decay(f_tr, fit_transformers=True,
@@ -180,18 +243,25 @@ def holdout_validation(long_df: pd.DataFrame, test_season: str = None,
 
     y = te[TARGET].to_numpy()
     ha = tr.groupby("is_home")[TARGET].mean()
-    return {
+    pred = m.predict(te[FEATURES].fillna(means))
+    const = np.full(len(te), tr[TARGET].mean())
+    aff = (te["n_prev"] < 15).to_numpy()          # filas con ventana de 15 partidos incompleta (equipos nuevos)
+    result = {
         "test_season": test_season, "train_seasons": prev[1:], "n_test_rows": int(len(te)),
-        "half_life_days": half_life_days,
-        "model": _scores(y, m.predict(te[FEATURES].fillna(means))),
-        "baseline_constant": _scores(y, np.full(len(te), tr[TARGET].mean())),
+        "half_life_days": half_life_days, "shrink": list(shrink) if shrink else None,
+        "model": _scores(y, pred),
+        "baseline_constant": _scores(y, const),
         "baseline_home_away": _scores(y, te["is_home"].map(ha).to_numpy()),
+        "affected": {"n": int(aff.sum())},
     }
+    if aff.any():
+        result["affected"].update(model=_scores(y[aff], pred[aff]), baseline_constant=_scores(y[aff], const[aff]))
+    return result
 
 
 # ─── CLI ─────────────────────────────────────────────────────────────────────
 
-def run(data_dir: str, model_dir: str, results_dir: str) -> None:
+def run(data_dir: str, model_dir: str, results_dir: str, shrink=SHRINK_DEFAULT) -> None:
     long_path = os.path.join(data_dir, "df_liga.csv")
     pend_files = sorted(glob.glob(os.path.join(data_dir, "pending_*.csv")))
     elo_path = os.path.join(data_dir, "elo_actual.csv")
@@ -204,7 +274,7 @@ def run(data_dir: str, model_dir: str, results_dir: str) -> None:
     pending = pd.read_csv(pending_path)
     elo_now = pd.read_csv(elo_path).set_index("team")["elo"].to_dict()
 
-    lm = train_liga(long)
+    lm = train_liga(long, shrink=shrink)
     os.makedirs(model_dir, exist_ok=True)
     lm.model.save_model(os.path.join(model_dir, f"xgb_{MODEL_NAME}.json"))
     with open(os.path.join(model_dir, f"rho_{MODEL_NAME}.json"), "w", encoding="utf-8") as f:
@@ -216,7 +286,7 @@ def run(data_dir: str, model_dir: str, results_dir: str) -> None:
     print(f"✅ modelo → {model_dir}/xgb_{MODEL_NAME}.json  (rho={lm.rho:.4f}, filas={lm.n_train_rows})")
     print(f"✅ {len(out)} partidos pendientes → xg_pending_{code}.csv")
     try:
-        val = holdout_validation(long)
+        val = holdout_validation(long, shrink=shrink)
     except ValueError as e:   # pocas temporadas: los artefactos útiles ya están escritos
         print(f"⚠️  Sin validación hold-out: {e} (descarga más temporadas con scripts/download_liga.py --seasons 6)")
         return

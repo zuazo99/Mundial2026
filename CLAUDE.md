@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 FIFA World Cup 2026 prediction system. An XGBoost model trained on historical match data predicts expected goals (XG) per team, which then drive a probabilistic match simulator for the full 48-team tournament.
 
+> **Antes de empezar una tarea, leer `docs/registro_errores/README.md`** (errores ya cometidos y reglas para no repetirlos) y añadir ahí cada error nuevo.
+
 ## Running the Project
 
 ```bash
