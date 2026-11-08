@@ -57,10 +57,10 @@ Alcanzables vía `raw.githubusercontent.com` (HTTPS; `github.com` y su API dan 4
 | Fuente | Cobertura La Liga | Contenido | Licencia | Notas |
 |---|---|---|---|---|
 | [datasets/football-datasets](https://github.com/datasets/football-datasets) (`datasets/la-liga/season-<aabb>.csv`) | 1993/94 → 2025/26, 380 filas por temporada (**15 de 2025/26 son 0-0 de relleno**, ver categorización) | resultado, descanso, árbitro, tiros (HS/AS), a puerta (HST/AST), faltas, córners, tarjetas | PDDL (dominio público) | Espejo de football-data.co.uk. Sin cuotas. **No tiene 2026/27** (a 2026-11-08) |
-| [openfootball/football.json](https://github.com/openfootball/football.json) | desde ~2016/17 hasta 2026/27 (en curso) | resultado y descanso | CC0 | La única con la temporada en curso (hasta 2026-09-20); faltan 10 resultados en 2024/25 y 15 en 2025/26 |
+| [openfootball/football.json](https://github.com/openfootball/football.json) | 2016/17 → 2026/27 (en curso) verificadas; 2010/11 y 2000/01 no existen; 2011/12-2015/16 sin verificar | resultado y descanso | CC0 | La única con la temporada en curso (hasta 2026-09-20); faltan 10 resultados en 2024/25 y 15 en 2025/26 |
 | [footballcsv/cache.footballdata](https://github.com/footballcsv/cache.footballdata) | 1993/94 → 2023/24 | resultado y descanso | CC0 | Nombres abreviados de football-data; usada para validación cruzada |
 | [jalapic/engsoccerdata](https://github.com/jalapic/engsoccerdata) (`data-raw/spain.csv`) | 1928 → 2024, 27.335 partidos | resultado y descanso | GPL ≥ 2 (licencia del paquete; revisar antes de redistribuir datos) | Historial muy largo entre rivales |
-| [statsbomb/open-data](https://github.com/statsbomb/open-data) | 2004/05 → 2020/21, casi todo solo partidos del Barça; 2015/16 completa | eventos y xG por tiro | licencia propia de StatsBomb (atribución) | Útil para validar xG, no como fuente principal |
+| [statsbomb/open-data](https://github.com/statsbomb/open-data) | 2004/05 → 2020/21, casi todo solo partidos del Barça; 2015/16 completa | eventos y xG por tiro | licencia propia de StatsBomb (atribución; **sin verificar**) | Útil para validar xG, no como fuente principal |
 
 No alcanzables desde aquí (sin permisos de red): football-data.co.uk (original, con cuotas), clubelo.com, Understat, FBref, football-data.org, API-Football, SportMonks. De pago: Opta.
 
