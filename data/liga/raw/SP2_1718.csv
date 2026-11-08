@@ -1,0 +1,463 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP2,18/08/2017,Lorca FC,Cultural Leonesa,2,0
+SP2,18/08/2017,CD Tenerife,Real Zaragoza,1,0
+SP2,19/08/2017,AD Alcorcón,Sporting Gijón,0,0
+SP2,19/08/2017,CA Osasuna,Sevilla Atlético,1,1
+SP2,19/08/2017,Córdoba CF,Cádiz CF,1,2
+SP2,19/08/2017,CD Numancia,SD Huesca,1,0
+SP2,19/08/2017,Real Valladolid CF,FC Barcelona B,1,2
+SP2,20/08/2017,Real Oviedo,Rayo Vallecano de Madrid,2,3
+SP2,20/08/2017,Gimnàstic de Tarragona,UD Almería,0,1
+SP2,20/08/2017,Granada CF,Albacete,0,0
+SP2,21/08/2017,CD Lugo,CF Reus Deportiu,0,0
+SP2,25/08/2017,Albacete,Córdoba CF,0,3
+SP2,26/08/2017,SD Huesca,Lorca FC,2,0
+SP2,26/08/2017,Cultural Leonesa,CA Osasuna,2,1
+SP2,26/08/2017,Rayo Vallecano de Madrid,CD Numancia,2,2
+SP2,26/08/2017,Sevilla Atlético,Real Valladolid CF,1,2
+SP2,26/08/2017,UD Almería,Real Oviedo,1,1
+SP2,27/08/2017,Sporting Gijón,CD Lugo,2,0
+SP2,27/08/2017,Real Zaragoza,Granada CF,1,1
+SP2,27/08/2017,Cádiz CF,AD Alcorcón,0,0
+SP2,27/08/2017,CF Reus Deportiu,Gimnàstic de Tarragona,1,1
+SP2,28/08/2017,FC Barcelona B,CD Tenerife,0,3
+SP2,01/09/2017,Granada CF,FC Barcelona B,2,2
+SP2,02/09/2017,CD Lugo,Cádiz CF,0,1
+SP2,02/09/2017,CD Numancia,UD Almería,1,0
+SP2,02/09/2017,Gimnàstic de Tarragona,Sporting Gijón,0,4
+SP2,02/09/2017,Lorca FC,Rayo Vallecano de Madrid,0,0
+SP2,02/09/2017,CA Osasuna,SD Huesca,1,1
+SP2,03/09/2017,Real Oviedo,CF Reus Deportiu,3,0
+SP2,03/09/2017,Sevilla Atlético,Cultural Leonesa,1,2
+SP2,03/09/2017,Real Valladolid CF,CD Tenerife,2,0
+SP2,03/09/2017,Córdoba CF,Real Zaragoza,1,2
+SP2,04/09/2017,AD Alcorcón,Albacete,1,0
+SP2,08/09/2017,Cádiz CF,Gimnàstic de Tarragona,2,0
+SP2,09/09/2017,SD Huesca,Sevilla Atlético,0,0
+SP2,09/09/2017,FC Barcelona B,Córdoba CF,4,0
+SP2,09/09/2017,Sporting Gijón,Real Oviedo,1,1
+SP2,09/09/2017,UD Almería,Lorca FC,2,1
+SP2,10/09/2017,CD Tenerife,Granada CF,2,2
+SP2,10/09/2017,Real Zaragoza,AD Alcorcón,0,1
+SP2,10/09/2017,Cultural Leonesa,Real Valladolid CF,4,4
+SP2,10/09/2017,Albacete,CD Lugo,0,1
+SP2,10/09/2017,Rayo Vallecano de Madrid,CA Osasuna,0,3
+SP2,11/09/2017,CF Reus Deportiu,CD Numancia,1,0
+SP2,15/09/2017,CD Lugo,Real Zaragoza,2,1
+SP2,16/09/2017,Real Valladolid CF,Granada CF,2,1
+SP2,16/09/2017,Lorca FC,CF Reus Deportiu,1,1
+SP2,16/09/2017,Sevilla Atlético,Rayo Vallecano de Madrid,0,0
+SP2,16/09/2017,CA Osasuna,UD Almería,2,1
+SP2,16/09/2017,CD Numancia,Sporting Gijón,3,0
+SP2,17/09/2017,Cultural Leonesa,SD Huesca,3,2
+SP2,17/09/2017,AD Alcorcón,FC Barcelona B,1,1
+SP2,17/09/2017,Gimnàstic de Tarragona,Albacete,3,1
+SP2,17/09/2017,Real Oviedo,Cádiz CF,1,0
+SP2,17/09/2017,Córdoba CF,CD Tenerife,2,0
+SP2,22/09/2017,UD Almería,Sevilla Atlético,3,0
+SP2,23/09/2017,CF Reus Deportiu,CA Osasuna,0,0
+SP2,23/09/2017,Sporting Gijón,Lorca FC,1,0
+SP2,23/09/2017,Granada CF,Córdoba CF,3,1
+SP2,23/09/2017,CD Tenerife,AD Alcorcón,4,0
+SP2,24/09/2017,SD Huesca,Real Valladolid CF,1,0
+SP2,24/09/2017,Rayo Vallecano de Madrid,Cultural Leonesa,3,1
+SP2,24/09/2017,Albacete,Real Oviedo,2,1
+SP2,24/09/2017,Cádiz CF,CD Numancia,0,0
+SP2,24/09/2017,Real Zaragoza,Gimnàstic de Tarragona,1,1
+SP2,25/09/2017,FC Barcelona B,CD Lugo,1,2
+SP2,29/09/2017,Cultural Leonesa,UD Almería,0,0
+SP2,30/09/2017,Real Valladolid CF,Córdoba CF,4,1
+SP2,30/09/2017,CD Numancia,Albacete,5,1
+SP2,30/09/2017,Lorca FC,Cádiz CF,3,0
+SP2,01/10/2017,AD Alcorcón,Granada CF,1,2
+SP2,01/10/2017,SD Huesca,Rayo Vallecano de Madrid,2,1
+SP2,01/10/2017,CA Osasuna,Sporting Gijón,2,0
+SP2,01/10/2017,CD Lugo,CD Tenerife,1,0
+SP2,01/10/2017,Sevilla Atlético,CF Reus Deportiu,0,1
+SP2,02/10/2017,Real Oviedo,Real Zaragoza,2,2
+SP2,07/10/2017,Sporting Gijón,Sevilla Atlético,3,0
+SP2,07/10/2017,UD Almería,SD Huesca,0,3
+SP2,07/10/2017,CF Reus Deportiu,Cultural Leonesa,1,1
+SP2,07/10/2017,CD Tenerife,Gimnàstic de Tarragona,2,0
+SP2,07/10/2017,Cádiz CF,CA Osasuna,0,2
+SP2,08/10/2017,Albacete,Lorca FC,2,1
+SP2,08/10/2017,Rayo Vallecano de Madrid,Real Valladolid CF,4,1
+SP2,08/10/2017,FC Barcelona B,Real Oviedo,1,1
+SP2,08/10/2017,Córdoba CF,AD Alcorcón,3,0
+SP2,08/10/2017,Granada CF,CD Lugo,2,0
+SP2,08/10/2017,Real Zaragoza,CD Numancia,3,0
+SP2,10/10/2017,SD Huesca,CF Reus Deportiu,1,1
+SP2,10/10/2017,Cultural Leonesa,Sporting Gijón,0,2
+SP2,11/10/2017,Gimnàstic de Tarragona,Granada CF,2,0
+SP2,11/10/2017,CD Numancia,FC Barcelona B,1,0
+SP2,11/10/2017,Real Oviedo,CD Tenerife,1,1
+SP2,11/10/2017,Lorca FC,Real Zaragoza,0,2
+SP2,11/10/2017,Sevilla Atlético,Cádiz CF,0,0
+SP2,12/10/2017,CD Lugo,Córdoba CF,2,0
+SP2,12/10/2017,Real Valladolid CF,AD Alcorcón,4,0
+SP2,12/10/2017,CA Osasuna,Albacete,1,0
+SP2,12/10/2017,Rayo Vallecano de Madrid,UD Almería,1,0
+SP2,13/10/2017,Sporting Gijón,SD Huesca,1,1
+SP2,14/10/2017,Cádiz CF,Cultural Leonesa,2,2
+SP2,14/10/2017,Granada CF,Real Oviedo,2,0
+SP2,14/10/2017,FC Barcelona B,Lorca FC,1,0
+SP2,14/10/2017,CD Tenerife,CD Numancia,1,1
+SP2,15/10/2017,CF Reus Deportiu,Rayo Vallecano de Madrid,0,2
+SP2,15/10/2017,Albacete,Sevilla Atlético,2,1
+SP2,15/10/2017,UD Almería,Real Valladolid CF,1,1
+SP2,15/10/2017,Córdoba CF,Gimnàstic de Tarragona,1,5
+SP2,15/10/2017,Real Zaragoza,CA Osasuna,1,1
+SP2,16/10/2017,AD Alcorcón,CD Lugo,0,1
+SP2,20/10/2017,CA Osasuna,FC Barcelona B,2,2
+SP2,21/10/2017,SD Huesca,Cádiz CF,1,0
+SP2,21/10/2017,CD Numancia,Granada CF,1,3
+SP2,21/10/2017,Lorca FC,CD Tenerife,2,2
+SP2,21/10/2017,Sevilla Atlético,Real Zaragoza,2,2
+SP2,22/10/2017,Real Oviedo,Córdoba CF,2,0
+SP2,22/10/2017,Real Valladolid CF,CD Lugo,2,2
+SP2,22/10/2017,Rayo Vallecano de Madrid,Sporting Gijón,1,1
+SP2,22/10/2017,Gimnàstic de Tarragona,AD Alcorcón,0,3
+SP2,22/10/2017,UD Almería,CF Reus Deportiu,0,1
+SP2,23/10/2017,Cultural Leonesa,Albacete,0,0
+SP2,27/10/2017,Real Zaragoza,Cultural Leonesa,0,0
+SP2,28/10/2017,CD Lugo,Gimnàstic de Tarragona,1,0
+SP2,28/10/2017,Albacete,SD Huesca,0,0
+SP2,28/10/2017,Cádiz CF,Rayo Vallecano de Madrid,0,0
+SP2,28/10/2017,Sporting Gijón,UD Almería,2,0
+SP2,29/10/2017,FC Barcelona B,Sevilla Atlético,1,1
+SP2,29/10/2017,Córdoba CF,CD Numancia,1,1
+SP2,29/10/2017,AD Alcorcón,Real Oviedo,2,0
+SP2,29/10/2017,CF Reus Deportiu,Real Valladolid CF,2,2
+SP2,29/10/2017,CD Tenerife,CA Osasuna,0,0
+SP2,30/10/2017,Granada CF,Lorca FC,4,1
+SP2,01/11/2017,Gimnàstic de Tarragona,FC Barcelona B,0,0
+SP2,03/11/2017,CD Numancia,AD Alcorcón,1,0
+SP2,04/11/2017,Rayo Vallecano de Madrid,Albacete,1,1
+SP2,04/11/2017,Sevilla Atlético,CD Tenerife,1,1
+SP2,04/11/2017,Lorca FC,Córdoba CF,1,0
+SP2,04/11/2017,CF Reus Deportiu,Sporting Gijón,1,0
+SP2,05/11/2017,Real Oviedo,CD Lugo,3,2
+SP2,05/11/2017,Cultural Leonesa,FC Barcelona B,1,1
+SP2,05/11/2017,CA Osasuna,Granada CF,0,0
+SP2,05/11/2017,Real Valladolid CF,Gimnàstic de Tarragona,0,3
+SP2,05/11/2017,UD Almería,Cádiz CF,0,2
+SP2,06/11/2017,SD Huesca,Real Zaragoza,3,1
+SP2,10/11/2017,Córdoba CF,CA Osasuna,0,1
+SP2,11/11/2017,AD Alcorcón,Lorca FC,1,1
+SP2,11/11/2017,Albacete,UD Almería,2,0
+SP2,11/11/2017,CD Tenerife,Cultural Leonesa,2,0
+SP2,11/11/2017,Real Zaragoza,Rayo Vallecano de Madrid,3,2
+SP2,11/11/2017,FC Barcelona B,SD Huesca,0,2
+SP2,12/11/2017,Granada CF,Sevilla Atlético,1,2
+SP2,12/11/2017,Gimnàstic de Tarragona,Real Oviedo,1,2
+SP2,12/11/2017,CD Lugo,CD Numancia,0,1
+SP2,12/11/2017,Sporting Gijón,Real Valladolid CF,1,1
+SP2,13/11/2017,Cádiz CF,CF Reus Deportiu,1,0
+SP2,17/11/2017,UD Almería,Real Zaragoza,3,0
+SP2,18/11/2017,SD Huesca,CD Tenerife,3,0
+SP2,18/11/2017,Lorca FC,CD Lugo,1,2
+SP2,18/11/2017,Real Valladolid CF,Real Oviedo,3,1
+SP2,18/11/2017,CF Reus Deportiu,Albacete,1,1
+SP2,19/11/2017,CD Numancia,Gimnàstic de Tarragona,1,2
+SP2,19/11/2017,Rayo Vallecano de Madrid,FC Barcelona B,1,0
+SP2,19/11/2017,Sevilla Atlético,Córdoba CF,1,1
+SP2,19/11/2017,CA Osasuna,AD Alcorcón,2,3
+SP2,19/11/2017,Cultural Leonesa,Granada CF,1,1
+SP2,19/11/2017,Sporting Gijón,Cádiz CF,0,3
+SP2,24/11/2017,CD Tenerife,Rayo Vallecano de Madrid,2,2
+SP2,25/11/2017,Cádiz CF,Real Valladolid CF,1,0
+SP2,25/11/2017,Real Oviedo,CD Numancia,3,1
+SP2,25/11/2017,Gimnàstic de Tarragona,Lorca FC,0,2
+SP2,25/11/2017,AD Alcorcón,Sevilla Atlético,0,0
+SP2,25/11/2017,Real Zaragoza,CF Reus Deportiu,0,0
+SP2,26/11/2017,FC Barcelona B,UD Almería,1,1
+SP2,26/11/2017,Granada CF,SD Huesca,2,0
+SP2,26/11/2017,Córdoba CF,Cultural Leonesa,2,2
+SP2,26/11/2017,CD Lugo,CA Osasuna,1,0
+SP2,26/11/2017,Albacete,Sporting Gijón,2,2
+SP2,02/12/2017,SD Huesca,Córdoba CF,3,1
+SP2,02/12/2017,Rayo Vallecano de Madrid,Granada CF,1,0
+SP2,02/12/2017,CF Reus Deportiu,FC Barcelona B,2,1
+SP2,02/12/2017,Lorca FC,Real Oviedo,0,2
+SP2,03/12/2017,Cultural Leonesa,AD Alcorcón,2,2
+SP2,03/12/2017,Real Valladolid CF,CD Numancia,2,3
+SP2,03/12/2017,Sevilla Atlético,CD Lugo,1,1
+SP2,03/12/2017,Cádiz CF,Albacete,2,0
+SP2,03/12/2017,UD Almería,CD Tenerife,2,1
+SP2,03/12/2017,Sporting Gijón,Real Zaragoza,0,1
+SP2,08/12/2017,Granada CF,UD Almería,3,2
+SP2,08/12/2017,FC Barcelona B,Sporting Gijón,2,1
+SP2,09/12/2017,Albacete,Real Valladolid CF,2,1
+SP2,09/12/2017,AD Alcorcón,SD Huesca,1,1
+SP2,09/12/2017,CD Numancia,Lorca FC,1,0
+SP2,09/12/2017,Real Zaragoza,Cádiz CF,0,2
+SP2,10/12/2017,Córdoba CF,Rayo Vallecano de Madrid,2,2
+SP2,10/12/2017,CD Lugo,Cultural Leonesa,3,1
+SP2,10/12/2017,Gimnàstic de Tarragona,Sevilla Atlético,2,1
+SP2,10/12/2017,Real Oviedo,CA Osasuna,1,0
+SP2,10/12/2017,CD Tenerife,CF Reus Deportiu,3,0
+SP2,15/12/2017,Cádiz CF,FC Barcelona B,3,1
+SP2,16/12/2017,CA Osasuna,CD Numancia,2,2
+SP2,16/12/2017,CF Reus Deportiu,Granada CF,0,0
+SP2,16/12/2017,Real Valladolid CF,Lorca FC,3,0
+SP2,16/12/2017,UD Almería,Córdoba CF,1,0
+SP2,16/12/2017,Albacete,Real Zaragoza,0,0
+SP2,17/12/2017,Sevilla Atlético,Real Oviedo,0,1
+SP2,17/12/2017,SD Huesca,CD Lugo,3,0
+SP2,17/12/2017,Sporting Gijón,CD Tenerife,3,0
+SP2,17/12/2017,Cultural Leonesa,Gimnàstic de Tarragona,2,0
+SP2,17/12/2017,Rayo Vallecano de Madrid,AD Alcorcón,2,1
+SP2,19/12/2017,FC Barcelona B,Albacete,0,1
+SP2,19/12/2017,Real Valladolid CF,Real Zaragoza,3,2
+SP2,20/12/2017,Lorca FC,CA Osasuna,0,1
+SP2,20/12/2017,Granada CF,Sporting Gijón,2,1
+SP2,20/12/2017,Córdoba CF,CF Reus Deportiu,5,0
+SP2,21/12/2017,CD Numancia,Sevilla Atlético,3,0
+SP2,21/12/2017,CD Tenerife,Cádiz CF,1,1
+SP2,22/12/2017,CD Lugo,Rayo Vallecano de Madrid,1,2
+SP2,22/12/2017,AD Alcorcón,UD Almería,2,0
+SP2,23/12/2017,Gimnàstic de Tarragona,SD Huesca,1,2
+SP2,23/12/2017,Real Oviedo,Cultural Leonesa,3,0
+SP2,06/01/2018,Sporting Gijón,Córdoba CF,3,2
+SP2,06/01/2018,Rayo Vallecano de Madrid,Gimnàstic de Tarragona,2,3
+SP2,06/01/2018,Cádiz CF,Granada CF,1,0
+SP2,06/01/2018,CF Reus Deportiu,AD Alcorcón,1,1
+SP2,06/01/2018,Real Zaragoza,FC Barcelona B,1,1
+SP2,07/01/2018,Sevilla Atlético,Lorca FC,3,2
+SP2,07/01/2018,CA Osasuna,Real Valladolid CF,4,2
+SP2,07/01/2018,Albacete,CD Tenerife,1,2
+SP2,07/01/2018,SD Huesca,Real Oviedo,1,1
+SP2,07/01/2018,Cultural Leonesa,CD Numancia,2,2
+SP2,07/01/2018,UD Almería,CD Lugo,1,0
+SP2,12/01/2018,Rayo Vallecano de Madrid,Real Oviedo,2,2
+SP2,13/01/2018,FC Barcelona B,Real Valladolid CF,0,1
+SP2,13/01/2018,Sporting Gijón,AD Alcorcón,3,0
+SP2,13/01/2018,UD Almería,Gimnàstic de Tarragona,1,1
+SP2,13/01/2018,CF Reus Deportiu,CD Lugo,0,1
+SP2,13/01/2018,Real Zaragoza,CD Tenerife,1,0
+SP2,14/01/2018,SD Huesca,CD Numancia,2,1
+SP2,14/01/2018,Cádiz CF,Córdoba CF,2,0
+SP2,14/01/2018,Cultural Leonesa,Lorca FC,2,1
+SP2,14/01/2018,Albacete,Granada CF,2,1
+SP2,14/01/2018,Sevilla Atlético,CA Osasuna,0,1
+SP2,18/01/2018,CA Osasuna,Gimnàstic de Tarragona,0,2
+SP2,19/01/2018,Granada CF,Real Zaragoza,2,1
+SP2,20/01/2018,Real Valladolid CF,Sevilla Atlético,1,0
+SP2,20/01/2018,Real Oviedo,UD Almería,2,1
+SP2,20/01/2018,Córdoba CF,Albacete,1,0
+SP2,20/01/2018,Lorca FC,SD Huesca,2,3
+SP2,20/01/2018,CD Lugo,Sporting Gijón,3,1
+SP2,21/01/2018,AD Alcorcón,Cádiz CF,1,0
+SP2,21/01/2018,CA Osasuna,Cultural Leonesa,2,1
+SP2,21/01/2018,Gimnàstic de Tarragona,CF Reus Deportiu,1,2
+SP2,21/01/2018,CD Numancia,Rayo Vallecano de Madrid,0,0
+SP2,21/01/2018,CD Tenerife,FC Barcelona B,1,3
+SP2,26/01/2018,Real Zaragoza,Córdoba CF,1,0
+SP2,27/01/2018,FC Barcelona B,Granada CF,3,0
+SP2,27/01/2018,CF Reus Deportiu,Real Oviedo,0,0
+SP2,27/01/2018,Rayo Vallecano de Madrid,Lorca FC,5,1
+SP2,27/01/2018,Albacete,AD Alcorcón,2,0
+SP2,27/01/2018,Cádiz CF,CD Lugo,1,1
+SP2,28/01/2018,Cultural Leonesa,Sevilla Atlético,2,1
+SP2,28/01/2018,Sporting Gijón,Gimnàstic de Tarragona,2,0
+SP2,28/01/2018,UD Almería,CD Numancia,0,0
+SP2,28/01/2018,SD Huesca,CA Osasuna,1,0
+SP2,28/01/2018,CD Tenerife,Real Valladolid CF,0,0
+SP2,02/02/2018,CA Osasuna,Rayo Vallecano de Madrid,1,1
+SP2,03/02/2018,Gimnàstic de Tarragona,Cádiz CF,0,0
+SP2,03/02/2018,Real Valladolid CF,Cultural Leonesa,3,2
+SP2,03/02/2018,AD Alcorcón,Real Zaragoza,1,1
+SP2,03/02/2018,Lorca FC,UD Almería,1,2
+SP2,03/02/2018,Granada CF,CD Tenerife,2,1
+SP2,04/02/2018,CD Lugo,Albacete,1,1
+SP2,04/02/2018,Sevilla Atlético,SD Huesca,0,1
+SP2,04/02/2018,CD Numancia,CF Reus Deportiu,1,0
+SP2,04/02/2018,Real Oviedo,Sporting Gijón,2,1
+SP2,04/02/2018,Córdoba CF,FC Barcelona B,1,2
+SP2,09/02/2018,Granada CF,Real Valladolid CF,1,0
+SP2,10/02/2018,Sporting Gijón,CD Numancia,2,0
+SP2,10/02/2018,FC Barcelona B,AD Alcorcón,0,1
+SP2,10/02/2018,Cádiz CF,Real Oviedo,2,1
+SP2,10/02/2018,UD Almería,CA Osasuna,0,1
+SP2,11/02/2018,Albacete,Gimnàstic de Tarragona,0,1
+SP2,11/02/2018,SD Huesca,Cultural Leonesa,1,0
+SP2,11/02/2018,CF Reus Deportiu,Lorca FC,3,0
+SP2,11/02/2018,Rayo Vallecano de Madrid,Sevilla Atlético,2,0
+SP2,11/02/2018,CD Tenerife,Córdoba CF,5,1
+SP2,11/02/2018,Real Zaragoza,CD Lugo,2,0
+SP2,16/02/2018,Real Valladolid CF,SD Huesca,3,2
+SP2,17/02/2018,CA Osasuna,CF Reus Deportiu,0,0
+SP2,17/02/2018,Real Oviedo,Albacete,0,0
+SP2,17/02/2018,AD Alcorcón,CD Tenerife,1,1
+SP2,17/02/2018,Lorca FC,Sporting Gijón,0,0
+SP2,17/02/2018,Gimnàstic de Tarragona,Real Zaragoza,0,2
+SP2,18/02/2018,Sevilla Atlético,UD Almería,0,3
+SP2,18/02/2018,Córdoba CF,Granada CF,1,2
+SP2,18/02/2018,CD Numancia,Cádiz CF,1,0
+SP2,18/02/2018,Cultural Leonesa,Rayo Vallecano de Madrid,2,3
+SP2,18/02/2018,CD Lugo,FC Barcelona B,1,2
+SP2,23/02/2018,Sporting Gijón,CA Osasuna,2,0
+SP2,24/02/2018,FC Barcelona B,Gimnàstic de Tarragona,1,1
+SP2,24/02/2018,UD Almería,Cultural Leonesa,2,1
+SP2,24/02/2018,Rayo Vallecano de Madrid,SD Huesca,3,0
+SP2,24/02/2018,Cádiz CF,Lorca FC,0,0
+SP2,25/02/2018,Córdoba CF,Real Valladolid CF,2,1
+SP2,25/02/2018,Real Zaragoza,Real Oviedo,2,1
+SP2,25/02/2018,Albacete,CD Numancia,1,0
+SP2,25/02/2018,CF Reus Deportiu,Sevilla Atlético,2,0
+SP2,25/02/2018,Granada CF,AD Alcorcón,2,0
+SP2,26/02/2018,CD Tenerife,CD Lugo,3,1
+SP2,02/03/2018,Real Oviedo,FC Barcelona B,0,0
+SP2,03/03/2018,CD Numancia,Real Zaragoza,1,2
+SP2,03/03/2018,CA Osasuna,Cádiz CF,1,0
+SP2,03/03/2018,Cultural Leonesa,CF Reus Deportiu,2,0
+SP2,03/03/2018,CD Lugo,Granada CF,2,1
+SP2,04/03/2018,Lorca FC,Albacete,1,2
+SP2,04/03/2018,Gimnàstic de Tarragona,CD Tenerife,1,2
+SP2,04/03/2018,Sevilla Atlético,Sporting Gijón,0,1
+SP2,04/03/2018,AD Alcorcón,Córdoba CF,1,2
+SP2,04/03/2018,Real Valladolid CF,Rayo Vallecano de Madrid,1,1
+SP2,04/03/2018,SD Huesca,UD Almería,2,2
+SP2,09/03/2018,CD Tenerife,Real Oviedo,3,1
+SP2,10/03/2018,Granada CF,Gimnàstic de Tarragona,0,1
+SP2,10/03/2018,AD Alcorcón,Real Valladolid CF,0,0
+SP2,10/03/2018,UD Almería,Rayo Vallecano de Madrid,0,1
+SP2,10/03/2018,Cádiz CF,Sevilla Atlético,4,1
+SP2,11/03/2018,Real Zaragoza,Lorca FC,3,1
+SP2,11/03/2018,FC Barcelona B,CD Numancia,2,2
+SP2,11/03/2018,Albacete,CA Osasuna,0,0
+SP2,11/03/2018,Córdoba CF,CD Lugo,1,0
+SP2,11/03/2018,Sporting Gijón,Cultural Leonesa,4,0
+SP2,11/03/2018,CF Reus Deportiu,SD Huesca,0,0
+SP2,16/03/2018,Sevilla Atlético,Albacete,1,2
+SP2,17/03/2018,CA Osasuna,Real Zaragoza,1,2
+SP2,17/03/2018,CD Lugo,AD Alcorcón,2,1
+SP2,17/03/2018,Lorca FC,FC Barcelona B,1,1
+SP2,17/03/2018,Cultural Leonesa,Cádiz CF,0,1
+SP2,18/03/2018,Real Valladolid CF,UD Almería,2,1
+SP2,18/03/2018,Rayo Vallecano de Madrid,CF Reus Deportiu,3,2
+SP2,18/03/2018,Real Oviedo,Granada CF,2,1
+SP2,18/03/2018,Gimnàstic de Tarragona,Córdoba CF,0,2
+SP2,18/03/2018,CD Numancia,CD Tenerife,2,0
+SP2,19/03/2018,SD Huesca,Sporting Gijón,0,2
+SP2,24/03/2018,Albacete,Cultural Leonesa,0,0
+SP2,24/03/2018,CD Lugo,Real Valladolid CF,0,0
+SP2,24/03/2018,Córdoba CF,Real Oviedo,1,1
+SP2,24/03/2018,CF Reus Deportiu,UD Almería,1,0
+SP2,24/03/2018,Sporting Gijón,Rayo Vallecano de Madrid,1,0
+SP2,25/03/2018,AD Alcorcón,Gimnàstic de Tarragona,1,0
+SP2,25/03/2018,Real Zaragoza,Sevilla Atlético,0,1
+SP2,25/03/2018,FC Barcelona B,CA Osasuna,0,2
+SP2,25/03/2018,CD Tenerife,Lorca FC,2,0
+SP2,25/03/2018,Granada CF,CD Numancia,1,0
+SP2,26/03/2018,Cádiz CF,SD Huesca,1,1
+SP2,31/03/2018,CD Numancia,Córdoba CF,2,1
+SP2,31/03/2018,Cultural Leonesa,Real Zaragoza,0,1
+SP2,31/03/2018,Real Oviedo,AD Alcorcón,0,1
+SP2,31/03/2018,Real Valladolid CF,CF Reus Deportiu,1,0
+SP2,01/04/2018,Sevilla Atlético,FC Barcelona B,3,1
+SP2,01/04/2018,Lorca FC,Granada CF,3,2
+SP2,01/04/2018,CA Osasuna,CD Tenerife,0,1
+SP2,01/04/2018,UD Almería,Sporting Gijón,1,3
+SP2,01/04/2018,Rayo Vallecano de Madrid,Cádiz CF,1,1
+SP2,01/04/2018,Gimnàstic de Tarragona,CD Lugo,3,0
+SP2,06/04/2018,Cádiz CF,UD Almería,0,0
+SP2,07/04/2018,FC Barcelona B,Cultural Leonesa,0,1
+SP2,07/04/2018,Granada CF,CA Osasuna,1,1
+SP2,07/04/2018,AD Alcorcón,CD Numancia,0,1
+SP2,07/04/2018,Real Zaragoza,SD Huesca,1,0
+SP2,07/04/2018,Albacete,Rayo Vallecano de Madrid,0,1
+SP2,08/04/2018,Gimnàstic de Tarragona,Real Valladolid CF,1,0
+SP2,08/04/2018,CD Lugo,Real Oviedo,0,1
+SP2,08/04/2018,Córdoba CF,Lorca FC,1,0
+SP2,08/04/2018,Sporting Gijón,CF Reus Deportiu,2,1
+SP2,08/04/2018,CD Tenerife,Sevilla Atlético,2,0
+SP2,12/04/2018,SD Huesca,Albacete,0,0
+SP2,14/04/2018,CF Reus Deportiu,Cádiz CF,1,0
+SP2,14/04/2018,CD Numancia,CD Lugo,2,0
+SP2,14/04/2018,Lorca FC,AD Alcorcón,1,1
+SP2,14/04/2018,Cultural Leonesa,CD Tenerife,3,2
+SP2,15/04/2018,CA Osasuna,Córdoba CF,1,1
+SP2,15/04/2018,Real Valladolid CF,Sporting Gijón,0,1
+SP2,15/04/2018,UD Almería,Albacete,1,1
+SP2,15/04/2018,Rayo Vallecano de Madrid,Real Zaragoza,2,1
+SP2,15/04/2018,Sevilla Atlético,Granada CF,0,0
+SP2,15/04/2018,Real Oviedo,Gimnàstic de Tarragona,1,0
+SP2,16/04/2018,SD Huesca,FC Barcelona B,2,1
+SP2,20/04/2018,Real Oviedo,Real Valladolid CF,1,2
+SP2,20/04/2018,Córdoba CF,Sevilla Atlético,3,0
+SP2,21/04/2018,Real Zaragoza,UD Almería,2,1
+SP2,21/04/2018,Gimnàstic de Tarragona,CD Numancia,0,0
+SP2,21/04/2018,Albacete,CF Reus Deportiu,0,1
+SP2,21/04/2018,CD Tenerife,SD Huesca,2,4
+SP2,22/04/2018,AD Alcorcón,CA Osasuna,0,0
+SP2,22/04/2018,FC Barcelona B,Rayo Vallecano de Madrid,2,3
+SP2,22/04/2018,Cádiz CF,Sporting Gijón,0,0
+SP2,22/04/2018,CD Lugo,Lorca FC,1,1
+SP2,22/04/2018,Granada CF,Cultural Leonesa,3,3
+SP2,27/04/2018,CF Reus Deportiu,Real Zaragoza,1,1
+SP2,28/04/2018,Real Valladolid CF,Cádiz CF,1,1
+SP2,28/04/2018,UD Almería,FC Barcelona B,1,0
+SP2,28/04/2018,CA Osasuna,CD Lugo,1,1
+SP2,28/04/2018,Sevilla Atlético,AD Alcorcón,1,0
+SP2,28/04/2018,SD Huesca,Granada CF,2,1
+SP2,29/04/2018,CD Numancia,Real Oviedo,3,0
+SP2,29/04/2018,Sporting Gijón,Albacete,2,1
+SP2,29/04/2018,Cultural Leonesa,Córdoba CF,2,1
+SP2,29/04/2018,Rayo Vallecano de Madrid,CD Tenerife,3,1
+SP2,29/04/2018,Lorca FC,Gimnàstic de Tarragona,1,0
+SP2,04/05/2018,AD Alcorcón,Cultural Leonesa,0,0
+SP2,05/05/2018,Córdoba CF,SD Huesca,2,4
+SP2,05/05/2018,CD Numancia,Real Valladolid CF,0,1
+SP2,05/05/2018,FC Barcelona B,CF Reus Deportiu,0,1
+SP2,05/05/2018,Real Zaragoza,Sporting Gijón,2,1
+SP2,05/05/2018,CD Tenerife,UD Almería,0,0
+SP2,06/05/2018,Gimnàstic de Tarragona,CA Osasuna,0,2
+SP2,06/05/2018,Real Oviedo,Lorca FC,2,0
+SP2,06/05/2018,Albacete,Cádiz CF,1,1
+SP2,06/05/2018,CD Lugo,Sevilla Atlético,1,0
+SP2,07/05/2018,Granada CF,Rayo Vallecano de Madrid,0,2
+SP2,11/05/2018,Lorca FC,CD Numancia,2,1
+SP2,12/05/2018,Real Valladolid CF,Albacete,3,2
+SP2,12/05/2018,Sporting Gijón,FC Barcelona B,2,3
+SP2,12/05/2018,CF Reus Deportiu,CD Tenerife,1,1
+SP2,12/05/2018,CA Osasuna,Real Oviedo,2,1
+SP2,13/05/2018,Cultural Leonesa,CD Lugo,1,1
+SP2,13/05/2018,SD Huesca,AD Alcorcón,1,1
+SP2,13/05/2018,Sevilla Atlético,Gimnàstic de Tarragona,1,0
+SP2,13/05/2018,Rayo Vallecano de Madrid,Córdoba CF,1,2
+SP2,13/05/2018,UD Almería,Granada CF,2,0
+SP2,14/05/2018,Cádiz CF,Real Zaragoza,2,0
+SP2,18/05/2018,CD Tenerife,Sporting Gijón,1,0
+SP2,19/05/2018,Gimnàstic de Tarragona,Cultural Leonesa,5,3
+SP2,19/05/2018,Real Oviedo,Sevilla Atlético,2,1
+SP2,19/05/2018,Lorca FC,Real Valladolid CF,1,5
+SP2,19/05/2018,Granada CF,CF Reus Deportiu,1,0
+SP2,20/05/2018,FC Barcelona B,Cádiz CF,3,1
+SP2,20/05/2018,CD Numancia,CA Osasuna,1,1
+SP2,20/05/2018,AD Alcorcón,Rayo Vallecano de Madrid,4,0
+SP2,20/05/2018,Real Zaragoza,Albacete,4,1
+SP2,20/05/2018,Córdoba CF,UD Almería,2,0
+SP2,21/05/2018,CD Lugo,SD Huesca,0,2
+SP2,27/05/2018,CF Reus Deportiu,Córdoba CF,1,2
+SP2,27/05/2018,CA Osasuna,Lorca FC,1,0
+SP2,27/05/2018,Real Zaragoza,Real Valladolid CF,3,2
+SP2,27/05/2018,Cultural Leonesa,Real Oviedo,2,0
+SP2,27/05/2018,Rayo Vallecano de Madrid,CD Lugo,1,0
+SP2,27/05/2018,Sevilla Atlético,CD Numancia,2,1
+SP2,27/05/2018,Albacete,FC Barcelona B,0,0
+SP2,27/05/2018,UD Almería,AD Alcorcón,0,0
+SP2,27/05/2018,Cádiz CF,CD Tenerife,1,1
+SP2,27/05/2018,SD Huesca,Gimnàstic de Tarragona,0,1
+SP2,27/05/2018,Sporting Gijón,Granada CF,2,1
+SP2,01/06/2018,Lorca FC,Sevilla Atlético,2,1
+SP2,02/06/2018,Granada CF,Cádiz CF,2,1
+SP2,02/06/2018,Córdoba CF,Sporting Gijón,3,0
+SP2,02/06/2018,CD Tenerife,Albacete,1,1
+SP2,02/06/2018,CD Lugo,UD Almería,1,1
+SP2,02/06/2018,Gimnàstic de Tarragona,Rayo Vallecano de Madrid,2,0
+SP2,02/06/2018,Real Valladolid CF,CA Osasuna,2,0
+SP2,02/06/2018,Real Oviedo,SD Huesca,2,1
+SP2,02/06/2018,AD Alcorcón,CF Reus Deportiu,3,0
+SP2,02/06/2018,CD Numancia,Cultural Leonesa,2,1
+SP2,02/06/2018,FC Barcelona B,Real Zaragoza,0,2

@@ -71,13 +71,13 @@ England,3,1,Ghana
 Panama,1,2,Croatia
 Panama,0,2,England
 Croatia,3,1,Ghana
-South Korea,2,0,Canada
-Brazil,0,1,Japan
-Germany,4,1,Scotland
-Netherlands,3,2,Morocco
+South Korea,3,2,Canada
+Brazil,2,1,Japan
+Germany,3,2,Scotland
+Netherlands,1,0,Morocco
 Ecuador,1,0,France
-Norway,1,2,United States
-Mexico,2,1,Ivory Coast
+Norway,2,1,United States
+Mexico,3,0,Ivory Coast
 England,2,0,Algeria
 Belgium,1,2,Czech Republic
 Turkey,1,0,Bosnia and Herzegovina
@@ -88,18 +88,18 @@ Australia,1,2,Iran
 Austria,1,2,Uruguay
 Portugal,4,0,Senegal
 South Korea,0,3,Netherlands
-Germany,3,2,United States
-Japan,0,1,Ecuador
-Mexico,1,2,England
-Spain,1,2,Colombia
-Turkey,3,2,Czech Republic
+Germany,1,2,Norway
+Brazil,2,1,Ecuador
+Mexico,2,1,England
+Spain,3,2,Colombia
+Turkey,2,0,Czech Republic
 Uruguay,2,1,Iran
 Switzerland,0,1,Portugal
-Netherlands,2,0,Germany
-Colombia,3,2,Turkey
-Ecuador,1,0,England
+Netherlands,2,1,Norway
+Spain,1,2,Turkey
+Brazil,3,2,Mexico
 Uruguay,1,2,Portugal
-Netherlands,2,1,Colombia
-Ecuador,1,2,Portugal
-Colombia,1,0,Ecuador
-Netherlands,2,1,Portugal
+Netherlands,2,1,Turkey
+Brazil,3,2,Portugal
+Turkey,1,2,Portugal
+Netherlands,1,3,Brazil

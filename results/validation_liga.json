@@ -1,0 +1,39 @@
+{
+  "test_season": "2526",
+  "train_seasons": [
+    "1718",
+    "1819",
+    "1920",
+    "2021",
+    "2122",
+    "2223",
+    "2324",
+    "2425"
+  ],
+  "n_test_rows": 730,
+  "half_life_days": 730,
+  "shrink": null,
+  "model": {
+    "mae": 0.7906,
+    "poisson_deviance": 0.8966
+  },
+  "baseline_constant": {
+    "mae": 0.8713,
+    "poisson_deviance": 1.0118
+  },
+  "baseline_home_away": {
+    "mae": 0.8451,
+    "poisson_deviance": 0.974
+  },
+  "affected": {
+    "n": 15,
+    "model": {
+      "mae": 0.7931,
+      "poisson_deviance": 1.3975
+    },
+    "baseline_constant": {
+      "mae": 1.0084,
+      "poisson_deviance": 1.6925
+    }
+  }
+}

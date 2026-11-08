@@ -1,0 +1,381 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP1,28/08/2010,Hercules,Athletic Club,0,1
+SP1,28/08/2010,Levante UD,Sevilla FC,1,4
+SP1,28/08/2010,Málaga CF,Valencia CF,1,3
+SP1,29/08/2010,RCD Espanyol de Barcelona,Getafe CF,3,1
+SP1,29/08/2010,RC Deportivo La Coruña,Zaragoza,0,0
+SP1,29/08/2010,RCD Mallorca,Real Madrid CF,0,0
+SP1,29/08/2010,CA Osasuna,UD Almería,0,0
+SP1,29/08/2010,Real Racing Club de Santander,FC Barcelona,0,3
+SP1,29/08/2010,Real Sociedad de Fútbol,Villarreal CF,1,0
+SP1,30/08/2010,Club Atlético de Madrid,Sporting Gijón,4,0
+SP1,11/09/2010,Athletic Club,Club Atlético de Madrid,1,2
+SP1,11/09/2010,FC Barcelona,Hercules,0,2
+SP1,11/09/2010,Real Madrid CF,CA Osasuna,1,0
+SP1,11/09/2010,Valencia CF,Real Racing Club de Santander,1,0
+SP1,12/09/2010,Getafe CF,Levante UD,4,1
+SP1,12/09/2010,Sevilla FC,RC Deportivo La Coruña,0,0
+SP1,12/09/2010,Sporting Gijón,RCD Mallorca,2,0
+SP1,12/09/2010,Villarreal CF,RCD Espanyol de Barcelona,4,0
+SP1,12/09/2010,Zaragoza,Málaga CF,3,5
+SP1,13/09/2010,UD Almería,Real Sociedad de Fútbol,2,2
+SP1,18/09/2010,RCD Espanyol de Barcelona,UD Almería,1,0
+SP1,18/09/2010,RCD Mallorca,CA Osasuna,2,0
+SP1,18/09/2010,Real Sociedad de Fútbol,Real Madrid CF,1,2
+SP1,18/09/2010,Sporting Gijón,Athletic Club,2,2
+SP1,19/09/2010,Club Atlético de Madrid,FC Barcelona,1,2
+SP1,19/09/2010,Hercules,Valencia CF,1,2
+SP1,19/09/2010,Levante UD,Villarreal CF,1,2
+SP1,19/09/2010,Málaga CF,Sevilla FC,1,2
+SP1,19/09/2010,Real Racing Club de Santander,Zaragoza,2,0
+SP1,20/09/2010,RC Deportivo La Coruña,Getafe CF,2,2
+SP1,21/09/2010,Athletic Club,RCD Mallorca,3,0
+SP1,21/09/2010,CA Osasuna,Real Sociedad de Fútbol,3,1
+SP1,21/09/2010,Real Madrid CF,RCD Espanyol de Barcelona,3,0
+SP1,22/09/2010,UD Almería,Levante UD,0,1
+SP1,22/09/2010,FC Barcelona,Sporting Gijón,1,0
+SP1,22/09/2010,Valencia CF,Club Atlético de Madrid,1,1
+SP1,22/09/2010,Zaragoza,Hercules,0,0
+SP1,23/09/2010,Getafe CF,Málaga CF,0,2
+SP1,23/09/2010,Sevilla FC,Real Racing Club de Santander,1,1
+SP1,23/09/2010,Villarreal CF,RC Deportivo La Coruña,1,0
+SP1,25/09/2010,Athletic Club,FC Barcelona,1,3
+SP1,25/09/2010,Levante UD,Real Madrid CF,0,0
+SP1,25/09/2010,Sporting Gijón,Valencia CF,0,2
+SP1,26/09/2010,Club Atlético de Madrid,Zaragoza,1,0
+SP1,26/09/2010,RCD Espanyol de Barcelona,CA Osasuna,1,0
+SP1,26/09/2010,Hercules,Sevilla FC,2,0
+SP1,26/09/2010,RC Deportivo La Coruña,UD Almería,0,2
+SP1,26/09/2010,RCD Mallorca,Real Sociedad de Fútbol,2,0
+SP1,26/09/2010,Real Racing Club de Santander,Getafe CF,0,1
+SP1,27/09/2010,Málaga CF,Villarreal CF,2,3
+SP1,02/10/2010,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,1,0
+SP1,02/10/2010,Valencia CF,Athletic Club,2,1
+SP1,02/10/2010,Zaragoza,Sporting Gijón,2,2
+SP1,03/10/2010,UD Almería,Málaga CF,1,1
+SP1,03/10/2010,FC Barcelona,RCD Mallorca,1,1
+SP1,03/10/2010,Getafe CF,Hercules,3,0
+SP1,03/10/2010,CA Osasuna,Levante UD,1,1
+SP1,03/10/2010,Real Madrid CF,RC Deportivo La Coruña,6,1
+SP1,03/10/2010,Sevilla FC,Club Atlético de Madrid,3,1
+SP1,03/10/2010,Villarreal CF,Real Racing Club de Santander,2,0
+SP1,16/10/2010,Club Atlético de Madrid,Getafe CF,2,0
+SP1,16/10/2010,FC Barcelona,Valencia CF,2,1
+SP1,16/10/2010,Málaga CF,Real Madrid CF,1,4
+SP1,17/10/2010,Athletic Club,Zaragoza,2,1
+SP1,17/10/2010,RC Deportivo La Coruña,CA Osasuna,0,0
+SP1,17/10/2010,Levante UD,Real Sociedad de Fútbol,2,1
+SP1,17/10/2010,RCD Mallorca,RCD Espanyol de Barcelona,0,1
+SP1,17/10/2010,Real Racing Club de Santander,UD Almería,1,0
+SP1,17/10/2010,Sporting Gijón,Sevilla FC,2,0
+SP1,18/10/2010,Hercules,Villarreal CF,2,2
+SP1,23/10/2010,Real Madrid CF,Real Racing Club de Santander,6,1
+SP1,23/10/2010,Valencia CF,RCD Mallorca,1,2
+SP1,23/10/2010,Zaragoza,FC Barcelona,0,2
+SP1,24/10/2010,UD Almería,Hercules,1,1
+SP1,24/10/2010,RCD Espanyol de Barcelona,Levante UD,2,1
+SP1,24/10/2010,Getafe CF,Sporting Gijón,3,0
+SP1,24/10/2010,CA Osasuna,Málaga CF,3,0
+SP1,24/10/2010,Sevilla FC,Athletic Club,4,3
+SP1,24/10/2010,Villarreal CF,Club Atlético de Madrid,2,0
+SP1,25/10/2010,Real Sociedad de Fútbol,RC Deportivo La Coruña,3,0
+SP1,30/10/2010,FC Barcelona,Sevilla FC,5,0
+SP1,30/10/2010,Hercules,Real Madrid CF,1,3
+SP1,30/10/2010,Valencia CF,Zaragoza,1,1
+SP1,31/10/2010,Athletic Club,Getafe CF,3,0
+SP1,31/10/2010,Club Atlético de Madrid,UD Almería,1,1
+SP1,31/10/2010,RC Deportivo La Coruña,RCD Espanyol de Barcelona,3,0
+SP1,31/10/2010,Málaga CF,Real Sociedad de Fútbol,1,2
+SP1,31/10/2010,Real Racing Club de Santander,CA Osasuna,4,1
+SP1,31/10/2010,Sporting Gijón,Villarreal CF,1,1
+SP1,01/11/2010,RCD Mallorca,Levante UD,2,1
+SP1,06/11/2010,RCD Espanyol de Barcelona,Málaga CF,1,0
+SP1,06/11/2010,Real Sociedad de Fútbol,Real Racing Club de Santander,1,0
+SP1,07/11/2010,UD Almería,Sporting Gijón,1,1
+SP1,07/11/2010,Getafe CF,FC Barcelona,1,3
+SP1,07/11/2010,Levante UD,RC Deportivo La Coruña,1,2
+SP1,07/11/2010,CA Osasuna,Hercules,3,0
+SP1,07/11/2010,Real Madrid CF,Club Atlético de Madrid,2,0
+SP1,07/11/2010,Villarreal CF,Athletic Club,4,1
+SP1,07/11/2010,Zaragoza,RCD Mallorca,3,2
+SP1,08/11/2010,Sevilla FC,Valencia CF,2,0
+SP1,13/11/2010,Athletic Club,UD Almería,1,0
+SP1,13/11/2010,Club Atlético de Madrid,CA Osasuna,3,0
+SP1,13/11/2010,FC Barcelona,Villarreal CF,3,1
+SP1,14/11/2010,Hercules,Real Sociedad de Fútbol,2,1
+SP1,14/11/2010,Málaga CF,Levante UD,1,0
+SP1,14/11/2010,RCD Mallorca,RC Deportivo La Coruña,0,0
+SP1,14/11/2010,Real Racing Club de Santander,RCD Espanyol de Barcelona,0,0
+SP1,14/11/2010,Sporting Gijón,Real Madrid CF,0,1
+SP1,14/11/2010,Valencia CF,Getafe CF,2,0
+SP1,14/11/2010,Zaragoza,Sevilla FC,1,2
+SP1,20/11/2010,UD Almería,FC Barcelona,0,8
+SP1,20/11/2010,Real Madrid CF,Athletic Club,5,1
+SP1,20/11/2010,Villarreal CF,Valencia CF,1,1
+SP1,21/11/2010,RCD Espanyol de Barcelona,Hercules,3,0
+SP1,21/11/2010,RC Deportivo La Coruña,Málaga CF,3,0
+SP1,21/11/2010,Levante UD,Real Racing Club de Santander,3,1
+SP1,21/11/2010,CA Osasuna,Sporting Gijón,1,0
+SP1,21/11/2010,Sevilla FC,RCD Mallorca,1,2
+SP1,21/11/2010,Real Sociedad de Fútbol,Club Atlético de Madrid,2,4
+SP1,22/11/2010,Getafe CF,Zaragoza,1,1
+SP1,27/11/2010,Club Atlético de Madrid,RCD Espanyol de Barcelona,2,3
+SP1,27/11/2010,Sevilla FC,Getafe CF,1,3
+SP1,27/11/2010,Zaragoza,Villarreal CF,0,3
+SP1,28/11/2010,Athletic Club,CA Osasuna,1,0
+SP1,28/11/2010,Hercules,Levante UD,3,1
+SP1,28/11/2010,RCD Mallorca,Málaga CF,2,0
+SP1,28/11/2010,Real Racing Club de Santander,RC Deportivo La Coruña,1,0
+SP1,28/11/2010,Sporting Gijón,Real Sociedad de Fútbol,1,3
+SP1,28/11/2010,Valencia CF,UD Almería,2,1
+SP1,29/11/2010,FC Barcelona,Real Madrid CF,5,0
+SP1,04/12/2010,Levante UD,Club Atlético de Madrid,2,0
+SP1,04/12/2010,CA Osasuna,FC Barcelona,0,3
+SP1,04/12/2010,Real Madrid CF,Valencia CF,2,0
+SP1,05/12/2010,UD Almería,Zaragoza,1,1
+SP1,05/12/2010,RCD Espanyol de Barcelona,Sporting Gijón,1,0
+SP1,05/12/2010,Getafe CF,RCD Mallorca,3,0
+SP1,05/12/2010,Málaga CF,Real Racing Club de Santander,4,1
+SP1,05/12/2010,Real Sociedad de Fútbol,Athletic Club,2,0
+SP1,05/12/2010,Villarreal CF,Sevilla FC,1,0
+SP1,06/12/2010,RC Deportivo La Coruña,Hercules,1,0
+SP1,11/12/2010,Club Atlético de Madrid,RC Deportivo La Coruña,2,0
+SP1,11/12/2010,Getafe CF,Villarreal CF,1,0
+SP1,11/12/2010,Sevilla FC,UD Almería,1,3
+SP1,12/12/2010,Athletic Club,RCD Espanyol de Barcelona,2,1
+SP1,12/12/2010,FC Barcelona,Real Sociedad de Fútbol,5,0
+SP1,12/12/2010,Hercules,Málaga CF,4,1
+SP1,12/12/2010,RCD Mallorca,Real Racing Club de Santander,0,1
+SP1,12/12/2010,Sporting Gijón,Levante UD,1,1
+SP1,12/12/2010,Zaragoza,Real Madrid CF,1,3
+SP1,13/12/2010,Valencia CF,CA Osasuna,3,3
+SP1,18/12/2010,RCD Espanyol de Barcelona,FC Barcelona,1,5
+SP1,18/12/2010,RC Deportivo La Coruña,Sporting Gijón,1,1
+SP1,18/12/2010,Levante UD,Athletic Club,1,2
+SP1,18/12/2010,Real Sociedad de Fútbol,Valencia CF,1,2
+SP1,18/12/2010,Villarreal CF,RCD Mallorca,3,1
+SP1,19/12/2010,UD Almería,Getafe CF,2,3
+SP1,19/12/2010,Málaga CF,Club Atlético de Madrid,0,3
+SP1,19/12/2010,CA Osasuna,Zaragoza,0,0
+SP1,19/12/2010,Real Madrid CF,Sevilla FC,1,0
+SP1,20/12/2010,Real Racing Club de Santander,Hercules,0,0
+SP1,02/01/2011,Athletic Club,RC Deportivo La Coruña,1,2
+SP1,02/01/2011,FC Barcelona,Levante UD,2,1
+SP1,02/01/2011,Sevilla FC,CA Osasuna,1,0
+SP1,02/01/2011,Sporting Gijón,Málaga CF,1,2
+SP1,02/01/2011,Valencia CF,RCD Espanyol de Barcelona,2,1
+SP1,03/01/2011,Club Atlético de Madrid,Real Racing Club de Santander,0,0
+SP1,03/01/2011,Getafe CF,Real Madrid CF,2,3
+SP1,03/01/2011,RCD Mallorca,Hercules,3,0
+SP1,03/01/2011,Villarreal CF,UD Almería,2,0
+SP1,03/01/2011,Zaragoza,Real Sociedad de Fútbol,2,1
+SP1,08/01/2011,RC Deportivo La Coruña,FC Barcelona,0,4
+SP1,08/01/2011,Málaga CF,Athletic Club,1,1
+SP1,08/01/2011,Real Sociedad de Fútbol,Sevilla FC,2,3
+SP1,09/01/2011,RCD Espanyol de Barcelona,Zaragoza,4,0
+SP1,09/01/2011,Levante UD,Valencia CF,0,1
+SP1,09/01/2011,RCD Mallorca,UD Almería,4,1
+SP1,09/01/2011,CA Osasuna,Getafe CF,0,0
+SP1,09/01/2011,Real Madrid CF,Villarreal CF,4,2
+SP1,09/01/2011,Real Racing Club de Santander,Sporting Gijón,1,1
+SP1,10/01/2011,Hercules,Club Atlético de Madrid,4,1
+SP1,15/01/2011,Athletic Club,Real Racing Club de Santander,2,1
+SP1,15/01/2011,Getafe CF,Real Sociedad de Fútbol,0,4
+SP1,15/01/2011,Sevilla FC,RCD Espanyol de Barcelona,1,2
+SP1,15/01/2011,Sporting Gijón,Hercules,2,0
+SP1,15/01/2011,Villarreal CF,CA Osasuna,4,2
+SP1,15/01/2011,Zaragoza,Levante UD,1,0
+SP1,16/01/2011,UD Almería,Real Madrid CF,1,1
+SP1,16/01/2011,FC Barcelona,Málaga CF,4,1
+SP1,16/01/2011,Valencia CF,RC Deportivo La Coruña,2,0
+SP1,17/01/2011,Club Atlético de Madrid,RCD Mallorca,3,0
+SP1,22/01/2011,FC Barcelona,Real Racing Club de Santander,3,0
+SP1,22/01/2011,Sevilla FC,Levante UD,4,1
+SP1,22/01/2011,Valencia CF,Málaga CF,4,3
+SP1,23/01/2011,UD Almería,CA Osasuna,3,2
+SP1,23/01/2011,Getafe CF,RCD Espanyol de Barcelona,1,3
+SP1,23/01/2011,Real Madrid CF,RCD Mallorca,1,0
+SP1,23/01/2011,Sporting Gijón,Club Atlético de Madrid,1,0
+SP1,23/01/2011,Villarreal CF,Real Sociedad de Fútbol,2,1
+SP1,23/01/2011,Zaragoza,RC Deportivo La Coruña,1,0
+SP1,24/01/2011,Athletic Club,Hercules,3,0
+SP1,29/01/2011,Hercules,FC Barcelona,0,3
+SP1,29/01/2011,RC Deportivo La Coruña,Sevilla FC,3,3
+SP1,29/01/2011,Levante UD,Getafe CF,2,0
+SP1,29/01/2011,Málaga CF,Zaragoza,1,2
+SP1,29/01/2011,RCD Mallorca,Sporting Gijón,0,4
+SP1,29/01/2011,Real Sociedad de Fútbol,UD Almería,2,0
+SP1,30/01/2011,Club Atlético de Madrid,Athletic Club,0,2
+SP1,30/01/2011,RCD Espanyol de Barcelona,Villarreal CF,0,1
+SP1,30/01/2011,CA Osasuna,Real Madrid CF,1,0
+SP1,31/01/2011,Real Racing Club de Santander,Valencia CF,1,1
+SP1,05/02/2011,UD Almería,RCD Espanyol de Barcelona,3,2
+SP1,05/02/2011,Athletic Club,Sporting Gijón,3,0
+SP1,05/02/2011,FC Barcelona,Club Atlético de Madrid,3,0
+SP1,05/02/2011,Getafe CF,RC Deportivo La Coruña,4,1
+SP1,05/02/2011,CA Osasuna,RCD Mallorca,1,1
+SP1,05/02/2011,Villarreal CF,Levante UD,0,1
+SP1,05/02/2011,Zaragoza,Real Racing Club de Santander,1,1
+SP1,06/02/2011,Real Madrid CF,Real Sociedad de Fútbol,4,1
+SP1,06/02/2011,Sevilla FC,Málaga CF,0,0
+SP1,06/02/2011,Valencia CF,Hercules,2,0
+SP1,12/02/2011,Club Atlético de Madrid,Valencia CF,1,2
+SP1,12/02/2011,Real Racing Club de Santander,Sevilla FC,3,2
+SP1,12/02/2011,Sporting Gijón,FC Barcelona,1,1
+SP1,13/02/2011,RCD Espanyol de Barcelona,Real Madrid CF,0,1
+SP1,13/02/2011,Hercules,Zaragoza,2,1
+SP1,13/02/2011,RC Deportivo La Coruña,Villarreal CF,1,0
+SP1,13/02/2011,Levante UD,UD Almería,1,0
+SP1,13/02/2011,Málaga CF,Getafe CF,2,2
+SP1,13/02/2011,Real Sociedad de Fútbol,CA Osasuna,1,0
+SP1,14/02/2011,RCD Mallorca,Athletic Club,1,0
+SP1,19/02/2011,Real Madrid CF,Levante UD,2,0
+SP1,19/02/2011,Valencia CF,Sporting Gijón,0,0
+SP1,19/02/2011,Zaragoza,Club Atlético de Madrid,0,1
+SP1,20/02/2011,UD Almería,RC Deportivo La Coruña,1,1
+SP1,20/02/2011,FC Barcelona,Athletic Club,2,1
+SP1,20/02/2011,Getafe CF,Real Racing Club de Santander,0,1
+SP1,20/02/2011,CA Osasuna,RCD Espanyol de Barcelona,4,0
+SP1,20/02/2011,Sevilla FC,Hercules,1,0
+SP1,20/02/2011,Villarreal CF,Málaga CF,1,1
+SP1,21/02/2011,Real Sociedad de Fútbol,RCD Mallorca,1,0
+SP1,26/02/2011,Club Atlético de Madrid,Sevilla FC,2,2
+SP1,26/02/2011,RCD Espanyol de Barcelona,Real Sociedad de Fútbol,4,1
+SP1,26/02/2011,RC Deportivo La Coruña,Real Madrid CF,0,0
+SP1,26/02/2011,RCD Mallorca,FC Barcelona,0,3
+SP1,26/02/2011,Sporting Gijón,Zaragoza,0,0
+SP1,27/02/2011,Athletic Club,Valencia CF,1,2
+SP1,27/02/2011,Hercules,Getafe CF,0,0
+SP1,27/02/2011,Levante UD,CA Osasuna,2,1
+SP1,27/02/2011,Real Racing Club de Santander,Villarreal CF,2,2
+SP1,28/02/2011,Málaga CF,UD Almería,3,1
+SP1,01/03/2011,RCD Espanyol de Barcelona,RCD Mallorca,1,2
+SP1,01/03/2011,Sevilla FC,Sporting Gijón,3,0
+SP1,02/03/2011,Getafe CF,Club Atlético de Madrid,1,1
+SP1,02/03/2011,CA Osasuna,RC Deportivo La Coruña,0,0
+SP1,02/03/2011,Real Sociedad de Fútbol,Levante UD,1,1
+SP1,02/03/2011,Valencia CF,FC Barcelona,0,1
+SP1,02/03/2011,Villarreal CF,Hercules,1,0
+SP1,02/03/2011,Zaragoza,Athletic Club,2,1
+SP1,03/03/2011,UD Almería,Real Racing Club de Santander,1,1
+SP1,03/03/2011,Real Madrid CF,Málaga CF,7,0
+SP1,05/03/2011,Club Atlético de Madrid,Villarreal CF,3,1
+SP1,05/03/2011,FC Barcelona,Zaragoza,1,0
+SP1,05/03/2011,RCD Mallorca,Valencia CF,1,2
+SP1,06/03/2011,Athletic Club,Sevilla FC,2,0
+SP1,06/03/2011,Hercules,UD Almería,1,2
+SP1,06/03/2011,Levante UD,RCD Espanyol de Barcelona,1,0
+SP1,06/03/2011,Málaga CF,CA Osasuna,0,1
+SP1,06/03/2011,Real Racing Club de Santander,Real Madrid CF,1,3
+SP1,06/03/2011,Sporting Gijón,Getafe CF,2,0
+SP1,07/03/2011,RC Deportivo La Coruña,Real Sociedad de Fútbol,2,1
+SP1,12/03/2011,UD Almería,Club Atlético de Madrid,2,2
+SP1,12/03/2011,Real Madrid CF,Hercules,2,0
+SP1,12/03/2011,Zaragoza,Valencia CF,4,0
+SP1,13/03/2011,RCD Espanyol de Barcelona,RC Deportivo La Coruña,2,0
+SP1,13/03/2011,Levante UD,RCD Mallorca,1,1
+SP1,13/03/2011,CA Osasuna,Real Racing Club de Santander,3,1
+SP1,13/03/2011,Sevilla FC,FC Barcelona,1,1
+SP1,13/03/2011,Real Sociedad de Fútbol,Málaga CF,0,2
+SP1,13/03/2011,Villarreal CF,Sporting Gijón,1,1
+SP1,14/03/2011,Getafe CF,Athletic Club,2,2
+SP1,19/03/2011,Club Atlético de Madrid,Real Madrid CF,1,2
+SP1,19/03/2011,FC Barcelona,Getafe CF,2,1
+SP1,19/03/2011,RCD Mallorca,Zaragoza,1,0
+SP1,20/03/2011,Athletic Club,Villarreal CF,0,1
+SP1,20/03/2011,Hercules,CA Osasuna,0,4
+SP1,20/03/2011,RC Deportivo La Coruña,Levante UD,0,1
+SP1,20/03/2011,Málaga CF,RCD Espanyol de Barcelona,2,0
+SP1,20/03/2011,Real Racing Club de Santander,Real Sociedad de Fútbol,2,1
+SP1,20/03/2011,Sporting Gijón,UD Almería,1,0
+SP1,20/03/2011,Valencia CF,Sevilla FC,0,1
+SP1,02/04/2011,Getafe CF,Valencia CF,2,4
+SP1,02/04/2011,Real Madrid CF,Sporting Gijón,0,1
+SP1,02/04/2011,Villarreal CF,FC Barcelona,0,1
+SP1,03/04/2011,RCD Espanyol de Barcelona,Real Racing Club de Santander,1,2
+SP1,03/04/2011,RC Deportivo La Coruña,RCD Mallorca,2,1
+SP1,03/04/2011,Levante UD,Málaga CF,3,1
+SP1,03/04/2011,CA Osasuna,Club Atlético de Madrid,2,3
+SP1,03/04/2011,Sevilla FC,Zaragoza,3,1
+SP1,03/04/2011,Real Sociedad de Fútbol,Hercules,1,3
+SP1,04/04/2011,UD Almería,Athletic Club,1,3
+SP1,09/04/2011,Athletic Club,Real Madrid CF,0,3
+SP1,09/04/2011,FC Barcelona,UD Almería,3,1
+SP1,09/04/2011,RCD Mallorca,Sevilla FC,2,2
+SP1,10/04/2011,Club Atlético de Madrid,Real Sociedad de Fútbol,3,0
+SP1,10/04/2011,Hercules,RCD Espanyol de Barcelona,0,0
+SP1,10/04/2011,Málaga CF,RC Deportivo La Coruña,0,0
+SP1,10/04/2011,Real Racing Club de Santander,Levante UD,1,1
+SP1,10/04/2011,Sporting Gijón,CA Osasuna,1,0
+SP1,10/04/2011,Valencia CF,Villarreal CF,5,0
+SP1,11/04/2011,Zaragoza,Getafe CF,2,1
+SP1,16/04/2011,UD Almería,Valencia CF,0,3
+SP1,16/04/2011,Getafe CF,Sevilla FC,1,0
+SP1,16/04/2011,Málaga CF,RCD Mallorca,3,0
+SP1,16/04/2011,Real Madrid CF,FC Barcelona,1,1
+SP1,17/04/2011,RCD Espanyol de Barcelona,Club Atlético de Madrid,2,2
+SP1,17/04/2011,RC Deportivo La Coruña,Real Racing Club de Santander,2,0
+SP1,17/04/2011,Levante UD,Hercules,2,1
+SP1,17/04/2011,CA Osasuna,Athletic Club,1,2
+SP1,17/04/2011,Real Sociedad de Fútbol,Sporting Gijón,2,1
+SP1,18/04/2011,Villarreal CF,Zaragoza,1,0
+SP1,23/04/2011,Athletic Club,Real Sociedad de Fútbol,2,1
+SP1,23/04/2011,FC Barcelona,CA Osasuna,2,0
+SP1,23/04/2011,Valencia CF,Real Madrid CF,3,6
+SP1,24/04/2011,Club Atlético de Madrid,Levante UD,4,1
+SP1,24/04/2011,Hercules,RC Deportivo La Coruña,1,0
+SP1,24/04/2011,RCD Mallorca,Getafe CF,2,0
+SP1,24/04/2011,Real Racing Club de Santander,Málaga CF,1,2
+SP1,24/04/2011,Sevilla FC,Villarreal CF,3,2
+SP1,24/04/2011,Sporting Gijón,RCD Espanyol de Barcelona,1,0
+SP1,25/04/2011,Zaragoza,UD Almería,1,0
+SP1,30/04/2011,RC Deportivo La Coruña,Club Atlético de Madrid,0,1
+SP1,30/04/2011,Real Madrid CF,Zaragoza,2,3
+SP1,30/04/2011,Real Sociedad de Fútbol,FC Barcelona,2,1
+SP1,01/05/2011,UD Almería,Sevilla FC,0,1
+SP1,01/05/2011,Levante UD,Sporting Gijón,0,0
+SP1,01/05/2011,Málaga CF,Hercules,3,1
+SP1,01/05/2011,CA Osasuna,Valencia CF,1,0
+SP1,01/05/2011,Real Racing Club de Santander,RCD Mallorca,2,0
+SP1,01/05/2011,Villarreal CF,Getafe CF,2,1
+SP1,02/05/2011,RCD Espanyol de Barcelona,Athletic Club,2,1
+SP1,07/05/2011,Athletic Club,Levante UD,3,2
+SP1,07/05/2011,Club Atlético de Madrid,Málaga CF,0,3
+SP1,07/05/2011,Getafe CF,UD Almería,2,0
+SP1,07/05/2011,Hercules,Real Racing Club de Santander,2,3
+SP1,07/05/2011,Sevilla FC,Real Madrid CF,2,6
+SP1,07/05/2011,Sporting Gijón,RC Deportivo La Coruña,2,2
+SP1,07/05/2011,Valencia CF,Real Sociedad de Fútbol,3,0
+SP1,08/05/2011,FC Barcelona,RCD Espanyol de Barcelona,2,0
+SP1,08/05/2011,RCD Mallorca,Villarreal CF,0,0
+SP1,08/05/2011,Zaragoza,CA Osasuna,1,3
+SP1,10/05/2011,RC Deportivo La Coruña,Athletic Club,2,1
+SP1,10/05/2011,Málaga CF,Sporting Gijón,2,0
+SP1,10/05/2011,Real Madrid CF,Getafe CF,4,0
+SP1,10/05/2011,Real Racing Club de Santander,Club Atlético de Madrid,2,1
+SP1,11/05/2011,UD Almería,Villarreal CF,0,0
+SP1,11/05/2011,RCD Espanyol de Barcelona,Valencia CF,2,2
+SP1,11/05/2011,Hercules,RCD Mallorca,2,2
+SP1,11/05/2011,Levante UD,FC Barcelona,1,1
+SP1,11/05/2011,CA Osasuna,Sevilla FC,3,2
+SP1,11/05/2011,Real Sociedad de Fútbol,Zaragoza,2,1
+SP1,15/05/2011,UD Almería,RCD Mallorca,3,1
+SP1,15/05/2011,Athletic Club,Málaga CF,1,1
+SP1,15/05/2011,Club Atlético de Madrid,Hercules,2,1
+SP1,15/05/2011,FC Barcelona,RC Deportivo La Coruña,0,0
+SP1,15/05/2011,Getafe CF,CA Osasuna,2,0
+SP1,15/05/2011,Sevilla FC,Real Sociedad de Fútbol,3,1
+SP1,15/05/2011,Sporting Gijón,Real Racing Club de Santander,2,1
+SP1,15/05/2011,Valencia CF,Levante UD,0,0
+SP1,15/05/2011,Villarreal CF,Real Madrid CF,1,3
+SP1,15/05/2011,Zaragoza,RCD Espanyol de Barcelona,1,0
+SP1,21/05/2011,RCD Espanyol de Barcelona,Sevilla FC,2,3
+SP1,21/05/2011,Hercules,Sporting Gijón,0,0
+SP1,21/05/2011,RC Deportivo La Coruña,Valencia CF,0,2
+SP1,21/05/2011,Levante UD,Zaragoza,1,2
+SP1,21/05/2011,Málaga CF,FC Barcelona,1,3
+SP1,21/05/2011,RCD Mallorca,Club Atlético de Madrid,3,4
+SP1,21/05/2011,CA Osasuna,Villarreal CF,1,0
+SP1,21/05/2011,Real Madrid CF,UD Almería,8,1
+SP1,21/05/2011,Real Racing Club de Santander,Athletic Club,1,2
+SP1,21/05/2011,Real Sociedad de Fútbol,Getafe CF,1,1

@@ -1,0 +1,381 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP1,23/08/2014,UD Almería,RCD Espanyol de Barcelona,1,1
+SP1,23/08/2014,Granada CF,RC Deportivo La Coruña,2,1
+SP1,23/08/2014,Málaga CF,Athletic Club,1,0
+SP1,23/08/2014,Sevilla FC,Valencia CF,1,1
+SP1,24/08/2014,FC Barcelona,Elche CF,3,0
+SP1,24/08/2014,RC Celta de Vigo,Getafe CF,3,1
+SP1,24/08/2014,SD Eibar,Real Sociedad de Fútbol,1,0
+SP1,24/08/2014,Levante UD,Villarreal CF,0,2
+SP1,25/08/2014,Real Madrid CF,Cordoba,2,0
+SP1,25/08/2014,Rayo Vallecano de Madrid,Club Atlético de Madrid,0,0
+SP1,29/08/2014,Getafe CF,UD Almería,1,0
+SP1,29/08/2014,Valencia CF,Málaga CF,3,0
+SP1,30/08/2014,Athletic Club,Levante UD,3,0
+SP1,30/08/2014,Club Atlético de Madrid,SD Eibar,2,1
+SP1,30/08/2014,Cordoba,RC Celta de Vigo,1,1
+SP1,30/08/2014,RCD Espanyol de Barcelona,Sevilla FC,1,2
+SP1,31/08/2014,Elche CF,Granada CF,1,1
+SP1,31/08/2014,RC Deportivo La Coruña,Rayo Vallecano de Madrid,2,2
+SP1,31/08/2014,Real Sociedad de Fútbol,Real Madrid CF,4,2
+SP1,31/08/2014,Villarreal CF,FC Barcelona,0,1
+SP1,12/09/2014,UD Almería,Cordoba,1,1
+SP1,13/09/2014,FC Barcelona,Athletic Club,2,0
+SP1,13/09/2014,RC Celta de Vigo,Real Sociedad de Fútbol,2,2
+SP1,13/09/2014,Málaga CF,Levante UD,0,0
+SP1,13/09/2014,Real Madrid CF,Club Atlético de Madrid,1,2
+SP1,14/09/2014,Granada CF,Villarreal CF,0,0
+SP1,14/09/2014,Sevilla FC,Getafe CF,2,0
+SP1,14/09/2014,Valencia CF,RCD Espanyol de Barcelona,3,1
+SP1,14/09/2014,Rayo Vallecano de Madrid,Elche CF,2,3
+SP1,15/09/2014,SD Eibar,RC Deportivo La Coruña,0,1
+SP1,19/09/2014,Elche CF,SD Eibar,0,2
+SP1,20/09/2014,Athletic Club,Granada CF,0,1
+SP1,20/09/2014,Club Atlético de Madrid,RC Celta de Vigo,2,2
+SP1,20/09/2014,RCD Espanyol de Barcelona,Málaga CF,2,2
+SP1,20/09/2014,RC Deportivo La Coruña,Real Madrid CF,2,8
+SP1,21/09/2014,Cordoba,Sevilla FC,1,3
+SP1,21/09/2014,Levante UD,FC Barcelona,0,5
+SP1,21/09/2014,Real Sociedad de Fútbol,UD Almería,1,2
+SP1,21/09/2014,Villarreal CF,Rayo Vallecano de Madrid,4,2
+SP1,22/09/2014,Getafe CF,Valencia CF,0,3
+SP1,23/09/2014,RC Celta de Vigo,RC Deportivo La Coruña,2,1
+SP1,23/09/2014,Real Madrid CF,Elche CF,5,1
+SP1,24/09/2014,UD Almería,Club Atlético de Madrid,0,1
+SP1,24/09/2014,SD Eibar,Villarreal CF,1,1
+SP1,24/09/2014,Granada CF,Levante UD,0,1
+SP1,24/09/2014,Málaga CF,FC Barcelona,0,0
+SP1,24/09/2014,Sevilla FC,Real Sociedad de Fútbol,1,0
+SP1,24/09/2014,Rayo Vallecano de Madrid,Athletic Club,2,1
+SP1,25/09/2014,RCD Espanyol de Barcelona,Getafe CF,2,0
+SP1,25/09/2014,Valencia CF,Cordoba,3,0
+SP1,26/09/2014,Elche CF,RC Celta de Vigo,0,1
+SP1,27/09/2014,Athletic Club,SD Eibar,0,0
+SP1,27/09/2014,Club Atlético de Madrid,Sevilla FC,4,0
+SP1,27/09/2014,FC Barcelona,Granada CF,6,0
+SP1,27/09/2014,Levante UD,Rayo Vallecano de Madrid,0,2
+SP1,27/09/2014,Villarreal CF,Real Madrid CF,0,2
+SP1,28/09/2014,Cordoba,RCD Espanyol de Barcelona,0,0
+SP1,28/09/2014,Getafe CF,Málaga CF,1,0
+SP1,28/09/2014,RC Deportivo La Coruña,UD Almería,0,1
+SP1,28/09/2014,Real Sociedad de Fútbol,Valencia CF,1,1
+SP1,03/10/2014,Getafe CF,Cordoba,1,1
+SP1,04/10/2014,UD Almería,Elche CF,2,2
+SP1,04/10/2014,SD Eibar,Levante UD,3,3
+SP1,04/10/2014,Málaga CF,Granada CF,2,1
+SP1,04/10/2014,Valencia CF,Club Atlético de Madrid,3,1
+SP1,04/10/2014,Rayo Vallecano de Madrid,FC Barcelona,0,2
+SP1,05/10/2014,RC Celta de Vigo,Villarreal CF,1,3
+SP1,05/10/2014,RCD Espanyol de Barcelona,Real Sociedad de Fútbol,2,0
+SP1,05/10/2014,Real Madrid CF,Athletic Club,5,0
+SP1,05/10/2014,Sevilla FC,RC Deportivo La Coruña,4,1
+SP1,17/10/2014,Granada CF,Rayo Vallecano de Madrid,0,1
+SP1,18/10/2014,Athletic Club,RC Celta de Vigo,1,1
+SP1,18/10/2014,FC Barcelona,SD Eibar,3,0
+SP1,18/10/2014,Cordoba,Málaga CF,1,2
+SP1,18/10/2014,Levante UD,Real Madrid CF,0,5
+SP1,19/10/2014,Club Atlético de Madrid,RCD Espanyol de Barcelona,2,0
+SP1,19/10/2014,Elche CF,Sevilla FC,0,2
+SP1,19/10/2014,RC Deportivo La Coruña,Valencia CF,3,0
+SP1,19/10/2014,Villarreal CF,UD Almería,2,0
+SP1,20/10/2014,Real Sociedad de Fútbol,Getafe CF,1,2
+SP1,24/10/2014,RC Celta de Vigo,Levante UD,3,0
+SP1,25/10/2014,UD Almería,Athletic Club,0,1
+SP1,25/10/2014,Cordoba,Real Sociedad de Fútbol,1,1
+SP1,25/10/2014,SD Eibar,Granada CF,1,1
+SP1,25/10/2014,Real Madrid CF,FC Barcelona,3,1
+SP1,25/10/2014,Valencia CF,Elche CF,3,1
+SP1,26/10/2014,RCD Espanyol de Barcelona,RC Deportivo La Coruña,0,0
+SP1,26/10/2014,Getafe CF,Club Atlético de Madrid,0,1
+SP1,26/10/2014,Málaga CF,Rayo Vallecano de Madrid,4,0
+SP1,26/10/2014,Sevilla FC,Villarreal CF,2,1
+SP1,31/10/2014,RC Deportivo La Coruña,Getafe CF,1,2
+SP1,01/11/2014,Club Atlético de Madrid,Cordoba,4,2
+SP1,01/11/2014,FC Barcelona,RC Celta de Vigo,0,1
+SP1,01/11/2014,Granada CF,Real Madrid CF,0,4
+SP1,01/11/2014,Real Sociedad de Fútbol,Málaga CF,0,1
+SP1,02/11/2014,Athletic Club,Sevilla FC,1,0
+SP1,02/11/2014,Elche CF,RCD Espanyol de Barcelona,2,1
+SP1,02/11/2014,Levante UD,UD Almería,2,1
+SP1,02/11/2014,Villarreal CF,Valencia CF,1,3
+SP1,03/11/2014,Rayo Vallecano de Madrid,SD Eibar,2,3
+SP1,07/11/2014,Cordoba,RC Deportivo La Coruña,0,0
+SP1,08/11/2014,UD Almería,FC Barcelona,1,2
+SP1,08/11/2014,RC Celta de Vigo,Granada CF,0,0
+SP1,08/11/2014,Getafe CF,Elche CF,0,0
+SP1,08/11/2014,Málaga CF,SD Eibar,2,1
+SP1,08/11/2014,Real Madrid CF,Rayo Vallecano de Madrid,5,1
+SP1,09/11/2014,RCD Espanyol de Barcelona,Villarreal CF,1,1
+SP1,09/11/2014,Sevilla FC,Levante UD,1,1
+SP1,09/11/2014,Real Sociedad de Fútbol,Club Atlético de Madrid,2,1
+SP1,09/11/2014,Valencia CF,Athletic Club,0,0
+SP1,21/11/2014,Athletic Club,RCD Espanyol de Barcelona,3,1
+SP1,22/11/2014,Club Atlético de Madrid,Málaga CF,3,1
+SP1,22/11/2014,FC Barcelona,Sevilla FC,5,1
+SP1,22/11/2014,SD Eibar,Real Madrid CF,0,4
+SP1,22/11/2014,RC Deportivo La Coruña,Real Sociedad de Fútbol,0,0
+SP1,23/11/2014,Elche CF,Cordoba,2,2
+SP1,23/11/2014,Levante UD,Valencia CF,2,1
+SP1,23/11/2014,Rayo Vallecano de Madrid,RC Celta de Vigo,1,0
+SP1,23/11/2014,Villarreal CF,Getafe CF,2,1
+SP1,24/11/2014,Granada CF,UD Almería,0,0
+SP1,28/11/2014,Real Sociedad de Fútbol,Elche CF,3,0
+SP1,29/11/2014,RC Celta de Vigo,SD Eibar,0,1
+SP1,29/11/2014,RCD Espanyol de Barcelona,Levante UD,2,1
+SP1,29/11/2014,Getafe CF,Athletic Club,1,2
+SP1,29/11/2014,Málaga CF,Real Madrid CF,1,2
+SP1,30/11/2014,Club Atlético de Madrid,RC Deportivo La Coruña,2,0
+SP1,30/11/2014,Cordoba,Villarreal CF,0,2
+SP1,30/11/2014,Sevilla FC,Granada CF,5,1
+SP1,30/11/2014,Valencia CF,FC Barcelona,0,1
+SP1,01/12/2014,UD Almería,Rayo Vallecano de Madrid,0,1
+SP1,06/12/2014,Athletic Club,Cordoba,0,1
+SP1,06/12/2014,Elche CF,Club Atlético de Madrid,0,2
+SP1,06/12/2014,RC Deportivo La Coruña,Málaga CF,0,1
+SP1,06/12/2014,Real Madrid CF,RC Celta de Vigo,3,0
+SP1,07/12/2014,FC Barcelona,RCD Espanyol de Barcelona,5,1
+SP1,07/12/2014,Granada CF,Valencia CF,1,1
+SP1,07/12/2014,Rayo Vallecano de Madrid,Sevilla FC,0,1
+SP1,07/12/2014,Villarreal CF,Real Sociedad de Fútbol,4,0
+SP1,08/12/2014,SD Eibar,UD Almería,5,2
+SP1,08/12/2014,Levante UD,Getafe CF,1,1
+SP1,12/12/2014,UD Almería,Real Madrid CF,1,4
+SP1,13/12/2014,Cordoba,Levante UD,0,0
+SP1,13/12/2014,Getafe CF,FC Barcelona,0,0
+SP1,13/12/2014,Málaga CF,RC Celta de Vigo,1,0
+SP1,13/12/2014,Valencia CF,Rayo Vallecano de Madrid,3,0
+SP1,14/12/2014,Club Atlético de Madrid,Villarreal CF,0,1
+SP1,14/12/2014,RCD Espanyol de Barcelona,Granada CF,2,1
+SP1,14/12/2014,Sevilla FC,SD Eibar,0,0
+SP1,14/12/2014,Real Sociedad de Fútbol,Athletic Club,1,1
+SP1,15/12/2014,RC Deportivo La Coruña,Elche CF,1,0
+SP1,19/12/2014,RC Celta de Vigo,UD Almería,0,1
+SP1,20/12/2014,FC Barcelona,Cordoba,5,0
+SP1,20/12/2014,SD Eibar,Valencia CF,0,1
+SP1,20/12/2014,Levante UD,Real Sociedad de Fútbol,1,1
+SP1,20/12/2014,Rayo Vallecano de Madrid,RCD Espanyol de Barcelona,1,3
+SP1,21/12/2014,Athletic Club,Club Atlético de Madrid,1,4
+SP1,21/12/2014,Elche CF,Málaga CF,1,2
+SP1,21/12/2014,Granada CF,Getafe CF,1,1
+SP1,21/12/2014,Villarreal CF,RC Deportivo La Coruña,3,0
+SP1,03/01/2015,Club Atlético de Madrid,Levante UD,3,1
+SP1,03/01/2015,Elche CF,Villarreal CF,2,2
+SP1,03/01/2015,RC Deportivo La Coruña,Athletic Club,1,0
+SP1,03/01/2015,Málaga CF,UD Almería,1,2
+SP1,03/01/2015,Sevilla FC,RC Celta de Vigo,1,0
+SP1,04/01/2015,RCD Espanyol de Barcelona,SD Eibar,1,2
+SP1,04/01/2015,Getafe CF,Rayo Vallecano de Madrid,1,2
+SP1,04/01/2015,Real Sociedad de Fútbol,FC Barcelona,1,0
+SP1,04/01/2015,Valencia CF,Real Madrid CF,2,1
+SP1,05/01/2015,Cordoba,Granada CF,2,0
+SP1,09/01/2015,Levante UD,RC Deportivo La Coruña,0,0
+SP1,10/01/2015,RC Celta de Vigo,Valencia CF,1,1
+SP1,10/01/2015,SD Eibar,Getafe CF,2,1
+SP1,10/01/2015,Málaga CF,Villarreal CF,1,1
+SP1,10/01/2015,Real Madrid CF,RCD Espanyol de Barcelona,3,0
+SP1,11/01/2015,UD Almería,Sevilla FC,0,2
+SP1,11/01/2015,Athletic Club,Elche CF,1,2
+SP1,11/01/2015,FC Barcelona,Club Atlético de Madrid,3,1
+SP1,11/01/2015,Granada CF,Real Sociedad de Fútbol,1,1
+SP1,12/01/2015,Rayo Vallecano de Madrid,Cordoba,0,1
+SP1,16/01/2015,Cordoba,SD Eibar,1,1
+SP1,17/01/2015,RCD Espanyol de Barcelona,RC Celta de Vigo,1,0
+SP1,17/01/2015,Real Sociedad de Fútbol,Rayo Vallecano de Madrid,0,1
+SP1,17/01/2015,Valencia CF,UD Almería,3,2
+SP1,17/01/2015,Villarreal CF,Athletic Club,2,0
+SP1,18/01/2015,Club Atlético de Madrid,Granada CF,2,0
+SP1,18/01/2015,Elche CF,Levante UD,1,0
+SP1,18/01/2015,Getafe CF,Real Madrid CF,0,3
+SP1,18/01/2015,RC Deportivo La Coruña,FC Barcelona,0,4
+SP1,18/01/2015,Sevilla FC,Málaga CF,2,0
+SP1,24/01/2015,Club Atlético de Madrid,Rayo Vallecano de Madrid,3,1
+SP1,24/01/2015,Cordoba,Real Madrid CF,1,2
+SP1,24/01/2015,Elche CF,FC Barcelona,0,6
+SP1,24/01/2015,Real Sociedad de Fútbol,SD Eibar,1,0
+SP1,24/01/2015,Villarreal CF,Levante UD,1,0
+SP1,25/01/2015,Athletic Club,Málaga CF,1,1
+SP1,25/01/2015,RCD Espanyol de Barcelona,UD Almería,3,0
+SP1,25/01/2015,RC Deportivo La Coruña,Granada CF,2,2
+SP1,25/01/2015,Valencia CF,Sevilla FC,3,1
+SP1,26/01/2015,Getafe CF,RC Celta de Vigo,2,1
+SP1,30/01/2015,Rayo Vallecano de Madrid,RC Deportivo La Coruña,1,2
+SP1,31/01/2015,RC Celta de Vigo,Cordoba,1,0
+SP1,31/01/2015,SD Eibar,Club Atlético de Madrid,1,3
+SP1,31/01/2015,Granada CF,Elche CF,1,0
+SP1,31/01/2015,Real Madrid CF,Real Sociedad de Fútbol,4,1
+SP1,01/02/2015,UD Almería,Getafe CF,1,0
+SP1,01/02/2015,FC Barcelona,Villarreal CF,3,2
+SP1,01/02/2015,Levante UD,Athletic Club,0,2
+SP1,01/02/2015,Sevilla FC,RCD Espanyol de Barcelona,3,2
+SP1,02/02/2015,Málaga CF,Valencia CF,1,0
+SP1,04/02/2015,Real Madrid CF,Sevilla FC,2,1
+SP1,06/02/2015,RC Deportivo La Coruña,SD Eibar,2,0
+SP1,07/02/2015,Club Atlético de Madrid,Real Madrid CF,4,0
+SP1,07/02/2015,Levante UD,Málaga CF,4,1
+SP1,07/02/2015,Real Sociedad de Fútbol,RC Celta de Vigo,1,1
+SP1,07/02/2015,Villarreal CF,Granada CF,2,0
+SP1,08/02/2015,Athletic Club,FC Barcelona,2,5
+SP1,08/02/2015,Cordoba,UD Almería,1,2
+SP1,08/02/2015,RCD Espanyol de Barcelona,Valencia CF,1,2
+SP1,08/02/2015,Getafe CF,Sevilla FC,2,1
+SP1,09/02/2015,Elche CF,Rayo Vallecano de Madrid,2,0
+SP1,13/02/2015,UD Almería,Real Sociedad de Fútbol,2,2
+SP1,14/02/2015,Granada CF,Athletic Club,0,0
+SP1,14/02/2015,Málaga CF,RCD Espanyol de Barcelona,0,2
+SP1,14/02/2015,Real Madrid CF,RC Deportivo La Coruña,2,0
+SP1,14/02/2015,Sevilla FC,Cordoba,3,0
+SP1,15/02/2015,FC Barcelona,Levante UD,5,0
+SP1,15/02/2015,RC Celta de Vigo,Club Atlético de Madrid,2,0
+SP1,15/02/2015,Valencia CF,Getafe CF,1,0
+SP1,15/02/2015,Rayo Vallecano de Madrid,Villarreal CF,2,0
+SP1,16/02/2015,SD Eibar,Elche CF,0,1
+SP1,20/02/2015,Getafe CF,RCD Espanyol de Barcelona,2,1
+SP1,21/02/2015,Club Atlético de Madrid,UD Almería,3,0
+SP1,21/02/2015,FC Barcelona,Málaga CF,0,1
+SP1,21/02/2015,Cordoba,Valencia CF,1,2
+SP1,21/02/2015,RC Deportivo La Coruña,RC Celta de Vigo,0,2
+SP1,22/02/2015,Athletic Club,Rayo Vallecano de Madrid,1,0
+SP1,22/02/2015,Elche CF,Real Madrid CF,0,2
+SP1,22/02/2015,Real Sociedad de Fútbol,Sevilla FC,4,3
+SP1,22/02/2015,Villarreal CF,SD Eibar,1,0
+SP1,23/02/2015,Levante UD,Granada CF,2,1
+SP1,27/02/2015,RCD Espanyol de Barcelona,Cordoba,1,0
+SP1,28/02/2015,UD Almería,RC Deportivo La Coruña,0,0
+SP1,28/02/2015,Granada CF,FC Barcelona,1,3
+SP1,28/02/2015,Málaga CF,Getafe CF,3,2
+SP1,28/02/2015,Rayo Vallecano de Madrid,Levante UD,4,2
+SP1,01/03/2015,SD Eibar,Athletic Club,0,1
+SP1,01/03/2015,Real Madrid CF,Villarreal CF,1,1
+SP1,01/03/2015,Sevilla FC,Club Atlético de Madrid,0,0
+SP1,01/03/2015,Valencia CF,Real Sociedad de Fútbol,2,0
+SP1,02/03/2015,RC Celta de Vigo,Elche CF,1,1
+SP1,06/03/2015,Levante UD,SD Eibar,2,1
+SP1,07/03/2015,Athletic Club,Real Madrid CF,1,0
+SP1,07/03/2015,Elche CF,UD Almería,1,0
+SP1,07/03/2015,Granada CF,Málaga CF,1,0
+SP1,07/03/2015,RC Deportivo La Coruña,Sevilla FC,3,4
+SP1,08/03/2015,Club Atlético de Madrid,Valencia CF,1,1
+SP1,08/03/2015,FC Barcelona,Rayo Vallecano de Madrid,6,1
+SP1,08/03/2015,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,1,0
+SP1,08/03/2015,Villarreal CF,RC Celta de Vigo,4,1
+SP1,09/03/2015,Cordoba,Getafe CF,1,2
+SP1,13/03/2015,Valencia CF,RC Deportivo La Coruña,2,0
+SP1,14/03/2015,RC Celta de Vigo,Athletic Club,1,2
+SP1,14/03/2015,SD Eibar,FC Barcelona,0,2
+SP1,14/03/2015,RCD Espanyol de Barcelona,Club Atlético de Madrid,0,0
+SP1,14/03/2015,Rayo Vallecano de Madrid,Granada CF,3,1
+SP1,15/03/2015,UD Almería,Villarreal CF,0,0
+SP1,15/03/2015,Málaga CF,Cordoba,2,0
+SP1,15/03/2015,Real Madrid CF,Levante UD,2,0
+SP1,15/03/2015,Sevilla FC,Elche CF,3,0
+SP1,16/03/2015,Getafe CF,Real Sociedad de Fútbol,0,1
+SP1,20/03/2015,Elche CF,Valencia CF,0,4
+SP1,21/03/2015,Athletic Club,UD Almería,2,1
+SP1,21/03/2015,Club Atlético de Madrid,Getafe CF,2,0
+SP1,21/03/2015,Granada CF,SD Eibar,0,0
+SP1,21/03/2015,Levante UD,RC Celta de Vigo,0,1
+SP1,21/03/2015,Rayo Vallecano de Madrid,Málaga CF,1,0
+SP1,22/03/2015,FC Barcelona,Real Madrid CF,2,1
+SP1,22/03/2015,RC Deportivo La Coruña,RCD Espanyol de Barcelona,0,0
+SP1,22/03/2015,Real Sociedad de Fútbol,Cordoba,3,1
+SP1,22/03/2015,Villarreal CF,Sevilla FC,0,2
+SP1,03/04/2015,SD Eibar,Rayo Vallecano de Madrid,1,2
+SP1,04/04/2015,UD Almería,Levante UD,1,4
+SP1,04/04/2015,Cordoba,Club Atlético de Madrid,0,2
+SP1,04/04/2015,Málaga CF,Real Sociedad de Fútbol,1,1
+SP1,04/04/2015,Sevilla FC,Athletic Club,2,0
+SP1,05/04/2015,RC Celta de Vigo,FC Barcelona,0,1
+SP1,05/04/2015,Getafe CF,RC Deportivo La Coruña,2,1
+SP1,05/04/2015,Real Madrid CF,Granada CF,9,1
+SP1,05/04/2015,Valencia CF,Villarreal CF,0,0
+SP1,06/04/2015,RCD Espanyol de Barcelona,Elche CF,1,1
+SP1,07/04/2015,Club Atlético de Madrid,Real Sociedad de Fútbol,2,0
+SP1,07/04/2015,SD Eibar,Málaga CF,1,0
+SP1,07/04/2015,Levante UD,Sevilla FC,1,2
+SP1,08/04/2015,FC Barcelona,UD Almería,4,0
+SP1,08/04/2015,Granada CF,RC Celta de Vigo,1,1
+SP1,08/04/2015,RC Deportivo La Coruña,Cordoba,1,1
+SP1,08/04/2015,Rayo Vallecano de Madrid,Real Madrid CF,0,2
+SP1,09/04/2015,Athletic Club,Valencia CF,1,1
+SP1,09/04/2015,Elche CF,Getafe CF,0,1
+SP1,09/04/2015,Villarreal CF,RCD Espanyol de Barcelona,0,3
+SP1,11/04/2015,UD Almería,Granada CF,3,0
+SP1,11/04/2015,RC Celta de Vigo,Rayo Vallecano de Madrid,6,1
+SP1,11/04/2015,Málaga CF,Club Atlético de Madrid,2,2
+SP1,11/04/2015,Real Madrid CF,SD Eibar,3,0
+SP1,11/04/2015,Sevilla FC,FC Barcelona,2,2
+SP1,12/04/2015,Cordoba,Elche CF,0,2
+SP1,12/04/2015,RCD Espanyol de Barcelona,Athletic Club,1,0
+SP1,12/04/2015,Getafe CF,Villarreal CF,1,1
+SP1,12/04/2015,Real Sociedad de Fútbol,RC Deportivo La Coruña,2,2
+SP1,13/04/2015,Valencia CF,Levante UD,3,0
+SP1,17/04/2015,Levante UD,RCD Espanyol de Barcelona,2,2
+SP1,18/04/2015,Athletic Club,Getafe CF,4,0
+SP1,18/04/2015,FC Barcelona,Valencia CF,2,0
+SP1,18/04/2015,RC Deportivo La Coruña,Club Atlético de Madrid,1,2
+SP1,18/04/2015,Real Madrid CF,Málaga CF,3,1
+SP1,19/04/2015,SD Eibar,RC Celta de Vigo,0,1
+SP1,19/04/2015,Granada CF,Sevilla FC,1,1
+SP1,19/04/2015,Rayo Vallecano de Madrid,UD Almería,2,0
+SP1,19/04/2015,Villarreal CF,Cordoba,0,0
+SP1,20/04/2015,Elche CF,Real Sociedad de Fútbol,1,0
+SP1,24/04/2015,Cordoba,Athletic Club,0,1
+SP1,25/04/2015,Club Atlético de Madrid,Elche CF,3,0
+SP1,25/04/2015,RCD Espanyol de Barcelona,FC Barcelona,0,2
+SP1,25/04/2015,Getafe CF,Levante UD,0,1
+SP1,25/04/2015,Real Sociedad de Fútbol,Villarreal CF,0,0
+SP1,26/04/2015,UD Almería,SD Eibar,2,0
+SP1,26/04/2015,RC Celta de Vigo,Real Madrid CF,2,4
+SP1,26/04/2015,Málaga CF,RC Deportivo La Coruña,1,1
+SP1,26/04/2015,Sevilla FC,Rayo Vallecano de Madrid,2,0
+SP1,27/04/2015,Valencia CF,Granada CF,4,0
+SP1,28/04/2015,Athletic Club,Real Sociedad de Fútbol,1,1
+SP1,28/04/2015,FC Barcelona,Getafe CF,6,0
+SP1,28/04/2015,Levante UD,Cordoba,1,0
+SP1,29/04/2015,RC Celta de Vigo,Málaga CF,1,0
+SP1,29/04/2015,SD Eibar,Sevilla FC,1,3
+SP1,29/04/2015,Elche CF,RC Deportivo La Coruña,4,0
+SP1,29/04/2015,Real Madrid CF,UD Almería,3,0
+SP1,29/04/2015,Villarreal CF,Club Atlético de Madrid,0,1
+SP1,30/04/2015,Granada CF,RCD Espanyol de Barcelona,1,2
+SP1,30/04/2015,Rayo Vallecano de Madrid,Valencia CF,1,1
+SP1,01/05/2015,Real Sociedad de Fútbol,Levante UD,3,0
+SP1,02/05/2015,Club Atlético de Madrid,Athletic Club,0,0
+SP1,02/05/2015,Cordoba,FC Barcelona,0,8
+SP1,02/05/2015,RC Deportivo La Coruña,Villarreal CF,1,1
+SP1,02/05/2015,Sevilla FC,Real Madrid CF,2,3
+SP1,03/05/2015,RCD Espanyol de Barcelona,Rayo Vallecano de Madrid,1,1
+SP1,03/05/2015,Getafe CF,Granada CF,1,2
+SP1,03/05/2015,Málaga CF,Elche CF,1,2
+SP1,03/05/2015,Valencia CF,SD Eibar,3,1
+SP1,04/05/2015,UD Almería,RC Celta de Vigo,2,2
+SP1,08/05/2015,SD Eibar,RCD Espanyol de Barcelona,0,2
+SP1,09/05/2015,Athletic Club,RC Deportivo La Coruña,1,1
+SP1,09/05/2015,FC Barcelona,Real Sociedad de Fútbol,2,0
+SP1,09/05/2015,Granada CF,Cordoba,2,0
+SP1,09/05/2015,Real Madrid CF,Valencia CF,2,2
+SP1,10/05/2015,UD Almería,Málaga CF,1,2
+SP1,10/05/2015,RC Celta de Vigo,Sevilla FC,1,1
+SP1,10/05/2015,Levante UD,Club Atlético de Madrid,2,2
+SP1,10/05/2015,Villarreal CF,Elche CF,1,0
+SP1,11/05/2015,Rayo Vallecano de Madrid,Getafe CF,2,0
+SP1,17/05/2015,Club Atlético de Madrid,FC Barcelona,0,1
+SP1,17/05/2015,Cordoba,Rayo Vallecano de Madrid,1,2
+SP1,17/05/2015,Elche CF,Athletic Club,2,3
+SP1,17/05/2015,RCD Espanyol de Barcelona,Real Madrid CF,1,4
+SP1,17/05/2015,Getafe CF,SD Eibar,1,1
+SP1,17/05/2015,RC Deportivo La Coruña,Levante UD,2,0
+SP1,17/05/2015,Sevilla FC,UD Almería,2,1
+SP1,17/05/2015,Real Sociedad de Fútbol,Granada CF,0,3
+SP1,17/05/2015,Valencia CF,RC Celta de Vigo,1,1
+SP1,17/05/2015,Villarreal CF,Málaga CF,2,1
+SP1,23/05/2015,UD Almería,Valencia CF,2,3
+SP1,23/05/2015,Athletic Club,Villarreal CF,4,0
+SP1,23/05/2015,FC Barcelona,RC Deportivo La Coruña,2,2
+SP1,23/05/2015,RC Celta de Vigo,RCD Espanyol de Barcelona,3,2
+SP1,23/05/2015,SD Eibar,Cordoba,3,0
+SP1,23/05/2015,Granada CF,Club Atlético de Madrid,0,0
+SP1,23/05/2015,Levante UD,Elche CF,0,0
+SP1,23/05/2015,Málaga CF,Sevilla FC,2,3
+SP1,23/05/2015,Real Madrid CF,Getafe CF,7,3
+SP1,23/05/2015,Rayo Vallecano de Madrid,Real Sociedad de Fútbol,2,4

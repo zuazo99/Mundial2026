@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Flag from '../components/Flag.astro';
 import GroupCard from '../components/GroupCard.astro';
 import BracketMatch from '../components/BracketMatch.astro';
+import LigaTab from '../components/LigaTab.astro';
 import { predictions, type Variant, type MatchResult } from '../data/predictions';
 import { xgData } from '../data/xg';
 import { GROUPS, BASE_ELO, ELO_ADJUSTMENTS } from '../data/groups';
@@ -191,6 +192,7 @@ const shocks = VARIANTS.map(v => {
           { id: 'resultado',   label: 'Resultado'   },
           { id: 'simular',     label: 'Simular'     },
           { id: 'porra',       label: 'Porra'       },
+          { id: 'liga',        label: 'La Liga'     },
         ].map(({ id, label }) => (
           <button
             data-tab={id}
@@ -673,9 +675,14 @@ const shocks = VARIANTS.map(v => {
       </div>
     </section>
 
+    <!-- ── LA LIGA ─────────────────────────────────────────────── -->
+    <section id="liga" data-tab-content>
+      <LigaTab />
+    </section>
+
   </main>
 
-  <footer class="text-center py-4 mt-6 text-xs text-[var(--text-muted)] border-t border-[var(--border)]">
+  <footer id="site-footer" class="text-center py-4 mt-6 text-xs text-[var(--text-muted)] border-t border-[var(--border)]">
     Predicciones basadas en datos hasta el <strong>{metadata.trainingCutoff}</strong>
     &nbsp;·&nbsp; Generado el {metadata.generatedAt}
   </footer>
@@ -698,6 +705,12 @@ const shocks = VARIANTS.map(v => {
       contents.forEach(el => {
         el.classList.toggle('active', el.id === target);
       });
+      // El conmutador de variantes y el pie son del Mundial: no aplican a La Liga
+      const isLiga = target === 'liga';
+      const variantNav = document.getElementById('variant-nav');
+      if (variantNav) variantNav.style.visibility = isLiga ? 'hidden' : '';
+      const footer = document.getElementById('site-footer');
+      if (footer) footer.style.display = isLiga ? 'none' : '';
     });
   });
 

@@ -28,10 +28,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 
 import xgboost as xgb
+from config import VARIANTS, WC_START
 from xg_preds import (FEATURES, TARGET, _CONFED_NUMERIC, _DEFAULT_PARAMS,
                        _add_rolling_and_style, _apply_pca_merge_decay, estimate_rho)
 
-VARIANTS = ["misterclaude", "gemaldini", "dav_gpo"]
 
 
 def _poisson_1x2(xg_home: float, xg_away: float, max_goals: int = 10):
@@ -88,7 +88,7 @@ def validate_model(name: str, cutoff: str = "2025-09-16", params: dict = None) -
     df = pd.read_csv(os.path.join(ROOT, "data", "models_csv", f"df_{name}.csv"))
     df["date"] = pd.to_datetime(df["date"])
     df.sort_values(by=["team", "date"], inplace=True)
-    df_historia = df[df["date"] < "2026-06-11"].copy()
+    df_historia = df[df["date"] < WC_START].copy()
 
     # 2. Rolling features on FULL history so early test rows keep their pre-cutoff window context
     df_historia = _add_rolling_and_style(df_historia)

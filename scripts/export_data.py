@@ -5,11 +5,14 @@ Run from the repo root: python3 scripts/export_data.py
 import csv
 import json
 import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
+from config import VARIANTS, WC_START  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT  = os.path.join(ROOT, "web", "src", "data")
 
-VARIANTS = ["misterclaude", "gemaldini", "dav_gpo"]
 
 # ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -184,12 +187,7 @@ def build_knockout_xg():
     import numpy as np
     import xgboost as xgb
 
-    FEATURES = [
-        'elo', 'opponent_elo', 'is_home', 'tournament_num', 'confed', 'rival_confed',
-        'gf_prom_5', 'gc_prom_5', 'elo_prom_5', 'gf_prom_15', 'gc_prom_15', 'PCA_1', 'PCA_2',
-        'rival_gf_prom_5', 'rival_gc_prom_5', 'rival_elo_prom_5', 'rival_gf_prom_15',
-        'rival_gc_prom_15', 'rival_PCA_1', 'rival_PCA_2',
-    ]
+    from config import FEATURES
 
     data = {}
     for v in VARIANTS:
@@ -246,7 +244,7 @@ def build_knockout_xg():
 
 # ─── metadata.ts ─────────────────────────────────────────────────────────────
 
-TRAINING_CUTOFF = "2026-06-11"
+TRAINING_CUTOFF = WC_START
 
 def build_metadata():
     from datetime import date

@@ -1,0 +1,463 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP2,19/08/2016,CD Mirandés,Getafe CF,1,1
+SP2,19/08/2016,UD Almería,Cádiz CF,1,1
+SP2,20/08/2016,RCD Mallorca,CF Reus Deportiu,0,1
+SP2,20/08/2016,Elche CF,Rayo Vallecano de Madrid,2,1
+SP2,20/08/2016,AD Alcorcón,SD Huesca,0,0
+SP2,20/08/2016,Córdoba CF,CD Tenerife,1,0
+SP2,21/08/2016,Gimnàstic de Tarragona,CD Lugo,2,2
+SP2,21/08/2016,CD Numancia,Levante UD,0,1
+SP2,21/08/2016,Sevilla Atlético,Girona FC,3,3
+SP2,21/08/2016,Real Valladolid CF,Real Oviedo,1,0
+SP2,22/08/2016,Real Zaragoza,UCAM Murcia CF,3,1
+SP2,26/08/2016,Getafe CF,CD Numancia,0,0
+SP2,26/08/2016,CD Tenerife,Sevilla Atlético,1,1
+SP2,27/08/2016,CF Reus Deportiu,CD Mirandés,1,1
+SP2,27/08/2016,Real Oviedo,UD Almería,2,0
+SP2,27/08/2016,Girona FC,Elche CF,3,1
+SP2,27/08/2016,CD Lugo,Real Zaragoza,3,3
+SP2,28/08/2016,UCAM Murcia CF,Córdoba CF,1,1
+SP2,28/08/2016,SD Huesca,Gimnàstic de Tarragona,1,1
+SP2,28/08/2016,Levante UD,AD Alcorcón,2,0
+SP2,28/08/2016,Rayo Vallecano de Madrid,Real Valladolid CF,0,0
+SP2,28/08/2016,Cádiz CF,RCD Mallorca,1,1
+SP2,02/09/2016,Sevilla Atlético,UCAM Murcia CF,1,1
+SP2,02/09/2016,Córdoba CF,CD Lugo,3,3
+SP2,03/09/2016,CD Mirandés,Cádiz CF,3,2
+SP2,03/09/2016,Getafe CF,CF Reus Deportiu,1,1
+SP2,03/09/2016,UD Almería,Rayo Vallecano de Madrid,3,0
+SP2,03/09/2016,Real Valladolid CF,Girona FC,2,1
+SP2,03/09/2016,Elche CF,CD Tenerife,3,1
+SP2,04/09/2016,CD Numancia,AD Alcorcón,1,1
+SP2,04/09/2016,Gimnàstic de Tarragona,Levante UD,1,1
+SP2,04/09/2016,RCD Mallorca,Real Oviedo,0,0
+SP2,04/09/2016,Real Zaragoza,SD Huesca,1,0
+SP2,10/09/2016,CD Lugo,Sevilla Atlético,1,0
+SP2,10/09/2016,CF Reus Deportiu,CD Numancia,1,1
+SP2,10/09/2016,CD Tenerife,Real Valladolid CF,1,0
+SP2,10/09/2016,Levante UD,Real Zaragoza,4,2
+SP2,11/09/2016,Rayo Vallecano de Madrid,RCD Mallorca,1,0
+SP2,11/09/2016,Real Oviedo,CD Mirandés,0,0
+SP2,11/09/2016,Cádiz CF,Getafe CF,3,0
+SP2,11/09/2016,UCAM Murcia CF,Elche CF,1,1
+SP2,11/09/2016,SD Huesca,Córdoba CF,3,0
+SP2,11/09/2016,AD Alcorcón,Gimnàstic de Tarragona,1,0
+SP2,11/09/2016,Girona FC,UD Almería,3,3
+SP2,17/09/2016,CD Numancia,Gimnàstic de Tarragona,1,0
+SP2,17/09/2016,CF Reus Deportiu,Cádiz CF,1,0
+SP2,17/09/2016,Real Valladolid CF,UCAM Murcia CF,0,1
+SP2,17/09/2016,Elche CF,CD Lugo,0,3
+SP2,17/09/2016,Córdoba CF,Levante UD,1,0
+SP2,17/09/2016,Real Zaragoza,AD Alcorcón,2,0
+SP2,18/09/2016,UD Almería,CD Tenerife,0,1
+SP2,18/09/2016,CD Mirandés,Rayo Vallecano de Madrid,2,1
+SP2,18/09/2016,Getafe CF,Real Oviedo,2,1
+SP2,18/09/2016,Sevilla Atlético,SD Huesca,2,0
+SP2,18/09/2016,RCD Mallorca,Girona FC,1,0
+SP2,20/09/2016,CD Lugo,Real Valladolid CF,1,0
+SP2,20/09/2016,AD Alcorcón,Córdoba CF,0,1
+SP2,20/09/2016,Cádiz CF,CD Numancia,1,0
+SP2,20/09/2016,Gimnàstic de Tarragona,Real Zaragoza,0,0
+SP2,21/09/2016,SD Huesca,Elche CF,0,3
+SP2,21/09/2016,Levante UD,Sevilla Atlético,1,0
+SP2,21/09/2016,UCAM Murcia CF,UD Almería,4,0
+SP2,22/09/2016,Real Oviedo,CF Reus Deportiu,0,1
+SP2,22/09/2016,Rayo Vallecano de Madrid,Getafe CF,2,0
+SP2,22/09/2016,Girona FC,CD Mirandés,1,1
+SP2,22/09/2016,CD Tenerife,RCD Mallorca,0,0
+SP2,24/09/2016,Sevilla Atlético,AD Alcorcón,1,1
+SP2,24/09/2016,UD Almería,CD Lugo,0,0
+SP2,24/09/2016,Real Valladolid CF,SD Huesca,1,2
+SP2,24/09/2016,Córdoba CF,Gimnàstic de Tarragona,2,0
+SP2,24/09/2016,Elche CF,Levante UD,0,1
+SP2,25/09/2016,Cádiz CF,Real Oviedo,0,2
+SP2,25/09/2016,CD Mirandés,CD Tenerife,3,2
+SP2,25/09/2016,Getafe CF,Girona FC,0,2
+SP2,25/09/2016,RCD Mallorca,UCAM Murcia CF,0,0
+SP2,25/09/2016,CD Numancia,Real Zaragoza,2,1
+SP2,25/09/2016,CF Reus Deportiu,Rayo Vallecano de Madrid,1,1
+SP2,01/10/2016,SD Huesca,UD Almería,2,0
+SP2,01/10/2016,CD Lugo,RCD Mallorca,3,1
+SP2,01/10/2016,AD Alcorcón,Elche CF,1,0
+SP2,01/10/2016,Gimnàstic de Tarragona,Sevilla Atlético,1,1
+SP2,01/10/2016,Real Zaragoza,Córdoba CF,1,1
+SP2,02/10/2016,UCAM Murcia CF,CD Mirandés,2,2
+SP2,02/10/2016,Girona FC,CF Reus Deportiu,1,0
+SP2,02/10/2016,Levante UD,Real Valladolid CF,3,2
+SP2,02/10/2016,Real Oviedo,CD Numancia,2,2
+SP2,02/10/2016,CD Tenerife,Getafe CF,0,0
+SP2,02/10/2016,Rayo Vallecano de Madrid,Cádiz CF,3,0
+SP2,08/10/2016,CF Reus Deportiu,CD Tenerife,0,0
+SP2,08/10/2016,Getafe CF,UCAM Murcia CF,2,0
+SP2,08/10/2016,Real Valladolid CF,AD Alcorcón,2,0
+SP2,08/10/2016,Elche CF,Gimnàstic de Tarragona,4,4
+SP2,08/10/2016,CD Numancia,Córdoba CF,1,1
+SP2,08/10/2016,Sevilla Atlético,Real Zaragoza,2,1
+SP2,09/10/2016,Real Oviedo,Rayo Vallecano de Madrid,2,0
+SP2,09/10/2016,CD Mirandés,CD Lugo,2,2
+SP2,09/10/2016,Cádiz CF,Girona FC,0,0
+SP2,09/10/2016,RCD Mallorca,SD Huesca,3,0
+SP2,09/10/2016,UD Almería,Levante UD,2,2
+SP2,15/10/2016,CD Lugo,Getafe CF,0,1
+SP2,15/10/2016,Girona FC,Real Oviedo,0,0
+SP2,15/10/2016,SD Huesca,CD Mirandés,3,0
+SP2,15/10/2016,AD Alcorcón,UD Almería,0,0
+SP2,15/10/2016,Levante UD,RCD Mallorca,2,1
+SP2,16/10/2016,Real Zaragoza,Elche CF,1,3
+SP2,16/10/2016,Córdoba CF,Sevilla Atlético,0,1
+SP2,16/10/2016,Rayo Vallecano de Madrid,CD Numancia,3,3
+SP2,16/10/2016,UCAM Murcia CF,CF Reus Deportiu,0,2
+SP2,16/10/2016,Gimnàstic de Tarragona,Real Valladolid CF,1,2
+SP2,16/10/2016,CD Tenerife,Cádiz CF,1,1
+SP2,22/10/2016,Elche CF,Córdoba CF,1,1
+SP2,22/10/2016,CF Reus Deportiu,CD Lugo,2,1
+SP2,22/10/2016,Getafe CF,SD Huesca,1,1
+SP2,22/10/2016,CD Numancia,Sevilla Atlético,1,2
+SP2,22/10/2016,Rayo Vallecano de Madrid,Girona FC,1,0
+SP2,23/10/2016,RCD Mallorca,AD Alcorcón,1,0
+SP2,23/10/2016,Real Valladolid CF,Real Zaragoza,0,0
+SP2,23/10/2016,UD Almería,Gimnàstic de Tarragona,3,0
+SP2,23/10/2016,Cádiz CF,UCAM Murcia CF,2,2
+SP2,23/10/2016,CD Mirandés,Levante UD,0,3
+SP2,23/10/2016,Real Oviedo,CD Tenerife,2,0
+SP2,29/10/2016,SD Huesca,CF Reus Deportiu,2,1
+SP2,29/10/2016,CD Tenerife,Rayo Vallecano de Madrid,3,2
+SP2,29/10/2016,Real Zaragoza,UD Almería,2,1
+SP2,29/10/2016,Córdoba CF,Real Valladolid CF,1,1
+SP2,30/10/2016,Girona FC,CD Numancia,3,0
+SP2,30/10/2016,Sevilla Atlético,Elche CF,2,0
+SP2,30/10/2016,CD Lugo,Cádiz CF,0,1
+SP2,30/10/2016,UCAM Murcia CF,Real Oviedo,0,1
+SP2,30/10/2016,AD Alcorcón,CD Mirandés,1,0
+SP2,30/10/2016,Gimnàstic de Tarragona,RCD Mallorca,2,2
+SP2,30/10/2016,Levante UD,Getafe CF,1,1
+SP2,05/11/2016,Cádiz CF,SD Huesca,1,0
+SP2,05/11/2016,Girona FC,CD Tenerife,1,1
+SP2,05/11/2016,Rayo Vallecano de Madrid,UCAM Murcia CF,0,1
+SP2,05/11/2016,Real Valladolid CF,Sevilla Atlético,2,0
+SP2,05/11/2016,RCD Mallorca,Real Zaragoza,2,2
+SP2,06/11/2016,CD Mirandés,Gimnàstic de Tarragona,0,1
+SP2,06/11/2016,CD Numancia,Elche CF,2,2
+SP2,06/11/2016,Real Oviedo,CD Lugo,1,1
+SP2,06/11/2016,Getafe CF,AD Alcorcón,1,0
+SP2,06/11/2016,UD Almería,Córdoba CF,3,1
+SP2,06/11/2016,CF Reus Deportiu,Levante UD,0,1
+SP2,11/11/2016,Córdoba CF,RCD Mallorca,0,2
+SP2,12/11/2016,Elche CF,Real Valladolid CF,2,0
+SP2,12/11/2016,SD Huesca,Real Oviedo,4,0
+SP2,12/11/2016,Gimnàstic de Tarragona,Getafe CF,1,0
+SP2,12/11/2016,CD Tenerife,CD Numancia,1,1
+SP2,12/11/2016,AD Alcorcón,CF Reus Deportiu,1,0
+SP2,12/11/2016,Levante UD,Cádiz CF,0,0
+SP2,13/11/2016,CD Lugo,Rayo Vallecano de Madrid,1,0
+SP2,13/11/2016,Sevilla Atlético,UD Almería,1,0
+SP2,13/11/2016,UCAM Murcia CF,Girona FC,0,1
+SP2,13/11/2016,Real Zaragoza,CD Mirandés,2,0
+SP2,18/11/2016,UD Almería,Elche CF,2,1
+SP2,19/11/2016,CD Numancia,Real Valladolid CF,2,1
+SP2,19/11/2016,Real Oviedo,Levante UD,2,0
+SP2,19/11/2016,RCD Mallorca,Sevilla Atlético,2,2
+SP2,19/11/2016,Girona FC,CD Lugo,3,1
+SP2,20/11/2016,CF Reus Deportiu,Gimnàstic de Tarragona,1,0
+SP2,20/11/2016,Getafe CF,Real Zaragoza,1,0
+SP2,20/11/2016,CD Tenerife,UCAM Murcia CF,2,1
+SP2,20/11/2016,Rayo Vallecano de Madrid,SD Huesca,2,2
+SP2,20/11/2016,Cádiz CF,AD Alcorcón,4,1
+SP2,20/11/2016,CD Mirandés,Córdoba CF,1,1
+SP2,25/11/2016,Gimnàstic de Tarragona,Cádiz CF,1,0
+SP2,26/11/2016,CD Lugo,CD Tenerife,1,3
+SP2,26/11/2016,UCAM Murcia CF,CD Numancia,3,2
+SP2,26/11/2016,AD Alcorcón,Real Oviedo,5,1
+SP2,26/11/2016,Real Valladolid CF,UD Almería,0,0
+SP2,26/11/2016,Real Zaragoza,CF Reus Deportiu,2,2
+SP2,27/11/2016,Elche CF,RCD Mallorca,1,0
+SP2,27/11/2016,SD Huesca,Girona FC,1,2
+SP2,27/11/2016,Córdoba CF,Getafe CF,1,3
+SP2,27/11/2016,Sevilla Atlético,CD Mirandés,1,0
+SP2,02/12/2016,Getafe CF,Sevilla Atlético,2,0
+SP2,03/12/2016,UCAM Murcia CF,CD Lugo,1,2
+SP2,03/12/2016,CD Mirandés,Elche CF,1,0
+SP2,03/12/2016,CD Numancia,UD Almería,1,0
+SP2,03/12/2016,Cádiz CF,Real Zaragoza,3,0
+SP2,04/12/2016,Girona FC,Levante UD,2,1
+SP2,04/12/2016,Rayo Vallecano de Madrid,AD Alcorcón,2,0
+SP2,04/12/2016,Real Oviedo,Gimnàstic de Tarragona,1,0
+SP2,04/12/2016,CD Tenerife,SD Huesca,1,1
+SP2,04/12/2016,RCD Mallorca,Real Valladolid CF,0,3
+SP2,04/12/2016,CF Reus Deportiu,Córdoba CF,1,2
+SP2,09/12/2016,Sevilla Atlético,CF Reus Deportiu,0,1
+SP2,10/12/2016,Gimnàstic de Tarragona,Rayo Vallecano de Madrid,0,1
+SP2,10/12/2016,SD Huesca,UCAM Murcia CF,5,2
+SP2,10/12/2016,Elche CF,Getafe CF,2,2
+SP2,10/12/2016,Levante UD,CD Tenerife,1,0
+SP2,11/12/2016,UD Almería,RCD Mallorca,2,1
+SP2,11/12/2016,Córdoba CF,Cádiz CF,1,3
+SP2,11/12/2016,CD Lugo,CD Numancia,3,1
+SP2,11/12/2016,AD Alcorcón,Girona FC,2,1
+SP2,11/12/2016,Real Valladolid CF,CD Mirandés,5,0
+SP2,11/12/2016,Real Zaragoza,Real Oviedo,2,1
+SP2,14/12/2016,Levante UD,Rayo Vallecano de Madrid,1,0
+SP2,16/12/2016,CF Reus Deportiu,Elche CF,0,1
+SP2,17/12/2016,Getafe CF,Real Valladolid CF,3,1
+SP2,17/12/2016,CD Lugo,SD Huesca,1,1
+SP2,17/12/2016,CD Tenerife,AD Alcorcón,2,0
+SP2,17/12/2016,Real Oviedo,Córdoba CF,1,2
+SP2,17/12/2016,Girona FC,Gimnàstic de Tarragona,4,2
+SP2,18/12/2016,Rayo Vallecano de Madrid,Real Zaragoza,1,2
+SP2,18/12/2016,CD Mirandés,UD Almería,2,1
+SP2,18/12/2016,CD Numancia,RCD Mallorca,3,1
+SP2,18/12/2016,Cádiz CF,Sevilla Atlético,4,1
+SP2,06/01/2017,Real Valladolid CF,CF Reus Deportiu,1,0
+SP2,06/01/2017,UD Almería,Getafe CF,0,1
+SP2,06/01/2017,CD Numancia,SD Huesca,0,0
+SP2,06/01/2017,RCD Mallorca,CD Mirandés,2,0
+SP2,07/01/2017,Levante UD,CD Lugo,1,0
+SP2,07/01/2017,Córdoba CF,Rayo Vallecano de Madrid,0,0
+SP2,08/01/2017,AD Alcorcón,UCAM Murcia CF,0,0
+SP2,08/01/2017,Gimnàstic de Tarragona,CD Tenerife,1,1
+SP2,08/01/2017,Real Zaragoza,Girona FC,0,2
+SP2,08/01/2017,Elche CF,Cádiz CF,2,3
+SP2,08/01/2017,Sevilla Atlético,Real Oviedo,5,3
+SP2,11/01/2017,UCAM Murcia CF,Levante UD,0,2
+SP2,13/01/2017,Cádiz CF,Real Valladolid CF,0,1
+SP2,14/01/2017,Rayo Vallecano de Madrid,Sevilla Atlético,1,1
+SP2,14/01/2017,UCAM Murcia CF,Gimnàstic de Tarragona,1,1
+SP2,14/01/2017,Real Oviedo,Elche CF,2,1
+SP2,14/01/2017,CD Mirandés,CD Numancia,0,3
+SP2,14/01/2017,CD Tenerife,Real Zaragoza,1,0
+SP2,15/01/2017,Getafe CF,RCD Mallorca,1,1
+SP2,15/01/2017,CF Reus Deportiu,UD Almería,1,0
+SP2,15/01/2017,SD Huesca,Levante UD,0,2
+SP2,15/01/2017,CD Lugo,AD Alcorcón,1,0
+SP2,15/01/2017,Girona FC,Córdoba CF,2,0
+SP2,21/01/2017,Real Oviedo,Real Valladolid CF,1,0
+SP2,21/01/2017,Rayo Vallecano de Madrid,Elche CF,1,1
+SP2,21/01/2017,CD Tenerife,Córdoba CF,2,0
+SP2,21/01/2017,CD Lugo,Gimnàstic de Tarragona,2,3
+SP2,21/01/2017,SD Huesca,AD Alcorcón,0,1
+SP2,21/01/2017,UCAM Murcia CF,Real Zaragoza,1,0
+SP2,22/01/2017,Levante UD,CD Numancia,1,0
+SP2,22/01/2017,CF Reus Deportiu,RCD Mallorca,1,1
+SP2,22/01/2017,Getafe CF,CD Mirandés,1,1
+SP2,22/01/2017,Girona FC,Sevilla Atlético,2,0
+SP2,22/01/2017,Cádiz CF,UD Almería,1,0
+SP2,27/01/2017,Elche CF,Girona FC,1,0
+SP2,28/01/2017,Sevilla Atlético,CD Tenerife,0,0
+SP2,28/01/2017,CD Mirandés,CF Reus Deportiu,1,1
+SP2,28/01/2017,Gimnàstic de Tarragona,SD Huesca,0,0
+SP2,28/01/2017,AD Alcorcón,Levante UD,2,0
+SP2,28/01/2017,Real Valladolid CF,Rayo Vallecano de Madrid,2,1
+SP2,29/01/2017,CD Numancia,Getafe CF,2,0
+SP2,29/01/2017,Córdoba CF,UCAM Murcia CF,1,1
+SP2,29/01/2017,RCD Mallorca,Cádiz CF,0,0
+SP2,29/01/2017,UD Almería,Real Oviedo,3,0
+SP2,29/01/2017,Real Zaragoza,CD Lugo,1,1
+SP2,03/02/2017,UCAM Murcia CF,Sevilla Atlético,1,0
+SP2,04/02/2017,AD Alcorcón,CD Numancia,2,3
+SP2,04/02/2017,Cádiz CF,CD Mirandés,2,1
+SP2,04/02/2017,CD Tenerife,Elche CF,2,0
+SP2,04/02/2017,CD Lugo,Córdoba CF,1,0
+SP2,04/02/2017,SD Huesca,Real Zaragoza,2,3
+SP2,05/02/2017,Real Oviedo,RCD Mallorca,2,1
+SP2,05/02/2017,Rayo Vallecano de Madrid,UD Almería,1,0
+SP2,05/02/2017,CF Reus Deportiu,Getafe CF,1,1
+SP2,05/02/2017,Levante UD,Gimnàstic de Tarragona,2,1
+SP2,05/02/2017,Girona FC,Real Valladolid CF,2,1
+SP2,10/02/2017,Sevilla Atlético,CD Lugo,1,1
+SP2,11/02/2017,UD Almería,Girona FC,0,0
+SP2,11/02/2017,Real Zaragoza,Levante UD,0,1
+SP2,11/02/2017,Gimnàstic de Tarragona,AD Alcorcón,1,1
+SP2,11/02/2017,Getafe CF,Cádiz CF,3,2
+SP2,12/02/2017,Córdoba CF,SD Huesca,0,2
+SP2,12/02/2017,Real Valladolid CF,CD Tenerife,0,0
+SP2,12/02/2017,CD Numancia,CF Reus Deportiu,1,0
+SP2,12/02/2017,CD Mirandés,Real Oviedo,0,2
+SP2,12/02/2017,Elche CF,UCAM Murcia CF,1,1
+SP2,12/02/2017,RCD Mallorca,Rayo Vallecano de Madrid,2,1
+SP2,17/02/2017,CD Lugo,Elche CF,1,2
+SP2,18/02/2017,UCAM Murcia CF,Real Valladolid CF,1,3
+SP2,18/02/2017,CD Tenerife,UD Almería,1,0
+SP2,18/02/2017,Levante UD,Córdoba CF,3,1
+SP2,18/02/2017,Gimnàstic de Tarragona,CD Numancia,2,0
+SP2,18/02/2017,Girona FC,RCD Mallorca,1,0
+SP2,19/02/2017,SD Huesca,Sevilla Atlético,2,1
+SP2,19/02/2017,Cádiz CF,CF Reus Deportiu,0,0
+SP2,19/02/2017,Real Oviedo,Getafe CF,2,1
+SP2,19/02/2017,Rayo Vallecano de Madrid,CD Mirandés,1,2
+SP2,19/02/2017,AD Alcorcón,Real Zaragoza,1,1
+SP2,24/02/2017,CF Reus Deportiu,Real Oviedo,1,1
+SP2,25/02/2017,Córdoba CF,AD Alcorcón,1,0
+SP2,25/02/2017,CD Mirandés,Girona FC,0,2
+SP2,25/02/2017,RCD Mallorca,CD Tenerife,1,4
+SP2,25/02/2017,Elche CF,SD Huesca,1,1
+SP2,25/02/2017,Getafe CF,Rayo Vallecano de Madrid,1,0
+SP2,26/02/2017,CD Numancia,Cádiz CF,0,3
+SP2,26/02/2017,UD Almería,UCAM Murcia CF,2,3
+SP2,26/02/2017,Real Valladolid CF,CD Lugo,1,1
+SP2,26/02/2017,Sevilla Atlético,Levante UD,1,1
+SP2,26/02/2017,Real Zaragoza,Gimnàstic de Tarragona,1,2
+SP2,03/03/2017,CD Tenerife,CD Mirandés,1,1
+SP2,04/03/2017,AD Alcorcón,Sevilla Atlético,0,0
+SP2,04/03/2017,Rayo Vallecano de Madrid,CF Reus Deportiu,0,0
+SP2,04/03/2017,Girona FC,Getafe CF,5,1
+SP2,04/03/2017,Real Oviedo,Cádiz CF,2,1
+SP2,05/03/2017,UCAM Murcia CF,RCD Mallorca,1,1
+SP2,05/03/2017,SD Huesca,Real Valladolid CF,1,0
+SP2,05/03/2017,CD Lugo,UD Almería,1,2
+SP2,05/03/2017,Levante UD,Elche CF,2,1
+SP2,05/03/2017,Gimnàstic de Tarragona,Córdoba CF,2,1
+SP2,05/03/2017,Real Zaragoza,CD Numancia,3,0
+SP2,10/03/2017,Elche CF,AD Alcorcón,0,0
+SP2,11/03/2017,RCD Mallorca,CD Lugo,1,1
+SP2,11/03/2017,CD Numancia,Real Oviedo,0,0
+SP2,11/03/2017,CD Mirandés,UCAM Murcia CF,1,1
+SP2,11/03/2017,Real Valladolid CF,Levante UD,0,4
+SP2,11/03/2017,Córdoba CF,Real Zaragoza,2,1
+SP2,12/03/2017,UD Almería,SD Huesca,0,0
+SP2,12/03/2017,Sevilla Atlético,Gimnàstic de Tarragona,2,2
+SP2,12/03/2017,Cádiz CF,Rayo Vallecano de Madrid,1,0
+SP2,12/03/2017,CF Reus Deportiu,Girona FC,1,2
+SP2,12/03/2017,Getafe CF,CD Tenerife,2,2
+SP2,17/03/2017,Gimnàstic de Tarragona,Elche CF,1,3
+SP2,18/03/2017,Córdoba CF,CD Numancia,0,0
+SP2,18/03/2017,UCAM Murcia CF,Getafe CF,2,0
+SP2,18/03/2017,CD Lugo,CD Mirandés,2,1
+SP2,18/03/2017,SD Huesca,RCD Mallorca,2,1
+SP2,18/03/2017,Real Zaragoza,Sevilla Atlético,1,2
+SP2,19/03/2017,Levante UD,UD Almería,1,0
+SP2,19/03/2017,AD Alcorcón,Real Valladolid CF,1,2
+SP2,19/03/2017,CD Tenerife,CF Reus Deportiu,0,1
+SP2,19/03/2017,Girona FC,Cádiz CF,1,2
+SP2,19/03/2017,Rayo Vallecano de Madrid,Real Oviedo,2,0
+SP2,25/03/2017,Real Valladolid CF,Gimnàstic de Tarragona,1,2
+SP2,25/03/2017,CD Numancia,Rayo Vallecano de Madrid,0,0
+SP2,25/03/2017,UD Almería,AD Alcorcón,3,1
+SP2,25/03/2017,RCD Mallorca,Levante UD,1,1
+SP2,25/03/2017,Real Oviedo,Girona FC,2,0
+SP2,26/03/2017,Getafe CF,CD Lugo,2,0
+SP2,26/03/2017,Cádiz CF,CD Tenerife,0,1
+SP2,26/03/2017,CF Reus Deportiu,UCAM Murcia CF,0,0
+SP2,26/03/2017,CD Mirandés,SD Huesca,1,3
+SP2,26/03/2017,Sevilla Atlético,Córdoba CF,1,0
+SP2,26/03/2017,Elche CF,Real Zaragoza,0,3
+SP2,31/03/2017,AD Alcorcón,RCD Mallorca,1,0
+SP2,01/04/2017,Levante UD,CD Mirandés,2,1
+SP2,01/04/2017,UCAM Murcia CF,Cádiz CF,1,1
+SP2,01/04/2017,SD Huesca,Getafe CF,0,0
+SP2,01/04/2017,Girona FC,Rayo Vallecano de Madrid,1,3
+SP2,02/04/2017,Gimnàstic de Tarragona,UD Almería,0,1
+SP2,02/04/2017,CD Lugo,CF Reus Deportiu,1,0
+SP2,02/04/2017,CD Tenerife,Real Oviedo,1,0
+SP2,02/04/2017,Córdoba CF,Elche CF,1,0
+SP2,02/04/2017,Real Zaragoza,Real Valladolid CF,1,1
+SP2,03/04/2017,Sevilla Atlético,CD Numancia,1,1
+SP2,07/04/2017,CD Mirandés,AD Alcorcón,2,0
+SP2,08/04/2017,RCD Mallorca,Gimnàstic de Tarragona,0,0
+SP2,08/04/2017,Cádiz CF,CD Lugo,1,1
+SP2,08/04/2017,Getafe CF,Levante UD,2,0
+SP2,08/04/2017,Rayo Vallecano de Madrid,CD Tenerife,1,1
+SP2,09/04/2017,Real Valladolid CF,Córdoba CF,2,1
+SP2,09/04/2017,Elche CF,Sevilla Atlético,3,2
+SP2,09/04/2017,CD Numancia,Girona FC,0,2
+SP2,09/04/2017,Real Oviedo,UCAM Murcia CF,2,0
+SP2,09/04/2017,CF Reus Deportiu,SD Huesca,0,1
+SP2,09/04/2017,UD Almería,Real Zaragoza,2,2
+SP2,15/04/2017,Elche CF,CD Numancia,1,3
+SP2,15/04/2017,CD Tenerife,Girona FC,3,3
+SP2,15/04/2017,Gimnàstic de Tarragona,CD Mirandés,4,1
+SP2,15/04/2017,SD Huesca,Cádiz CF,1,1
+SP2,16/04/2017,Sevilla Atlético,Real Valladolid CF,6,2
+SP2,16/04/2017,AD Alcorcón,Getafe CF,0,3
+SP2,16/04/2017,UCAM Murcia CF,Rayo Vallecano de Madrid,0,1
+SP2,16/04/2017,CD Lugo,Real Oviedo,2,1
+SP2,16/04/2017,Córdoba CF,UD Almería,1,0
+SP2,16/04/2017,Real Zaragoza,RCD Mallorca,1,0
+SP2,17/04/2017,Levante UD,CF Reus Deportiu,0,0
+SP2,21/04/2017,Real Oviedo,SD Huesca,1,1
+SP2,22/04/2017,Real Valladolid CF,Elche CF,2,1
+SP2,22/04/2017,Rayo Vallecano de Madrid,CD Lugo,2,0
+SP2,22/04/2017,Cádiz CF,Levante UD,1,1
+SP2,22/04/2017,Getafe CF,Gimnàstic de Tarragona,1,1
+SP2,22/04/2017,Girona FC,UCAM Murcia CF,1,2
+SP2,23/04/2017,CD Numancia,CD Tenerife,1,1
+SP2,23/04/2017,CD Mirandés,Real Zaragoza,0,1
+SP2,23/04/2017,RCD Mallorca,Córdoba CF,1,1
+SP2,23/04/2017,CF Reus Deportiu,AD Alcorcón,0,0
+SP2,23/04/2017,UD Almería,Sevilla Atlético,2,1
+SP2,28/04/2017,Elche CF,UD Almería,2,3
+SP2,29/04/2017,UCAM Murcia CF,CD Tenerife,1,0
+SP2,29/04/2017,Levante UD,Real Oviedo,1,0
+SP2,29/04/2017,Real Valladolid CF,CD Numancia,1,1
+SP2,29/04/2017,Real Zaragoza,Getafe CF,1,2
+SP2,30/04/2017,AD Alcorcón,Cádiz CF,0,2
+SP2,30/04/2017,CD Lugo,Girona FC,1,2
+SP2,30/04/2017,Córdoba CF,CD Mirandés,1,1
+SP2,30/04/2017,Sevilla Atlético,RCD Mallorca,2,3
+SP2,01/05/2017,SD Huesca,Rayo Vallecano de Madrid,2,0
+SP2,01/05/2017,Gimnàstic de Tarragona,CF Reus Deportiu,0,1
+SP2,05/05/2017,Real Oviedo,AD Alcorcón,0,1
+SP2,06/05/2017,RCD Mallorca,Elche CF,1,0
+SP2,06/05/2017,CD Numancia,UCAM Murcia CF,1,0
+SP2,06/05/2017,Rayo Vallecano de Madrid,Levante UD,2,1
+SP2,06/05/2017,Girona FC,SD Huesca,3,1
+SP2,07/05/2017,CD Tenerife,CD Lugo,2,1
+SP2,07/05/2017,CD Mirandés,Sevilla Atlético,0,1
+SP2,07/05/2017,Cádiz CF,Gimnàstic de Tarragona,0,0
+SP2,07/05/2017,Getafe CF,Córdoba CF,2,0
+SP2,07/05/2017,UD Almería,Real Valladolid CF,0,3
+SP2,07/05/2017,CF Reus Deportiu,Real Zaragoza,1,0
+SP2,12/05/2017,Sevilla Atlético,Getafe CF,2,1
+SP2,12/05/2017,Real Zaragoza,Cádiz CF,1,1
+SP2,13/05/2017,Real Valladolid CF,RCD Mallorca,2,1
+SP2,13/05/2017,SD Huesca,CD Tenerife,2,2
+SP2,13/05/2017,Elche CF,CD Mirandés,0,1
+SP2,13/05/2017,Levante UD,Girona FC,2,1
+SP2,13/05/2017,AD Alcorcón,Rayo Vallecano de Madrid,2,0
+SP2,13/05/2017,Córdoba CF,CF Reus Deportiu,1,0
+SP2,13/05/2017,UD Almería,CD Numancia,2,0
+SP2,13/05/2017,Gimnàstic de Tarragona,Real Oviedo,2,2
+SP2,14/05/2017,CD Lugo,UCAM Murcia CF,0,0
+SP2,19/05/2017,Rayo Vallecano de Madrid,Gimnàstic de Tarragona,2,0
+SP2,19/05/2017,Getafe CF,Elche CF,2,0
+SP2,20/05/2017,UCAM Murcia CF,SD Huesca,3,1
+SP2,20/05/2017,CD Tenerife,Levante UD,0,0
+SP2,20/05/2017,Girona FC,AD Alcorcón,0,0
+SP2,20/05/2017,CF Reus Deportiu,Sevilla Atlético,2,1
+SP2,20/05/2017,RCD Mallorca,UD Almería,1,0
+SP2,20/05/2017,Real Oviedo,Real Zaragoza,0,0
+SP2,20/05/2017,Cádiz CF,Córdoba CF,1,1
+SP2,21/05/2017,CD Mirandés,Real Valladolid CF,2,2
+SP2,21/05/2017,CD Numancia,CD Lugo,0,1
+SP2,26/05/2017,Levante UD,UCAM Murcia CF,3,1
+SP2,27/05/2017,SD Huesca,CD Lugo,1,0
+SP2,27/05/2017,Sevilla Atlético,Cádiz CF,3,3
+SP2,27/05/2017,Real Valladolid CF,Getafe CF,1,0
+SP2,27/05/2017,UD Almería,CD Mirandés,2,0
+SP2,28/05/2017,AD Alcorcón,CD Tenerife,1,3
+SP2,28/05/2017,Real Zaragoza,Rayo Vallecano de Madrid,1,1
+SP2,28/05/2017,Gimnàstic de Tarragona,Girona FC,3,1
+SP2,28/05/2017,Elche CF,CF Reus Deportiu,1,1
+SP2,28/05/2017,RCD Mallorca,CD Numancia,0,0
+SP2,28/05/2017,Córdoba CF,Real Oviedo,4,2
+SP2,02/06/2017,CD Lugo,Levante UD,1,0
+SP2,04/06/2017,SD Huesca,CD Numancia,0,0
+SP2,04/06/2017,UCAM Murcia CF,AD Alcorcón,0,1
+SP2,04/06/2017,CD Tenerife,Gimnàstic de Tarragona,0,1
+SP2,04/06/2017,Girona FC,Real Zaragoza,0,0
+SP2,04/06/2017,Rayo Vallecano de Madrid,Córdoba CF,1,2
+SP2,04/06/2017,Real Oviedo,Sevilla Atlético,1,0
+SP2,04/06/2017,Cádiz CF,Elche CF,2,1
+SP2,04/06/2017,CF Reus Deportiu,Real Valladolid CF,2,0
+SP2,04/06/2017,Getafe CF,UD Almería,4,0
+SP2,04/06/2017,CD Mirandés,RCD Mallorca,2,2
+SP2,09/06/2017,Sevilla Atlético,Rayo Vallecano de Madrid,1,2
+SP2,10/06/2017,Levante UD,SD Huesca,1,2
+SP2,10/06/2017,AD Alcorcón,CD Lugo,3,0
+SP2,10/06/2017,Gimnàstic de Tarragona,UCAM Murcia CF,1,0
+SP2,10/06/2017,Real Zaragoza,CD Tenerife,1,2
+SP2,10/06/2017,Córdoba CF,Girona FC,2,1
+SP2,10/06/2017,Elche CF,Real Oviedo,0,2
+SP2,10/06/2017,Real Valladolid CF,Cádiz CF,1,0
+SP2,10/06/2017,UD Almería,CF Reus Deportiu,1,0
+SP2,10/06/2017,RCD Mallorca,Getafe CF,3,3
+SP2,11/06/2017,CD Numancia,CD Mirandés,0,2
