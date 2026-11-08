@@ -24,6 +24,7 @@
 | 20 | Lancé la rejilla de 20 ajustes con todos los hilos mientras corría la suite de tests: la suite pasó de ~7 s a casi 20 min | No solapar trabajos pesados de CPU; lanzar los tests solos o limitar hilos (`n_jobs`) |
 | 21 | Documenté y dije al usuario que las probabilidades "salen algo sobreconfiadas" sin haberlo medido; el backtest no lo confirmó | Regla 5: no afirmar una limitación como hecho; marcarla como hipótesis hasta medirla |
 | 22 | Generé `scripts/liga_backtest.py` con `str.replace` sin contar coincidencias y solo comprobé la sintaxis | Contar las coincidencias de cada sustitución y buscar con `grep` restos (rutas del scratchpad) antes de commitear |
+| 23 | Primera versión de la tabla de La Liga con ancho mínimo fijo: en móvil la columna Descenso quedaba fuera de pantalla; números de posición pegados al nombre; barras con línea espuria en valores ≈ 0 | Mirar siempre capturas de escritorio **y móvil** antes de dar una UI por buena; que la información clave quepa sin desplazar |
 
 ## Hábitos nuevos acordados con el usuario
 - La suite de tests la lanza un subagente y devuelve solo el resultado final.

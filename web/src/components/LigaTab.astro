@@ -1,0 +1,147 @@
+---
+import { liga } from '../data/liga';
+
+const { meta, teams } = liga;
+const n = teams.length;
+const jornadas = Math.max(...teams.map(t => t.played));
+const totalJornadas = 2 * (n - 1);
+const [eurLo, eurHi] = meta.zones.europa;
+
+const nf1 = new Intl.NumberFormat('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const nf2 = new Intl.NumberFormat('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const NB = '\u00A0';   // espacio sin ruptura: el % no se separa de la cifra
+const pct = (p: number) => (p < 0.0005 ? `<0,1${NB}%` : p > 0.9995 ? `100${NB}%` : `${nf1.format(p * 100)}${NB}%`);
+const dateEs = new Date(meta.dataAsOf + 'T00:00:00Z').toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'UTC' });
+
+// Zona de la posición esperada (solo para el borde de color de la fila)
+const zoneOf = (pos: number) => {
+  if (pos <= 1.5) return 'var(--gold)';
+  if (pos <= meta.zones.champions + 0.5) return 'var(--green)';
+  if (pos <= eurHi + 0.5) return 'var(--blue)';
+  if (pos > n - meta.zones.relegation + 0.5) return 'var(--red)';
+  return 'transparent';
+};
+// Color de la zona de una posición (1..n) para la cabecera del mapa de calor
+const zoneOfPos = (pos: number) => {
+  if (pos === 1) return 'var(--gold)';
+  if (pos <= meta.zones.champions) return 'var(--green)';
+  if (pos >= eurLo && pos <= eurHi) return 'var(--blue)';
+  if (pos > n - meta.zones.relegation) return 'var(--red)';
+  return 'var(--text-muted)';
+};
+// Fondo con barra proporcional al valor, con el color de la columna
+const bar = (p: number, hsl: string) => {
+  const w = Math.round(p * 100);
+  return w === 0 ? '' : `background: linear-gradient(90deg, hsla(${hsl} / 0.38) ${w}%, transparent ${w}%)`;
+};
+const formColor: Record<string, string> = { W: 'var(--green)', D: 'var(--amber)', L: 'var(--red)' };
+const top = teams.reduce((a, b) => (b.pChampion > a.pChampion ? b : a), teams[0]);
+---
+
+<div class="space-y-5">
+  <!-- Aviso de frescura -->
+  <div class="rounded-xl border border-[var(--amber)]/50 bg-[var(--amber)]/10 px-4 py-3 text-sm" role="note">
+    <strong>Probabilidades a {dateEs}</strong> · {jornadas} de {totalJornadas} jornadas jugadas · temporada {meta.seasonLabel}
+    · {meta.nSims.toLocaleString('es-ES')} simulaciones del resto de la temporada.
+    <span class="text-[var(--text-muted)]">Los datos de la fuente pueden ir por detrás de la fecha actual.</span>
+  </div>
+
+  <!-- Tabla de probabilidades -->
+  <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] overflow-hidden">
+    <div class="bg-[var(--bg-muted)] px-4 py-2 flex items-center gap-2">
+      <span class="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">La Liga</span>
+      <span class="text-xl font-black">{meta.seasonLabel}</span>
+    </div>
+    <div class="overflow-x-auto" data-liga-table-wrap>
+      <table class="w-full text-[11px] sm:text-xs min-w-[340px]" data-liga-table>
+        <thead>
+          <tr class="text-[var(--text-muted)] uppercase tracking-wide text-[10px]">
+            <th class="text-left pl-3 pr-2 py-2 w-9">#</th>
+            <th class="text-left py-2">Equipo</th>
+            <th class="text-center px-1 py-2 hidden sm:table-cell" title="Partidos jugados">PJ</th>
+            <th class="text-center px-1 py-2 hidden sm:table-cell" title="Diferencia de goles">DG</th>
+            <th class="text-center px-1 py-2" title="Puntos actuales">Pts</th>
+            <th class="text-center px-1 py-2 hidden md:table-cell" title="Puntos esperados al final">Pts esp.</th>
+            <th class="text-center px-1 sm:px-2 py-2" title="Probabilidad de ser campeón">Campeón</th>
+            <th class="text-center px-1 sm:px-2 py-2" title={`Probabilidad de acabar entre los ${meta.zones.champions} primeros`}>Champions</th>
+            <th class="text-center px-2 py-2 hidden sm:table-cell" title={`Puestos ${eurLo}-${eurHi}`}>Europa L.</th>
+            <th class="text-center px-1 sm:px-2 py-2" title={`Probabilidad de acabar entre los ${meta.zones.relegation} últimos`}>Descenso</th>
+            <th class="text-center px-2 py-2 hidden md:table-cell" title="Últimos resultados">Forma</th>
+          </tr>
+        </thead>
+        <tbody>
+          {teams.map((t, i) => (
+            <tr class="border-t border-[var(--border)]" style={`box-shadow: inset 3px 0 0 ${zoneOf(t.expPosition)}`} data-liga-row={t.name}>
+              <td class="pl-3 pr-2 py-1.5 text-[var(--text-muted)] tabular-nums">{i + 1}</td>
+              <td class="py-1.5 font-semibold whitespace-nowrap">
+                <span class="sm:hidden">{t.short}</span><span class="hidden sm:inline">{t.name}</span>
+              </td>
+              <td class="text-center px-1 hidden sm:table-cell tabular-nums">{t.played}</td>
+              <td class="text-center px-1 hidden sm:table-cell tabular-nums">{t.gd > 0 ? `+${t.gd}` : t.gd}</td>
+              <td class="text-center px-1 font-bold tabular-nums">{t.pointsNow}</td>
+              <td class="text-center px-1 hidden md:table-cell tabular-nums text-[var(--text-muted)]">{nf2.format(t.expPoints)}</td>
+              <td class="text-center px-1 sm:px-2 py-1.5 tabular-nums" style={bar(t.pChampion, '45 100% 50%')}>{pct(t.pChampion)}</td>
+              <td class="text-center px-1 sm:px-2 py-1.5 tabular-nums" style={bar(t.pChampions, '142 72% 42%')}>{pct(t.pChampions)}</td>
+              <td class="text-center px-2 py-1.5 tabular-nums hidden sm:table-cell" style={bar(t.pEuropa, '220 80% 58%')}>{pct(t.pEuropa)}</td>
+              <td class="text-center px-1 sm:px-2 py-1.5 tabular-nums" style={bar(t.pRelegation, '0 72% 51%')}>{pct(t.pRelegation)}</td>
+              <td class="text-center px-2 hidden md:table-cell">
+                <span class="inline-flex gap-0.5">
+                  {[...t.form].map(r => (
+                    <span class="w-4 h-4 rounded-sm text-[9px] font-bold text-black flex items-center justify-center" style={`background:${formColor[r]}`}>{r}</span>
+                  ))}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="px-4 py-2 text-[10px] text-[var(--text-muted)] border-t border-[var(--border)]">
+      Ordenado por posición final esperada. Borde: <span style="color:var(--gold)">campeón</span> ·
+      <span style="color:var(--green)">Champions</span> · <span style="color:var(--blue)">Europa League</span> ·
+      <span style="color:var(--red)">descenso</span>. Las zonas europeas son un supuesto ({meta.zones.champions} Champions, puestos {eurLo}-{eurHi} Europa League).
+    </p>
+  </div>
+
+  <!-- Mapa de calor de posiciones -->
+  <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] overflow-hidden">
+    <div class="bg-[var(--bg-muted)] px-4 py-2">
+      <span class="text-xs font-bold uppercase tracking-widest text-[var(--gold)]">Distribución de posiciones finales</span>
+    </div>
+    <div class="overflow-x-auto px-2 sm:px-3 py-3 [--liga-name-w:4.6rem] sm:[--liga-name-w:7.5rem]" data-liga-heatmap-wrap>
+      <div class="min-w-[330px]">
+        <div class="grid items-end mb-1" style={`grid-template-columns: var(--liga-name-w) repeat(${n}, minmax(0, 1fr)); gap: 2px`}>
+          <span></span>
+          {Array.from({ length: n }, (_, k) => k + 1).map(pos => (
+            <span class="text-center text-[8px] sm:text-[10px] font-bold tabular-nums" style={`color:${zoneOfPos(pos)}`}>{pos}</span>
+          ))}
+        </div>
+        {teams.map(t => (
+          <div class="grid items-center" style={`grid-template-columns: var(--liga-name-w) repeat(${n}, minmax(0, 1fr)); gap: 2px; margin-bottom: 2px`}>
+            <span class="text-[10px] sm:text-[11px] font-semibold truncate pr-1">{t.short}</span>
+            {t.positionDist.map((p, k) => (
+              <span
+                class="h-5 rounded-[3px]"
+                style={`background: hsla(220 80% 58% / ${Math.min(1, p * 2.4).toFixed(3)}); ${p >= 0.005 ? '' : 'opacity:.9'}`}
+                title={`${t.name} · ${k + 1}.º puesto: ${pct(p)}`}
+              ></span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Cómo leerlo -->
+  <details class="rounded-xl border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 text-sm">
+    <summary class="cursor-pointer font-semibold">Cómo leerlo y qué límites tiene</summary>
+    <ul class="mt-3 space-y-2 list-disc pl-5 text-[var(--text-muted)]">
+      <li>Un modelo XGBoost estima los goles esperados (XG) de cada partido pendiente; se simulan {meta.nSims.toLocaleString('es-ES')} temporadas con los desempates de La Liga y se cuentan las veces que cada equipo acaba en cada zona.</li>
+      <li><strong class="text-[var(--text-base)]">Frescura:</strong> los datos llegan hasta el {dateEs}. Las probabilidades no incluyen lo ocurrido después.</li>
+      <li><strong class="text-[var(--text-base)]">XG fijo:</strong> el estado de cada equipo se congela en su último partido jugado; no se actualiza con la forma durante la temporada.</li>
+      <li><strong class="text-[var(--text-base)]">Valores extremos sin validar:</strong> en el backtest de 2019/20-2023/24 (cortando cada temporada en la jornada 7) el favorito recibió como máximo un 59&nbsp;% de probabilidad de ser campeón. Cifras más altas, como el {pct(top.pChampion)} de {top.short}, quedan fuera del rango comprobado; léelas como una cota alta.</li>
+      <li><strong class="text-[var(--text-base)]">Equipos con poca historia</strong> (ascendidos): sus medias de 5 y 15 partidos salen de muy pocos encuentros y son ruidosas, lo que puede inflar o hundir su probabilidad de descenso.</li>
+      <li>Las zonas europeas y el desempate con tres o más equipos son supuestos; las plazas europeas reales cambian cada año.</li>
+    </ul>
+  </details>
+</div>
