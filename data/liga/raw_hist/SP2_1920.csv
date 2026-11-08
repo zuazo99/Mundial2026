@@ -1,0 +1,463 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP2,17/08/2019,CD Lugo,Extremadura UD,0,0
+SP2,17/08/2019,Real Racing Club de Santander,Málaga CF,0,1
+SP2,17/08/2019,UD Almería,Albacete,3,0
+SP2,17/08/2019,Elche CF,CF Fuenlabrada,0,2
+SP2,17/08/2019,Rayo Vallecano de Madrid,CD Mirandés,2,2
+SP2,17/08/2019,Real Zaragoza,CD Tenerife,2,0
+SP2,18/08/2019,RC Deportivo La Coruña,Real Oviedo,3,2
+SP2,18/08/2019,CD Numancia,AD Alcorcón,0,1
+SP2,18/08/2019,Girona FC,Sporting Gijón,1,1
+SP2,18/08/2019,Cádiz CF,SD Ponferradina,3,1
+SP2,18/08/2019,UD Las Palmas,SD Huesca,0,1
+SP2,23/08/2019,Albacete,Girona FC,1,0
+SP2,24/08/2019,Real Oviedo,CD Lugo,1,1
+SP2,24/08/2019,Real Racing Club de Santander,UD Almería,1,1
+SP2,24/08/2019,CD Mirandés,Cádiz CF,1,2
+SP2,24/08/2019,AD Alcorcón,Elche CF,1,2
+SP2,24/08/2019,Málaga CF,UD Las Palmas,1,1
+SP2,25/08/2019,SD Ponferradina,Real Zaragoza,1,1
+SP2,25/08/2019,Sporting Gijón,Rayo Vallecano de Madrid,1,1
+SP2,25/08/2019,SD Huesca,RC Deportivo La Coruña,3,1
+SP2,25/08/2019,CD Tenerife,CD Numancia,3,2
+SP2,25/08/2019,Extremadura UD,CF Fuenlabrada,1,2
+SP2,30/08/2019,Real Zaragoza,Elche CF,1,0
+SP2,31/08/2019,CF Fuenlabrada,Real Oviedo,2,1
+SP2,31/08/2019,CD Numancia,CD Mirandés,2,0
+SP2,31/08/2019,UD Almería,SD Huesca,1,0
+SP2,31/08/2019,UD Las Palmas,Real Racing Club de Santander,2,2
+SP2,01/09/2019,CD Lugo,AD Alcorcón,2,4
+SP2,01/09/2019,Rayo Vallecano de Madrid,RC Deportivo La Coruña,3,1
+SP2,01/09/2019,Sporting Gijón,Albacete,2,0
+SP2,01/09/2019,Girona FC,Málaga CF,1,0
+SP2,01/09/2019,SD Ponferradina,CD Tenerife,4,0
+SP2,01/09/2019,Cádiz CF,Extremadura UD,2,1
+SP2,06/09/2019,Real Racing Club de Santander,Cádiz CF,1,2
+SP2,07/09/2019,RC Deportivo La Coruña,Albacete,0,1
+SP2,07/09/2019,Málaga CF,UD Almería,0,1
+SP2,07/09/2019,Extremadura UD,CD Numancia,0,0
+SP2,07/09/2019,CF Fuenlabrada,SD Ponferradina,1,1
+SP2,07/09/2019,CD Tenerife,UD Las Palmas,0,0
+SP2,08/09/2019,SD Huesca,Sporting Gijón,1,0
+SP2,08/09/2019,Girona FC,Rayo Vallecano de Madrid,3,1
+SP2,08/09/2019,Elche CF,CD Lugo,1,1
+SP2,08/09/2019,CD Mirandés,Real Oviedo,2,1
+SP2,08/09/2019,AD Alcorcón,Real Zaragoza,0,3
+SP2,13/09/2019,Rayo Vallecano de Madrid,Real Racing Club de Santander,2,0
+SP2,14/09/2019,CD Mirandés,Málaga CF,1,1
+SP2,14/09/2019,CD Numancia,SD Huesca,1,0
+SP2,14/09/2019,UD Las Palmas,UD Almería,0,3
+SP2,14/09/2019,Cádiz CF,Girona FC,2,0
+SP2,14/09/2019,SD Ponferradina,AD Alcorcón,1,1
+SP2,15/09/2019,Albacete,CD Tenerife,0,4
+SP2,15/09/2019,Real Oviedo,Elche CF,0,2
+SP2,15/09/2019,Real Zaragoza,Extremadura UD,3,1
+SP2,15/09/2019,CD Lugo,CF Fuenlabrada,2,0
+SP2,15/09/2019,Sporting Gijón,RC Deportivo La Coruña,1,1
+SP2,17/09/2019,UD Almería,Girona FC,3,1
+SP2,17/09/2019,Málaga CF,Rayo Vallecano de Madrid,1,1
+SP2,17/09/2019,Real Racing Club de Santander,CD Mirandés,4,0
+SP2,17/09/2019,AD Alcorcón,Cádiz CF,3,0
+SP2,18/09/2019,SD Huesca,Albacete,0,1
+SP2,18/09/2019,CD Lugo,SD Ponferradina,2,2
+SP2,18/09/2019,RC Deportivo La Coruña,CD Numancia,3,3
+SP2,19/09/2019,Elche CF,CD Tenerife,1,1
+SP2,19/09/2019,Real Oviedo,Extremadura UD,1,1
+SP2,19/09/2019,UD Las Palmas,Sporting Gijón,1,0
+SP2,20/09/2019,CD Mirandés,AD Alcorcón,2,2
+SP2,21/09/2019,Cádiz CF,RC Deportivo La Coruña,0,0
+SP2,21/09/2019,Real Zaragoza,CD Lugo,0,0
+SP2,21/09/2019,Rayo Vallecano de Madrid,UD Almería,1,1
+SP2,21/09/2019,Albacete,Málaga CF,1,0
+SP2,22/09/2019,SD Ponferradina,Real Oviedo,2,1
+SP2,22/09/2019,Girona FC,UD Las Palmas,1,0
+SP2,22/09/2019,CD Numancia,Elche CF,1,1
+SP2,22/09/2019,Sporting Gijón,Real Racing Club de Santander,1,1
+SP2,22/09/2019,Extremadura UD,SD Huesca,0,1
+SP2,22/09/2019,CD Tenerife,CF Fuenlabrada,0,1
+SP2,27/09/2019,UD Las Palmas,Albacete,3,2
+SP2,28/09/2019,CF Fuenlabrada,Rayo Vallecano de Madrid,2,2
+SP2,28/09/2019,AD Alcorcón,Extremadura UD,0,2
+SP2,28/09/2019,SD Huesca,Girona FC,1,0
+SP2,28/09/2019,Elche CF,SD Ponferradina,1,0
+SP2,28/09/2019,Real Racing Club de Santander,CD Numancia,0,0
+SP2,29/09/2019,Málaga CF,Sporting Gijón,0,0
+SP2,29/09/2019,UD Almería,Cádiz CF,1,2
+SP2,29/09/2019,Real Oviedo,Real Zaragoza,2,2
+SP2,29/09/2019,RC Deportivo La Coruña,CD Mirandés,1,1
+SP2,29/09/2019,CD Lugo,CD Tenerife,1,4
+SP2,01/10/2019,Albacete,Real Racing Club de Santander,0,0
+SP2,01/10/2019,Extremadura UD,Elche CF,2,0
+SP2,01/10/2019,CD Numancia,CF Fuenlabrada,1,0
+SP2,01/10/2019,Rayo Vallecano de Madrid,AD Alcorcón,1,1
+SP2,02/10/2019,Cádiz CF,SD Huesca,1,0
+SP2,02/10/2019,CD Mirandés,CD Lugo,1,1
+SP2,02/10/2019,SD Ponferradina,UD Las Palmas,0,2
+SP2,02/10/2019,CD Tenerife,Real Oviedo,0,1
+SP2,03/10/2019,Sporting Gijón,UD Almería,4,2
+SP2,03/10/2019,Real Zaragoza,Málaga CF,2,2
+SP2,03/10/2019,Girona FC,RC Deportivo La Coruña,3,1
+SP2,04/10/2019,AD Alcorcón,Albacete,0,1
+SP2,05/10/2019,CD Lugo,UD Las Palmas,0,2
+SP2,05/10/2019,Elche CF,Rayo Vallecano de Madrid,1,1
+SP2,05/10/2019,SD Ponferradina,CD Mirandés,2,0
+SP2,05/10/2019,CD Tenerife,Extremadura UD,1,2
+SP2,06/10/2019,CF Fuenlabrada,Sporting Gijón,2,0
+SP2,06/10/2019,Real Oviedo,CD Numancia,1,1
+SP2,06/10/2019,Real Zaragoza,Cádiz CF,0,2
+SP2,06/10/2019,RC Deportivo La Coruña,UD Almería,0,0
+SP2,06/10/2019,SD Huesca,Málaga CF,2,0
+SP2,06/10/2019,Real Racing Club de Santander,Girona FC,0,3
+SP2,11/10/2019,Rayo Vallecano de Madrid,CD Tenerife,2,1
+SP2,12/10/2019,Girona FC,Elche CF,0,2
+SP2,12/10/2019,UD Almería,CD Lugo,0,0
+SP2,12/10/2019,Sporting Gijón,AD Alcorcón,1,3
+SP2,12/10/2019,Extremadura UD,SD Ponferradina,1,1
+SP2,12/10/2019,Málaga CF,Cádiz CF,1,2
+SP2,13/10/2019,CD Mirandés,CF Fuenlabrada,2,1
+SP2,13/10/2019,CD Numancia,Real Zaragoza,0,1
+SP2,13/10/2019,Albacete,Real Oviedo,1,2
+SP2,13/10/2019,SD Huesca,Real Racing Club de Santander,1,1
+SP2,13/10/2019,UD Las Palmas,RC Deportivo La Coruña,3,0
+SP2,16/10/2019,CF Fuenlabrada,Real Zaragoza,2,1
+SP2,18/10/2019,Cádiz CF,UD Las Palmas,2,0
+SP2,19/10/2019,AD Alcorcón,UD Almería,2,2
+SP2,19/10/2019,SD Ponferradina,CD Numancia,1,1
+SP2,19/10/2019,Elche CF,Sporting Gijón,0,1
+SP2,19/10/2019,CD Lugo,SD Huesca,3,2
+SP2,19/10/2019,Extremadura UD,Rayo Vallecano de Madrid,0,3
+SP2,20/10/2019,CF Fuenlabrada,Albacete,0,1
+SP2,20/10/2019,RC Deportivo La Coruña,Málaga CF,0,2
+SP2,20/10/2019,Real Oviedo,Girona FC,4,2
+SP2,20/10/2019,CD Tenerife,Real Racing Club de Santander,3,3
+SP2,20/10/2019,Real Zaragoza,CD Mirandés,1,2
+SP2,25/10/2019,Albacete,Cádiz CF,1,0
+SP2,26/10/2019,Rayo Vallecano de Madrid,SD Ponferradina,1,3
+SP2,26/10/2019,CD Mirandés,CD Tenerife,0,0
+SP2,26/10/2019,Real Racing Club de Santander,RC Deportivo La Coruña,1,1
+SP2,26/10/2019,Málaga CF,Real Oviedo,2,1
+SP2,26/10/2019,CD Numancia,CD Lugo,3,1
+SP2,27/10/2019,Girona FC,AD Alcorcón,0,0
+SP2,27/10/2019,Sporting Gijón,Real Zaragoza,4,0
+SP2,27/10/2019,SD Huesca,Elche CF,2,0
+SP2,27/10/2019,UD Las Palmas,CF Fuenlabrada,1,3
+SP2,27/10/2019,UD Almería,Extremadura UD,3,2
+SP2,01/11/2019,CD Numancia,Albacete,1,0
+SP2,01/11/2019,Cádiz CF,Sporting Gijón,3,1
+SP2,01/11/2019,SD Ponferradina,Málaga CF,1,0
+SP2,01/11/2019,Real Oviedo,UD Almería,0,0
+SP2,02/11/2019,CF Fuenlabrada,RC Deportivo La Coruña,1,1
+SP2,02/11/2019,AD Alcorcón,Real Racing Club de Santander,1,0
+SP2,02/11/2019,CD Tenerife,SD Huesca,0,0
+SP2,03/11/2019,Extremadura UD,Girona FC,1,3
+SP2,03/11/2019,CD Lugo,Rayo Vallecano de Madrid,1,0
+SP2,03/11/2019,Real Zaragoza,UD Las Palmas,3,0
+SP2,03/11/2019,Elche CF,CD Mirandés,4,2
+SP2,08/11/2019,Girona FC,CD Tenerife,1,0
+SP2,09/11/2019,SD Huesca,Real Oviedo,3,1
+SP2,09/11/2019,CD Mirandés,Extremadura UD,2,0
+SP2,09/11/2019,Albacete,CD Lugo,0,1
+SP2,09/11/2019,Sporting Gijón,CD Numancia,0,1
+SP2,09/11/2019,UD Las Palmas,AD Alcorcón,1,1
+SP2,10/11/2019,RC Deportivo La Coruña,Elche CF,1,3
+SP2,10/11/2019,UD Almería,Real Zaragoza,1,1
+SP2,10/11/2019,Málaga CF,CF Fuenlabrada,0,0
+SP2,10/11/2019,Real Racing Club de Santander,SD Ponferradina,2,2
+SP2,10/11/2019,Rayo Vallecano de Madrid,Cádiz CF,1,1
+SP2,16/11/2019,CF Fuenlabrada,SD Huesca,3,2
+SP2,16/11/2019,Extremadura UD,RC Deportivo La Coruña,2,0
+SP2,16/11/2019,Elche CF,UD Almería,1,1
+SP2,16/11/2019,CD Numancia,Rayo Vallecano de Madrid,2,2
+SP2,16/11/2019,Real Zaragoza,Albacete,0,1
+SP2,17/11/2019,SD Ponferradina,Girona FC,1,1
+SP2,17/11/2019,AD Alcorcón,Málaga CF,1,0
+SP2,17/11/2019,Real Oviedo,Sporting Gijón,0,0
+SP2,17/11/2019,CD Lugo,Real Racing Club de Santander,1,1
+SP2,17/11/2019,CD Mirandés,UD Las Palmas,2,1
+SP2,17/11/2019,CD Tenerife,Cádiz CF,1,1
+SP2,22/11/2019,Sporting Gijón,CD Tenerife,0,2
+SP2,23/11/2019,Rayo Vallecano de Madrid,Real Zaragoza,0,1
+SP2,23/11/2019,RC Deportivo La Coruña,AD Alcorcón,0,0
+SP2,23/11/2019,Real Racing Club de Santander,Extremadura UD,3,0
+SP2,23/11/2019,SD Huesca,SD Ponferradina,2,0
+SP2,24/11/2019,UD Almería,CD Numancia,2,0
+SP2,24/11/2019,Albacete,CD Mirandés,1,2
+SP2,24/11/2019,Málaga CF,Elche CF,3,3
+SP2,24/11/2019,Girona FC,CF Fuenlabrada,2,0
+SP2,24/11/2019,UD Las Palmas,Real Oviedo,3,1
+SP2,24/11/2019,Cádiz CF,CD Lugo,2,1
+SP2,29/11/2019,CD Numancia,Málaga CF,0,0
+SP2,30/11/2019,AD Alcorcón,SD Huesca,0,2
+SP2,30/11/2019,CD Mirandés,Sporting Gijón,0,0
+SP2,30/11/2019,SD Ponferradina,Albacete,1,1
+SP2,30/11/2019,CD Tenerife,UD Almería,1,3
+SP2,30/11/2019,Real Zaragoza,Girona FC,3,3
+SP2,01/12/2019,CF Fuenlabrada,Cádiz CF,1,0
+SP2,01/12/2019,Real Oviedo,Rayo Vallecano de Madrid,2,1
+SP2,01/12/2019,Elche CF,Real Racing Club de Santander,2,0
+SP2,01/12/2019,CD Lugo,RC Deportivo La Coruña,0,0
+SP2,01/12/2019,Extremadura UD,UD Las Palmas,0,1
+SP2,06/12/2019,Albacete,Extremadura UD,1,1
+SP2,06/12/2019,Real Racing Club de Santander,CF Fuenlabrada,2,2
+SP2,06/12/2019,AD Alcorcón,Real Oviedo,1,3
+SP2,06/12/2019,Málaga CF,CD Tenerife,2,0
+SP2,07/12/2019,SD Huesca,Rayo Vallecano de Madrid,0,2
+SP2,07/12/2019,Sporting Gijón,SD Ponferradina,1,0
+SP2,07/12/2019,UD Almería,CD Mirandés,3,1
+SP2,08/12/2019,Girona FC,CD Lugo,3,1
+SP2,08/12/2019,RC Deportivo La Coruña,Real Zaragoza,1,3
+SP2,08/12/2019,UD Las Palmas,CD Numancia,3,1
+SP2,08/12/2019,Cádiz CF,Elche CF,0,0
+SP2,13/12/2019,CD Numancia,Girona FC,2,0
+SP2,14/12/2019,CD Mirandés,SD Huesca,2,0
+SP2,14/12/2019,SD Ponferradina,RC Deportivo La Coruña,2,0
+SP2,14/12/2019,CD Tenerife,AD Alcorcón,0,0
+SP2,14/12/2019,Real Zaragoza,Real Racing Club de Santander,2,0
+SP2,15/12/2019,Extremadura UD,Málaga CF,0,0
+SP2,15/12/2019,Real Oviedo,Cádiz CF,0,2
+SP2,15/12/2019,Elche CF,UD Las Palmas,2,3
+SP2,15/12/2019,CD Lugo,Sporting Gijón,1,2
+SP2,15/12/2019,CF Fuenlabrada,UD Almería,2,2
+SP2,20/12/2019,RC Deportivo La Coruña,CD Tenerife,2,1
+SP2,21/12/2019,Albacete,Elche CF,0,1
+SP2,21/12/2019,Málaga CF,CD Lugo,1,1
+SP2,21/12/2019,UD Las Palmas,Rayo Vallecano de Madrid,1,1
+SP2,21/12/2019,Sporting Gijón,Extremadura UD,0,1
+SP2,21/12/2019,Real Racing Club de Santander,Real Oviedo,1,1
+SP2,21/12/2019,Cádiz CF,CD Numancia,2,4
+SP2,22/12/2019,UD Almería,SD Ponferradina,2,3
+SP2,22/12/2019,SD Huesca,Real Zaragoza,2,1
+SP2,22/12/2019,AD Alcorcón,CF Fuenlabrada,1,1
+SP2,22/12/2019,Girona FC,CD Mirandés,0,3
+SP2,03/01/2020,Extremadura UD,AD Alcorcón,0,0
+SP2,04/01/2020,CF Fuenlabrada,UD Las Palmas,0,0
+SP2,04/01/2020,SD Ponferradina,Cádiz CF,0,0
+SP2,04/01/2020,CD Lugo,UD Almería,0,4
+SP2,04/01/2020,CD Tenerife,Albacete,4,2
+SP2,04/01/2020,Elche CF,SD Huesca,1,1
+SP2,04/01/2020,CD Mirandés,Real Racing Club de Santander,0,0
+SP2,05/01/2020,CD Numancia,RC Deportivo La Coruña,0,1
+SP2,05/01/2020,Rayo Vallecano de Madrid,Girona FC,1,0
+SP2,05/01/2020,Real Oviedo,Málaga CF,1,1
+SP2,07/01/2020,Real Zaragoza,Sporting Gijón,2,0
+SP2,14/01/2020,Albacete,CF Fuenlabrada,1,1
+SP2,14/01/2020,Sporting Gijón,Elche CF,1,0
+SP2,14/01/2020,Málaga CF,SD Ponferradina,1,0
+SP2,14/01/2020,UD Las Palmas,Real Zaragoza,0,1
+SP2,15/01/2020,AD Alcorcón,CD Numancia,2,2
+SP2,15/01/2020,SD Huesca,CD Tenerife,2,1
+SP2,15/01/2020,Rayo Vallecano de Madrid,CD Lugo,1,0
+SP2,15/01/2020,Cádiz CF,CD Mirandés,3,3
+SP2,16/01/2020,RC Deportivo La Coruña,Real Racing Club de Santander,2,1
+SP2,16/01/2020,Girona FC,Extremadura UD,3,1
+SP2,16/01/2020,UD Almería,Real Oviedo,2,0
+SP2,17/01/2020,CF Fuenlabrada,Málaga CF,0,0
+SP2,18/01/2020,CD Numancia,Sporting Gijón,2,0
+SP2,18/01/2020,CD Lugo,Albacete,1,0
+SP2,18/01/2020,SD Ponferradina,Rayo Vallecano de Madrid,1,1
+SP2,19/01/2020,Elche CF,AD Alcorcón,1,1
+SP2,19/01/2020,RC Deportivo La Coruña,Cádiz CF,1,0
+SP2,19/01/2020,Real Oviedo,SD Huesca,1,1
+SP2,19/01/2020,Real Racing Club de Santander,UD Las Palmas,1,1
+SP2,19/01/2020,Extremadura UD,UD Almería,1,2
+SP2,19/01/2020,CD Tenerife,Girona FC,1,0
+SP2,24/01/2020,Cádiz CF,Real Racing Club de Santander,1,0
+SP2,25/01/2020,SD Huesca,CD Lugo,2,1
+SP2,25/01/2020,Sporting Gijón,CF Fuenlabrada,1,0
+SP2,25/01/2020,UD Las Palmas,CD Tenerife,0,0
+SP2,25/01/2020,Real Zaragoza,CD Numancia,1,0
+SP2,26/01/2020,Málaga CF,CD Mirandés,2,2
+SP2,26/01/2020,Albacete,RC Deportivo La Coruña,0,1
+SP2,26/01/2020,UD Almería,Elche CF,0,2
+SP2,26/01/2020,AD Alcorcón,SD Ponferradina,3,1
+SP2,26/01/2020,Rayo Vallecano de Madrid,Extremadura UD,1,1
+SP2,26/01/2020,Girona FC,Real Oviedo,1,1
+SP2,31/01/2020,CD Tenerife,Sporting Gijón,2,1
+SP2,01/02/2020,Extremadura UD,CD Lugo,1,0
+SP2,01/02/2020,RC Deportivo La Coruña,UD Las Palmas,2,1
+SP2,01/02/2020,SD Ponferradina,SD Huesca,3,1
+SP2,01/02/2020,Elche CF,Málaga CF,2,0
+SP2,02/02/2020,CF Fuenlabrada,Girona FC,0,1
+SP2,02/02/2020,Cádiz CF,Real Zaragoza,1,1
+SP2,02/02/2020,CD Mirandés,Rayo Vallecano de Madrid,0,0
+SP2,02/02/2020,CD Numancia,UD Almería,1,1
+SP2,02/02/2020,Real Oviedo,Albacete,3,1
+SP2,02/02/2020,Real Racing Club de Santander,AD Alcorcón,1,1
+SP2,07/02/2020,UD Almería,Real Racing Club de Santander,0,1
+SP2,08/02/2020,Extremadura UD,CD Tenerife,2,4
+SP2,08/02/2020,Girona FC,SD Huesca,1,0
+SP2,08/02/2020,UD Las Palmas,Cádiz CF,1,2
+SP2,08/02/2020,Real Zaragoza,CF Fuenlabrada,0,0
+SP2,09/02/2020,Albacete,SD Ponferradina,1,1
+SP2,09/02/2020,AD Alcorcón,RC Deportivo La Coruña,0,1
+SP2,09/02/2020,Sporting Gijón,CD Mirandés,2,2
+SP2,09/02/2020,CD Lugo,Elche CF,2,2
+SP2,09/02/2020,Rayo Vallecano de Madrid,Real Oviedo,1,1
+SP2,09/02/2020,Málaga CF,CD Numancia,2,1
+SP2,14/02/2020,RC Deportivo La Coruña,Girona FC,2,2
+SP2,15/02/2020,SD Huesca,UD Almería,3,2
+SP2,15/02/2020,CD Numancia,UD Las Palmas,1,1
+SP2,15/02/2020,Real Oviedo,AD Alcorcón,1,2
+SP2,15/02/2020,Elche CF,Real Zaragoza,1,2
+SP2,16/02/2020,CF Fuenlabrada,CD Lugo,0,1
+SP2,16/02/2020,CD Mirandés,Albacete,1,1
+SP2,16/02/2020,Cádiz CF,Málaga CF,0,1
+SP2,16/02/2020,SD Ponferradina,Extremadura UD,0,0
+SP2,16/02/2020,Real Racing Club de Santander,Sporting Gijón,0,2
+SP2,16/02/2020,CD Tenerife,Rayo Vallecano de Madrid,0,0
+SP2,19/02/2020,CD Mirandés,Real Zaragoza,1,1
+SP2,21/02/2020,Sporting Gijón,Cádiz CF,1,0
+SP2,22/02/2020,AD Alcorcón,UD Las Palmas,1,1
+SP2,22/02/2020,UD Almería,CF Fuenlabrada,0,0
+SP2,22/02/2020,Girona FC,SD Ponferradina,2,0
+SP2,22/02/2020,CD Tenerife,Elche CF,1,0
+SP2,22/02/2020,Albacete,CD Numancia,2,1
+SP2,23/02/2020,CD Lugo,Real Oviedo,1,0
+SP2,23/02/2020,Real Zaragoza,RC Deportivo La Coruña,3,1
+SP2,23/02/2020,Extremadura UD,CD Mirandés,3,2
+SP2,23/02/2020,Málaga CF,Real Racing Club de Santander,2,0
+SP2,23/02/2020,Rayo Vallecano de Madrid,SD Huesca,2,0
+SP2,28/02/2020,UD Las Palmas,Málaga CF,1,1
+SP2,29/02/2020,SD Huesca,Extremadura UD,2,2
+SP2,29/02/2020,SD Ponferradina,Sporting Gijón,1,0
+SP2,29/02/2020,Cádiz CF,UD Almería,2,1
+SP2,29/02/2020,Albacete,Rayo Vallecano de Madrid,1,1
+SP2,29/02/2020,Real Racing Club de Santander,Real Zaragoza,2,2
+SP2,01/03/2020,CD Mirandés,Girona FC,1,1
+SP2,01/03/2020,RC Deportivo La Coruña,CD Lugo,0,0
+SP2,01/03/2020,Elche CF,CD Numancia,2,0
+SP2,01/03/2020,CF Fuenlabrada,AD Alcorcón,3,4
+SP2,01/03/2020,Real Oviedo,CD Tenerife,1,0
+SP2,06/03/2020,CD Lugo,Cádiz CF,1,1
+SP2,07/03/2020,Extremadura UD,Real Oviedo,1,2
+SP2,07/03/2020,Girona FC,Albacete,1,1
+SP2,07/03/2020,SD Huesca,CF Fuenlabrada,2,0
+SP2,07/03/2020,CD Numancia,Real Racing Club de Santander,1,2
+SP2,07/03/2020,UD Almería,RC Deportivo La Coruña,4,0
+SP2,08/03/2020,Rayo Vallecano de Madrid,Elche CF,2,3
+SP2,08/03/2020,Málaga CF,Real Zaragoza,0,1
+SP2,08/03/2020,AD Alcorcón,CD Mirandés,1,2
+SP2,08/03/2020,Sporting Gijón,UD Las Palmas,4,0
+SP2,08/03/2020,CD Tenerife,SD Ponferradina,1,0
+SP2,10/06/2020,Rayo Vallecano de Madrid,Albacete,1,0
+SP2,12/06/2020,Elche CF,Extremadura UD,1,1
+SP2,12/06/2020,CF Fuenlabrada,CD Tenerife,1,0
+SP2,12/06/2020,Málaga CF,SD Huesca,1,3
+SP2,12/06/2020,Real Oviedo,SD Ponferradina,0,0
+SP2,13/06/2020,Real Racing Club de Santander,CD Lugo,1,2
+SP2,13/06/2020,UD Las Palmas,Girona FC,0,0
+SP2,13/06/2020,Real Zaragoza,AD Alcorcón,1,3
+SP2,14/06/2020,RC Deportivo La Coruña,Sporting Gijón,0,0
+SP2,14/06/2020,CD Mirandés,CD Numancia,2,1
+SP2,14/06/2020,Albacete,UD Almería,0,1
+SP2,14/06/2020,Cádiz CF,Rayo Vallecano de Madrid,1,1
+SP2,15/06/2020,SD Ponferradina,Elche CF,2,1
+SP2,15/06/2020,CD Tenerife,Málaga CF,0,0
+SP2,16/06/2020,CD Lugo,Real Zaragoza,1,3
+SP2,16/06/2020,Girona FC,Real Racing Club de Santander,0,0
+SP2,17/06/2020,UD Almería,UD Las Palmas,0,1
+SP2,17/06/2020,Extremadura UD,Albacete,0,1
+SP2,17/06/2020,Real Oviedo,RC Deportivo La Coruña,2,2
+SP2,17/06/2020,Rayo Vallecano de Madrid,CF Fuenlabrada,1,0
+SP2,18/06/2020,SD Huesca,CD Mirandés,1,2
+SP2,18/06/2020,CD Numancia,Cádiz CF,1,2
+SP2,18/06/2020,AD Alcorcón,Sporting Gijón,0,2
+SP2,19/06/2020,Elche CF,Girona FC,1,0
+SP2,20/06/2020,RC Deportivo La Coruña,Rayo Vallecano de Madrid,3,3
+SP2,20/06/2020,UD Las Palmas,CD Lugo,1,0
+SP2,20/06/2020,Real Zaragoza,UD Almería,0,2
+SP2,20/06/2020,Málaga CF,Extremadura UD,1,1
+SP2,21/06/2020,CD Mirandés,SD Ponferradina,1,2
+SP2,21/06/2020,Real Racing Club de Santander,CD Tenerife,1,2
+SP2,21/06/2020,Albacete,SD Huesca,2,2
+SP2,21/06/2020,Cádiz CF,AD Alcorcón,1,1
+SP2,21/06/2020,CF Fuenlabrada,CD Numancia,2,0
+SP2,22/06/2020,Sporting Gijón,Real Oviedo,0,1
+SP2,23/06/2020,Elche CF,RC Deportivo La Coruña,0,1
+SP2,23/06/2020,CD Lugo,Málaga CF,0,0
+SP2,23/06/2020,Extremadura UD,Real Zaragoza,1,2
+SP2,24/06/2020,Girona FC,CD Numancia,2,0
+SP2,24/06/2020,SD Huesca,Cádiz CF,1,1
+SP2,24/06/2020,CD Tenerife,CD Mirandés,4,1
+SP2,24/06/2020,Albacete,UD Las Palmas,0,0
+SP2,24/06/2020,SD Ponferradina,Real Racing Club de Santander,1,1
+SP2,25/06/2020,UD Almería,AD Alcorcón,0,1
+SP2,25/06/2020,Rayo Vallecano de Madrid,Sporting Gijón,1,1
+SP2,25/06/2020,Real Oviedo,CF Fuenlabrada,0,0
+SP2,27/06/2020,RC Deportivo La Coruña,SD Ponferradina,2,1
+SP2,27/06/2020,Cádiz CF,CD Tenerife,0,2
+SP2,27/06/2020,UD Las Palmas,Elche CF,1,1
+SP2,27/06/2020,Real Racing Club de Santander,Albacete,1,2
+SP2,28/06/2020,CD Mirandés,UD Almería,2,2
+SP2,28/06/2020,Sporting Gijón,CD Lugo,2,0
+SP2,28/06/2020,Málaga CF,Girona FC,2,0
+SP2,28/06/2020,CD Numancia,Real Oviedo,1,0
+SP2,28/06/2020,CF Fuenlabrada,Extremadura UD,1,1
+SP2,29/06/2020,AD Alcorcón,Rayo Vallecano de Madrid,3,2
+SP2,29/06/2020,Real Zaragoza,SD Huesca,0,1
+SP2,30/06/2020,CD Tenerife,RC Deportivo La Coruña,1,1
+SP2,30/06/2020,Elche CF,Cádiz CF,0,0
+SP2,01/07/2020,UD Almería,Sporting Gijón,1,0
+SP2,01/07/2020,CD Lugo,CD Numancia,3,1
+SP2,01/07/2020,Real Oviedo,CD Mirandés,1,0
+SP2,01/07/2020,Extremadura UD,Real Racing Club de Santander,3,1
+SP2,01/07/2020,SD Ponferradina,CF Fuenlabrada,0,3
+SP2,02/07/2020,SD Huesca,UD Las Palmas,1,0
+SP2,02/07/2020,Albacete,AD Alcorcón,1,1
+SP2,02/07/2020,Rayo Vallecano de Madrid,Málaga CF,0,0
+SP2,03/07/2020,Girona FC,Real Zaragoza,1,0
+SP2,04/07/2020,CD Numancia,Extremadura UD,1,0
+SP2,04/07/2020,Real Racing Club de Santander,Elche CF,1,2
+SP2,04/07/2020,UD Almería,CD Tenerife,1,2
+SP2,04/07/2020,Cádiz CF,Real Oviedo,2,0
+SP2,04/07/2020,CF Fuenlabrada,CD Mirandés,2,2
+SP2,05/07/2020,RC Deportivo La Coruña,SD Huesca,2,1
+SP2,05/07/2020,UD Las Palmas,SD Ponferradina,3,0
+SP2,05/07/2020,Málaga CF,Albacete,0,0
+SP2,05/07/2020,AD Alcorcón,CD Lugo,2,2
+SP2,06/07/2020,Sporting Gijón,Girona FC,0,0
+SP2,06/07/2020,Real Zaragoza,Rayo Vallecano de Madrid,2,4
+SP2,07/07/2020,CD Mirandés,Elche CF,1,0
+SP2,07/07/2020,CF Fuenlabrada,Real Racing Club de Santander,1,0
+SP2,07/07/2020,Extremadura UD,Cádiz CF,0,1
+SP2,08/07/2020,Málaga CF,RC Deportivo La Coruña,1,0
+SP2,08/07/2020,Real Oviedo,UD Las Palmas,2,1
+SP2,08/07/2020,SD Huesca,AD Alcorcón,2,1
+SP2,08/07/2020,SD Ponferradina,CD Lugo,0,1
+SP2,09/07/2020,Albacete,Sporting Gijón,1,1
+SP2,09/07/2020,Rayo Vallecano de Madrid,CD Numancia,3,2
+SP2,09/07/2020,Girona FC,UD Almería,1,0
+SP2,09/07/2020,CD Tenerife,Real Zaragoza,1,1
+SP2,11/07/2020,Real Racing Club de Santander,SD Huesca,1,0
+SP2,11/07/2020,UD Las Palmas,CD Mirandés,1,0
+SP2,11/07/2020,Cádiz CF,CF Fuenlabrada,0,1
+SP2,12/07/2020,RC Deportivo La Coruña,Extremadura UD,2,3
+SP2,12/07/2020,CD Lugo,Girona FC,2,2
+SP2,12/07/2020,CD Numancia,SD Ponferradina,1,0
+SP2,12/07/2020,Real Zaragoza,Real Oviedo,2,4
+SP2,13/07/2020,UD Almería,Rayo Vallecano de Madrid,3,2
+SP2,13/07/2020,Sporting Gijón,Málaga CF,2,1
+SP2,13/07/2020,AD Alcorcón,CD Tenerife,0,0
+SP2,13/07/2020,Elche CF,Albacete,2,0
+SP2,17/07/2020,Albacete,Real Zaragoza,4,1
+SP2,17/07/2020,Extremadura UD,Sporting Gijón,2,0
+SP2,17/07/2020,CF Fuenlabrada,Elche CF,3,1
+SP2,17/07/2020,Girona FC,Cádiz CF,2,1
+SP2,17/07/2020,SD Huesca,CD Numancia,3,0
+SP2,17/07/2020,CD Mirandés,RC Deportivo La Coruña,1,0
+SP2,17/07/2020,Málaga CF,AD Alcorcón,2,0
+SP2,17/07/2020,SD Ponferradina,UD Almería,2,1
+SP2,17/07/2020,Real Oviedo,Real Racing Club de Santander,1,0
+SP2,17/07/2020,Rayo Vallecano de Madrid,UD Las Palmas,2,2
+SP2,17/07/2020,CD Tenerife,CD Lugo,1,2
+SP2,20/07/2020,UD Las Palmas,Extremadura UD,5,1
+SP2,20/07/2020,AD Alcorcón,Girona FC,2,0
+SP2,20/07/2020,UD Almería,Málaga CF,0,0
+SP2,20/07/2020,Cádiz CF,Albacete,0,1
+SP2,20/07/2020,Elche CF,Real Oviedo,2,1
+SP2,20/07/2020,CD Lugo,CD Mirandés,2,1
+SP2,20/07/2020,CD Numancia,CD Tenerife,2,1
+SP2,20/07/2020,Real Racing Club de Santander,Rayo Vallecano de Madrid,1,2
+SP2,20/07/2020,Sporting Gijón,SD Huesca,0,1
+SP2,20/07/2020,Real Zaragoza,SD Ponferradina,2,1
+SP2,07/08/2020,RC Deportivo La Coruña,CF Fuenlabrada,2,1

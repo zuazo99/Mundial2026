@@ -1,0 +1,381 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP1,11/08/2023,UD Almería,Rayo Vallecano de Madrid,0,2
+SP1,11/08/2023,Sevilla FC,Valencia CF,1,2
+SP1,12/08/2023,Real Sociedad de Fútbol,Girona FC,1,1
+SP1,12/08/2023,UD Las Palmas,RCD Mallorca,1,1
+SP1,12/08/2023,Athletic Club,Real Madrid CF,0,2
+SP1,13/08/2023,RC Celta de Vigo,CA Osasuna,0,2
+SP1,13/08/2023,Villarreal CF,Real Betis Balompié,1,2
+SP1,13/08/2023,Getafe CF,FC Barcelona,0,0
+SP1,14/08/2023,Cádiz CF,Deportivo Alavés,1,0
+SP1,14/08/2023,Club Atlético de Madrid,Granada CF,3,1
+SP1,18/08/2023,RCD Mallorca,Villarreal CF,0,1
+SP1,18/08/2023,Valencia CF,UD Las Palmas,1,0
+SP1,19/08/2023,Real Sociedad de Fútbol,RC Celta de Vigo,1,1
+SP1,19/08/2023,UD Almería,Real Madrid CF,1,3
+SP1,19/08/2023,CA Osasuna,Athletic Club,0,2
+SP1,20/08/2023,Girona FC,Getafe CF,3,0
+SP1,20/08/2023,FC Barcelona,Cádiz CF,2,0
+SP1,20/08/2023,Real Betis Balompié,Club Atlético de Madrid,0,0
+SP1,21/08/2023,Deportivo Alavés,Sevilla FC,4,3
+SP1,21/08/2023,Granada CF,Rayo Vallecano de Madrid,0,2
+SP1,25/08/2023,UD Las Palmas,Real Sociedad de Fútbol,0,0
+SP1,25/08/2023,RC Celta de Vigo,Real Madrid CF,0,1
+SP1,26/08/2023,Cádiz CF,UD Almería,1,1
+SP1,26/08/2023,Granada CF,RCD Mallorca,3,2
+SP1,26/08/2023,Sevilla FC,Girona FC,1,2
+SP1,27/08/2023,Villarreal CF,FC Barcelona,3,4
+SP1,27/08/2023,Valencia CF,CA Osasuna,1,2
+SP1,27/08/2023,Athletic Club,Real Betis Balompié,4,2
+SP1,28/08/2023,Getafe CF,Deportivo Alavés,1,0
+SP1,28/08/2023,Rayo Vallecano de Madrid,Club Atlético de Madrid,0,7
+SP1,01/09/2023,Cádiz CF,Villarreal CF,3,1
+SP1,01/09/2023,UD Almería,RC Celta de Vigo,2,3
+SP1,02/09/2023,Real Sociedad de Fútbol,Granada CF,5,3
+SP1,02/09/2023,Real Madrid CF,Getafe CF,2,1
+SP1,02/09/2023,Deportivo Alavés,Valencia CF,1,0
+SP1,02/09/2023,Real Betis Balompié,Rayo Vallecano de Madrid,1,0
+SP1,03/09/2023,Girona FC,UD Las Palmas,1,0
+SP1,03/09/2023,RCD Mallorca,Athletic Club,0,0
+SP1,03/09/2023,CA Osasuna,FC Barcelona,1,2
+SP1,15/09/2023,Rayo Vallecano de Madrid,Deportivo Alavés,2,0
+SP1,16/09/2023,Athletic Club,Cádiz CF,3,0
+SP1,16/09/2023,Valencia CF,Club Atlético de Madrid,3,0
+SP1,16/09/2023,RC Celta de Vigo,RCD Mallorca,0,1
+SP1,16/09/2023,FC Barcelona,Real Betis Balompié,5,0
+SP1,17/09/2023,Getafe CF,CA Osasuna,3,2
+SP1,17/09/2023,Villarreal CF,UD Almería,2,1
+SP1,17/09/2023,Sevilla FC,UD Las Palmas,1,0
+SP1,17/09/2023,Real Madrid CF,Real Sociedad de Fútbol,2,1
+SP1,18/09/2023,Granada CF,Girona FC,2,4
+SP1,22/09/2023,Deportivo Alavés,Athletic Club,0,2
+SP1,23/09/2023,Girona FC,RCD Mallorca,5,3
+SP1,23/09/2023,CA Osasuna,Sevilla FC,0,0
+SP1,23/09/2023,FC Barcelona,RC Celta de Vigo,3,2
+SP1,23/09/2023,UD Almería,Valencia CF,2,2
+SP1,24/09/2023,Real Sociedad de Fútbol,Getafe CF,4,3
+SP1,24/09/2023,Rayo Vallecano de Madrid,Villarreal CF,1,1
+SP1,24/09/2023,UD Las Palmas,Granada CF,1,0
+SP1,24/09/2023,Real Betis Balompié,Cádiz CF,1,1
+SP1,24/09/2023,Club Atlético de Madrid,Real Madrid CF,3,1
+SP1,26/09/2023,Sevilla FC,UD Almería,5,1
+SP1,26/09/2023,RCD Mallorca,FC Barcelona,2,2
+SP1,27/09/2023,Athletic Club,Getafe CF,2,2
+SP1,27/09/2023,Villarreal CF,Girona FC,1,2
+SP1,27/09/2023,Real Madrid CF,UD Las Palmas,2,0
+SP1,27/09/2023,Cádiz CF,Rayo Vallecano de Madrid,0,0
+SP1,27/09/2023,Valencia CF,Real Sociedad de Fútbol,0,1
+SP1,28/09/2023,RC Celta de Vigo,Deportivo Alavés,1,1
+SP1,28/09/2023,Granada CF,Real Betis Balompié,1,1
+SP1,28/09/2023,CA Osasuna,Club Atlético de Madrid,0,2
+SP1,29/09/2023,FC Barcelona,Sevilla FC,1,0
+SP1,30/09/2023,Getafe CF,Villarreal CF,0,0
+SP1,30/09/2023,Rayo Vallecano de Madrid,RCD Mallorca,2,2
+SP1,30/09/2023,Girona FC,Real Madrid CF,0,3
+SP1,30/09/2023,Real Sociedad de Fútbol,Athletic Club,3,0
+SP1,01/10/2023,UD Almería,Granada CF,3,3
+SP1,01/10/2023,Deportivo Alavés,CA Osasuna,0,2
+SP1,01/10/2023,Club Atlético de Madrid,Cádiz CF,3,2
+SP1,01/10/2023,Real Betis Balompié,Valencia CF,3,0
+SP1,02/10/2023,UD Las Palmas,RC Celta de Vigo,2,1
+SP1,06/10/2023,Athletic Club,UD Almería,3,0
+SP1,07/10/2023,Cádiz CF,Girona FC,0,1
+SP1,07/10/2023,Real Madrid CF,CA Osasuna,4,0
+SP1,07/10/2023,RCD Mallorca,Valencia CF,1,1
+SP1,07/10/2023,Sevilla FC,Rayo Vallecano de Madrid,2,2
+SP1,08/10/2023,Villarreal CF,UD Las Palmas,1,2
+SP1,08/10/2023,Club Atlético de Madrid,Real Sociedad de Fútbol,2,1
+SP1,08/10/2023,RC Celta de Vigo,Getafe CF,2,2
+SP1,08/10/2023,Deportivo Alavés,Real Betis Balompié,1,1
+SP1,08/10/2023,Granada CF,FC Barcelona,2,2
+SP1,20/10/2023,CA Osasuna,Granada CF,2,0
+SP1,21/10/2023,Real Sociedad de Fútbol,RCD Mallorca,1,0
+SP1,21/10/2023,Getafe CF,Real Betis Balompié,1,1
+SP1,21/10/2023,Sevilla FC,Real Madrid CF,1,1
+SP1,21/10/2023,RC Celta de Vigo,Club Atlético de Madrid,0,3
+SP1,22/10/2023,UD Las Palmas,Rayo Vallecano de Madrid,0,1
+SP1,22/10/2023,Girona FC,UD Almería,5,2
+SP1,22/10/2023,Villarreal CF,Deportivo Alavés,1,1
+SP1,22/10/2023,FC Barcelona,Athletic Club,1,0
+SP1,23/10/2023,Valencia CF,Cádiz CF,2,0
+SP1,27/10/2023,Girona FC,RC Celta de Vigo,1,0
+SP1,28/10/2023,UD Almería,UD Las Palmas,1,2
+SP1,28/10/2023,FC Barcelona,Real Madrid CF,1,2
+SP1,28/10/2023,RCD Mallorca,Getafe CF,0,0
+SP1,28/10/2023,Cádiz CF,Sevilla FC,2,2
+SP1,29/10/2023,Real Betis Balompié,CA Osasuna,2,1
+SP1,29/10/2023,Rayo Vallecano de Madrid,Real Sociedad de Fútbol,2,2
+SP1,29/10/2023,Athletic Club,Valencia CF,2,2
+SP1,29/10/2023,Club Atlético de Madrid,Deportivo Alavés,2,1
+SP1,30/10/2023,Granada CF,Villarreal CF,2,3
+SP1,03/11/2023,UD Las Palmas,Club Atlético de Madrid,2,1
+SP1,04/11/2023,CA Osasuna,Girona FC,2,4
+SP1,04/11/2023,Real Betis Balompié,RCD Mallorca,2,0
+SP1,04/11/2023,RC Celta de Vigo,Sevilla FC,1,1
+SP1,04/11/2023,Real Sociedad de Fútbol,FC Barcelona,0,1
+SP1,05/11/2023,Deportivo Alavés,UD Almería,1,0
+SP1,05/11/2023,Valencia CF,Granada CF,1,0
+SP1,05/11/2023,Villarreal CF,Athletic Club,2,3
+SP1,05/11/2023,Real Madrid CF,Rayo Vallecano de Madrid,0,0
+SP1,06/11/2023,Getafe CF,Cádiz CF,1,0
+SP1,10/11/2023,Athletic Club,RC Celta de Vigo,4,3
+SP1,11/11/2023,Rayo Vallecano de Madrid,Girona FC,1,2
+SP1,11/11/2023,UD Almería,Real Sociedad de Fútbol,1,3
+SP1,11/11/2023,CA Osasuna,UD Las Palmas,1,1
+SP1,11/11/2023,Granada CF,Getafe CF,1,1
+SP1,11/11/2023,Real Madrid CF,Valencia CF,5,1
+SP1,12/11/2023,FC Barcelona,Deportivo Alavés,2,1
+SP1,12/11/2023,Sevilla FC,Real Betis Balompié,1,1
+SP1,12/11/2023,Club Atlético de Madrid,Villarreal CF,3,1
+SP1,24/11/2023,Deportivo Alavés,Granada CF,3,1
+SP1,25/11/2023,Rayo Vallecano de Madrid,FC Barcelona,1,1
+SP1,25/11/2023,Valencia CF,RC Celta de Vigo,0,0
+SP1,25/11/2023,Getafe CF,UD Almería,2,1
+SP1,25/11/2023,Club Atlético de Madrid,RCD Mallorca,1,0
+SP1,26/11/2023,Villarreal CF,CA Osasuna,3,1
+SP1,26/11/2023,Real Sociedad de Fútbol,Sevilla FC,2,1
+SP1,26/11/2023,Cádiz CF,Real Madrid CF,0,3
+SP1,26/11/2023,Real Betis Balompié,UD Las Palmas,1,0
+SP1,27/11/2023,Girona FC,Athletic Club,1,1
+SP1,29/11/2023,RCD Mallorca,Cádiz CF,1,1
+SP1,01/12/2023,UD Las Palmas,Getafe CF,2,0
+SP1,02/12/2023,Girona FC,Valencia CF,2,1
+SP1,02/12/2023,Athletic Club,Rayo Vallecano de Madrid,4,0
+SP1,02/12/2023,Real Madrid CF,Granada CF,2,0
+SP1,02/12/2023,CA Osasuna,Real Sociedad de Fútbol,1,1
+SP1,03/12/2023,RCD Mallorca,Deportivo Alavés,0,0
+SP1,03/12/2023,UD Almería,Real Betis Balompié,0,0
+SP1,03/12/2023,Sevilla FC,Villarreal CF,1,1
+SP1,03/12/2023,FC Barcelona,Club Atlético de Madrid,1,0
+SP1,04/12/2023,RC Celta de Vigo,Cádiz CF,1,1
+SP1,08/12/2023,Getafe CF,Valencia CF,1,0
+SP1,09/12/2023,Deportivo Alavés,UD Las Palmas,0,1
+SP1,09/12/2023,Real Betis Balompié,Real Madrid CF,1,1
+SP1,09/12/2023,Villarreal CF,Real Sociedad de Fútbol,0,3
+SP1,09/12/2023,RCD Mallorca,Sevilla FC,1,0
+SP1,10/12/2023,Club Atlético de Madrid,UD Almería,2,1
+SP1,10/12/2023,Cádiz CF,CA Osasuna,1,1
+SP1,10/12/2023,FC Barcelona,Girona FC,2,4
+SP1,11/12/2023,Granada CF,Athletic Club,1,1
+SP1,11/12/2023,Rayo Vallecano de Madrid,RC Celta de Vigo,0,0
+SP1,15/12/2023,CA Osasuna,Rayo Vallecano de Madrid,1,0
+SP1,16/12/2023,RC Celta de Vigo,Granada CF,1,0
+SP1,16/12/2023,Athletic Club,Club Atlético de Madrid,2,0
+SP1,16/12/2023,Sevilla FC,Getafe CF,0,3
+SP1,16/12/2023,Valencia CF,FC Barcelona,1,1
+SP1,17/12/2023,UD Almería,RCD Mallorca,0,0
+SP1,17/12/2023,Real Sociedad de Fútbol,Real Betis Balompié,0,0
+SP1,17/12/2023,UD Las Palmas,Cádiz CF,1,1
+SP1,17/12/2023,Real Madrid CF,Villarreal CF,4,1
+SP1,18/12/2023,Girona FC,Deportivo Alavés,3,0
+SP1,19/12/2023,Rayo Vallecano de Madrid,Valencia CF,0,1
+SP1,19/12/2023,Club Atlético de Madrid,Getafe CF,3,3
+SP1,19/12/2023,Granada CF,Sevilla FC,0,3
+SP1,20/12/2023,FC Barcelona,UD Almería,3,2
+SP1,20/12/2023,Athletic Club,UD Las Palmas,1,0
+SP1,20/12/2023,Villarreal CF,RC Celta de Vigo,3,2
+SP1,21/12/2023,Real Betis Balompié,Girona FC,1,1
+SP1,21/12/2023,Cádiz CF,Real Sociedad de Fútbol,0,0
+SP1,21/12/2023,Deportivo Alavés,Real Madrid CF,0,1
+SP1,21/12/2023,RCD Mallorca,CA Osasuna,3,2
+SP1,23/12/2023,Club Atlético de Madrid,Sevilla FC,1,0
+SP1,02/01/2024,Getafe CF,Rayo Vallecano de Madrid,0,2
+SP1,02/01/2024,Real Sociedad de Fútbol,Deportivo Alavés,1,1
+SP1,02/01/2024,Valencia CF,Villarreal CF,3,1
+SP1,03/01/2024,Granada CF,Cádiz CF,2,0
+SP1,03/01/2024,RC Celta de Vigo,Real Betis Balompié,2,1
+SP1,03/01/2024,Real Madrid CF,RCD Mallorca,1,0
+SP1,03/01/2024,Girona FC,Club Atlético de Madrid,4,3
+SP1,04/01/2024,CA Osasuna,UD Almería,1,0
+SP1,04/01/2024,Sevilla FC,Athletic Club,0,2
+SP1,04/01/2024,UD Las Palmas,FC Barcelona,1,2
+SP1,12/01/2024,Sevilla FC,Deportivo Alavés,2,3
+SP1,13/01/2024,UD Las Palmas,Villarreal CF,3,0
+SP1,13/01/2024,RCD Mallorca,RC Celta de Vigo,1,1
+SP1,13/01/2024,Athletic Club,Real Sociedad de Fútbol,2,1
+SP1,13/01/2024,Real Betis Balompié,Granada CF,1,0
+SP1,14/01/2024,UD Almería,Girona FC,0,0
+SP1,14/01/2024,Cádiz CF,Valencia CF,1,4
+SP1,19/01/2024,Deportivo Alavés,Cádiz CF,1,0
+SP1,20/01/2024,Rayo Vallecano de Madrid,UD Las Palmas,0,2
+SP1,20/01/2024,Villarreal CF,RCD Mallorca,1,1
+SP1,20/01/2024,Valencia CF,Athletic Club,1,0
+SP1,20/01/2024,RC Celta de Vigo,Real Sociedad de Fútbol,0,1
+SP1,21/01/2024,CA Osasuna,Getafe CF,3,2
+SP1,21/01/2024,Real Madrid CF,UD Almería,3,2
+SP1,21/01/2024,Real Betis Balompié,FC Barcelona,2,4
+SP1,21/01/2024,Girona FC,Sevilla FC,5,1
+SP1,22/01/2024,Granada CF,Club Atlético de Madrid,0,1
+SP1,26/01/2024,UD Almería,Deportivo Alavés,0,3
+SP1,27/01/2024,Real Sociedad de Fútbol,Rayo Vallecano de Madrid,0,0
+SP1,27/01/2024,UD Las Palmas,Real Madrid CF,1,2
+SP1,27/01/2024,FC Barcelona,Villarreal CF,3,5
+SP1,27/01/2024,RCD Mallorca,Real Betis Balompié,0,1
+SP1,28/01/2024,RC Celta de Vigo,Girona FC,0,1
+SP1,28/01/2024,Cádiz CF,Athletic Club,0,0
+SP1,28/01/2024,Sevilla FC,CA Osasuna,1,1
+SP1,28/01/2024,Club Atlético de Madrid,Valencia CF,2,0
+SP1,29/01/2024,Getafe CF,Granada CF,2,0
+SP1,31/01/2024,FC Barcelona,CA Osasuna,1,0
+SP1,31/01/2024,Club Atlético de Madrid,Rayo Vallecano de Madrid,2,1
+SP1,01/02/2024,Getafe CF,Real Madrid CF,0,2
+SP1,02/02/2024,Athletic Club,RCD Mallorca,4,0
+SP1,03/02/2024,Valencia CF,UD Almería,2,1
+SP1,03/02/2024,Granada CF,UD Las Palmas,1,1
+SP1,03/02/2024,Deportivo Alavés,FC Barcelona,1,3
+SP1,03/02/2024,Girona FC,Real Sociedad de Fútbol,0,0
+SP1,04/02/2024,Villarreal CF,Cádiz CF,0,0
+SP1,04/02/2024,CA Osasuna,RC Celta de Vigo,0,3
+SP1,04/02/2024,Real Betis Balompié,Getafe CF,1,1
+SP1,04/02/2024,Real Madrid CF,Club Atlético de Madrid,1,1
+SP1,05/02/2024,Rayo Vallecano de Madrid,Sevilla FC,1,2
+SP1,09/02/2024,Cádiz CF,Real Betis Balompié,0,2
+SP1,10/02/2024,Deportivo Alavés,Villarreal CF,1,1
+SP1,10/02/2024,Real Sociedad de Fútbol,CA Osasuna,0,1
+SP1,10/02/2024,Real Madrid CF,Girona FC,4,0
+SP1,10/02/2024,UD Las Palmas,Valencia CF,2,0
+SP1,11/02/2024,Getafe CF,RC Celta de Vigo,3,2
+SP1,11/02/2024,RCD Mallorca,Rayo Vallecano de Madrid,2,1
+SP1,11/02/2024,Sevilla FC,Club Atlético de Madrid,1,0
+SP1,11/02/2024,FC Barcelona,Granada CF,3,3
+SP1,12/02/2024,UD Almería,Athletic Club,0,0
+SP1,16/02/2024,Villarreal CF,Getafe CF,1,1
+SP1,17/02/2024,Club Atlético de Madrid,UD Las Palmas,5,0
+SP1,17/02/2024,CA Osasuna,Cádiz CF,2,0
+SP1,17/02/2024,RC Celta de Vigo,FC Barcelona,1,2
+SP1,17/02/2024,Valencia CF,Sevilla FC,0,0
+SP1,18/02/2024,Rayo Vallecano de Madrid,Real Madrid CF,1,1
+SP1,18/02/2024,Granada CF,UD Almería,1,1
+SP1,18/02/2024,RCD Mallorca,Real Sociedad de Fútbol,1,2
+SP1,18/02/2024,Real Betis Balompié,Deportivo Alavés,0,0
+SP1,19/02/2024,Athletic Club,Girona FC,3,2
+SP1,23/02/2024,Real Sociedad de Fútbol,Villarreal CF,1,3
+SP1,24/02/2024,FC Barcelona,Getafe CF,4,0
+SP1,24/02/2024,Deportivo Alavés,RCD Mallorca,1,1
+SP1,24/02/2024,UD Almería,Club Atlético de Madrid,2,2
+SP1,25/02/2024,Cádiz CF,RC Celta de Vigo,2,2
+SP1,25/02/2024,Real Betis Balompié,Athletic Club,3,1
+SP1,25/02/2024,UD Las Palmas,CA Osasuna,1,1
+SP1,25/02/2024,Real Madrid CF,Sevilla FC,1,0
+SP1,26/02/2024,Girona FC,Rayo Vallecano de Madrid,3,0
+SP1,01/03/2024,RC Celta de Vigo,UD Almería,1,0
+SP1,02/03/2024,Sevilla FC,Real Sociedad de Fútbol,3,2
+SP1,02/03/2024,Rayo Vallecano de Madrid,Cádiz CF,1,1
+SP1,02/03/2024,Getafe CF,UD Las Palmas,3,3
+SP1,02/03/2024,Valencia CF,Real Madrid CF,2,2
+SP1,03/03/2024,Villarreal CF,Granada CF,5,1
+SP1,03/03/2024,Club Atlético de Madrid,Real Betis Balompié,2,1
+SP1,03/03/2024,RCD Mallorca,Girona FC,1,0
+SP1,03/03/2024,Athletic Club,FC Barcelona,0,0
+SP1,04/03/2024,CA Osasuna,Deportivo Alavés,1,0
+SP1,08/03/2024,FC Barcelona,RCD Mallorca,1,0
+SP1,09/03/2024,Valencia CF,Getafe CF,1,0
+SP1,09/03/2024,Cádiz CF,Club Atlético de Madrid,2,0
+SP1,09/03/2024,Granada CF,Real Sociedad de Fútbol,2,3
+SP1,09/03/2024,Girona FC,CA Osasuna,2,0
+SP1,10/03/2024,Deportivo Alavés,Rayo Vallecano de Madrid,1,0
+SP1,10/03/2024,UD Las Palmas,Athletic Club,0,2
+SP1,10/03/2024,Real Madrid CF,RC Celta de Vigo,4,0
+SP1,10/03/2024,Real Betis Balompié,Villarreal CF,2,3
+SP1,11/03/2024,UD Almería,Sevilla FC,2,2
+SP1,15/03/2024,Real Sociedad de Fútbol,Cádiz CF,2,0
+SP1,16/03/2024,RCD Mallorca,Granada CF,1,0
+SP1,16/03/2024,CA Osasuna,Real Madrid CF,2,4
+SP1,16/03/2024,Getafe CF,Girona FC,1,0
+SP1,16/03/2024,Athletic Club,Deportivo Alavés,2,0
+SP1,17/03/2024,Sevilla FC,RC Celta de Vigo,1,2
+SP1,17/03/2024,Villarreal CF,Valencia CF,1,0
+SP1,17/03/2024,UD Las Palmas,UD Almería,0,1
+SP1,17/03/2024,Rayo Vallecano de Madrid,Real Betis Balompié,2,0
+SP1,17/03/2024,Club Atlético de Madrid,FC Barcelona,0,3
+SP1,29/03/2024,Cádiz CF,Granada CF,1,0
+SP1,30/03/2024,Getafe CF,Sevilla FC,0,1
+SP1,30/03/2024,UD Almería,CA Osasuna,0,3
+SP1,30/03/2024,Valencia CF,RCD Mallorca,0,0
+SP1,30/03/2024,FC Barcelona,UD Las Palmas,1,0
+SP1,31/03/2024,RC Celta de Vigo,Rayo Vallecano de Madrid,0,0
+SP1,31/03/2024,Girona FC,Real Betis Balompié,3,2
+SP1,31/03/2024,Deportivo Alavés,Real Sociedad de Fútbol,0,1
+SP1,31/03/2024,Real Madrid CF,Athletic Club,2,0
+SP1,01/04/2024,Villarreal CF,Club Atlético de Madrid,1,2
+SP1,04/04/2024,Granada CF,Valencia CF,0,1
+SP1,12/04/2024,Real Betis Balompié,RC Celta de Vigo,2,1
+SP1,13/04/2024,Club Atlético de Madrid,Girona FC,3,1
+SP1,13/04/2024,Rayo Vallecano de Madrid,Getafe CF,0,0
+SP1,13/04/2024,RCD Mallorca,Real Madrid CF,0,1
+SP1,13/04/2024,Cádiz CF,FC Barcelona,0,1
+SP1,14/04/2024,UD Las Palmas,Sevilla FC,0,2
+SP1,14/04/2024,Granada CF,Deportivo Alavés,2,0
+SP1,14/04/2024,Athletic Club,Villarreal CF,1,1
+SP1,14/04/2024,Real Sociedad de Fútbol,UD Almería,2,2
+SP1,15/04/2024,CA Osasuna,Valencia CF,0,1
+SP1,19/04/2024,Athletic Club,Granada CF,1,1
+SP1,20/04/2024,RC Celta de Vigo,UD Las Palmas,4,1
+SP1,20/04/2024,Rayo Vallecano de Madrid,CA Osasuna,2,1
+SP1,20/04/2024,Valencia CF,Real Betis Balompié,1,2
+SP1,20/04/2024,Girona FC,Cádiz CF,4,1
+SP1,21/04/2024,Getafe CF,Real Sociedad de Fútbol,1,1
+SP1,21/04/2024,UD Almería,Villarreal CF,1,2
+SP1,21/04/2024,Deportivo Alavés,Club Atlético de Madrid,2,0
+SP1,21/04/2024,Real Madrid CF,FC Barcelona,3,2
+SP1,22/04/2024,Sevilla FC,RCD Mallorca,2,1
+SP1,26/04/2024,Real Sociedad de Fútbol,Real Madrid CF,0,1
+SP1,27/04/2024,UD Las Palmas,Girona FC,0,2
+SP1,27/04/2024,UD Almería,Getafe CF,1,3
+SP1,27/04/2024,Deportivo Alavés,RC Celta de Vigo,3,0
+SP1,27/04/2024,Club Atlético de Madrid,Athletic Club,3,1
+SP1,28/04/2024,Cádiz CF,RCD Mallorca,1,1
+SP1,28/04/2024,Granada CF,CA Osasuna,3,0
+SP1,28/04/2024,Villarreal CF,Rayo Vallecano de Madrid,3,0
+SP1,28/04/2024,Real Betis Balompié,Sevilla FC,1,1
+SP1,29/04/2024,FC Barcelona,Valencia CF,4,2
+SP1,03/05/2024,Getafe CF,Athletic Club,0,2
+SP1,04/05/2024,Real Sociedad de Fútbol,UD Las Palmas,2,0
+SP1,04/05/2024,Real Madrid CF,Cádiz CF,3,0
+SP1,04/05/2024,Girona FC,FC Barcelona,4,2
+SP1,04/05/2024,RCD Mallorca,Club Atlético de Madrid,0,1
+SP1,05/05/2024,CA Osasuna,Real Betis Balompié,0,2
+SP1,05/05/2024,RC Celta de Vigo,Villarreal CF,3,2
+SP1,05/05/2024,Valencia CF,Deportivo Alavés,0,1
+SP1,05/05/2024,Sevilla FC,Granada CF,3,0
+SP1,05/05/2024,Rayo Vallecano de Madrid,UD Almería,0,1
+SP1,10/05/2024,Deportivo Alavés,Girona FC,2,2
+SP1,11/05/2024,RCD Mallorca,UD Las Palmas,1,0
+SP1,11/05/2024,Villarreal CF,Sevilla FC,3,2
+SP1,11/05/2024,Granada CF,Real Madrid CF,0,4
+SP1,11/05/2024,Athletic Club,CA Osasuna,2,2
+SP1,12/05/2024,Cádiz CF,Getafe CF,1,0
+SP1,12/05/2024,Club Atlético de Madrid,RC Celta de Vigo,1,0
+SP1,12/05/2024,Valencia CF,Rayo Vallecano de Madrid,0,0
+SP1,12/05/2024,Real Betis Balompié,UD Almería,3,2
+SP1,13/05/2024,FC Barcelona,Real Sociedad de Fútbol,2,0
+SP1,14/05/2024,CA Osasuna,RCD Mallorca,1,1
+SP1,14/05/2024,Real Madrid CF,Deportivo Alavés,5,0
+SP1,14/05/2024,Girona FC,Villarreal CF,0,1
+SP1,15/05/2024,Sevilla FC,Cádiz CF,0,1
+SP1,15/05/2024,Rayo Vallecano de Madrid,Granada CF,2,1
+SP1,15/05/2024,RC Celta de Vigo,Athletic Club,2,1
+SP1,15/05/2024,Getafe CF,Club Atlético de Madrid,0,3
+SP1,16/05/2024,UD Las Palmas,Real Betis Balompié,2,2
+SP1,16/05/2024,UD Almería,FC Barcelona,0,2
+SP1,16/05/2024,Real Sociedad de Fútbol,Valencia CF,1,0
+SP1,18/05/2024,Deportivo Alavés,Getafe CF,1,0
+SP1,19/05/2024,Athletic Club,Sevilla FC,2,0
+SP1,19/05/2024,Club Atlético de Madrid,CA Osasuna,1,4
+SP1,19/05/2024,Real Betis Balompié,Real Sociedad de Fútbol,0,2
+SP1,19/05/2024,FC Barcelona,Rayo Vallecano de Madrid,3,0
+SP1,19/05/2024,Cádiz CF,UD Las Palmas,0,0
+SP1,19/05/2024,Granada CF,RC Celta de Vigo,1,2
+SP1,19/05/2024,Valencia CF,Girona FC,1,3
+SP1,19/05/2024,Villarreal CF,Real Madrid CF,4,4
+SP1,19/05/2024,RCD Mallorca,UD Almería,2,2
+SP1,24/05/2024,Girona FC,Granada CF,7,0
+SP1,25/05/2024,CA Osasuna,Villarreal CF,1,1
+SP1,25/05/2024,Real Sociedad de Fútbol,Club Atlético de Madrid,0,2
+SP1,25/05/2024,Rayo Vallecano de Madrid,Athletic Club,0,1
+SP1,25/05/2024,UD Almería,Cádiz CF,6,1
+SP1,25/05/2024,Real Madrid CF,Real Betis Balompié,0,0
+SP1,26/05/2024,Getafe CF,RCD Mallorca,1,2
+SP1,26/05/2024,RC Celta de Vigo,Valencia CF,2,2
+SP1,26/05/2024,UD Las Palmas,Deportivo Alavés,1,1
+SP1,26/05/2024,Sevilla FC,FC Barcelona,1,2

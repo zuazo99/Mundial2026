@@ -27,6 +27,7 @@ from sklearn.metrics import mean_absolute_error, mean_poisson_deviance
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import FEATURES, TARGET, path  # noqa: E402
+from liga.ingest import season_key  # noqa: E402
 from xg_preds import (_CONFED_NUMERIC, _DEFAULT_PARAMS, _add_rolling_and_style,  # noqa: E402
                       _apply_pca_merge_decay, engineer_features, estimate_rho)
 
@@ -136,23 +137,30 @@ def _fit_xgb(df_train: pd.DataFrame, feat_means: pd.Series) -> xgb.XGBRegressor:
     return m
 
 
-def train_liga(long_df: pd.DataFrame, half_life_days: int = HALF_LIFE_DAYS, shrink=SHRINK_DEFAULT) -> LigaModel:
-    """Ajusta el modelo con todas las temporadas menos la primera."""
+def train_liga(long_df: pd.DataFrame, half_life_days: int = HALF_LIFE_DAYS, shrink=SHRINK_DEFAULT,
+               train_from: str = None) -> LigaModel:
+    """Ajusta el modelo con todas las temporadas menos la primera (ELO en frío).
+
+    train_from fija la primera temporada de ENTRENAMIENTO (código '1718') con independencia de cuánta historia
+    se use para ELO y ventanas: permite calentar el ELO desde 1993 sin cambiar las filas de ajuste."""
     df = _sorted(long_df)
     _check_unique_dates(df)
-    seasons = sorted(df["season"].unique())
+    seasons = sorted(df["season"].unique(), key=season_key)
     decay_ref = df["date"].max()
     feat = _add_rolling_and_style(df.copy())
-    priors = fit_priors(feat[feat["season"] != seasons[0]])          # solo filas de entrenamiento
+    train_seasons = seasons[1:] if train_from is None else [s for s in seasons if season_key(s) >= season_key(train_from)]
+    if not train_seasons:
+        raise ValueError(f"train_from={train_from!r} deja sin temporadas de entrenamiento (datos: {seasons[0]}…{seasons[-1]}).")
+    priors = fit_priors(feat[feat["season"].isin(train_seasons)])     # solo filas de entrenamiento
     feat = apply_shrink(feat, priors, shrink)
     eng, scaler, pca = _apply_pca_merge_decay(feat, fit_transformers=True,
                                               decay_ref=decay_ref, half_life_days=half_life_days)
-    train = _force_club_constants(eng[eng["season"] != seasons[0]].dropna(subset=[TARGET]).copy())
+    train = _force_club_constants(eng[eng["season"].isin(train_seasons)].dropna(subset=[TARGET]).copy())
     feat_means = train[FEATURES].mean()
     train[FEATURES] = train[FEATURES].fillna(feat_means)
     model = _fit_xgb(train, feat_means)
     return LigaModel(model, scaler, pca, feat_means, estimate_rho(model, train), decay_ref,
-                     half_life_days, train_seasons=seasons[1:], n_train_rows=len(train),
+                     half_life_days, train_seasons=train_seasons, n_train_rows=len(train),
                      priors=priors, shrink=shrink)
 
 
@@ -219,11 +227,11 @@ def holdout_validation(long_df: pd.DataFrame, test_season: str = None,
     """
     df = _sorted(long_df)
     _check_unique_dates(df)
-    seasons = sorted(df["season"].unique())
+    seasons = sorted(df["season"].unique(), key=season_key)
     if test_season is None:
         sizes = df.groupby("season").size()
         test_season = [s for s in seasons if sizes[s] >= 0.9 * sizes.max()][-1]
-    prev = [s for s in seasons if s < test_season]
+    prev = [s for s in seasons if season_key(s) < season_key(test_season)]
     if len(prev) < 2:
         raise ValueError("Se necesitan al menos 3 temporadas (1 de arranque en frío, 1 de train y 1 de test).")
 

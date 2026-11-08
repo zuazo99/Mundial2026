@@ -1,0 +1,463 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP2,17/08/2018,Cádiz CF,UD Almería,1,0
+SP2,17/08/2018,Albacete,RC Deportivo La Coruña,1,1
+SP2,18/08/2018,Elche CF,Granada CF,0,0
+SP2,18/08/2018,CD Lugo,Málaga CF,1,2
+SP2,18/08/2018,AD Alcorcón,Sporting Gijón,1,1
+SP2,18/08/2018,Córdoba CF,CD Numancia,3,3
+SP2,19/08/2018,RCD Mallorca,CA Osasuna,1,0
+SP2,19/08/2018,Real Oviedo,Extremadura UD,1,1
+SP2,19/08/2018,Real Zaragoza,Rayo Majadahonda,2,1
+SP2,19/08/2018,UD Las Palmas,CF Reus Deportiu,2,0
+SP2,20/08/2018,Gimnàstic de Tarragona,CD Tenerife,1,1
+SP2,24/08/2018,Málaga CF,AD Alcorcón,1,0
+SP2,24/08/2018,Extremadura UD,RC Deportivo La Coruña,0,1
+SP2,25/08/2018,CF Reus Deportiu,Real Zaragoza,0,0
+SP2,25/08/2018,CD Numancia,Cádiz CF,1,1
+SP2,25/08/2018,UD Las Palmas,Albacete,1,1
+SP2,25/08/2018,Córdoba CF,Real Oviedo,2,4
+SP2,26/08/2018,Sporting Gijón,Gimnàstic de Tarragona,2,0
+SP2,26/08/2018,CA Osasuna,Elche CF,1,1
+SP2,26/08/2018,Granada CF,CD Lugo,1,1
+SP2,26/08/2018,UD Almería,CD Tenerife,1,1
+SP2,27/08/2018,Rayo Majadahonda,RCD Mallorca,0,1
+SP2,31/08/2018,AD Alcorcón,RCD Mallorca,1,0
+SP2,01/09/2018,CD Lugo,CD Numancia,3,2
+SP2,01/09/2018,Elche CF,CF Reus Deportiu,0,2
+SP2,01/09/2018,Real Zaragoza,UD Las Palmas,1,1
+SP2,01/09/2018,Cádiz CF,Real Oviedo,1,1
+SP2,01/09/2018,CD Tenerife,RC Deportivo La Coruña,2,2
+SP2,02/09/2018,Gimnàstic de Tarragona,Rayo Majadahonda,0,1
+SP2,02/09/2018,Sporting Gijón,Extremadura UD,2,0
+SP2,02/09/2018,Albacete,Córdoba CF,3,0
+SP2,02/09/2018,Granada CF,CA Osasuna,2,0
+SP2,03/09/2018,UD Almería,Málaga CF,0,1
+SP2,07/09/2018,UD Las Palmas,Gimnàstic de Tarragona,4,0
+SP2,07/09/2018,RCD Mallorca,Cádiz CF,1,0
+SP2,08/09/2018,CA Osasuna,UD Almería,3,1
+SP2,08/09/2018,Málaga CF,CD Tenerife,1,0
+SP2,08/09/2018,Real Oviedo,Real Zaragoza,0,4
+SP2,09/09/2018,CF Reus Deportiu,Albacete,1,2
+SP2,09/09/2018,CD Numancia,Elche CF,1,0
+SP2,09/09/2018,Extremadura UD,Granada CF,1,3
+SP2,09/09/2018,Córdoba CF,AD Alcorcón,0,0
+SP2,09/09/2018,RC Deportivo La Coruña,Sporting Gijón,1,0
+SP2,10/09/2018,Rayo Majadahonda,CD Lugo,1,0
+SP2,15/09/2018,Gimnàstic de Tarragona,CA Osasuna,1,0
+SP2,15/09/2018,Málaga CF,Córdoba CF,3,0
+SP2,15/09/2018,CD Tenerife,CF Reus Deportiu,0,1
+SP2,15/09/2018,AD Alcorcón,RC Deportivo La Coruña,1,0
+SP2,16/09/2018,Elche CF,RCD Mallorca,1,1
+SP2,16/09/2018,CD Lugo,Real Oviedo,0,2
+SP2,16/09/2018,Extremadura UD,UD Las Palmas,1,2
+SP2,16/09/2018,UD Almería,Real Zaragoza,2,1
+SP2,16/09/2018,Granada CF,Rayo Majadahonda,3,0
+SP2,16/09/2018,Sporting Gijón,CD Numancia,1,1
+SP2,17/09/2018,Albacete,Cádiz CF,1,1
+SP2,22/09/2018,CA Osasuna,Sporting Gijón,1,0
+SP2,22/09/2018,Rayo Majadahonda,Extremadura UD,1,4
+SP2,22/09/2018,Real Zaragoza,CD Lugo,0,2
+SP2,22/09/2018,Córdoba CF,CD Tenerife,1,1
+SP2,23/09/2018,RCD Mallorca,Albacete,1,3
+SP2,23/09/2018,Real Oviedo,Elche CF,1,1
+SP2,23/09/2018,UD Las Palmas,Málaga CF,1,0
+SP2,23/09/2018,CF Reus Deportiu,Gimnàstic de Tarragona,1,1
+SP2,23/09/2018,CD Numancia,UD Almería,0,2
+SP2,23/09/2018,Cádiz CF,AD Alcorcón,0,2
+SP2,24/09/2018,RC Deportivo La Coruña,Granada CF,2,1
+SP2,28/09/2018,Albacete,Real Zaragoza,2,2
+SP2,29/09/2018,CD Lugo,RCD Mallorca,1,1
+SP2,29/09/2018,Granada CF,Córdoba CF,4,2
+SP2,29/09/2018,Sporting Gijón,UD Las Palmas,1,0
+SP2,29/09/2018,CD Tenerife,Cádiz CF,1,0
+SP2,30/09/2018,AD Alcorcón,Real Oviedo,2,0
+SP2,30/09/2018,Málaga CF,Rayo Majadahonda,1,0
+SP2,30/09/2018,UD Almería,CF Reus Deportiu,2,0
+SP2,30/09/2018,CA Osasuna,CD Numancia,0,0
+SP2,30/09/2018,Extremadura UD,Elche CF,2,2
+SP2,30/09/2018,Gimnàstic de Tarragona,RC Deportivo La Coruña,1,3
+SP2,06/10/2018,RCD Mallorca,CD Tenerife,4,1
+SP2,06/10/2018,CD Numancia,Extremadura UD,1,0
+SP2,06/10/2018,Córdoba CF,UD Almería,1,0
+SP2,06/10/2018,UD Las Palmas,AD Alcorcón,0,0
+SP2,07/10/2018,CF Reus Deportiu,Granada CF,1,2
+SP2,07/10/2018,Real Oviedo,Albacete,1,0
+SP2,07/10/2018,RC Deportivo La Coruña,Málaga CF,1,1
+SP2,07/10/2018,Elche CF,CD Lugo,2,1
+SP2,07/10/2018,Cádiz CF,Gimnàstic de Tarragona,1,1
+SP2,08/10/2018,Rayo Majadahonda,Sporting Gijón,2,1
+SP2,08/10/2018,Real Zaragoza,CA Osasuna,1,1
+SP2,12/10/2018,Málaga CF,Albacete,2,1
+SP2,12/10/2018,Extremadura UD,Cádiz CF,2,1
+SP2,12/10/2018,RC Deportivo La Coruña,Elche CF,4,0
+SP2,13/10/2018,CA Osasuna,Córdoba CF,3,1
+SP2,13/10/2018,Sporting Gijón,CF Reus Deportiu,1,1
+SP2,13/10/2018,UD Almería,UD Las Palmas,3,0
+SP2,13/10/2018,CD Numancia,Real Zaragoza,1,0
+SP2,14/10/2018,CD Tenerife,CD Lugo,0,0
+SP2,14/10/2018,Rayo Majadahonda,Real Oviedo,1,0
+SP2,14/10/2018,Granada CF,RCD Mallorca,1,0
+SP2,15/10/2018,Gimnàstic de Tarragona,AD Alcorcón,1,3
+SP2,19/10/2018,Elche CF,Málaga CF,2,0
+SP2,20/10/2018,Real Oviedo,CA Osasuna,2,1
+SP2,20/10/2018,AD Alcorcón,Granada CF,1,0
+SP2,20/10/2018,UD Las Palmas,CD Numancia,3,0
+SP2,20/10/2018,Córdoba CF,RC Deportivo La Coruña,1,1
+SP2,21/10/2018,RCD Mallorca,Extremadura UD,1,1
+SP2,21/10/2018,CD Lugo,Gimnàstic de Tarragona,1,0
+SP2,21/10/2018,Albacete,UD Almería,1,1
+SP2,21/10/2018,CF Reus Deportiu,Rayo Majadahonda,2,1
+SP2,21/10/2018,Real Zaragoza,CD Tenerife,1,1
+SP2,21/10/2018,Cádiz CF,Sporting Gijón,0,0
+SP2,26/10/2018,Sporting Gijón,Córdoba CF,0,0
+SP2,27/10/2018,RC Deportivo La Coruña,CF Reus Deportiu,2,0
+SP2,27/10/2018,Granada CF,UD Almería,1,0
+SP2,27/10/2018,RCD Mallorca,UD Las Palmas,2,2
+SP2,27/10/2018,CD Tenerife,AD Alcorcón,3,2
+SP2,27/10/2018,CD Lugo,Cádiz CF,1,2
+SP2,28/10/2018,Gimnàstic de Tarragona,Real Oviedo,2,1
+SP2,28/10/2018,Rayo Majadahonda,CA Osasuna,1,1
+SP2,28/10/2018,Extremadura UD,Albacete,1,2
+SP2,28/10/2018,Elche CF,Real Zaragoza,2,0
+SP2,29/10/2018,Málaga CF,CD Numancia,2,0
+SP2,02/11/2018,Albacete,Gimnàstic de Tarragona,2,0
+SP2,03/11/2018,CF Reus Deportiu,CD Lugo,0,0
+SP2,03/11/2018,CD Numancia,CD Tenerife,2,0
+SP2,03/11/2018,CA Osasuna,Málaga CF,2,1
+SP2,03/11/2018,Córdoba CF,Extremadura UD,4,2
+SP2,03/11/2018,UD Las Palmas,RC Deportivo La Coruña,1,1
+SP2,04/11/2018,Cádiz CF,Elche CF,5,1
+SP2,04/11/2018,Real Oviedo,RCD Mallorca,1,1
+SP2,04/11/2018,AD Alcorcón,Rayo Majadahonda,2,0
+SP2,04/11/2018,UD Almería,Sporting Gijón,2,1
+SP2,04/11/2018,Real Zaragoza,Granada CF,0,2
+SP2,10/11/2018,Cádiz CF,CF Reus Deportiu,2,0
+SP2,10/11/2018,Extremadura UD,CA Osasuna,2,3
+SP2,10/11/2018,CD Lugo,AD Alcorcón,0,1
+SP2,10/11/2018,RC Deportivo La Coruña,Real Oviedo,4,0
+SP2,10/11/2018,Elche CF,UD Las Palmas,0,0
+SP2,11/11/2018,Granada CF,CD Numancia,0,0
+SP2,11/11/2018,Rayo Majadahonda,UD Almería,2,0
+SP2,11/11/2018,RCD Mallorca,Córdoba CF,3,0
+SP2,11/11/2018,Sporting Gijón,Málaga CF,2,2
+SP2,11/11/2018,CD Tenerife,Albacete,0,0
+SP2,12/11/2018,Gimnàstic de Tarragona,Real Zaragoza,1,3
+SP2,16/11/2018,UD Las Palmas,Granada CF,2,2
+SP2,17/11/2018,Málaga CF,Gimnàstic de Tarragona,2,0
+SP2,17/11/2018,CA Osasuna,CD Tenerife,2,0
+SP2,17/11/2018,CF Reus Deportiu,Extremadura UD,1,4
+SP2,17/11/2018,Real Zaragoza,RCD Mallorca,2,2
+SP2,17/11/2018,Real Oviedo,Sporting Gijón,2,1
+SP2,18/11/2018,CD Numancia,Rayo Majadahonda,1,2
+SP2,18/11/2018,Córdoba CF,Cádiz CF,1,3
+SP2,18/11/2018,Albacete,CD Lugo,1,0
+SP2,18/11/2018,AD Alcorcón,Elche CF,1,0
+SP2,19/11/2018,UD Almería,RC Deportivo La Coruña,1,1
+SP2,23/11/2018,Granada CF,Sporting Gijón,1,2
+SP2,24/11/2018,Gimnàstic de Tarragona,UD Almería,2,2
+SP2,24/11/2018,RC Deportivo La Coruña,CA Osasuna,2,0
+SP2,24/11/2018,CD Lugo,Córdoba CF,2,1
+SP2,24/11/2018,Cádiz CF,UD Las Palmas,4,1
+SP2,25/11/2018,RCD Mallorca,CD Numancia,1,0
+SP2,25/11/2018,Extremadura UD,Málaga CF,1,0
+SP2,25/11/2018,Real Oviedo,CF Reus Deportiu,3,0
+SP2,25/11/2018,Elche CF,Albacete,0,1
+SP2,25/11/2018,CD Tenerife,Rayo Majadahonda,2,1
+SP2,25/11/2018,AD Alcorcón,Real Zaragoza,2,0
+SP2,30/11/2018,Real Zaragoza,Cádiz CF,0,1
+SP2,01/12/2018,Córdoba CF,Elche CF,1,1
+SP2,01/12/2018,Málaga CF,Granada CF,0,1
+SP2,01/12/2018,CF Reus Deportiu,RCD Mallorca,0,2
+SP2,01/12/2018,UD Almería,Extremadura UD,1,1
+SP2,01/12/2018,Sporting Gijón,CD Tenerife,2,1
+SP2,02/12/2018,Rayo Majadahonda,RC Deportivo La Coruña,0,0
+SP2,02/12/2018,CA Osasuna,CD Lugo,1,0
+SP2,02/12/2018,Albacete,AD Alcorcón,2,1
+SP2,02/12/2018,CD Numancia,Gimnàstic de Tarragona,3,0
+SP2,02/12/2018,UD Las Palmas,Real Oviedo,0,0
+SP2,07/12/2018,CD Tenerife,Extremadura UD,0,0
+SP2,08/12/2018,RC Deportivo La Coruña,CD Numancia,2,2
+SP2,08/12/2018,Gimnàstic de Tarragona,Granada CF,0,1
+SP2,08/12/2018,Albacete,CA Osasuna,2,2
+SP2,08/12/2018,RCD Mallorca,Málaga CF,1,2
+SP2,08/12/2018,Real Oviedo,UD Almería,1,2
+SP2,09/12/2018,AD Alcorcón,CF Reus Deportiu,0,1
+SP2,09/12/2018,Cádiz CF,Rayo Majadahonda,1,0
+SP2,09/12/2018,Elche CF,Sporting Gijón,0,0
+SP2,09/12/2018,CD Lugo,UD Las Palmas,4,2
+SP2,09/12/2018,Real Zaragoza,Córdoba CF,0,0
+SP2,14/12/2018,Málaga CF,Cádiz CF,1,0
+SP2,15/12/2018,Granada CF,Real Oviedo,1,0
+SP2,15/12/2018,CD Numancia,Albacete,1,2
+SP2,15/12/2018,CF Reus Deportiu,Córdoba CF,1,1
+SP2,15/12/2018,Sporting Gijón,RCD Mallorca,1,0
+SP2,16/12/2018,Rayo Majadahonda,Elche CF,1,3
+SP2,16/12/2018,CA Osasuna,AD Alcorcón,2,1
+SP2,16/12/2018,Extremadura UD,Gimnàstic de Tarragona,0,1
+SP2,16/12/2018,UD Las Palmas,CD Tenerife,1,1
+SP2,16/12/2018,UD Almería,CD Lugo,1,1
+SP2,16/12/2018,RC Deportivo La Coruña,Real Zaragoza,3,1
+SP2,21/12/2018,CD Tenerife,Granada CF,1,1
+SP2,21/12/2018,RCD Mallorca,Gimnàstic de Tarragona,2,0
+SP2,22/12/2018,CD Lugo,Sporting Gijón,0,0
+SP2,22/12/2018,Real Oviedo,Málaga CF,0,0
+SP2,22/12/2018,Real Zaragoza,Extremadura UD,2,1
+SP2,22/12/2018,Elche CF,UD Almería,2,2
+SP2,22/12/2018,Córdoba CF,UD Las Palmas,4,1
+SP2,22/12/2018,Cádiz CF,RC Deportivo La Coruña,3,0
+SP2,23/12/2018,CF Reus Deportiu,CA Osasuna,0,1
+SP2,23/12/2018,Albacete,Rayo Majadahonda,1,0
+SP2,23/12/2018,AD Alcorcón,CD Numancia,1,1
+SP2,04/01/2019,Granada CF,Albacete,1,1
+SP2,04/01/2019,CD Tenerife,Elche CF,2,1
+SP2,05/01/2019,Sporting Gijón,Real Zaragoza,1,2
+SP2,05/01/2019,Extremadura UD,AD Alcorcón,3,0
+SP2,06/01/2019,UD Almería,RCD Mallorca,2,0
+SP2,06/01/2019,RC Deportivo La Coruña,CD Lugo,0,0
+SP2,06/01/2019,CA Osasuna,Cádiz CF,2,1
+SP2,06/01/2019,Gimnàstic de Tarragona,Córdoba CF,1,0
+SP2,06/01/2019,Málaga CF,CF Reus Deportiu,0,3
+SP2,07/01/2019,CD Numancia,Real Oviedo,2,3
+SP2,07/01/2019,Rayo Majadahonda,UD Las Palmas,0,0
+SP2,11/01/2019,Cádiz CF,Granada CF,0,0
+SP2,12/01/2019,Albacete,Sporting Gijón,1,1
+SP2,12/01/2019,UD Las Palmas,CA Osasuna,4,1
+SP2,12/01/2019,CF Reus Deportiu,CD Numancia,1,1
+SP2,12/01/2019,Real Oviedo,CD Tenerife,1,0
+SP2,12/01/2019,RCD Mallorca,RC Deportivo La Coruña,1,0
+SP2,13/01/2019,Córdoba CF,Rayo Majadahonda,1,1
+SP2,13/01/2019,AD Alcorcón,UD Almería,0,0
+SP2,13/01/2019,CD Lugo,Extremadura UD,1,1
+SP2,13/01/2019,Real Zaragoza,Málaga CF,0,2
+SP2,13/01/2019,Elche CF,Gimnàstic de Tarragona,1,0
+SP2,19/01/2019,CF Reus Deportiu,UD Las Palmas,0,1
+SP2,19/01/2019,UD Almería,Cádiz CF,0,0
+SP2,19/01/2019,Rayo Majadahonda,Real Zaragoza,2,2
+SP2,19/01/2019,CD Numancia,Córdoba CF,3,2
+SP2,19/01/2019,Málaga CF,CD Lugo,2,1
+SP2,20/01/2019,CA Osasuna,RCD Mallorca,2,0
+SP2,20/01/2019,Sporting Gijón,AD Alcorcón,2,0
+SP2,20/01/2019,RC Deportivo La Coruña,Albacete,2,0
+SP2,20/01/2019,CD Tenerife,Gimnàstic de Tarragona,2,0
+SP2,20/01/2019,Extremadura UD,Real Oviedo,0,2
+SP2,21/01/2019,Granada CF,Elche CF,2,1
+SP2,25/01/2019,Real Zaragoza,Real Oviedo,2,0
+SP2,26/01/2019,UD Almería,CA Osasuna,0,1
+SP2,26/01/2019,Elche CF,CD Numancia,1,1
+SP2,26/01/2019,CD Lugo,Rayo Majadahonda,3,2
+SP2,26/01/2019,Cádiz CF,RCD Mallorca,1,1
+SP2,26/01/2019,CD Tenerife,Málaga CF,0,0
+SP2,27/01/2019,Albacete,CF Reus Deportiu,1,0
+SP2,27/01/2019,Granada CF,Extremadura UD,0,0
+SP2,27/01/2019,AD Alcorcón,Córdoba CF,2,1
+SP2,27/01/2019,Sporting Gijón,RC Deportivo La Coruña,1,2
+SP2,27/01/2019,Gimnàstic de Tarragona,UD Las Palmas,0,0
+SP2,01/02/2019,Málaga CF,UD Almería,1,1
+SP2,02/02/2019,CD Numancia,CD Lugo,3,0
+SP2,02/02/2019,Rayo Majadahonda,Gimnàstic de Tarragona,1,0
+SP2,02/02/2019,Córdoba CF,Albacete,1,3
+SP2,02/02/2019,RC Deportivo La Coruña,CD Tenerife,0,0
+SP2,03/02/2019,RCD Mallorca,AD Alcorcón,2,0
+SP2,03/02/2019,Real Oviedo,Cádiz CF,2,1
+SP2,03/02/2019,CF Reus Deportiu,Elche CF,0,1
+SP2,03/02/2019,CA Osasuna,Granada CF,1,0
+SP2,03/02/2019,Extremadura UD,Sporting Gijón,0,3
+SP2,04/02/2019,UD Las Palmas,Real Zaragoza,1,1
+SP2,08/02/2019,Sporting Gijón,CA Osasuna,0,2
+SP2,09/02/2019,Gimnàstic de Tarragona,CF Reus Deportiu,1,0
+SP2,09/02/2019,Elche CF,Real Oviedo,1,2
+SP2,09/02/2019,Extremadura UD,Rayo Majadahonda,1,1
+SP2,09/02/2019,CD Tenerife,Córdoba CF,0,2
+SP2,09/02/2019,CD Lugo,Real Zaragoza,1,2
+SP2,10/02/2019,AD Alcorcón,Cádiz CF,1,2
+SP2,10/02/2019,Albacete,RCD Mallorca,2,0
+SP2,10/02/2019,UD Almería,CD Numancia,1,0
+SP2,10/02/2019,Granada CF,RC Deportivo La Coruña,0,1
+SP2,10/02/2019,Málaga CF,UD Las Palmas,0,0
+SP2,15/02/2019,Córdoba CF,Granada CF,1,2
+SP2,16/02/2019,RC Deportivo La Coruña,Gimnàstic de Tarragona,1,1
+SP2,16/02/2019,Elche CF,Extremadura UD,2,0
+SP2,16/02/2019,Real Zaragoza,Albacete,0,0
+SP2,16/02/2019,Real Oviedo,AD Alcorcón,1,0
+SP2,16/02/2019,Cádiz CF,CD Tenerife,2,0
+SP2,17/02/2019,CF Reus Deportiu,UD Almería,0,1
+SP2,17/02/2019,RCD Mallorca,CD Lugo,3,0
+SP2,17/02/2019,CD Numancia,CA Osasuna,1,1
+SP2,17/02/2019,Rayo Majadahonda,Málaga CF,0,1
+SP2,17/02/2019,UD Las Palmas,Sporting Gijón,1,0
+SP2,22/02/2019,CD Tenerife,RCD Mallorca,2,2
+SP2,23/02/2019,Albacete,Real Oviedo,0,0
+SP2,23/02/2019,Gimnàstic de Tarragona,Cádiz CF,2,3
+SP2,23/02/2019,AD Alcorcón,UD Las Palmas,2,0
+SP2,23/02/2019,CA Osasuna,Real Zaragoza,1,0
+SP2,24/02/2019,Granada CF,CF Reus Deportiu,1,0
+SP2,24/02/2019,Sporting Gijón,Rayo Majadahonda,2,3
+SP2,24/02/2019,UD Almería,Córdoba CF,3,1
+SP2,24/02/2019,Málaga CF,RC Deportivo La Coruña,0,0
+SP2,24/02/2019,CD Lugo,Elche CF,2,2
+SP2,24/02/2019,Extremadura UD,CD Numancia,0,1
+SP2,02/03/2019,Cádiz CF,Albacete,1,0
+SP2,02/03/2019,Córdoba CF,Málaga CF,1,1
+SP2,02/03/2019,CA Osasuna,Gimnàstic de Tarragona,1,0
+SP2,03/03/2019,CF Reus Deportiu,CD Tenerife,0,1
+SP2,03/03/2019,RCD Mallorca,Elche CF,1,1
+SP2,03/03/2019,CD Numancia,Sporting Gijón,1,2
+SP2,03/03/2019,Rayo Majadahonda,Granada CF,0,3
+SP2,03/03/2019,Real Oviedo,CD Lugo,1,1
+SP2,03/03/2019,UD Las Palmas,Extremadura UD,1,1
+SP2,03/03/2019,Real Zaragoza,UD Almería,1,2
+SP2,04/03/2019,RC Deportivo La Coruña,AD Alcorcón,2,2
+SP2,09/03/2019,RCD Mallorca,Real Oviedo,1,0
+SP2,09/03/2019,Sporting Gijón,UD Almería,1,0
+SP2,09/03/2019,Gimnàstic de Tarragona,Albacete,1,0
+SP2,09/03/2019,Elche CF,Cádiz CF,1,0
+SP2,10/03/2019,CD Lugo,CF Reus Deportiu,1,0
+SP2,10/03/2019,Rayo Majadahonda,AD Alcorcón,2,0
+SP2,10/03/2019,Extremadura UD,Córdoba CF,3,0
+SP2,10/03/2019,Granada CF,Real Zaragoza,1,0
+SP2,10/03/2019,CD Tenerife,CD Numancia,1,1
+SP2,10/03/2019,RC Deportivo La Coruña,UD Las Palmas,0,1
+SP2,11/03/2019,Málaga CF,CA Osasuna,1,2
+SP2,16/03/2019,Albacete,Extremadura UD,1,0
+SP2,16/03/2019,Cádiz CF,CD Lugo,1,1
+SP2,16/03/2019,AD Alcorcón,CD Tenerife,1,1
+SP2,16/03/2019,Real Zaragoza,Elche CF,1,0
+SP2,17/03/2019,CF Reus Deportiu,RC Deportivo La Coruña,0,1
+SP2,17/03/2019,Real Oviedo,Gimnàstic de Tarragona,2,0
+SP2,17/03/2019,Córdoba CF,Sporting Gijón,1,2
+SP2,17/03/2019,UD Almería,Granada CF,0,0
+SP2,17/03/2019,CA Osasuna,Rayo Majadahonda,3,0
+SP2,17/03/2019,UD Las Palmas,RCD Mallorca,1,2
+SP2,18/03/2019,CD Numancia,Málaga CF,1,1
+SP2,22/03/2019,RC Deportivo La Coruña,UD Almería,0,0
+SP2,22/03/2019,CD Tenerife,CA Osasuna,3,2
+SP2,23/03/2019,Elche CF,AD Alcorcón,3,1
+SP2,23/03/2019,CD Lugo,Albacete,0,3
+SP2,24/03/2019,Extremadura UD,CF Reus Deportiu,1,0
+SP2,24/03/2019,Rayo Majadahonda,CD Numancia,4,0
+SP2,24/03/2019,Gimnàstic de Tarragona,Málaga CF,0,1
+SP2,24/03/2019,Cádiz CF,Córdoba CF,1,1
+SP2,24/03/2019,Granada CF,UD Las Palmas,1,1
+SP2,24/03/2019,Sporting Gijón,Real Oviedo,1,0
+SP2,25/03/2019,RCD Mallorca,Real Zaragoza,3,0
+SP2,29/03/2019,Málaga CF,Sporting Gijón,1,1
+SP2,30/03/2019,UD Almería,Rayo Majadahonda,2,2
+SP2,30/03/2019,CD Numancia,Granada CF,2,1
+SP2,30/03/2019,Albacete,CD Tenerife,2,2
+SP2,31/03/2019,CF Reus Deportiu,Cádiz CF,0,1
+SP2,31/03/2019,Córdoba CF,RCD Mallorca,3,2
+SP2,31/03/2019,CA Osasuna,Extremadura UD,1,0
+SP2,31/03/2019,AD Alcorcón,CD Lugo,0,0
+SP2,31/03/2019,Real Oviedo,RC Deportivo La Coruña,1,1
+SP2,31/03/2019,UD Las Palmas,Elche CF,0,1
+SP2,01/04/2019,Real Zaragoza,Gimnàstic de Tarragona,3,0
+SP2,05/04/2019,CD Tenerife,Sporting Gijón,0,1
+SP2,06/04/2019,RC Deportivo La Coruña,Rayo Majadahonda,0,2
+SP2,06/04/2019,Granada CF,Málaga CF,1,0
+SP2,06/04/2019,Extremadura UD,UD Almería,1,0
+SP2,06/04/2019,Real Oviedo,UD Las Palmas,1,1
+SP2,07/04/2019,RCD Mallorca,CF Reus Deportiu,1,0
+SP2,07/04/2019,AD Alcorcón,Albacete,0,1
+SP2,07/04/2019,CD Lugo,CA Osasuna,2,2
+SP2,07/04/2019,Gimnàstic de Tarragona,CD Numancia,2,0
+SP2,07/04/2019,Elche CF,Córdoba CF,1,0
+SP2,08/04/2019,Cádiz CF,Real Zaragoza,3,3
+SP2,12/04/2019,Sporting Gijón,Granada CF,1,0
+SP2,13/04/2019,Málaga CF,Extremadura UD,1,2
+SP2,13/04/2019,UD Almería,Gimnàstic de Tarragona,3,0
+SP2,13/04/2019,CA Osasuna,RC Deportivo La Coruña,2,1
+SP2,13/04/2019,Rayo Majadahonda,CD Tenerife,1,3
+SP2,14/04/2019,CF Reus Deportiu,Real Oviedo,0,1
+SP2,14/04/2019,Albacete,Elche CF,1,1
+SP2,14/04/2019,CD Numancia,RCD Mallorca,1,1
+SP2,14/04/2019,Córdoba CF,CD Lugo,0,4
+SP2,14/04/2019,UD Las Palmas,Cádiz CF,0,3
+SP2,14/04/2019,Real Zaragoza,AD Alcorcón,0,2
+SP2,19/04/2019,AD Alcorcón,Málaga CF,1,4
+SP2,20/04/2019,CD Lugo,Granada CF,1,2
+SP2,20/04/2019,Albacete,UD Las Palmas,4,2
+SP2,20/04/2019,Gimnàstic de Tarragona,Sporting Gijón,0,0
+SP2,20/04/2019,RCD Mallorca,Rayo Majadahonda,2,0
+SP2,21/04/2019,Real Zaragoza,CF Reus Deportiu,1,0
+SP2,21/04/2019,Cádiz CF,CD Numancia,2,1
+SP2,21/04/2019,RC Deportivo La Coruña,Extremadura UD,1,2
+SP2,21/04/2019,Real Oviedo,Córdoba CF,3,3
+SP2,21/04/2019,CD Tenerife,UD Almería,1,3
+SP2,22/04/2019,Elche CF,CA Osasuna,1,2
+SP2,26/04/2019,CD Numancia,RC Deportivo La Coruña,1,2
+SP2,27/04/2019,Málaga CF,RCD Mallorca,0,1
+SP2,27/04/2019,UD Almería,Real Oviedo,0,1
+SP2,27/04/2019,CA Osasuna,Albacete,2,0
+SP2,27/04/2019,Extremadura UD,CD Tenerife,1,0
+SP2,28/04/2019,CF Reus Deportiu,AD Alcorcón,0,1
+SP2,28/04/2019,Rayo Majadahonda,Cádiz CF,1,1
+SP2,28/04/2019,Sporting Gijón,Elche CF,1,1
+SP2,28/04/2019,Granada CF,Gimnàstic de Tarragona,2,0
+SP2,28/04/2019,UD Las Palmas,CD Lugo,4,1
+SP2,28/04/2019,Córdoba CF,Real Zaragoza,0,3
+SP2,04/05/2019,AD Alcorcón,CA Osasuna,0,0
+SP2,04/05/2019,Real Zaragoza,RC Deportivo La Coruña,0,1
+SP2,04/05/2019,Gimnàstic de Tarragona,Extremadura UD,0,1
+SP2,04/05/2019,CD Tenerife,UD Las Palmas,2,1
+SP2,05/05/2019,Córdoba CF,CF Reus Deportiu,1,0
+SP2,05/05/2019,CD Lugo,UD Almería,4,2
+SP2,05/05/2019,RCD Mallorca,Sporting Gijón,2,1
+SP2,05/05/2019,Albacete,CD Numancia,0,0
+SP2,05/05/2019,Elche CF,Rayo Majadahonda,2,1
+SP2,05/05/2019,Real Oviedo,Granada CF,1,1
+SP2,06/05/2019,Cádiz CF,Málaga CF,1,1
+SP2,10/05/2019,Granada CF,CD Tenerife,2,1
+SP2,11/05/2019,Sporting Gijón,CD Lugo,0,0
+SP2,11/05/2019,Gimnàstic de Tarragona,RCD Mallorca,2,1
+SP2,11/05/2019,Extremadura UD,Real Zaragoza,0,3
+SP2,11/05/2019,CD Numancia,AD Alcorcón,2,0
+SP2,12/05/2019,CA Osasuna,CF Reus Deportiu,1,0
+SP2,12/05/2019,UD Almería,Elche CF,5,3
+SP2,12/05/2019,Rayo Majadahonda,Albacete,2,3
+SP2,12/05/2019,RC Deportivo La Coruña,Cádiz CF,1,1
+SP2,12/05/2019,UD Las Palmas,Córdoba CF,1,0
+SP2,13/05/2019,Málaga CF,Real Oviedo,3,0
+SP2,17/05/2019,Real Zaragoza,Sporting Gijón,4,2
+SP2,18/05/2019,AD Alcorcón,Extremadura UD,0,1
+SP2,18/05/2019,Elche CF,CD Tenerife,3,0
+SP2,19/05/2019,CF Reus Deportiu,Málaga CF,0,1
+SP2,19/05/2019,RCD Mallorca,UD Almería,1,0
+SP2,19/05/2019,Real Oviedo,CD Numancia,1,0
+SP2,19/05/2019,Cádiz CF,CA Osasuna,0,0
+SP2,19/05/2019,UD Las Palmas,Rayo Majadahonda,3,2
+SP2,19/05/2019,Córdoba CF,Gimnàstic de Tarragona,4,3
+SP2,19/05/2019,CD Lugo,RC Deportivo La Coruña,1,0
+SP2,20/05/2019,Albacete,Granada CF,0,1
+SP2,24/05/2019,Málaga CF,Real Zaragoza,3,1
+SP2,25/05/2019,Rayo Majadahonda,Córdoba CF,0,0
+SP2,25/05/2019,Sporting Gijón,Albacete,0,2
+SP2,25/05/2019,CA Osasuna,UD Las Palmas,2,0
+SP2,26/05/2019,CD Numancia,CF Reus Deportiu,1,0
+SP2,26/05/2019,UD Almería,AD Alcorcón,0,0
+SP2,26/05/2019,Gimnàstic de Tarragona,Elche CF,3,3
+SP2,26/05/2019,CD Tenerife,Real Oviedo,2,1
+SP2,26/05/2019,Granada CF,Cádiz CF,1,1
+SP2,26/05/2019,Extremadura UD,CD Lugo,0,0
+SP2,27/05/2019,RC Deportivo La Coruña,RCD Mallorca,1,0
+SP2,31/05/2019,Córdoba CF,CA Osasuna,2,3
+SP2,01/06/2019,AD Alcorcón,Gimnàstic de Tarragona,0,1
+SP2,02/06/2019,CF Reus Deportiu,Sporting Gijón,0,1
+SP2,02/06/2019,UD Las Palmas,UD Almería,0,0
+SP2,04/06/2019,Albacete,Málaga CF,1,2
+SP2,04/06/2019,Cádiz CF,Extremadura UD,0,1
+SP2,04/06/2019,CD Lugo,CD Tenerife,0,0
+SP2,04/06/2019,Elche CF,RC Deportivo La Coruña,0,0
+SP2,04/06/2019,RCD Mallorca,Granada CF,1,1
+SP2,04/06/2019,Real Oviedo,Rayo Majadahonda,4,3
+SP2,04/06/2019,Real Zaragoza,CD Numancia,0,0
+SP2,08/06/2019,Extremadura UD,RCD Mallorca,0,0
+SP2,08/06/2019,CA Osasuna,Real Oviedo,1,0
+SP2,08/06/2019,UD Almería,Albacete,3,0
+SP2,08/06/2019,Granada CF,AD Alcorcón,2,1
+SP2,08/06/2019,Sporting Gijón,Cádiz CF,1,0
+SP2,08/06/2019,RC Deportivo La Coruña,Córdoba CF,2,0
+SP2,08/06/2019,Málaga CF,Elche CF,3,0
+SP2,09/06/2019,Rayo Majadahonda,CF Reus Deportiu,1,0
+SP2,09/06/2019,Gimnàstic de Tarragona,CD Lugo,1,1
+SP2,09/06/2019,CD Numancia,UD Las Palmas,1,1
+SP2,09/06/2019,CD Tenerife,Real Zaragoza,1,0

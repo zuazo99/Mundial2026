@@ -30,6 +30,7 @@ import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import path  # noqa: E402
+from liga.ingest import season_key  # noqa: E402
 
 MAX_GOALS = 10
 DEFAULT_ZONES = {"champions": 4, "europa": (5, 6), "relegation": 3}
@@ -250,7 +251,7 @@ def load_inputs(data_dir: str, model_dir: str):
         raise SystemExit(f"Falta rho_liga.json en {model_dir}: no asumo rho=0 sin avisar. {_HINT}")
 
     long = pd.read_csv(long_path, dtype={"season": str})
-    last = max(long["season"].unique())
+    last = max(long["season"].unique(), key=season_key)
     if code != last:
         raise SystemExit(f"pending_{code} no corresponde a la última temporada ingerida ({last}). {_HINT}")
     pending = pd.read_csv(pending_path)

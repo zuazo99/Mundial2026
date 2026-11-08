@@ -1,0 +1,381 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP1,30/08/2008,RCD Espanyol de Barcelona,Real Valladolid CF,1,0
+SP1,30/08/2008,Valencia CF,RCD Mallorca,3,0
+SP1,31/08/2008,Athletic Club,UD Almería,1,3
+SP1,31/08/2008,Club Atlético de Madrid,Málaga CF,4,0
+SP1,31/08/2008,Real Betis Balompié,Recreativo,0,1
+SP1,31/08/2008,RC Deportivo La Coruña,Real Madrid CF,2,1
+SP1,31/08/2008,Numancia,FC Barcelona,1,0
+SP1,31/08/2008,CA Osasuna,Villarreal CF,1,1
+SP1,31/08/2008,Real Racing Club de Santander,Sevilla FC,1,1
+SP1,31/08/2008,Sporting Gijón,Getafe CF,1,2
+SP1,13/09/2008,FC Barcelona,Real Racing Club de Santander,1,1
+SP1,13/09/2008,Real Valladolid CF,Club Atlético de Madrid,2,1
+SP1,14/09/2008,UD Almería,Valencia CF,2,2
+SP1,14/09/2008,Getafe CF,Real Betis Balompié,0,0
+SP1,14/09/2008,Málaga CF,Athletic Club,0,0
+SP1,14/09/2008,RCD Mallorca,CA Osasuna,1,1
+SP1,14/09/2008,Real Madrid CF,Numancia,4,3
+SP1,14/09/2008,Recreativo,RCD Espanyol de Barcelona,0,1
+SP1,14/09/2008,Sevilla FC,Sporting Gijón,4,3
+SP1,14/09/2008,Villarreal CF,RC Deportivo La Coruña,1,0
+SP1,20/09/2008,Club Atlético de Madrid,Recreativo,4,0
+SP1,20/09/2008,RCD Espanyol de Barcelona,Getafe CF,1,1
+SP1,21/09/2008,UD Almería,Málaga CF,1,0
+SP1,21/09/2008,Athletic Club,Real Valladolid CF,2,0
+SP1,21/09/2008,Real Betis Balompié,Sevilla FC,0,0
+SP1,21/09/2008,RC Deportivo La Coruña,RCD Mallorca,0,0
+SP1,21/09/2008,Numancia,Villarreal CF,1,2
+SP1,21/09/2008,Real Racing Club de Santander,Real Madrid CF,0,2
+SP1,21/09/2008,Sporting Gijón,FC Barcelona,1,6
+SP1,21/09/2008,Valencia CF,CA Osasuna,1,0
+SP1,24/09/2008,FC Barcelona,Real Betis Balompié,3,2
+SP1,24/09/2008,Getafe CF,Club Atlético de Madrid,1,2
+SP1,24/09/2008,CA Osasuna,RC Deportivo La Coruña,0,0
+SP1,24/09/2008,Real Madrid CF,Sporting Gijón,7,1
+SP1,24/09/2008,Sevilla FC,RCD Espanyol de Barcelona,2,0
+SP1,24/09/2008,Villarreal CF,Real Racing Club de Santander,2,0
+SP1,25/09/2008,Málaga CF,Valencia CF,0,2
+SP1,25/09/2008,RCD Mallorca,Numancia,2,0
+SP1,25/09/2008,Recreativo,Athletic Club,1,1
+SP1,25/09/2008,Real Valladolid CF,UD Almería,2,0
+SP1,27/09/2008,Real Betis Balompié,Real Madrid CF,1,2
+SP1,27/09/2008,RCD Espanyol de Barcelona,FC Barcelona,1,2
+SP1,27/09/2008,Sporting Gijón,Villarreal CF,0,1
+SP1,28/09/2008,UD Almería,Recreativo,1,0
+SP1,28/09/2008,Athletic Club,Getafe CF,0,1
+SP1,28/09/2008,Club Atlético de Madrid,Sevilla FC,0,1
+SP1,28/09/2008,Málaga CF,Real Valladolid CF,2,1
+SP1,28/09/2008,Numancia,CA Osasuna,0,0
+SP1,28/09/2008,Real Racing Club de Santander,RCD Mallorca,1,2
+SP1,28/09/2008,Valencia CF,RC Deportivo La Coruña,4,2
+SP1,04/10/2008,FC Barcelona,Club Atlético de Madrid,6,1
+SP1,04/10/2008,Villarreal CF,Real Betis Balompié,2,1
+SP1,05/10/2008,Getafe CF,UD Almería,2,2
+SP1,05/10/2008,RC Deportivo La Coruña,Numancia,1,0
+SP1,05/10/2008,RCD Mallorca,Sporting Gijón,0,2
+SP1,05/10/2008,CA Osasuna,Real Racing Club de Santander,0,1
+SP1,05/10/2008,Real Madrid CF,RCD Espanyol de Barcelona,2,2
+SP1,05/10/2008,Recreativo,Málaga CF,0,4
+SP1,05/10/2008,Sevilla FC,Athletic Club,4,0
+SP1,05/10/2008,Real Valladolid CF,Valencia CF,0,1
+SP1,18/10/2008,Club Atlético de Madrid,Real Madrid CF,1,2
+SP1,18/10/2008,RCD Espanyol de Barcelona,Villarreal CF,0,0
+SP1,19/10/2008,UD Almería,Sevilla FC,0,1
+SP1,19/10/2008,Athletic Club,FC Barcelona,0,1
+SP1,19/10/2008,Real Betis Balompié,RCD Mallorca,3,0
+SP1,19/10/2008,Málaga CF,Getafe CF,2,1
+SP1,19/10/2008,Real Racing Club de Santander,RC Deportivo La Coruña,0,0
+SP1,19/10/2008,Sporting Gijón,CA Osasuna,2,1
+SP1,19/10/2008,Valencia CF,Numancia,4,0
+SP1,19/10/2008,Real Valladolid CF,Recreativo,1,1
+SP1,25/10/2008,FC Barcelona,UD Almería,5,0
+SP1,25/10/2008,CA Osasuna,Real Betis Balompié,0,2
+SP1,26/10/2008,Getafe CF,Real Valladolid CF,1,0
+SP1,26/10/2008,RC Deportivo La Coruña,Sporting Gijón,0,3
+SP1,26/10/2008,RCD Mallorca,RCD Espanyol de Barcelona,3,0
+SP1,26/10/2008,Numancia,Real Racing Club de Santander,2,1
+SP1,26/10/2008,Real Madrid CF,Athletic Club,3,2
+SP1,26/10/2008,Recreativo,Valencia CF,1,1
+SP1,26/10/2008,Sevilla FC,Málaga CF,0,1
+SP1,26/10/2008,Villarreal CF,Club Atlético de Madrid,4,4
+SP1,01/11/2008,Athletic Club,Villarreal CF,1,4
+SP1,01/11/2008,Club Atlético de Madrid,RCD Mallorca,2,0
+SP1,01/11/2008,Málaga CF,FC Barcelona,1,4
+SP1,01/11/2008,Valencia CF,Real Racing Club de Santander,2,4
+SP1,02/11/2008,UD Almería,Real Madrid CF,1,1
+SP1,02/11/2008,Real Betis Balompié,RC Deportivo La Coruña,0,3
+SP1,02/11/2008,RCD Espanyol de Barcelona,CA Osasuna,1,0
+SP1,02/11/2008,Recreativo,Getafe CF,1,1
+SP1,02/11/2008,Sporting Gijón,Numancia,3,1
+SP1,02/11/2008,Real Valladolid CF,Sevilla FC,3,2
+SP1,08/11/2008,FC Barcelona,Real Valladolid CF,6,0
+SP1,08/11/2008,Real Madrid CF,Málaga CF,4,3
+SP1,09/11/2008,Getafe CF,Valencia CF,0,3
+SP1,09/11/2008,RC Deportivo La Coruña,RCD Espanyol de Barcelona,1,0
+SP1,09/11/2008,RCD Mallorca,Athletic Club,3,3
+SP1,09/11/2008,Numancia,Real Betis Balompié,2,4
+SP1,09/11/2008,CA Osasuna,Club Atlético de Madrid,0,0
+SP1,09/11/2008,Real Racing Club de Santander,Sporting Gijón,1,0
+SP1,09/11/2008,Sevilla FC,Recreativo,1,0
+SP1,09/11/2008,Villarreal CF,UD Almería,2,1
+SP1,15/11/2008,Valencia CF,Sporting Gijón,2,3
+SP1,15/11/2008,Real Valladolid CF,Real Madrid CF,1,0
+SP1,16/11/2008,UD Almería,RCD Mallorca,2,1
+SP1,16/11/2008,Athletic Club,CA Osasuna,2,0
+SP1,16/11/2008,Club Atlético de Madrid,RC Deportivo La Coruña,4,1
+SP1,16/11/2008,Real Betis Balompié,Real Racing Club de Santander,3,1
+SP1,16/11/2008,RCD Espanyol de Barcelona,Numancia,3,4
+SP1,16/11/2008,Getafe CF,Sevilla FC,0,2
+SP1,16/11/2008,Málaga CF,Villarreal CF,2,2
+SP1,16/11/2008,Recreativo,FC Barcelona,0,2
+SP1,22/11/2008,Real Madrid CF,Recreativo,1,0
+SP1,22/11/2008,Sevilla FC,Valencia CF,0,0
+SP1,22/11/2008,Villarreal CF,Real Valladolid CF,0,3
+SP1,23/11/2008,FC Barcelona,Getafe CF,1,1
+SP1,23/11/2008,RC Deportivo La Coruña,Athletic Club,3,1
+SP1,23/11/2008,RCD Mallorca,Málaga CF,2,2
+SP1,23/11/2008,Numancia,Club Atlético de Madrid,1,1
+SP1,23/11/2008,CA Osasuna,UD Almería,3,1
+SP1,23/11/2008,Real Racing Club de Santander,RCD Espanyol de Barcelona,3,0
+SP1,23/11/2008,Sporting Gijón,Real Betis Balompié,1,2
+SP1,29/11/2008,Getafe CF,Real Madrid CF,3,1
+SP1,29/11/2008,Sevilla FC,FC Barcelona,0,3
+SP1,30/11/2008,UD Almería,RC Deportivo La Coruña,0,1
+SP1,30/11/2008,Athletic Club,Numancia,2,0
+SP1,30/11/2008,Club Atlético de Madrid,Real Racing Club de Santander,4,1
+SP1,30/11/2008,RCD Espanyol de Barcelona,Sporting Gijón,0,1
+SP1,30/11/2008,Málaga CF,CA Osasuna,4,2
+SP1,30/11/2008,Recreativo,Villarreal CF,1,2
+SP1,30/11/2008,Valencia CF,Real Betis Balompié,3,2
+SP1,30/11/2008,Real Valladolid CF,RCD Mallorca,3,0
+SP1,06/12/2008,FC Barcelona,Valencia CF,4,0
+SP1,06/12/2008,Sporting Gijón,Club Atlético de Madrid,2,5
+SP1,06/12/2008,Villarreal CF,Getafe CF,3,3
+SP1,07/12/2008,Real Betis Balompié,RCD Espanyol de Barcelona,1,1
+SP1,07/12/2008,RC Deportivo La Coruña,Málaga CF,2,0
+SP1,07/12/2008,RCD Mallorca,Recreativo,2,3
+SP1,07/12/2008,Numancia,UD Almería,2,1
+SP1,07/12/2008,CA Osasuna,Real Valladolid CF,3,3
+SP1,07/12/2008,Real Madrid CF,Sevilla FC,3,4
+SP1,07/12/2008,Real Racing Club de Santander,Athletic Club,1,1
+SP1,13/12/2008,FC Barcelona,Real Madrid CF,2,0
+SP1,13/12/2008,Valencia CF,RCD Espanyol de Barcelona,2,1
+SP1,14/12/2008,UD Almería,Real Racing Club de Santander,1,1
+SP1,14/12/2008,Athletic Club,Sporting Gijón,3,0
+SP1,14/12/2008,Club Atlético de Madrid,Real Betis Balompié,2,0
+SP1,14/12/2008,Getafe CF,RCD Mallorca,4,1
+SP1,14/12/2008,Málaga CF,Numancia,2,0
+SP1,14/12/2008,Recreativo,CA Osasuna,1,0
+SP1,14/12/2008,Sevilla FC,Villarreal CF,1,0
+SP1,14/12/2008,Real Valladolid CF,RC Deportivo La Coruña,3,0
+SP1,20/12/2008,RCD Espanyol de Barcelona,Club Atlético de Madrid,2,3
+SP1,20/12/2008,Real Madrid CF,Valencia CF,1,0
+SP1,21/12/2008,Real Betis Balompié,Athletic Club,0,1
+SP1,21/12/2008,RC Deportivo La Coruña,Recreativo,4,1
+SP1,21/12/2008,RCD Mallorca,Sevilla FC,0,0
+SP1,21/12/2008,Numancia,Real Valladolid CF,4,3
+SP1,21/12/2008,CA Osasuna,Getafe CF,5,2
+SP1,21/12/2008,Real Racing Club de Santander,Málaga CF,1,1
+SP1,21/12/2008,Sporting Gijón,UD Almería,1,0
+SP1,21/12/2008,Villarreal CF,FC Barcelona,1,2
+SP1,03/01/2009,FC Barcelona,RCD Mallorca,3,1
+SP1,03/01/2009,Valencia CF,Club Atlético de Madrid,3,1
+SP1,04/01/2009,UD Almería,Real Betis Balompié,1,0
+SP1,04/01/2009,Athletic Club,RCD Espanyol de Barcelona,1,1
+SP1,04/01/2009,Getafe CF,RC Deportivo La Coruña,1,2
+SP1,04/01/2009,Málaga CF,Sporting Gijón,1,0
+SP1,04/01/2009,Real Madrid CF,Villarreal CF,1,0
+SP1,04/01/2009,Recreativo,Numancia,3,1
+SP1,04/01/2009,Sevilla FC,CA Osasuna,1,1
+SP1,04/01/2009,Real Valladolid CF,Real Racing Club de Santander,0,1
+SP1,10/01/2009,RC Deportivo La Coruña,Sevilla FC,1,3
+SP1,10/01/2009,Valencia CF,Villarreal CF,3,3
+SP1,11/01/2009,Club Atlético de Madrid,Athletic Club,2,3
+SP1,11/01/2009,Real Betis Balompié,Málaga CF,1,2
+SP1,11/01/2009,RCD Espanyol de Barcelona,UD Almería,2,2
+SP1,11/01/2009,RCD Mallorca,Real Madrid CF,0,3
+SP1,11/01/2009,Numancia,Getafe CF,2,0
+SP1,11/01/2009,CA Osasuna,FC Barcelona,2,3
+SP1,11/01/2009,Real Racing Club de Santander,Recreativo,1,1
+SP1,11/01/2009,Sporting Gijón,Real Valladolid CF,2,1
+SP1,17/01/2009,FC Barcelona,RC Deportivo La Coruña,5,0
+SP1,17/01/2009,Sevilla FC,Numancia,1,0
+SP1,18/01/2009,UD Almería,Club Atlético de Madrid,1,1
+SP1,18/01/2009,Athletic Club,Valencia CF,3,2
+SP1,18/01/2009,Getafe CF,Real Racing Club de Santander,0,1
+SP1,18/01/2009,Málaga CF,RCD Espanyol de Barcelona,4,0
+SP1,18/01/2009,Real Madrid CF,CA Osasuna,3,1
+SP1,18/01/2009,Recreativo,Sporting Gijón,2,0
+SP1,18/01/2009,Real Valladolid CF,Real Betis Balompié,1,3
+SP1,18/01/2009,Villarreal CF,RCD Mallorca,2,0
+SP1,24/01/2009,FC Barcelona,Numancia,4,1
+SP1,24/01/2009,Villarreal CF,CA Osasuna,1,1
+SP1,25/01/2009,UD Almería,Athletic Club,2,1
+SP1,25/01/2009,Getafe CF,Sporting Gijón,5,1
+SP1,25/01/2009,Málaga CF,Club Atlético de Madrid,1,1
+SP1,25/01/2009,RCD Mallorca,Valencia CF,3,1
+SP1,25/01/2009,Real Madrid CF,RC Deportivo La Coruña,1,0
+SP1,25/01/2009,Recreativo,Real Betis Balompié,1,0
+SP1,25/01/2009,Sevilla FC,Real Racing Club de Santander,0,2
+SP1,25/01/2009,Real Valladolid CF,RCD Espanyol de Barcelona,1,1
+SP1,31/01/2009,Athletic Club,Málaga CF,3,2
+SP1,31/01/2009,Numancia,Real Madrid CF,0,2
+SP1,01/02/2009,Club Atlético de Madrid,Real Valladolid CF,1,2
+SP1,01/02/2009,Real Betis Balompié,Getafe CF,2,2
+SP1,01/02/2009,RCD Espanyol de Barcelona,Recreativo,1,1
+SP1,01/02/2009,RC Deportivo La Coruña,Villarreal CF,3,0
+SP1,01/02/2009,CA Osasuna,RCD Mallorca,1,0
+SP1,01/02/2009,Real Racing Club de Santander,FC Barcelona,1,2
+SP1,01/02/2009,Sporting Gijón,Sevilla FC,1,0
+SP1,01/02/2009,Valencia CF,UD Almería,3,2
+SP1,07/02/2009,Real Madrid CF,Real Racing Club de Santander,1,0
+SP1,07/02/2009,Sevilla FC,Real Betis Balompié,1,2
+SP1,08/02/2009,FC Barcelona,Sporting Gijón,3,1
+SP1,08/02/2009,Getafe CF,RCD Espanyol de Barcelona,1,1
+SP1,08/02/2009,Málaga CF,UD Almería,3,2
+SP1,08/02/2009,RCD Mallorca,RC Deportivo La Coruña,1,1
+SP1,08/02/2009,CA Osasuna,Valencia CF,1,0
+SP1,08/02/2009,Recreativo,Club Atlético de Madrid,0,3
+SP1,08/02/2009,Real Valladolid CF,Athletic Club,2,1
+SP1,08/02/2009,Villarreal CF,Numancia,2,1
+SP1,14/02/2009,Real Betis Balompié,FC Barcelona,2,2
+SP1,14/02/2009,RC Deportivo La Coruña,CA Osasuna,0,0
+SP1,14/02/2009,Valencia CF,Málaga CF,1,1
+SP1,15/02/2009,UD Almería,Real Valladolid CF,3,2
+SP1,15/02/2009,Athletic Club,Recreativo,1,1
+SP1,15/02/2009,Club Atlético de Madrid,Getafe CF,1,1
+SP1,15/02/2009,RCD Espanyol de Barcelona,Sevilla FC,0,2
+SP1,15/02/2009,Numancia,RCD Mallorca,0,1
+SP1,15/02/2009,Real Racing Club de Santander,Villarreal CF,1,1
+SP1,15/02/2009,Sporting Gijón,Real Madrid CF,0,4
+SP1,21/02/2009,FC Barcelona,RCD Espanyol de Barcelona,1,2
+SP1,21/02/2009,Real Madrid CF,Real Betis Balompié,6,1
+SP1,21/02/2009,Sevilla FC,Club Atlético de Madrid,1,0
+SP1,21/02/2009,Villarreal CF,Sporting Gijón,2,1
+SP1,22/02/2009,Getafe CF,Athletic Club,1,1
+SP1,22/02/2009,RC Deportivo La Coruña,Valencia CF,1,1
+SP1,22/02/2009,RCD Mallorca,Real Racing Club de Santander,1,0
+SP1,22/02/2009,CA Osasuna,Numancia,2,0
+SP1,22/02/2009,Recreativo,UD Almería,1,1
+SP1,22/02/2009,Real Valladolid CF,Málaga CF,1,3
+SP1,28/02/2009,Athletic Club,Sevilla FC,1,2
+SP1,28/02/2009,RCD Espanyol de Barcelona,Real Madrid CF,0,2
+SP1,01/03/2009,UD Almería,Getafe CF,2,1
+SP1,01/03/2009,Club Atlético de Madrid,FC Barcelona,4,3
+SP1,01/03/2009,Real Betis Balompié,Villarreal CF,2,2
+SP1,01/03/2009,Málaga CF,Recreativo,0,2
+SP1,01/03/2009,Numancia,RC Deportivo La Coruña,0,1
+SP1,01/03/2009,Real Racing Club de Santander,CA Osasuna,1,1
+SP1,01/03/2009,Sporting Gijón,RCD Mallorca,0,1
+SP1,01/03/2009,Valencia CF,Real Valladolid CF,1,2
+SP1,07/03/2009,FC Barcelona,Athletic Club,2,0
+SP1,07/03/2009,Real Madrid CF,Club Atlético de Madrid,1,1
+SP1,07/03/2009,Villarreal CF,RCD Espanyol de Barcelona,1,0
+SP1,08/03/2009,Getafe CF,Málaga CF,1,2
+SP1,08/03/2009,RC Deportivo La Coruña,Real Racing Club de Santander,5,3
+SP1,08/03/2009,RCD Mallorca,Real Betis Balompié,3,3
+SP1,08/03/2009,Numancia,Valencia CF,2,1
+SP1,08/03/2009,CA Osasuna,Sporting Gijón,1,2
+SP1,08/03/2009,Recreativo,Real Valladolid CF,2,3
+SP1,08/03/2009,Sevilla FC,UD Almería,2,1
+SP1,14/03/2009,Athletic Club,Real Madrid CF,2,5
+SP1,14/03/2009,Valencia CF,Recreativo,1,1
+SP1,15/03/2009,UD Almería,FC Barcelona,0,2
+SP1,15/03/2009,Club Atlético de Madrid,Villarreal CF,3,2
+SP1,15/03/2009,Real Betis Balompié,CA Osasuna,0,0
+SP1,15/03/2009,RCD Espanyol de Barcelona,RCD Mallorca,3,3
+SP1,15/03/2009,Málaga CF,Sevilla FC,2,2
+SP1,15/03/2009,Real Racing Club de Santander,Numancia,5,0
+SP1,15/03/2009,Sporting Gijón,RC Deportivo La Coruña,3,2
+SP1,15/03/2009,Real Valladolid CF,Getafe CF,1,0
+SP1,21/03/2009,Sevilla FC,Real Valladolid CF,4,1
+SP1,21/03/2009,Villarreal CF,Athletic Club,2,0
+SP1,22/03/2009,FC Barcelona,Málaga CF,6,0
+SP1,22/03/2009,Getafe CF,Recreativo,2,1
+SP1,22/03/2009,RC Deportivo La Coruña,Real Betis Balompié,1,1
+SP1,22/03/2009,RCD Mallorca,Club Atlético de Madrid,2,0
+SP1,22/03/2009,Numancia,Sporting Gijón,2,1
+SP1,22/03/2009,CA Osasuna,RCD Espanyol de Barcelona,1,0
+SP1,22/03/2009,Real Madrid CF,UD Almería,3,0
+SP1,22/03/2009,Real Racing Club de Santander,Valencia CF,0,1
+SP1,04/04/2009,UD Almería,Villarreal CF,3,0
+SP1,04/04/2009,Athletic Club,RCD Mallorca,2,1
+SP1,04/04/2009,Real Betis Balompié,Numancia,3,3
+SP1,04/04/2009,Málaga CF,Real Madrid CF,0,1
+SP1,04/04/2009,Recreativo,Sevilla FC,0,1
+SP1,04/04/2009,Real Valladolid CF,FC Barcelona,0,1
+SP1,05/04/2009,Club Atlético de Madrid,CA Osasuna,2,4
+SP1,05/04/2009,RCD Espanyol de Barcelona,RC Deportivo La Coruña,3,1
+SP1,05/04/2009,Sporting Gijón,Real Racing Club de Santander,0,2
+SP1,05/04/2009,Valencia CF,Getafe CF,4,1
+SP1,11/04/2009,FC Barcelona,Recreativo,2,0
+SP1,11/04/2009,Villarreal CF,Málaga CF,0,2
+SP1,12/04/2009,RC Deportivo La Coruña,Club Atlético de Madrid,1,2
+SP1,12/04/2009,RCD Mallorca,UD Almería,2,0
+SP1,12/04/2009,Numancia,RCD Espanyol de Barcelona,0,0
+SP1,12/04/2009,CA Osasuna,Athletic Club,2,1
+SP1,12/04/2009,Real Madrid CF,Real Valladolid CF,2,0
+SP1,12/04/2009,Real Racing Club de Santander,Real Betis Balompié,2,3
+SP1,12/04/2009,Sevilla FC,Getafe CF,0,1
+SP1,12/04/2009,Sporting Gijón,Valencia CF,2,3
+SP1,18/04/2009,Athletic Club,RC Deportivo La Coruña,0,1
+SP1,18/04/2009,Club Atlético de Madrid,Numancia,3,0
+SP1,18/04/2009,Getafe CF,FC Barcelona,0,1
+SP1,18/04/2009,Málaga CF,RCD Mallorca,1,1
+SP1,18/04/2009,Recreativo,Real Madrid CF,0,1
+SP1,19/04/2009,UD Almería,CA Osasuna,2,1
+SP1,19/04/2009,Real Betis Balompié,Sporting Gijón,2,0
+SP1,19/04/2009,RCD Espanyol de Barcelona,Real Racing Club de Santander,1,0
+SP1,19/04/2009,Valencia CF,Sevilla FC,3,1
+SP1,19/04/2009,Real Valladolid CF,Villarreal CF,0,0
+SP1,21/04/2009,Numancia,Athletic Club,1,2
+SP1,21/04/2009,Real Madrid CF,Getafe CF,3,2
+SP1,22/04/2009,FC Barcelona,Sevilla FC,4,0
+SP1,22/04/2009,Real Betis Balompié,Valencia CF,1,2
+SP1,22/04/2009,RC Deportivo La Coruña,UD Almería,2,0
+SP1,22/04/2009,CA Osasuna,Málaga CF,2,3
+SP1,23/04/2009,RCD Mallorca,Real Valladolid CF,2,0
+SP1,23/04/2009,Real Racing Club de Santander,Club Atlético de Madrid,5,1
+SP1,23/04/2009,Sporting Gijón,RCD Espanyol de Barcelona,0,3
+SP1,23/04/2009,Villarreal CF,Recreativo,2,1
+SP1,25/04/2009,UD Almería,Numancia,2,1
+SP1,25/04/2009,Málaga CF,RC Deportivo La Coruña,1,1
+SP1,25/04/2009,Valencia CF,FC Barcelona,2,2
+SP1,26/04/2009,Athletic Club,Real Racing Club de Santander,2,1
+SP1,26/04/2009,Club Atlético de Madrid,Sporting Gijón,3,1
+SP1,26/04/2009,RCD Espanyol de Barcelona,Real Betis Balompié,2,0
+SP1,26/04/2009,Getafe CF,Villarreal CF,1,2
+SP1,26/04/2009,Recreativo,RCD Mallorca,2,4
+SP1,26/04/2009,Sevilla FC,Real Madrid CF,2,4
+SP1,26/04/2009,Real Valladolid CF,CA Osasuna,0,0
+SP1,02/05/2009,Numancia,Málaga CF,2,0
+SP1,02/05/2009,Real Madrid CF,FC Barcelona,2,6
+SP1,02/05/2009,Villarreal CF,Sevilla FC,0,2
+SP1,03/05/2009,Real Betis Balompié,Club Atlético de Madrid,0,2
+SP1,03/05/2009,RCD Espanyol de Barcelona,Valencia CF,3,0
+SP1,03/05/2009,RC Deportivo La Coruña,Real Valladolid CF,1,0
+SP1,03/05/2009,RCD Mallorca,Getafe CF,2,1
+SP1,03/05/2009,CA Osasuna,Recreativo,1,2
+SP1,03/05/2009,Real Racing Club de Santander,UD Almería,0,2
+SP1,03/05/2009,Sporting Gijón,Athletic Club,1,1
+SP1,09/05/2009,Athletic Club,Real Betis Balompié,1,0
+SP1,09/05/2009,Sevilla FC,RCD Mallorca,3,1
+SP1,09/05/2009,Valencia CF,Real Madrid CF,3,0
+SP1,10/05/2009,UD Almería,Sporting Gijón,3,1
+SP1,10/05/2009,Club Atlético de Madrid,RCD Espanyol de Barcelona,3,2
+SP1,10/05/2009,FC Barcelona,Villarreal CF,3,3
+SP1,10/05/2009,Getafe CF,CA Osasuna,3,0
+SP1,10/05/2009,Málaga CF,Real Racing Club de Santander,1,0
+SP1,10/05/2009,Recreativo,RC Deportivo La Coruña,1,2
+SP1,10/05/2009,Real Valladolid CF,Numancia,0,0
+SP1,16/05/2009,RC Deportivo La Coruña,Getafe CF,1,1
+SP1,16/05/2009,CA Osasuna,Sevilla FC,0,0
+SP1,16/05/2009,Villarreal CF,Real Madrid CF,3,2
+SP1,17/05/2009,Club Atlético de Madrid,Valencia CF,1,0
+SP1,17/05/2009,Real Betis Balompié,UD Almería,2,0
+SP1,17/05/2009,RCD Espanyol de Barcelona,Athletic Club,1,0
+SP1,17/05/2009,RCD Mallorca,FC Barcelona,2,1
+SP1,17/05/2009,Numancia,Recreativo,1,0
+SP1,17/05/2009,Real Racing Club de Santander,Real Valladolid CF,3,2
+SP1,17/05/2009,Sporting Gijón,Málaga CF,2,1
+SP1,23/05/2009,UD Almería,RCD Espanyol de Barcelona,0,3
+SP1,23/05/2009,Athletic Club,Club Atlético de Madrid,1,4
+SP1,23/05/2009,FC Barcelona,CA Osasuna,0,1
+SP1,23/05/2009,Getafe CF,Numancia,1,0
+SP1,23/05/2009,Málaga CF,Real Betis Balompié,1,1
+SP1,23/05/2009,Recreativo,Real Racing Club de Santander,0,1
+SP1,23/05/2009,Sevilla FC,RC Deportivo La Coruña,1,0
+SP1,23/05/2009,Real Valladolid CF,Sporting Gijón,1,2
+SP1,23/05/2009,Villarreal CF,Valencia CF,3,1
+SP1,24/05/2009,Real Madrid CF,RCD Mallorca,1,3
+SP1,30/05/2009,Club Atlético de Madrid,UD Almería,3,0
+SP1,30/05/2009,RC Deportivo La Coruña,FC Barcelona,1,1
+SP1,30/05/2009,RCD Mallorca,Villarreal CF,2,3
+SP1,30/05/2009,Valencia CF,Athletic Club,2,0
+SP1,31/05/2009,Real Betis Balompié,Real Valladolid CF,1,1
+SP1,31/05/2009,RCD Espanyol de Barcelona,Málaga CF,3,0
+SP1,31/05/2009,Numancia,Sevilla FC,0,2
+SP1,31/05/2009,CA Osasuna,Real Madrid CF,2,1
+SP1,31/05/2009,Real Racing Club de Santander,Getafe CF,1,1
+SP1,31/05/2009,Sporting Gijón,Recreativo,2,1

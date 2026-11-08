@@ -1,0 +1,381 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP1,30/08/1997,Real Madrid CF,Club Atlético de Madrid,1,1
+SP1,31/08/1997,Athletic Club,RCD Espanyol de Barcelona,1,3
+SP1,31/08/1997,FC Barcelona,Real Sociedad de Fútbol,3,0
+SP1,31/08/1997,RC Celta de Vigo,Zaragoza,2,1
+SP1,31/08/1997,Compostela,Sporting Gijón,2,0
+SP1,31/08/1997,RCD Mallorca,Valencia CF,2,1
+SP1,31/08/1997,Real Oviedo,Merida,2,0
+SP1,31/08/1997,Real Racing Club de Santander,Salamanca,1,0
+SP1,31/08/1997,Tenerife,RC Deportivo La Coruña,0,0
+SP1,01/09/1997,Real Valladolid CF,Real Betis Balompié,1,3
+SP1,06/09/1997,Club Atlético de Madrid,Real Valladolid CF,5,0
+SP1,06/09/1997,Real Betis Balompié,Athletic Club,1,1
+SP1,07/09/1997,RCD Espanyol de Barcelona,RC Celta de Vigo,1,1
+SP1,07/09/1997,RC Deportivo La Coruña,RCD Mallorca,1,1
+SP1,07/09/1997,Merida,Compostela,3,3
+SP1,07/09/1997,Salamanca,Real Madrid CF,0,2
+SP1,07/09/1997,Real Sociedad de Fútbol,Real Racing Club de Santander,1,0
+SP1,07/09/1997,Sporting Gijón,Tenerife,0,2
+SP1,07/09/1997,Zaragoza,Real Oviedo,3,3
+SP1,08/09/1997,Valencia CF,FC Barcelona,0,3
+SP1,13/09/1997,Athletic Club,Club Atlético de Madrid,1,0
+SP1,13/09/1997,FC Barcelona,RC Deportivo La Coruña,2,1
+SP1,13/09/1997,Real Madrid CF,Real Sociedad de Fútbol,2,0
+SP1,13/09/1997,Real Valladolid CF,Salamanca,1,2
+SP1,14/09/1997,RC Celta de Vigo,Real Betis Balompié,2,0
+SP1,14/09/1997,Compostela,Tenerife,1,2
+SP1,14/09/1997,Merida,Zaragoza,0,1
+SP1,14/09/1997,Real Oviedo,RCD Espanyol de Barcelona,1,1
+SP1,14/09/1997,Real Racing Club de Santander,Valencia CF,2,1
+SP1,15/09/1997,RCD Mallorca,Sporting Gijón,6,2
+SP1,28/09/1997,Club Atlético de Madrid,RC Celta de Vigo,3,3
+SP1,28/09/1997,Real Betis Balompié,Real Oviedo,1,1
+SP1,28/09/1997,RC Deportivo La Coruña,Real Racing Club de Santander,4,1
+SP1,28/09/1997,Salamanca,Athletic Club,0,0
+SP1,28/09/1997,Real Sociedad de Fútbol,Real Valladolid CF,3,0
+SP1,28/09/1997,Sporting Gijón,FC Barcelona,1,4
+SP1,28/09/1997,Tenerife,RCD Mallorca,1,4
+SP1,28/09/1997,Valencia CF,Real Madrid CF,0,2
+SP1,28/09/1997,Zaragoza,Compostela,2,2
+SP1,29/09/1997,RCD Espanyol de Barcelona,Merida,0,0
+SP1,04/10/1997,Athletic Club,Real Sociedad de Fútbol,1,1
+SP1,04/10/1997,Zaragoza,RCD Espanyol de Barcelona,1,1
+SP1,05/10/1997,FC Barcelona,Tenerife,3,2
+SP1,05/10/1997,RC Celta de Vigo,Salamanca,4,1
+SP1,05/10/1997,Compostela,RCD Mallorca,2,2
+SP1,05/10/1997,Real Oviedo,Club Atlético de Madrid,0,2
+SP1,05/10/1997,Real Madrid CF,RC Deportivo La Coruña,0,0
+SP1,05/10/1997,Real Racing Club de Santander,Sporting Gijón,4,1
+SP1,05/10/1997,Real Valladolid CF,Valencia CF,0,3
+SP1,06/10/1997,Merida,Real Betis Balompié,1,3
+SP1,14/10/1997,RCD Mallorca,FC Barcelona,0,1
+SP1,15/10/1997,Club Atlético de Madrid,Merida,4,0
+SP1,15/10/1997,Real Betis Balompié,Zaragoza,3,3
+SP1,15/10/1997,RCD Espanyol de Barcelona,Compostela,1,0
+SP1,15/10/1997,RC Deportivo La Coruña,Real Valladolid CF,1,3
+SP1,15/10/1997,Salamanca,Real Oviedo,0,2
+SP1,15/10/1997,Real Sociedad de Fútbol,RC Celta de Vigo,2,1
+SP1,15/10/1997,Sporting Gijón,Real Madrid CF,0,2
+SP1,15/10/1997,Tenerife,Real Racing Club de Santander,2,2
+SP1,15/10/1997,Valencia CF,Athletic Club,1,1
+SP1,18/10/1997,Athletic Club,RC Deportivo La Coruña,1,1
+SP1,18/10/1997,Compostela,FC Barcelona,2,2
+SP1,18/10/1997,Real Madrid CF,Tenerife,3,0
+SP1,18/10/1997,Real Valladolid CF,Sporting Gijón,1,1
+SP1,18/10/1997,Zaragoza,Club Atlético de Madrid,1,5
+SP1,19/10/1997,RC Celta de Vigo,Valencia CF,1,0
+SP1,19/10/1997,RCD Espanyol de Barcelona,Real Betis Balompié,5,0
+SP1,19/10/1997,Merida,Salamanca,1,0
+SP1,19/10/1997,Real Oviedo,Real Sociedad de Fútbol,0,5
+SP1,19/10/1997,Real Racing Club de Santander,RCD Mallorca,0,1
+SP1,25/10/1997,RC Deportivo La Coruña,RC Celta de Vigo,1,1
+SP1,26/10/1997,Club Atlético de Madrid,RCD Espanyol de Barcelona,0,2
+SP1,26/10/1997,FC Barcelona,Real Racing Club de Santander,2,0
+SP1,26/10/1997,Real Betis Balompié,Compostela,1,0
+SP1,26/10/1997,Salamanca,Zaragoza,1,2
+SP1,26/10/1997,Real Sociedad de Fútbol,Merida,2,1
+SP1,26/10/1997,Sporting Gijón,Athletic Club,1,2
+SP1,26/10/1997,Tenerife,Real Valladolid CF,1,0
+SP1,26/10/1997,Valencia CF,Real Oviedo,1,1
+SP1,27/10/1997,RCD Mallorca,Real Madrid CF,0,0
+SP1,01/11/1997,Athletic Club,Tenerife,3,0
+SP1,01/11/1997,Real Betis Balompié,Club Atlético de Madrid,2,3
+SP1,01/11/1997,Real Madrid CF,FC Barcelona,2,3
+SP1,01/11/1997,Real Valladolid CF,RCD Mallorca,0,0
+SP1,02/11/1997,RC Celta de Vigo,Sporting Gijón,1,0
+SP1,02/11/1997,Compostela,Real Racing Club de Santander,3,1
+SP1,02/11/1997,RCD Espanyol de Barcelona,Salamanca,3,0
+SP1,02/11/1997,Real Oviedo,RC Deportivo La Coruña,1,1
+SP1,02/11/1997,Zaragoza,Real Sociedad de Fútbol,0,0
+SP1,03/11/1997,Merida,Valencia CF,1,0
+SP1,08/11/1997,Real Racing Club de Santander,Real Madrid CF,1,2
+SP1,09/11/1997,Club Atlético de Madrid,Compostela,3,1
+SP1,09/11/1997,FC Barcelona,Real Valladolid CF,1,2
+SP1,09/11/1997,RC Deportivo La Coruña,Merida,0,1
+SP1,09/11/1997,RCD Mallorca,Athletic Club,4,0
+SP1,09/11/1997,Salamanca,Real Betis Balompié,0,0
+SP1,09/11/1997,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,2,0
+SP1,09/11/1997,Sporting Gijón,Real Oviedo,1,2
+SP1,09/11/1997,Tenerife,RC Celta de Vigo,1,3
+SP1,09/11/1997,Valencia CF,Zaragoza,2,1
+SP1,11/11/1997,Club Atlético de Madrid,Salamanca,1,1
+SP1,12/11/1997,Real Betis Balompié,Real Sociedad de Fútbol,0,0
+SP1,12/11/1997,RC Celta de Vigo,RCD Mallorca,1,0
+SP1,12/11/1997,Compostela,Real Madrid CF,2,3
+SP1,12/11/1997,RCD Espanyol de Barcelona,Valencia CF,3,0
+SP1,12/11/1997,Merida,Sporting Gijón,1,0
+SP1,12/11/1997,Real Oviedo,Tenerife,1,0
+SP1,12/11/1997,Real Valladolid CF,Real Racing Club de Santander,0,0
+SP1,12/11/1997,Zaragoza,RC Deportivo La Coruña,1,2
+SP1,13/11/1997,Athletic Club,FC Barcelona,3,0
+SP1,15/11/1997,Real Sociedad de Fútbol,Club Atlético de Madrid,0,0
+SP1,16/11/1997,FC Barcelona,RC Celta de Vigo,3,2
+SP1,16/11/1997,RC Deportivo La Coruña,RCD Espanyol de Barcelona,1,1
+SP1,16/11/1997,RCD Mallorca,Real Oviedo,1,1
+SP1,16/11/1997,Salamanca,Compostela,0,1
+SP1,16/11/1997,Real Racing Club de Santander,Athletic Club,0,0
+SP1,16/11/1997,Sporting Gijón,Zaragoza,2,3
+SP1,16/11/1997,Tenerife,Merida,1,1
+SP1,16/11/1997,Valencia CF,Real Betis Balompié,1,0
+SP1,17/11/1997,Real Madrid CF,Real Valladolid CF,3,1
+SP1,22/11/1997,Athletic Club,Real Madrid CF,1,1
+SP1,22/11/1997,Club Atlético de Madrid,Valencia CF,3,1
+SP1,22/11/1997,Real Oviedo,FC Barcelona,1,0
+SP1,23/11/1997,Real Betis Balompié,RC Deportivo La Coruña,1,0
+SP1,23/11/1997,RC Celta de Vigo,Real Racing Club de Santander,1,2
+SP1,23/11/1997,Compostela,Real Valladolid CF,0,0
+SP1,23/11/1997,Merida,RCD Mallorca,0,0
+SP1,23/11/1997,Salamanca,Real Sociedad de Fútbol,0,0
+SP1,23/11/1997,Zaragoza,Tenerife,1,0
+SP1,24/11/1997,RCD Espanyol de Barcelona,Sporting Gijón,1,1
+SP1,29/11/1997,Sporting Gijón,Real Betis Balompié,2,3
+SP1,30/11/1997,RC Deportivo La Coruña,Club Atlético de Madrid,2,2
+SP1,30/11/1997,RCD Mallorca,Zaragoza,0,2
+SP1,30/11/1997,Real Madrid CF,RC Celta de Vigo,3,1
+SP1,30/11/1997,Real Racing Club de Santander,Real Oviedo,0,0
+SP1,30/11/1997,Real Sociedad de Fútbol,Compostela,5,1
+SP1,30/11/1997,Tenerife,RCD Espanyol de Barcelona,0,0
+SP1,30/11/1997,Valencia CF,Salamanca,0,1
+SP1,30/11/1997,Real Valladolid CF,Athletic Club,3,0
+SP1,01/12/1997,FC Barcelona,Merida,3,1
+SP1,06/12/1997,Club Atlético de Madrid,Sporting Gijón,2,1
+SP1,06/12/1997,RCD Espanyol de Barcelona,RCD Mallorca,1,0
+SP1,06/12/1997,Real Oviedo,Real Madrid CF,1,1
+SP1,06/12/1997,Zaragoza,FC Barcelona,1,2
+SP1,07/12/1997,Real Betis Balompié,Tenerife,3,0
+SP1,07/12/1997,RC Celta de Vigo,Real Valladolid CF,2,0
+SP1,07/12/1997,Compostela,Athletic Club,1,4
+SP1,07/12/1997,Merida,Real Racing Club de Santander,1,2
+SP1,07/12/1997,Salamanca,RC Deportivo La Coruña,4,1
+SP1,07/12/1997,Real Sociedad de Fútbol,Valencia CF,1,1
+SP1,13/12/1997,Athletic Club,RC Celta de Vigo,2,1
+SP1,13/12/1997,FC Barcelona,RCD Espanyol de Barcelona,3,1
+SP1,13/12/1997,RCD Mallorca,Real Betis Balompié,1,2
+SP1,14/12/1997,RC Deportivo La Coruña,Real Sociedad de Fútbol,1,1
+SP1,14/12/1997,Real Madrid CF,Merida,1,0
+SP1,14/12/1997,Real Racing Club de Santander,Zaragoza,2,3
+SP1,14/12/1997,Sporting Gijón,Salamanca,1,1
+SP1,14/12/1997,Tenerife,Club Atlético de Madrid,2,2
+SP1,14/12/1997,Valencia CF,Compostela,4,1
+SP1,14/12/1997,Real Valladolid CF,Real Oviedo,1,0
+SP1,17/12/1997,Club Atlético de Madrid,RCD Mallorca,2,3
+SP1,17/12/1997,Compostela,RC Celta de Vigo,0,0
+SP1,17/12/1997,RCD Espanyol de Barcelona,Real Racing Club de Santander,0,0
+SP1,17/12/1997,Merida,Real Valladolid CF,0,0
+SP1,17/12/1997,Real Oviedo,Athletic Club,1,2
+SP1,17/12/1997,Salamanca,Tenerife,2,0
+SP1,17/12/1997,Real Sociedad de Fútbol,Sporting Gijón,2,1
+SP1,17/12/1997,Zaragoza,Real Madrid CF,2,2
+SP1,18/12/1997,Valencia CF,RC Deportivo La Coruña,1,0
+SP1,20/12/1997,FC Barcelona,Club Atlético de Madrid,3,1
+SP1,21/12/1997,Athletic Club,Merida,5,1
+SP1,21/12/1997,RC Celta de Vigo,Real Oviedo,3,0
+SP1,21/12/1997,Compostela,RC Deportivo La Coruña,0,0
+SP1,21/12/1997,Real Madrid CF,RCD Espanyol de Barcelona,2,1
+SP1,21/12/1997,Real Racing Club de Santander,Real Betis Balompié,2,0
+SP1,21/12/1997,Sporting Gijón,Valencia CF,0,3
+SP1,21/12/1997,Tenerife,Real Sociedad de Fútbol,0,0
+SP1,21/12/1997,Real Valladolid CF,Zaragoza,4,0
+SP1,22/12/1997,RCD Mallorca,Salamanca,1,0
+SP1,03/01/1998,Real Betis Balompié,Real Madrid CF,3,2
+SP1,04/01/1998,Club Atlético de Madrid,Real Racing Club de Santander,2,1
+SP1,04/01/1998,RCD Espanyol de Barcelona,Real Valladolid CF,2,0
+SP1,04/01/1998,RC Deportivo La Coruña,Sporting Gijón,2,1
+SP1,04/01/1998,Merida,RC Celta de Vigo,4,0
+SP1,04/01/1998,Real Oviedo,Compostela,1,1
+SP1,04/01/1998,Real Sociedad de Fútbol,RCD Mallorca,1,0
+SP1,04/01/1998,Valencia CF,Tenerife,1,2
+SP1,04/01/1998,Zaragoza,Athletic Club,1,1
+SP1,05/01/1998,Salamanca,FC Barcelona,4,3
+SP1,10/01/1998,Club Atlético de Madrid,Real Madrid CF,1,1
+SP1,11/01/1998,RCD Espanyol de Barcelona,Athletic Club,0,1
+SP1,11/01/1998,RC Deportivo La Coruña,Tenerife,1,0
+SP1,11/01/1998,Merida,Real Oviedo,2,1
+SP1,11/01/1998,Salamanca,Real Racing Club de Santander,0,0
+SP1,11/01/1998,Real Sociedad de Fútbol,FC Barcelona,2,2
+SP1,11/01/1998,Sporting Gijón,Compostela,0,2
+SP1,11/01/1998,Zaragoza,RC Celta de Vigo,1,0
+SP1,12/01/1998,Valencia CF,RCD Mallorca,0,0
+SP1,17/01/1998,RC Celta de Vigo,RCD Espanyol de Barcelona,1,0
+SP1,17/01/1998,Real Oviedo,Zaragoza,3,0
+SP1,17/01/1998,Real Valladolid CF,Club Atlético de Madrid,2,1
+SP1,18/01/1998,Athletic Club,Real Betis Balompié,0,0
+SP1,18/01/1998,Compostela,Merida,3,0
+SP1,18/01/1998,RCD Mallorca,RC Deportivo La Coruña,0,0
+SP1,18/01/1998,Real Madrid CF,Salamanca,1,0
+SP1,18/01/1998,Real Racing Club de Santander,Real Sociedad de Fútbol,3,1
+SP1,18/01/1998,Tenerife,Sporting Gijón,2,1
+SP1,19/01/1998,FC Barcelona,Valencia CF,3,4
+SP1,24/01/1998,Club Atlético de Madrid,Athletic Club,3,0
+SP1,25/01/1998,Real Betis Balompié,RC Celta de Vigo,2,0
+SP1,25/01/1998,RCD Espanyol de Barcelona,Real Oviedo,0,0
+SP1,25/01/1998,RC Deportivo La Coruña,FC Barcelona,3,1
+SP1,25/01/1998,Real Sociedad de Fútbol,Real Madrid CF,4,2
+SP1,25/01/1998,Sporting Gijón,RCD Mallorca,1,3
+SP1,25/01/1998,Tenerife,Compostela,5,1
+SP1,25/01/1998,Valencia CF,Real Racing Club de Santander,6,1
+SP1,25/01/1998,Zaragoza,Merida,1,1
+SP1,26/01/1998,Salamanca,Real Valladolid CF,1,0
+SP1,31/01/1998,Athletic Club,Salamanca,1,0
+SP1,31/01/1998,RCD Mallorca,Tenerife,5,1
+SP1,31/01/1998,Real Oviedo,Real Betis Balompié,0,0
+SP1,01/02/1998,FC Barcelona,Sporting Gijón,2,1
+SP1,01/02/1998,RC Celta de Vigo,Club Atlético de Madrid,1,1
+SP1,01/02/1998,Compostela,Zaragoza,2,0
+SP1,01/02/1998,Merida,RCD Espanyol de Barcelona,1,1
+SP1,01/02/1998,Real Racing Club de Santander,RC Deportivo La Coruña,0,1
+SP1,01/02/1998,Real Valladolid CF,Real Sociedad de Fútbol,0,4
+SP1,02/02/1998,Real Madrid CF,Valencia CF,1,2
+SP1,08/02/1998,Real Betis Balompié,Merida,2,1
+SP1,08/02/1998,RCD Espanyol de Barcelona,Zaragoza,0,1
+SP1,08/02/1998,RC Deportivo La Coruña,Real Madrid CF,2,2
+SP1,08/02/1998,RCD Mallorca,Compostela,2,1
+SP1,08/02/1998,Salamanca,RC Celta de Vigo,0,1
+SP1,08/02/1998,Real Sociedad de Fútbol,Athletic Club,1,1
+SP1,08/02/1998,Sporting Gijón,Real Racing Club de Santander,2,1
+SP1,08/02/1998,Tenerife,FC Barcelona,1,1
+SP1,08/02/1998,Valencia CF,Real Valladolid CF,1,2
+SP1,09/02/1998,Club Atlético de Madrid,Real Oviedo,4,1
+SP1,14/02/1998,Real Valladolid CF,RC Deportivo La Coruña,1,0
+SP1,15/02/1998,Athletic Club,Valencia CF,0,3
+SP1,15/02/1998,FC Barcelona,RCD Mallorca,0,0
+SP1,15/02/1998,RC Celta de Vigo,Real Sociedad de Fútbol,2,1
+SP1,15/02/1998,Compostela,RCD Espanyol de Barcelona,1,1
+SP1,15/02/1998,Merida,Club Atlético de Madrid,2,1
+SP1,15/02/1998,Real Oviedo,Salamanca,2,0
+SP1,15/02/1998,Real Madrid CF,Sporting Gijón,3,0
+SP1,15/02/1998,Real Racing Club de Santander,Tenerife,2,1
+SP1,15/02/1998,Zaragoza,Real Betis Balompié,3,1
+SP1,21/02/1998,Sporting Gijón,Real Valladolid CF,1,2
+SP1,21/02/1998,Tenerife,Real Madrid CF,4,3
+SP1,22/02/1998,FC Barcelona,Compostela,2,0
+SP1,22/02/1998,Real Betis Balompié,RCD Espanyol de Barcelona,1,3
+SP1,22/02/1998,RC Deportivo La Coruña,Athletic Club,3,0
+SP1,22/02/1998,RCD Mallorca,Real Racing Club de Santander,2,1
+SP1,22/02/1998,Salamanca,Merida,3,1
+SP1,22/02/1998,Real Sociedad de Fútbol,Real Oviedo,2,2
+SP1,22/02/1998,Valencia CF,RC Celta de Vigo,2,1
+SP1,23/02/1998,Club Atlético de Madrid,Zaragoza,2,1
+SP1,25/02/1998,Real Betis Balompié,Real Valladolid CF,3,0
+SP1,28/02/1998,Compostela,Real Betis Balompié,2,3
+SP1,28/02/1998,RCD Espanyol de Barcelona,Club Atlético de Madrid,2,2
+SP1,28/02/1998,Real Madrid CF,RCD Mallorca,2,0
+SP1,01/03/1998,Athletic Club,Sporting Gijón,2,2
+SP1,01/03/1998,RC Celta de Vigo,RC Deportivo La Coruña,2,1
+SP1,01/03/1998,Merida,Real Sociedad de Fútbol,3,1
+SP1,01/03/1998,Real Oviedo,Valencia CF,0,0
+SP1,01/03/1998,Real Valladolid CF,Tenerife,2,1
+SP1,01/03/1998,Zaragoza,Salamanca,1,1
+SP1,02/03/1998,Real Racing Club de Santander,FC Barcelona,2,4
+SP1,07/03/1998,FC Barcelona,Real Madrid CF,3,0
+SP1,08/03/1998,Club Atlético de Madrid,Real Betis Balompié,0,0
+SP1,08/03/1998,RC Deportivo La Coruña,Real Oviedo,2,1
+SP1,08/03/1998,RCD Mallorca,Real Valladolid CF,1,1
+SP1,08/03/1998,Salamanca,RCD Espanyol de Barcelona,2,1
+SP1,08/03/1998,Real Racing Club de Santander,Compostela,1,1
+SP1,08/03/1998,Real Sociedad de Fútbol,Zaragoza,0,1
+SP1,08/03/1998,Sporting Gijón,RC Celta de Vigo,0,1
+SP1,08/03/1998,Tenerife,Athletic Club,0,2
+SP1,09/03/1998,Valencia CF,Merida,3,0
+SP1,14/03/1998,Compostela,Club Atlético de Madrid,2,1
+SP1,14/03/1998,Real Madrid CF,Real Racing Club de Santander,2,2
+SP1,15/03/1998,Real Betis Balompié,Salamanca,2,1
+SP1,15/03/1998,RC Celta de Vigo,Tenerife,0,0
+SP1,15/03/1998,RCD Espanyol de Barcelona,Real Sociedad de Fútbol,0,3
+SP1,15/03/1998,Merida,RC Deportivo La Coruña,1,0
+SP1,15/03/1998,Real Oviedo,Sporting Gijón,2,1
+SP1,15/03/1998,Real Valladolid CF,FC Barcelona,1,2
+SP1,15/03/1998,Zaragoza,Valencia CF,0,2
+SP1,16/03/1998,Athletic Club,RCD Mallorca,3,1
+SP1,21/03/1998,Salamanca,Club Atlético de Madrid,5,4
+SP1,22/03/1998,FC Barcelona,Athletic Club,4,0
+SP1,22/03/1998,RC Deportivo La Coruña,Zaragoza,2,1
+SP1,22/03/1998,RCD Mallorca,RC Celta de Vigo,4,2
+SP1,22/03/1998,Real Madrid CF,Compostela,2,1
+SP1,22/03/1998,Real Racing Club de Santander,Real Valladolid CF,1,2
+SP1,22/03/1998,Real Sociedad de Fútbol,Real Betis Balompié,2,0
+SP1,22/03/1998,Sporting Gijón,Merida,0,0
+SP1,22/03/1998,Tenerife,Real Oviedo,1,0
+SP1,22/03/1998,Valencia CF,RCD Espanyol de Barcelona,0,0
+SP1,28/03/1998,Club Atlético de Madrid,Real Sociedad de Fútbol,2,2
+SP1,28/03/1998,Real Betis Balompié,Valencia CF,1,0
+SP1,28/03/1998,Real Valladolid CF,Real Madrid CF,1,1
+SP1,29/03/1998,Athletic Club,Real Racing Club de Santander,4,3
+SP1,29/03/1998,RC Celta de Vigo,FC Barcelona,3,1
+SP1,29/03/1998,Compostela,Salamanca,2,0
+SP1,29/03/1998,RCD Espanyol de Barcelona,RC Deportivo La Coruña,2,0
+SP1,29/03/1998,Merida,Tenerife,1,1
+SP1,29/03/1998,Real Oviedo,RCD Mallorca,0,1
+SP1,29/03/1998,Zaragoza,Sporting Gijón,0,0
+SP1,04/04/1998,FC Barcelona,Real Oviedo,2,1
+SP1,04/04/1998,RC Deportivo La Coruña,Real Betis Balompié,2,0
+SP1,04/04/1998,Real Madrid CF,Athletic Club,0,0
+SP1,05/04/1998,RCD Mallorca,Merida,1,0
+SP1,05/04/1998,Real Racing Club de Santander,RC Celta de Vigo,2,1
+SP1,05/04/1998,Real Sociedad de Fútbol,Salamanca,1,1
+SP1,05/04/1998,Sporting Gijón,RCD Espanyol de Barcelona,1,0
+SP1,05/04/1998,Tenerife,Zaragoza,0,0
+SP1,05/04/1998,Valencia CF,Club Atlético de Madrid,4,1
+SP1,05/04/1998,Real Valladolid CF,Compostela,4,1
+SP1,07/04/1998,Real Betis Balompié,FC Barcelona,0,2
+SP1,11/04/1998,Club Atlético de Madrid,RC Deportivo La Coruña,3,0
+SP1,11/04/1998,RC Celta de Vigo,Real Madrid CF,2,1
+SP1,11/04/1998,Merida,FC Barcelona,1,2
+SP1,12/04/1998,Athletic Club,Real Valladolid CF,2,0
+SP1,12/04/1998,Compostela,Real Sociedad de Fútbol,1,3
+SP1,12/04/1998,RCD Espanyol de Barcelona,Tenerife,2,0
+SP1,12/04/1998,Real Oviedo,Real Racing Club de Santander,0,1
+SP1,12/04/1998,Salamanca,Valencia CF,6,0
+SP1,12/04/1998,Zaragoza,RCD Mallorca,2,3
+SP1,13/04/1998,Real Betis Balompié,Sporting Gijón,2,1
+SP1,18/04/1998,Valencia CF,Real Sociedad de Fútbol,3,2
+SP1,19/04/1998,Athletic Club,Compostela,2,0
+SP1,19/04/1998,FC Barcelona,Zaragoza,1,0
+SP1,19/04/1998,RC Deportivo La Coruña,Salamanca,1,0
+SP1,19/04/1998,RCD Mallorca,RCD Espanyol de Barcelona,2,2
+SP1,19/04/1998,Real Madrid CF,Real Oviedo,5,1
+SP1,19/04/1998,Real Racing Club de Santander,Merida,2,0
+SP1,19/04/1998,Sporting Gijón,Club Atlético de Madrid,2,3
+SP1,19/04/1998,Tenerife,Real Betis Balompié,3,1
+SP1,19/04/1998,Real Valladolid CF,RC Celta de Vigo,0,0
+SP1,25/04/1998,Real Betis Balompié,RCD Mallorca,2,1
+SP1,25/04/1998,RCD Espanyol de Barcelona,FC Barcelona,1,1
+SP1,26/04/1998,Club Atlético de Madrid,Tenerife,2,2
+SP1,26/04/1998,RC Celta de Vigo,Athletic Club,1,1
+SP1,26/04/1998,Compostela,Valencia CF,3,1
+SP1,26/04/1998,Merida,Real Madrid CF,2,2
+SP1,26/04/1998,Real Oviedo,Real Valladolid CF,0,1
+SP1,26/04/1998,Salamanca,Sporting Gijón,4,0
+SP1,26/04/1998,Zaragoza,Real Racing Club de Santander,2,0
+SP1,27/04/1998,Real Sociedad de Fútbol,RC Deportivo La Coruña,1,1
+SP1,02/05/1998,RC Deportivo La Coruña,Valencia CF,1,2
+SP1,03/05/1998,Athletic Club,Real Oviedo,3,0
+SP1,03/05/1998,FC Barcelona,Real Betis Balompié,1,3
+SP1,03/05/1998,RC Celta de Vigo,Compostela,3,3
+SP1,03/05/1998,RCD Mallorca,Club Atlético de Madrid,2,1
+SP1,03/05/1998,Real Racing Club de Santander,RCD Espanyol de Barcelona,1,1
+SP1,03/05/1998,Sporting Gijón,Real Sociedad de Fútbol,0,2
+SP1,03/05/1998,Tenerife,Salamanca,2,0
+SP1,03/05/1998,Real Valladolid CF,Merida,0,0
+SP1,04/05/1998,Real Madrid CF,Zaragoza,0,2
+SP1,09/05/1998,RCD Espanyol de Barcelona,Real Madrid CF,1,0
+SP1,09/05/1998,Valencia CF,Sporting Gijón,2,2
+SP1,10/05/1998,Club Atlético de Madrid,FC Barcelona,5,2
+SP1,10/05/1998,Real Betis Balompié,Real Racing Club de Santander,0,2
+SP1,10/05/1998,RC Deportivo La Coruña,Compostela,2,6
+SP1,10/05/1998,Merida,Athletic Club,0,0
+SP1,10/05/1998,Real Oviedo,RC Celta de Vigo,3,1
+SP1,10/05/1998,Salamanca,RCD Mallorca,1,1
+SP1,10/05/1998,Real Sociedad de Fútbol,Tenerife,1,1
+SP1,10/05/1998,Zaragoza,Real Valladolid CF,0,0
+SP1,15/05/1998,Athletic Club,Zaragoza,1,0
+SP1,15/05/1998,FC Barcelona,Salamanca,1,4
+SP1,15/05/1998,RC Celta de Vigo,Merida,2,0
+SP1,15/05/1998,Compostela,Real Oviedo,1,0
+SP1,15/05/1998,RCD Mallorca,Real Sociedad de Fútbol,0,1
+SP1,15/05/1998,Real Madrid CF,Real Betis Balompié,1,0
+SP1,15/05/1998,Real Racing Club de Santander,Club Atlético de Madrid,0,1
+SP1,15/05/1998,Tenerife,Valencia CF,3,2
+SP1,15/05/1998,Real Valladolid CF,RCD Espanyol de Barcelona,0,0
+SP1,16/05/1998,Sporting Gijón,RC Deportivo La Coruña,0,3

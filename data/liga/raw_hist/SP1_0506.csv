@@ -1,0 +1,381 @@
+Div,Date,HomeTeam,AwayTeam,FTHG,FTAG
+SP1,27/08/2005,Deportivo Alavés,FC Barcelona,0,0
+SP1,27/08/2005,Athletic Club,Real Sociedad de Fútbol,3,0
+SP1,27/08/2005,Valencia CF,Real Betis Balompié,1,0
+SP1,28/08/2005,Club Atlético de Madrid,Zaragoza,0,0
+SP1,28/08/2005,Cádiz CF,Real Madrid CF,1,2
+SP1,28/08/2005,RC Celta de Vigo,Málaga CF,2,0
+SP1,28/08/2005,RCD Espanyol de Barcelona,Getafe CF,0,2
+SP1,28/08/2005,RCD Mallorca,RC Deportivo La Coruña,0,1
+SP1,28/08/2005,CA Osasuna,Villarreal CF,2,1
+SP1,28/08/2005,Sevilla FC,Real Racing Club de Santander,1,0
+SP1,10/09/2005,Real Betis Balompié,CA Osasuna,1,0
+SP1,10/09/2005,RC Deportivo La Coruña,Club Atlético de Madrid,1,0
+SP1,10/09/2005,Real Madrid CF,RC Celta de Vigo,2,3
+SP1,11/09/2005,FC Barcelona,RCD Mallorca,2,0
+SP1,11/09/2005,Getafe CF,Athletic Club,1,1
+SP1,11/09/2005,Málaga CF,RCD Espanyol de Barcelona,1,2
+SP1,11/09/2005,Real Racing Club de Santander,Cádiz CF,0,1
+SP1,11/09/2005,Real Sociedad de Fútbol,Deportivo Alavés,2,1
+SP1,11/09/2005,Villarreal CF,Sevilla FC,1,1
+SP1,11/09/2005,Zaragoza,Valencia CF,2,2
+SP1,17/09/2005,RCD Mallorca,Real Sociedad de Fútbol,5,2
+SP1,17/09/2005,Valencia CF,RC Deportivo La Coruña,2,2
+SP1,18/09/2005,Deportivo Alavés,Getafe CF,3,4
+SP1,18/09/2005,Athletic Club,Málaga CF,1,2
+SP1,18/09/2005,Club Atlético de Madrid,FC Barcelona,2,1
+SP1,18/09/2005,Real Betis Balompié,Zaragoza,0,0
+SP1,18/09/2005,Cádiz CF,Villarreal CF,1,1
+SP1,18/09/2005,RC Celta de Vigo,Real Racing Club de Santander,0,1
+SP1,18/09/2005,RCD Espanyol de Barcelona,Real Madrid CF,1,0
+SP1,18/09/2005,CA Osasuna,Sevilla FC,1,0
+SP1,21/09/2005,FC Barcelona,Valencia CF,2,2
+SP1,21/09/2005,Getafe CF,RCD Mallorca,1,1
+SP1,21/09/2005,RC Deportivo La Coruña,Real Betis Balompié,1,1
+SP1,21/09/2005,Málaga CF,Deportivo Alavés,0,0
+SP1,21/09/2005,Real Racing Club de Santander,RCD Espanyol de Barcelona,1,0
+SP1,21/09/2005,Sevilla FC,Cádiz CF,0,0
+SP1,21/09/2005,Real Sociedad de Fútbol,Club Atlético de Madrid,3,2
+SP1,21/09/2005,Villarreal CF,RC Celta de Vigo,1,2
+SP1,21/09/2005,Zaragoza,CA Osasuna,3,1
+SP1,22/09/2005,Real Madrid CF,Athletic Club,3,1
+SP1,24/09/2005,Club Atlético de Madrid,Getafe CF,0,1
+SP1,24/09/2005,Real Betis Balompié,FC Barcelona,1,4
+SP1,24/09/2005,RCD Espanyol de Barcelona,Villarreal CF,1,2
+SP1,24/09/2005,Valencia CF,Real Sociedad de Fútbol,2,1
+SP1,24/09/2005,Zaragoza,RC Deportivo La Coruña,1,1
+SP1,25/09/2005,Deportivo Alavés,Real Madrid CF,0,3
+SP1,25/09/2005,Athletic Club,Real Racing Club de Santander,0,0
+SP1,25/09/2005,RC Celta de Vigo,Sevilla FC,2,1
+SP1,25/09/2005,RCD Mallorca,Málaga CF,1,4
+SP1,25/09/2005,CA Osasuna,Cádiz CF,2,0
+SP1,01/10/2005,FC Barcelona,Zaragoza,2,2
+SP1,01/10/2005,Getafe CF,Valencia CF,2,1
+SP1,02/10/2005,Cádiz CF,RC Celta de Vigo,1,1
+SP1,02/10/2005,RC Deportivo La Coruña,CA Osasuna,0,1
+SP1,02/10/2005,Málaga CF,Club Atlético de Madrid,0,2
+SP1,02/10/2005,Real Madrid CF,RCD Mallorca,4,0
+SP1,02/10/2005,Real Racing Club de Santander,Deportivo Alavés,1,2
+SP1,02/10/2005,Sevilla FC,RCD Espanyol de Barcelona,1,1
+SP1,02/10/2005,Real Sociedad de Fútbol,Real Betis Balompié,1,1
+SP1,02/10/2005,Villarreal CF,Athletic Club,3,1
+SP1,15/10/2005,Deportivo Alavés,Villarreal CF,1,1
+SP1,15/10/2005,Club Atlético de Madrid,Real Madrid CF,0,3
+SP1,15/10/2005,RC Deportivo La Coruña,FC Barcelona,3,3
+SP1,16/10/2005,Athletic Club,Sevilla FC,0,1
+SP1,16/10/2005,Real Betis Balompié,Getafe CF,1,0
+SP1,16/10/2005,RCD Espanyol de Barcelona,Cádiz CF,0,2
+SP1,16/10/2005,RCD Mallorca,Real Racing Club de Santander,0,0
+SP1,16/10/2005,CA Osasuna,RC Celta de Vigo,2,0
+SP1,16/10/2005,Valencia CF,Málaga CF,2,1
+SP1,16/10/2005,Zaragoza,Real Sociedad de Fútbol,0,1
+SP1,22/10/2005,FC Barcelona,CA Osasuna,3,0
+SP1,22/10/2005,Sevilla FC,Deportivo Alavés,2,0
+SP1,23/10/2005,Cádiz CF,Athletic Club,1,0
+SP1,23/10/2005,RC Celta de Vigo,RCD Espanyol de Barcelona,1,0
+SP1,23/10/2005,Getafe CF,Zaragoza,5,2
+SP1,23/10/2005,Málaga CF,Real Betis Balompié,5,0
+SP1,23/10/2005,Real Madrid CF,Valencia CF,1,2
+SP1,23/10/2005,Real Racing Club de Santander,Club Atlético de Madrid,0,1
+SP1,23/10/2005,Real Sociedad de Fútbol,RC Deportivo La Coruña,2,0
+SP1,23/10/2005,Villarreal CF,RCD Mallorca,3,0
+SP1,26/10/2005,FC Barcelona,Málaga CF,2,0
+SP1,26/10/2005,Real Betis Balompié,Villarreal CF,2,3
+SP1,26/10/2005,RC Deportivo La Coruña,Real Madrid CF,3,1
+SP1,26/10/2005,RCD Mallorca,RC Celta de Vigo,1,0
+SP1,26/10/2005,CA Osasuna,Athletic Club,3,2
+SP1,27/10/2005,Deportivo Alavés,RCD Espanyol de Barcelona,1,1
+SP1,27/10/2005,Club Atlético de Madrid,Cádiz CF,3,0
+SP1,27/10/2005,Real Sociedad de Fútbol,Getafe CF,3,0
+SP1,27/10/2005,Valencia CF,Sevilla FC,0,2
+SP1,27/10/2005,Zaragoza,Real Racing Club de Santander,1,1
+SP1,29/10/2005,Athletic Club,RC Celta de Vigo,1,1
+SP1,29/10/2005,Real Betis Balompié,Real Madrid CF,0,2
+SP1,30/10/2005,Deportivo Alavés,Cádiz CF,0,0
+SP1,30/10/2005,Club Atlético de Madrid,Villarreal CF,1,1
+SP1,30/10/2005,FC Barcelona,Real Sociedad de Fútbol,5,0
+SP1,30/10/2005,RC Deportivo La Coruña,Getafe CF,1,0
+SP1,30/10/2005,RCD Mallorca,Sevilla FC,1,1
+SP1,30/10/2005,CA Osasuna,RCD Espanyol de Barcelona,2,0
+SP1,30/10/2005,Valencia CF,Real Racing Club de Santander,1,1
+SP1,30/10/2005,Zaragoza,Málaga CF,1,1
+SP1,05/11/2005,RCD Espanyol de Barcelona,Athletic Club,1,1
+SP1,05/11/2005,Real Sociedad de Fútbol,CA Osasuna,1,2
+SP1,05/11/2005,Villarreal CF,Valencia CF,1,0
+SP1,06/11/2005,Cádiz CF,RCD Mallorca,1,2
+SP1,06/11/2005,RC Celta de Vigo,Deportivo Alavés,2,1
+SP1,06/11/2005,Getafe CF,FC Barcelona,1,3
+SP1,06/11/2005,Málaga CF,RC Deportivo La Coruña,1,1
+SP1,06/11/2005,Real Madrid CF,Zaragoza,1,0
+SP1,06/11/2005,Real Racing Club de Santander,Real Betis Balompié,1,1
+SP1,06/11/2005,Sevilla FC,Club Atlético de Madrid,0,0
+SP1,19/11/2005,Getafe CF,CA Osasuna,0,0
+SP1,19/11/2005,Real Madrid CF,FC Barcelona,0,3
+SP1,19/11/2005,Sevilla FC,Real Betis Balompié,1,0
+SP1,19/11/2005,Villarreal CF,Zaragoza,0,0
+SP1,20/11/2005,Athletic Club,Deportivo Alavés,0,2
+SP1,20/11/2005,Cádiz CF,Valencia CF,0,1
+SP1,20/11/2005,RC Celta de Vigo,Club Atlético de Madrid,2,1
+SP1,20/11/2005,RCD Espanyol de Barcelona,RCD Mallorca,2,0
+SP1,20/11/2005,Málaga CF,Real Sociedad de Fútbol,3,1
+SP1,20/11/2005,Real Racing Club de Santander,RC Deportivo La Coruña,0,3
+SP1,26/11/2005,RCD Mallorca,Athletic Club,0,1
+SP1,26/11/2005,Valencia CF,RC Celta de Vigo,2,0
+SP1,27/11/2005,Club Atlético de Madrid,RCD Espanyol de Barcelona,1,1
+SP1,27/11/2005,FC Barcelona,Real Racing Club de Santander,4,1
+SP1,27/11/2005,Real Betis Balompié,Cádiz CF,1,1
+SP1,27/11/2005,Getafe CF,Málaga CF,3,2
+SP1,27/11/2005,RC Deportivo La Coruña,Villarreal CF,0,2
+SP1,27/11/2005,CA Osasuna,Deportivo Alavés,3,2
+SP1,27/11/2005,Real Sociedad de Fútbol,Real Madrid CF,2,2
+SP1,27/11/2005,Zaragoza,Sevilla FC,0,2
+SP1,03/12/2005,Athletic Club,Club Atlético de Madrid,1,1
+SP1,03/12/2005,RC Celta de Vigo,Real Betis Balompié,2,1
+SP1,03/12/2005,Real Madrid CF,Getafe CF,1,0
+SP1,04/12/2005,Deportivo Alavés,RCD Mallorca,0,3
+SP1,04/12/2005,Cádiz CF,Zaragoza,1,2
+SP1,04/12/2005,RCD Espanyol de Barcelona,Valencia CF,1,3
+SP1,04/12/2005,Málaga CF,CA Osasuna,1,2
+SP1,04/12/2005,Real Racing Club de Santander,Real Sociedad de Fútbol,2,2
+SP1,04/12/2005,Sevilla FC,RC Deportivo La Coruña,0,2
+SP1,04/12/2005,Villarreal CF,FC Barcelona,0,2
+SP1,10/12/2005,Real Sociedad de Fútbol,Villarreal CF,1,3
+SP1,10/12/2005,Valencia CF,Athletic Club,1,1
+SP1,11/12/2005,Club Atlético de Madrid,Deportivo Alavés,1,1
+SP1,11/12/2005,FC Barcelona,Sevilla FC,2,1
+SP1,11/12/2005,Real Betis Balompié,RCD Espanyol de Barcelona,0,0
+SP1,11/12/2005,Getafe CF,Real Racing Club de Santander,1,2
+SP1,11/12/2005,RC Deportivo La Coruña,Cádiz CF,1,0
+SP1,11/12/2005,Málaga CF,Real Madrid CF,0,2
+SP1,11/12/2005,CA Osasuna,RCD Mallorca,1,0
+SP1,11/12/2005,Zaragoza,RC Celta de Vigo,1,0
+SP1,17/12/2005,Athletic Club,Real Betis Balompié,2,0
+SP1,17/12/2005,Cádiz CF,FC Barcelona,1,3
+SP1,17/12/2005,RC Celta de Vigo,RC Deportivo La Coruña,0,3
+SP1,18/12/2005,Deportivo Alavés,Valencia CF,0,1
+SP1,18/12/2005,RCD Espanyol de Barcelona,Zaragoza,2,2
+SP1,18/12/2005,RCD Mallorca,Club Atlético de Madrid,2,2
+SP1,18/12/2005,Real Madrid CF,CA Osasuna,1,1
+SP1,18/12/2005,Real Racing Club de Santander,Málaga CF,1,1
+SP1,18/12/2005,Sevilla FC,Real Sociedad de Fútbol,3,2
+SP1,18/12/2005,Villarreal CF,Getafe CF,2,1
+SP1,20/12/2005,FC Barcelona,RC Celta de Vigo,2,0
+SP1,21/12/2005,Real Betis Balompié,Deportivo Alavés,3,0
+SP1,21/12/2005,Getafe CF,Sevilla FC,1,0
+SP1,21/12/2005,RC Deportivo La Coruña,RCD Espanyol de Barcelona,1,2
+SP1,21/12/2005,Málaga CF,Villarreal CF,0,0
+SP1,21/12/2005,Real Madrid CF,Real Racing Club de Santander,1,2
+SP1,21/12/2005,Real Sociedad de Fútbol,Cádiz CF,2,0
+SP1,21/12/2005,Valencia CF,RCD Mallorca,3,0
+SP1,21/12/2005,Zaragoza,Athletic Club,3,2
+SP1,22/12/2005,CA Osasuna,Club Atlético de Madrid,2,1
+SP1,07/01/2006,Athletic Club,RC Deportivo La Coruña,1,2
+SP1,07/01/2006,RCD Espanyol de Barcelona,FC Barcelona,1,2
+SP1,08/01/2006,Deportivo Alavés,Zaragoza,0,2
+SP1,08/01/2006,Club Atlético de Madrid,Valencia CF,0,0
+SP1,08/01/2006,Cádiz CF,Getafe CF,1,0
+SP1,08/01/2006,RC Celta de Vigo,Real Sociedad de Fútbol,1,0
+SP1,08/01/2006,RCD Mallorca,Real Betis Balompié,1,1
+SP1,08/01/2006,CA Osasuna,Real Racing Club de Santander,1,1
+SP1,08/01/2006,Sevilla FC,Málaga CF,3,1
+SP1,08/01/2006,Villarreal CF,Real Madrid CF,0,0
+SP1,14/01/2006,Real Betis Balompié,Club Atlético de Madrid,1,0
+SP1,14/01/2006,Valencia CF,CA Osasuna,2,0
+SP1,15/01/2006,FC Barcelona,Athletic Club,2,1
+SP1,15/01/2006,Getafe CF,RC Celta de Vigo,1,1
+SP1,15/01/2006,RC Deportivo La Coruña,Deportivo Alavés,0,2
+SP1,15/01/2006,Málaga CF,Cádiz CF,0,2
+SP1,15/01/2006,Real Madrid CF,Sevilla FC,4,2
+SP1,15/01/2006,Real Racing Club de Santander,Villarreal CF,1,0
+SP1,15/01/2006,Real Sociedad de Fútbol,RCD Espanyol de Barcelona,0,1
+SP1,15/01/2006,Zaragoza,RCD Mallorca,3,1
+SP1,21/01/2006,Real Madrid CF,Cádiz CF,3,1
+SP1,21/01/2006,Zaragoza,Club Atlético de Madrid,0,2
+SP1,22/01/2006,FC Barcelona,Deportivo Alavés,2,0
+SP1,22/01/2006,Real Betis Balompié,Valencia CF,0,2
+SP1,22/01/2006,Getafe CF,RCD Espanyol de Barcelona,5,0
+SP1,22/01/2006,RC Deportivo La Coruña,RCD Mallorca,2,2
+SP1,22/01/2006,Málaga CF,RC Celta de Vigo,0,2
+SP1,22/01/2006,Real Racing Club de Santander,Sevilla FC,2,3
+SP1,22/01/2006,Real Sociedad de Fútbol,Athletic Club,3,3
+SP1,22/01/2006,Villarreal CF,CA Osasuna,2,1
+SP1,28/01/2006,Athletic Club,Getafe CF,1,0
+SP1,28/01/2006,Club Atlético de Madrid,RC Deportivo La Coruña,3,2
+SP1,28/01/2006,Cádiz CF,Real Racing Club de Santander,1,1
+SP1,29/01/2006,Deportivo Alavés,Real Sociedad de Fútbol,3,1
+SP1,29/01/2006,RC Celta de Vigo,Real Madrid CF,1,2
+SP1,29/01/2006,RCD Espanyol de Barcelona,Málaga CF,3,1
+SP1,29/01/2006,RCD Mallorca,FC Barcelona,0,3
+SP1,29/01/2006,CA Osasuna,Real Betis Balompié,0,2
+SP1,29/01/2006,Sevilla FC,Villarreal CF,2,0
+SP1,29/01/2006,Valencia CF,Zaragoza,2,2
+SP1,04/02/2006,RC Deportivo La Coruña,Valencia CF,0,1
+SP1,04/02/2006,Málaga CF,Athletic Club,2,1
+SP1,04/02/2006,Real Madrid CF,RCD Espanyol de Barcelona,4,0
+SP1,05/02/2006,FC Barcelona,Club Atlético de Madrid,1,3
+SP1,05/02/2006,Getafe CF,Deportivo Alavés,2,2
+SP1,05/02/2006,Real Racing Club de Santander,RC Celta de Vigo,0,1
+SP1,05/02/2006,Sevilla FC,CA Osasuna,0,1
+SP1,05/02/2006,Real Sociedad de Fútbol,RCD Mallorca,2,1
+SP1,05/02/2006,Villarreal CF,Cádiz CF,1,1
+SP1,05/02/2006,Zaragoza,Real Betis Balompié,4,3
+SP1,11/02/2006,Athletic Club,Real Madrid CF,0,2
+SP1,11/02/2006,Cádiz CF,Sevilla FC,0,4
+SP1,11/02/2006,CA Osasuna,Zaragoza,1,1
+SP1,12/02/2006,Deportivo Alavés,Málaga CF,3,2
+SP1,12/02/2006,Club Atlético de Madrid,Real Sociedad de Fútbol,1,0
+SP1,12/02/2006,Real Betis Balompié,RC Deportivo La Coruña,0,1
+SP1,12/02/2006,RC Celta de Vigo,Villarreal CF,1,0
+SP1,12/02/2006,RCD Espanyol de Barcelona,Real Racing Club de Santander,0,2
+SP1,12/02/2006,RCD Mallorca,Getafe CF,1,1
+SP1,12/02/2006,Valencia CF,FC Barcelona,1,0
+SP1,18/02/2006,FC Barcelona,Real Betis Balompié,5,1
+SP1,18/02/2006,Real Madrid CF,Deportivo Alavés,3,0
+SP1,18/02/2006,Sevilla FC,RC Celta de Vigo,1,0
+SP1,18/02/2006,Villarreal CF,RCD Espanyol de Barcelona,4,0
+SP1,19/02/2006,Cádiz CF,CA Osasuna,1,3
+SP1,19/02/2006,Getafe CF,Club Atlético de Madrid,0,3
+SP1,19/02/2006,RC Deportivo La Coruña,Zaragoza,1,1
+SP1,19/02/2006,Málaga CF,RCD Mallorca,0,2
+SP1,19/02/2006,Real Racing Club de Santander,Athletic Club,0,1
+SP1,19/02/2006,Real Sociedad de Fútbol,Valencia CF,1,2
+SP1,25/02/2006,Club Atlético de Madrid,Málaga CF,5,0
+SP1,25/02/2006,Zaragoza,FC Barcelona,0,2
+SP1,26/02/2006,Deportivo Alavés,Real Racing Club de Santander,2,2
+SP1,26/02/2006,Athletic Club,Villarreal CF,1,1
+SP1,26/02/2006,Real Betis Balompié,Real Sociedad de Fútbol,2,0
+SP1,26/02/2006,RC Celta de Vigo,Cádiz CF,2,0
+SP1,26/02/2006,RCD Espanyol de Barcelona,Sevilla FC,5,0
+SP1,26/02/2006,RCD Mallorca,Real Madrid CF,2,1
+SP1,26/02/2006,CA Osasuna,RC Deportivo La Coruña,1,2
+SP1,26/02/2006,Valencia CF,Getafe CF,1,1
+SP1,04/03/2006,FC Barcelona,RC Deportivo La Coruña,3,2
+SP1,04/03/2006,Cádiz CF,RCD Espanyol de Barcelona,2,0
+SP1,04/03/2006,Real Madrid CF,Club Atlético de Madrid,2,1
+SP1,04/03/2006,Villarreal CF,Deportivo Alavés,3,2
+SP1,05/03/2006,RC Celta de Vigo,CA Osasuna,2,0
+SP1,05/03/2006,Getafe CF,Real Betis Balompié,1,0
+SP1,05/03/2006,Málaga CF,Valencia CF,0,0
+SP1,05/03/2006,Real Racing Club de Santander,RCD Mallorca,0,0
+SP1,05/03/2006,Sevilla FC,Athletic Club,2,1
+SP1,05/03/2006,Real Sociedad de Fútbol,Zaragoza,1,3
+SP1,11/03/2006,RCD Espanyol de Barcelona,RC Celta de Vigo,2,0
+SP1,11/03/2006,RC Deportivo La Coruña,Real Sociedad de Fútbol,0,1
+SP1,11/03/2006,Valencia CF,Real Madrid CF,0,0
+SP1,12/03/2006,Deportivo Alavés,Sevilla FC,2,1
+SP1,12/03/2006,Athletic Club,Cádiz CF,1,0
+SP1,12/03/2006,Club Atlético de Madrid,Real Racing Club de Santander,2,1
+SP1,12/03/2006,Real Betis Balompié,Málaga CF,1,1
+SP1,12/03/2006,RCD Mallorca,Villarreal CF,1,1
+SP1,12/03/2006,CA Osasuna,FC Barcelona,2,1
+SP1,12/03/2006,Zaragoza,Getafe CF,1,2
+SP1,18/03/2006,Getafe CF,RC Deportivo La Coruña,1,2
+SP1,18/03/2006,Real Sociedad de Fútbol,FC Barcelona,0,2
+SP1,18/03/2006,Villarreal CF,Club Atlético de Madrid,1,1
+SP1,19/03/2006,Cádiz CF,Deportivo Alavés,0,0
+SP1,19/03/2006,RC Celta de Vigo,Athletic Club,0,1
+SP1,19/03/2006,RCD Espanyol de Barcelona,CA Osasuna,2,4
+SP1,19/03/2006,Málaga CF,Zaragoza,0,1
+SP1,19/03/2006,Real Madrid CF,Real Betis Balompié,0,0
+SP1,19/03/2006,Real Racing Club de Santander,Valencia CF,2,1
+SP1,19/03/2006,Sevilla FC,RCD Mallorca,1,1
+SP1,21/03/2006,FC Barcelona,Getafe CF,3,1
+SP1,22/03/2006,Deportivo Alavés,RC Celta de Vigo,1,0
+SP1,22/03/2006,Athletic Club,RCD Espanyol de Barcelona,1,1
+SP1,22/03/2006,Real Betis Balompié,Real Racing Club de Santander,1,0
+SP1,22/03/2006,RC Deportivo La Coruña,Málaga CF,2,1
+SP1,22/03/2006,RCD Mallorca,Cádiz CF,1,0
+SP1,22/03/2006,CA Osasuna,Real Sociedad de Fútbol,2,0
+SP1,22/03/2006,Valencia CF,Villarreal CF,1,1
+SP1,22/03/2006,Zaragoza,Real Madrid CF,1,1
+SP1,23/03/2006,Club Atlético de Madrid,Sevilla FC,0,1
+SP1,25/03/2006,Athletic Club,CA Osasuna,1,0
+SP1,25/03/2006,Málaga CF,FC Barcelona,0,0
+SP1,25/03/2006,Villarreal CF,Real Betis Balompié,1,2
+SP1,26/03/2006,Cádiz CF,Club Atlético de Madrid,1,1
+SP1,26/03/2006,RC Celta de Vigo,RCD Mallorca,2,0
+SP1,26/03/2006,RCD Espanyol de Barcelona,Deportivo Alavés,0,0
+SP1,26/03/2006,Getafe CF,Real Sociedad de Fútbol,2,1
+SP1,26/03/2006,Real Madrid CF,RC Deportivo La Coruña,4,0
+SP1,26/03/2006,Real Racing Club de Santander,Zaragoza,0,0
+SP1,26/03/2006,Sevilla FC,Valencia CF,1,0
+SP1,01/04/2006,FC Barcelona,Real Madrid CF,1,1
+SP1,01/04/2006,Real Sociedad de Fútbol,Málaga CF,3,0
+SP1,01/04/2006,Zaragoza,Villarreal CF,0,1
+SP1,02/04/2006,Deportivo Alavés,Athletic Club,0,0
+SP1,02/04/2006,Club Atlético de Madrid,RC Celta de Vigo,0,3
+SP1,02/04/2006,Real Betis Balompié,Sevilla FC,2,1
+SP1,02/04/2006,RC Deportivo La Coruña,Real Racing Club de Santander,2,0
+SP1,02/04/2006,RCD Mallorca,RCD Espanyol de Barcelona,0,0
+SP1,02/04/2006,CA Osasuna,Getafe CF,0,4
+SP1,02/04/2006,Valencia CF,Cádiz CF,5,3
+SP1,08/04/2006,Cádiz CF,Real Betis Balompié,1,1
+SP1,08/04/2006,RC Celta de Vigo,Valencia CF,0,1
+SP1,08/04/2006,Málaga CF,Getafe CF,1,2
+SP1,08/04/2006,Real Madrid CF,Real Sociedad de Fútbol,1,1
+SP1,09/04/2006,Deportivo Alavés,CA Osasuna,1,2
+SP1,09/04/2006,Athletic Club,RCD Mallorca,1,1
+SP1,09/04/2006,RCD Espanyol de Barcelona,Club Atlético de Madrid,1,1
+SP1,09/04/2006,Real Racing Club de Santander,FC Barcelona,2,2
+SP1,09/04/2006,Sevilla FC,Zaragoza,1,1
+SP1,09/04/2006,Villarreal CF,RC Deportivo La Coruña,1,1
+SP1,14/04/2006,FC Barcelona,Villarreal CF,1,0
+SP1,15/04/2006,RC Deportivo La Coruña,Sevilla FC,0,0
+SP1,15/04/2006,RCD Mallorca,Deportivo Alavés,0,0
+SP1,15/04/2006,Real Sociedad de Fútbol,Real Racing Club de Santander,1,0
+SP1,16/04/2006,Club Atlético de Madrid,Athletic Club,1,0
+SP1,16/04/2006,Real Betis Balompié,RC Celta de Vigo,0,2
+SP1,16/04/2006,Getafe CF,Real Madrid CF,1,1
+SP1,16/04/2006,CA Osasuna,Málaga CF,1,1
+SP1,16/04/2006,Valencia CF,RCD Espanyol de Barcelona,4,0
+SP1,16/04/2006,Zaragoza,Cádiz CF,1,2
+SP1,22/04/2006,Deportivo Alavés,Club Atlético de Madrid,0,1
+SP1,22/04/2006,RC Celta de Vigo,Zaragoza,4,0
+SP1,22/04/2006,Villarreal CF,Real Sociedad de Fútbol,0,2
+SP1,23/04/2006,Athletic Club,Valencia CF,0,3
+SP1,23/04/2006,Cádiz CF,RC Deportivo La Coruña,1,1
+SP1,23/04/2006,RCD Espanyol de Barcelona,Real Betis Balompié,2,0
+SP1,23/04/2006,RCD Mallorca,CA Osasuna,0,1
+SP1,23/04/2006,Real Madrid CF,Málaga CF,2,1
+SP1,23/04/2006,Real Racing Club de Santander,Getafe CF,1,3
+SP1,29/04/2006,FC Barcelona,Cádiz CF,1,0
+SP1,29/04/2006,Real Betis Balompié,Athletic Club,1,1
+SP1,29/04/2006,RC Deportivo La Coruña,RC Celta de Vigo,0,2
+SP1,30/04/2006,Club Atlético de Madrid,RCD Mallorca,0,1
+SP1,30/04/2006,Getafe CF,Villarreal CF,1,1
+SP1,30/04/2006,Málaga CF,Real Racing Club de Santander,2,3
+SP1,30/04/2006,CA Osasuna,Real Madrid CF,0,1
+SP1,30/04/2006,Real Sociedad de Fútbol,Sevilla FC,1,2
+SP1,30/04/2006,Valencia CF,Deportivo Alavés,3,0
+SP1,30/04/2006,Zaragoza,RCD Espanyol de Barcelona,1,1
+SP1,03/05/2006,Deportivo Alavés,Real Betis Balompié,2,0
+SP1,03/05/2006,Athletic Club,Zaragoza,1,0
+SP1,03/05/2006,Club Atlético de Madrid,CA Osasuna,0,1
+SP1,03/05/2006,Cádiz CF,Real Sociedad de Fútbol,2,2
+SP1,03/05/2006,RC Celta de Vigo,FC Barcelona,0,1
+SP1,03/05/2006,RCD Espanyol de Barcelona,RC Deportivo La Coruña,1,2
+SP1,03/05/2006,RCD Mallorca,Valencia CF,2,1
+SP1,03/05/2006,Sevilla FC,Getafe CF,3,0
+SP1,03/05/2006,Villarreal CF,Málaga CF,2,1
+SP1,04/05/2006,Real Racing Club de Santander,Real Madrid CF,2,3
+SP1,06/05/2006,FC Barcelona,RCD Espanyol de Barcelona,2,0
+SP1,06/05/2006,Málaga CF,Sevilla FC,0,2
+SP1,06/05/2006,Valencia CF,Club Atlético de Madrid,1,1
+SP1,07/05/2006,Real Betis Balompié,RCD Mallorca,2,1
+SP1,07/05/2006,Getafe CF,Cádiz CF,3,1
+SP1,07/05/2006,RC Deportivo La Coruña,Athletic Club,1,2
+SP1,07/05/2006,Real Madrid CF,Villarreal CF,3,3
+SP1,07/05/2006,Real Racing Club de Santander,CA Osasuna,2,1
+SP1,07/05/2006,Real Sociedad de Fútbol,RC Celta de Vigo,2,2
+SP1,07/05/2006,Zaragoza,Deportivo Alavés,3,0
+SP1,13/05/2006,Deportivo Alavés,RC Deportivo La Coruña,1,0
+SP1,13/05/2006,Club Atlético de Madrid,Real Betis Balompié,1,1
+SP1,13/05/2006,Cádiz CF,Málaga CF,5,0
+SP1,13/05/2006,RC Celta de Vigo,Getafe CF,1,0
+SP1,13/05/2006,RCD Espanyol de Barcelona,Real Sociedad de Fútbol,1,0
+SP1,13/05/2006,RCD Mallorca,Zaragoza,3,1
+SP1,13/05/2006,Sevilla FC,FC Barcelona,3,2
+SP1,13/05/2006,Villarreal CF,Real Racing Club de Santander,2,0
+SP1,16/05/2006,CA Osasuna,Valencia CF,2,1
+SP1,16/05/2006,Sevilla FC,Real Madrid CF,4,3
+SP1,20/05/2006,Athletic Club,FC Barcelona,3,1

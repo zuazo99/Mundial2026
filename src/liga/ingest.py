@@ -33,6 +33,15 @@ ELO_HOME_ADV = 65.0
 ELO_SP2_GAP = 100.0
 
 
+def season_key(code: str) -> int:
+    """Año de inicio de una temporada a partir de su código ('9394' → 1993, '0001' → 2000, '2627' → 2026).
+
+    Los códigos son texto de 4 dígitos: ordenar alfabéticamente rompe el cambio de siglo ('9394' > '2627').
+    Válido hasta la temporada 2089/90."""
+    y = int(code[:2])
+    return (1900 if y >= 90 else 2000) + y
+
+
 # ─── 1. parser ───────────────────────────────────────────────────────────────
 
 def _read_text_csv(file_path: str) -> pd.DataFrame:
@@ -68,7 +77,7 @@ def load_seasons(raw_dir: str, division: str = "SP1") -> dict:
     for f in sorted(glob.glob(os.path.join(raw_dir, f"{division}_*.csv"))):
         code = os.path.splitext(os.path.basename(f))[0].split("_", 1)[1]
         seasons[code] = read_season(f)
-    return dict(sorted(seasons.items()))
+    return dict(sorted(seasons.items(), key=lambda kv: season_key(kv[0])))
 
 
 # ─── 2. ELO propio ───────────────────────────────────────────────────────────
@@ -183,16 +192,24 @@ def pending_fixtures(season_df: pd.DataFrame) -> pd.DataFrame:
 
 # ─── control de calidad entre temporadas ─────────────────────────────────────
 
-def check_transitions(seasons: dict, max_changes: int = 3) -> None:
+# Excepciones históricas documentadas: 1998/99 → 1999/00 entraron 4 clubes distintos (Málaga, Numancia, Rayo,
+# Sevilla) y salieron otros 4 (Extremadura, Salamanca, Tenerife, Villarreal): no es un renombre.
+HISTORICAL_TRANSITION_EXCEPTIONS = {("9899", "9900"): 4}
+
+
+def check_transitions(seasons: dict, max_changes: int = 3, exceptions: dict = None) -> None:
     """En Primera cambian como mucho 3 equipos por temporada. Más entradas indican un renombre
     de clubes (p. ej. 'Real Madrid' → 'Real Madrid CF') o mezclar fuentes con nombres distintos,
-    y rompería el arrastre del ELO sin avisar. No aplicar a Segunda (22 equipos, hasta 7 cambios)."""
+    y rompería el arrastre del ELO sin avisar. No aplicar a Segunda (22 equipos, hasta 7 cambios).
+    `exceptions` fija un máximo distinto para pares concretos de temporadas (por defecto, los históricos)."""
+    exceptions = HISTORICAL_TRANSITION_EXCEPTIONS if exceptions is None else exceptions
     codes = list(seasons)
     for a, b in zip(codes, codes[1:]):
         ta, tb = set(seasons[a]["home"]) | set(seasons[a]["away"]), set(seasons[b]["home"]) | set(seasons[b]["away"])
         entering = sorted(tb - ta)
-        if len(entering) > max_changes:
-            raise ValueError(f"{a}→{b}: entran {len(entering)} equipos nuevos (máx. {max_changes}); posible renombre/alias. "
+        limit = exceptions.get((a, b), max_changes)
+        if len(entering) > limit:
+            raise ValueError(f"{a}→{b}: entran {len(entering)} equipos nuevos (máx. {limit}); posible renombre/alias. "
                              f"Salen {sorted(ta - tb)}; entran {entering}.")
 
 

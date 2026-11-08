@@ -19,10 +19,14 @@ Fuentes: https://github.com/openfootball/football.json y
 https://github.com/footballcsv/cache.footballdata (ambas CC0 / dominio público).
 """
 import collections
+import csv
 import datetime as dt
+import difflib
+import hashlib
 import io
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -229,3 +233,207 @@ def build(seasons: list, today: dt.date, fetch, raw_dir: str, cache_dir: str, re
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(report, f, indent=2, ensure_ascii=False)
     return report
+
+
+# ═══ Histórico desde el espejo datasets/football-datasets (1993/94 →) ═════════════════════════
+# Fuente: https://github.com/datasets/football-datasets (PDDL), espejo diario de football-data.co.uk.
+# Se usa solo como HISTÓRICO: no tiene la temporada en curso y contiene filas de relleno (ver quarantine).
+
+MIRROR_REPO = "datasets/football-datasets"
+MIRROR_URL = RAW_BASE + "/" + MIRROR_REPO + "/{ref}/datasets/la-liga/season-{code}.csv"
+_MIRROR_REQUIRED = ["Date", "HomeTeam", "AwayTeam", "FTHG", "FTAG"]
+
+# Nombre del espejo (esquema football-data) → nombre canónico (esquema openfootball).
+# Derivados por coincidencia (fecha, marcador) con openfootball 2016/17-2025/26 y verificados en cada
+# ejecución con check_mirror_aliases; los dos últimos son manuales (clubes sin solape que lo derive).
+MIRROR_ALIASES = {
+    'Alaves': 'Deportivo Alavés', 'Almeria': 'UD Almería', 'Ath Bilbao': 'Athletic Club',
+    'Ath Madrid': 'Club Atlético de Madrid', 'Barcelona': 'FC Barcelona', 'Betis': 'Real Betis Balompié',
+    'Cadiz': 'Cádiz CF', 'Celta': 'RC Celta de Vigo', 'Eibar': 'SD Eibar', 'Elche': 'Elche CF',
+    'Espanol': 'RCD Espanyol de Barcelona', 'Getafe': 'Getafe CF', 'Girona': 'Girona FC', 'Granada': 'Granada CF',
+    'Huesca': 'SD Huesca', 'La Coruna': 'RC Deportivo La Coruña', 'Las Palmas': 'UD Las Palmas',
+    'Leganes': 'CD Leganés', 'Levante': 'Levante UD', 'Malaga': 'Málaga CF', 'Mallorca': 'RCD Mallorca',
+    'Osasuna': 'CA Osasuna', 'Oviedo': 'Real Oviedo', 'Real Madrid': 'Real Madrid CF', 'Sevilla': 'Sevilla FC',
+    'Sociedad': 'Real Sociedad de Fútbol', 'Sp Gijon': 'Sporting Gijón', 'Valencia': 'Valencia CF',
+    'Valladolid': 'Real Valladolid CF', 'Vallecano': 'Rayo Vallecano de Madrid', 'Villarreal': 'Villarreal CF',
+    # manuales (sin solape con openfootball 2016+ que permita derivarlos):
+    'Santander': 'Real Racing Club de Santander',    # único club "Santander" de La Liga (2008/09-2011/12 en el espejo)
+    'Villareal': 'Villarreal CF',                    # errata del espejo en las temporadas anteriores a 2000
+}
+
+# Pares de nombres parecidos ya revisados a mano: son clubes distintos.
+KNOWN_DISTINCT = {frozenset(p) for p in [("Lerida", "Merida"), ("Real Madrid CF", "Real Valladolid CF")]}
+
+
+class SourceChanged(Exception):
+    """Un fichero descargado no coincide con la huella (SHA-256) registrada."""
+
+
+_ISO = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def mirror_url(code: str, ref: str = "master") -> str:
+    return MIRROR_URL.format(ref=ref, code=code)
+
+
+def parse_mirror(text: str) -> dict:
+    """CSV del espejo → dict con la forma de openfootball (para reutilizar clean_season). Fechas ISO estrictas."""
+    reader = csv.DictReader(io.StringIO(text.lstrip("\ufeff")))
+    missing = [c for c in _MIRROR_REQUIRED if c not in (reader.fieldnames or [])]
+    if missing:
+        raise ValueError(f"Espejo: faltan columnas {missing}")
+    matches = []
+    for r in reader:
+        d = (r["Date"] or "").strip()
+        if not _ISO.match(d):
+            raise ValueError(f"Espejo: fecha no ISO {d!r}")
+        dt.date.fromisoformat(d)                                   # valida mes/día
+        h, a = (r["FTHG"] or "").strip(), (r["FTAG"] or "").strip()
+        m = {"round": "", "date": d, "team1": r["HomeTeam"].strip(), "team2": r["AwayTeam"].strip()}
+        if h != "" and a != "":
+            m["score"] = {"ft": [int(h) if h.lstrip("-").isdigit() else h, int(a) if a.lstrip("-").isdigit() else a]}
+        matches.append(m)
+    return {"matches": matches}
+
+
+def apply_mirror_aliases(raw: dict) -> dict:
+    out = []
+    for m in raw["matches"]:
+        m = dict(m)
+        m["team1"], m["team2"] = MIRROR_ALIASES.get(m["team1"], m["team1"]), MIRROR_ALIASES.get(m["team2"], m["team2"])
+        out.append(m)
+    return {"matches": out}
+
+
+def derive_aliases(mirror: dict, ref: dict) -> dict:
+    """Alias espejo → referencia por coincidencia de (fecha, marcador) únicos en ambas fuentes. Conflicto → error."""
+    votes = collections.defaultdict(collections.Counter)
+    for code in sorted(set(mirror) & set(ref)):
+        m_count = collections.Counter((r.date, r.hg, r.ag) for r in mirror[code].itertuples())
+        idx = collections.defaultdict(list)
+        for r in ref[code].itertuples():
+            idx[(r.date, r.hg, r.ag)].append((r.home, r.away))
+        for r in mirror[code].itertuples():
+            key = (r.date, r.hg, r.ag)
+            if m_count[key] == 1 and len(idx.get(key, [])) == 1:
+                votes[r.home][idx[key][0][0]] += 1
+                votes[r.away][idx[key][0][1]] += 1
+    out = {}
+    for name, c in votes.items():
+        (best, n), *rest = c.most_common()
+        if rest and rest[0][1] >= max(2, 0.2 * n):
+            raise ValueError(f"Alias en conflicto para {name!r}: {dict(c)}")
+        if best != name:
+            out[name] = best
+    return out
+
+
+def check_mirror_aliases(mirror: dict, ref: dict) -> dict:
+    """Comprueba que el mapa estático MIRROR_ALIASES coincide con lo que dicen los datos."""
+    derived = derive_aliases(mirror, ref)
+    for name, target in derived.items():
+        if MIRROR_ALIASES.get(name, name) != target:
+            raise ValueError(f"Alias {name!r}: los datos dicen {target!r} pero MIRROR_ALIASES dice "
+                             f"{MIRROR_ALIASES.get(name, name)!r}")
+    return derived
+
+
+def similar_names(names, threshold: float = 0.75) -> list:
+    """Pares de nombres parecidos aún no revisados: posibles renombres que el recuento de entradas no detecta."""
+    ns = sorted(set(names))
+    return [(a, b) for i, a in enumerate(ns) for b in ns[i + 1:]
+            if frozenset((a, b)) not in KNOWN_DISTINCT
+            and difflib.SequenceMatcher(None, a.lower(), b.lower()).ratio() >= threshold]
+
+
+def uncorroborated(mirror_df: pd.DataFrame, ref_df: pd.DataFrame) -> pd.DataFrame:
+    """Filas del espejo que la fuente de referencia no respalda (misma fecha y marcador, sin usar nombres)."""
+    avail = collections.defaultdict(collections.Counter)
+    for r in ref_df.itertuples():
+        avail[r.date][(r.hg, r.ag)] += 1
+    extra = []
+    for r in mirror_df.itertuples(index=False):
+        if avail[r.date][(r.hg, r.ag)] > 0:
+            avail[r.date][(r.hg, r.ag)] -= 1
+        else:
+            extra.append(r)
+    return pd.DataFrame(extra, columns=["date", "home", "away", "hg", "ag"]) if extra else mirror_df.iloc[0:0].copy()
+
+
+def quarantine(extra: pd.DataFrame, min_rows: int = 3, zero_share: float = 0.8):
+    """Separa (conservadas, en cuarentena) las filas de fuente única.
+
+    Si hay al menos `min_rows` y ≥ `zero_share` son 0-0 se ponen todas en cuarentena: en 2025/26 el espejo
+    trae 15 resultados que openfootball no tiene y los 15 son 0-0 (la frecuencia real de 0-0 es ≈ 5 %).
+    """
+    if len(extra) >= min_rows and ((extra["hg"] == 0) & (extra["ag"] == 0)).mean() >= zero_share:
+        return extra.iloc[0:0].copy(), extra.copy()
+    return extra.copy(), extra.iloc[0:0].copy()
+
+
+def merge_season(ref_df: pd.DataFrame, mirror_df: pd.DataFrame):
+    """Referencia + filas de fuente única que superan la cuarentena. Devuelve (DataFrame, estadísticas)."""
+    kept, quarantined = quarantine(uncorroborated(mirror_df, ref_df))
+    merged = pd.concat([ref_df, kept], ignore_index=True).sort_values("date", kind="stable").reset_index(drop=True)
+    return merged, {"reference": int(len(ref_df)), "added_from_mirror": int(len(kept)), "quarantined": int(len(quarantined))}
+
+
+def verify_pinned(code: str, body: bytes, expected: dict, accept_changes: bool = False) -> str:
+    """SHA-256 del fichero; si había huella registrada y no coincide, falla salvo accept_changes."""
+    sha = hashlib.sha256(body).hexdigest()
+    exp = expected.get(code)
+    if exp and exp != sha and not accept_changes:
+        raise SourceChanged(f"{code}: la huella cambió (esperada {exp[:12]}…, obtenida {sha[:12]}…). "
+                            "Revisa el cambio y repite con --accept-changes si es legítimo.")
+    return sha
+
+
+def _frame(raw: dict) -> pd.DataFrame:
+    """Partidos con resultado de un dict estilo openfootball, SIN aplicar alias (para derivarlos de los datos)."""
+    rows = [(pd.Timestamp(m["date"]), m["team1"], m["team2"], m["score"]["ft"][0], m["score"]["ft"][1])
+            for m in raw["matches"] if m.get("score", {}).get("ft") and all(isinstance(x, int) for x in m["score"]["ft"])]
+    return pd.DataFrame(rows, columns=["date", "home", "away", "hg", "ag"])
+
+
+def build_history(mirror_bodies: dict, ref_dfs: dict, today: dt.date, expected_hashes: dict = None,
+                  accept_changes: bool = False):
+    """Primera división 1993/94 → hoy: espejo para el histórico + openfootball (limpio) donde existe.
+
+    Devuelve ({código: DataFrame}, informe). Falla ruidosamente si: cambia la huella de un fichero, un alias
+    estático contradice los datos, hay pares de nombres parecidos sin revisar o una transición de equipos
+    es sospechosa.
+    """
+    expected = expected_hashes or {}
+    shas, mir, mir_stats, frames = {}, {}, {}, {}
+    for code, body in mirror_bodies.items():
+        shas[code] = verify_pinned(code, body, expected, accept_changes)
+        raw = parse_mirror(body.decode("utf-8-sig"))
+        frames[code] = _frame(raw)
+        mir[code], mir_stats[code], _ = clean_season(apply_mirror_aliases(raw), today)
+    derived = check_mirror_aliases(frames, ref_dfs)
+
+    seasons, per_season, quarantined = {}, {}, []
+    for code in sorted(set(mir) | set(ref_dfs), key=ingest.season_key):
+        if code in mir and code in ref_dfs:
+            seasons[code], st = merge_season(ref_dfs[code], mir[code])
+            _, q = quarantine(uncorroborated(mir[code], ref_dfs[code]))
+            quarantined += [{"season": code, "date": str(r.date.date()), "home": r.home, "away": r.away,
+                             "hg": int(r.hg), "ag": int(r.ag)} for r in q.itertuples()]
+            per_season[code] = {"source": "merged", **st}
+        elif code in mir:
+            seasons[code] = mir[code]
+            per_season[code] = {"source": "mirror", "matches": int(len(mir[code])), **{k: mir_stats[code][k] for k in ("unplayed", "dropped_bad_score")}}
+        else:
+            seasons[code] = ref_dfs[code]
+            per_season[code] = {"source": "openfootball", "matches": int(len(ref_dfs[code]))}
+    names = {t for df in seasons.values() for t in set(df["home"]) | set(df["away"])}
+    flagged = similar_names(names)
+    if flagged:
+        raise ValueError(f"Pares de nombres parecidos sin revisar (¿renombre o errata?): {flagged}")
+    ingest.check_transitions(seasons)
+    report = {"mirror_sha256": shas, "seasons": per_season, "quarantined": quarantined,
+              "aliases_verified_against_data": len(derived),
+              "aliases_manual_unverified": sorted(k for k in MIRROR_ALIASES if k not in derived and any(
+                  k in set(f["home"]) | set(f["away"]) for f in frames.values())),
+              "n_clubs": len(names)}
+    return seasons, report

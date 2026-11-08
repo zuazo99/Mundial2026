@@ -25,6 +25,8 @@
 | 21 | Documenté y dije al usuario que las probabilidades "salen algo sobreconfiadas" sin haberlo medido; el backtest no lo confirmó | Regla 5: no afirmar una limitación como hecho; marcarla como hipótesis hasta medirla |
 | 22 | Generé `scripts/liga_backtest.py` con `str.replace` sin contar coincidencias y solo comprobé la sintaxis | Contar las coincidencias de cada sustitución y buscar con `grep` restos (rutas del scratchpad) antes de commitear |
 | 23 | Primera versión de la tabla de La Liga con ancho mínimo fijo: en móvil la columna Descenso quedaba fuera de pantalla; números de posición pegados al nombre; barras con línea espuria en valores ≈ 0 | Mirar siempre capturas de escritorio **y móvil** antes de dar una UI por buena; que la información clave quepa sin desplazar |
+| 24 | Dije que el espejo `datasets/football-datasets` "tiene justo los resultados que le faltan a openfootball" tras comprobar solo que las filas existían; 15 de esos 25 resultados (todos de 2025/26) son 0-0 de relleno | Perfilar **valores**, no solo presencia: comparar la distribución de marcadores de las filas "solo en una fuente" con la base (0-0 ≈ 5 %) antes de fiarse de ellas |
+| 25 | Pensé que "máx. 3 entradas por temporada" bastaba para detectar renombres; un renombre aislado (Villareal → Villarreal) cabe dentro de las 3 entradas y pasa sin avisar | Además del recuento, buscar nombres casi idénticos (similitud de cadenas) entre todos los clubes de la historia |
 
 ## Hábitos nuevos acordados con el usuario
 - La suite de tests la lanza un subagente y devuelve solo el resultado final.
