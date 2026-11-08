@@ -20,6 +20,8 @@
 | 16 | Al reescribir `CLAUDE.md` perdí la nota que el usuario pidió sobre las APIs | Regla 7: conservar las notas pedidas y verificar con un grep tras reescribir |
 | 17 | Interpreté "cuando se lo des ponte en `/loop`" como algo sobre permisos de red; el consejero señaló que era sobre su tarea | Regla 6: ante una instrucción ambigua, releerla literal o preguntar |
 | 18 | Un hook de parada me obligó a hacer push antes de recibir el resultado de los tests del subagente (commit `43c885e`) | Tests antes de commit; si un hook obliga a subir antes, verificar los tests y el CI justo después y decirlo |
+| 19 | En un script leí un fichero después de salir del `with tempfile.TemporaryDirectory()` que lo contenía | Leer dentro del bloque del directorio temporal; ante un `FileNotFoundError`, comprobar primero el ámbito del recurso |
+| 20 | Lancé la rejilla de 20 ajustes con todos los hilos mientras corría la suite de tests: la suite pasó de ~7 s a casi 20 min | No solapar trabajos pesados de CPU; lanzar los tests solos o limitar hilos (`n_jobs`) |
 
 ## Hábitos nuevos acordados con el usuario
 - La suite de tests la lanza un subagente y devuelve solo el resultado final.
