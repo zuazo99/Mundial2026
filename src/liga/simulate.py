@@ -8,8 +8,9 @@ y descenso, y la distribución completa de posiciones.
 
 Supuestos (documentados también en la salida):
   * XG fijo ("xg_frozen"): el estado de los equipos no se actualiza durante la
-    temporada, así que no recoge cambios de forma y las probabilidades salen
-    algo sobreconfiadas.
+    temporada, así que no recoge cambios de forma. Un backtest (scripts/liga_backtest.py)
+    no encontró sobreconfianza medible en promedio, pero sus probabilidades de campeón en la
+    jornada 7 no superaron 0,59: valores más extremos no están validados.
   * Zonas por defecto: 4 Champions, puestos 5-6 Europa League, 3 descensos. Las plazas
     europeas cambian cada año (plaza extra, Copa del Rey) y no se modelan.
   * Desempate (reglamento de La Liga): puntos → puntos del enfrentamiento directo →

@@ -22,6 +22,8 @@
 | 18 | Un hook de parada me obligó a hacer push antes de recibir el resultado de los tests del subagente (commit `43c885e`) | Tests antes de commit; si un hook obliga a subir antes, verificar los tests y el CI justo después y decirlo |
 | 19 | En un script leí un fichero después de salir del `with tempfile.TemporaryDirectory()` que lo contenía | Leer dentro del bloque del directorio temporal; ante un `FileNotFoundError`, comprobar primero el ámbito del recurso |
 | 20 | Lancé la rejilla de 20 ajustes con todos los hilos mientras corría la suite de tests: la suite pasó de ~7 s a casi 20 min | No solapar trabajos pesados de CPU; lanzar los tests solos o limitar hilos (`n_jobs`) |
+| 21 | Documenté y dije al usuario que las probabilidades "salen algo sobreconfiadas" sin haberlo medido; el backtest no lo confirmó | Regla 5: no afirmar una limitación como hecho; marcarla como hipótesis hasta medirla |
+| 22 | Generé `scripts/liga_backtest.py` con `str.replace` sin contar coincidencias y solo comprobé la sintaxis | Contar las coincidencias de cada sustitución y buscar con `grep` restos (rutas del scratchpad) antes de commitear |
 
 ## Hábitos nuevos acordados con el usuario
 - La suite de tests la lanza un subagente y devuelve solo el resultado final.
