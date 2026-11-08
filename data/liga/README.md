@@ -22,3 +22,19 @@ ajustable); si un ascendido no aparece en SP2, recibe la media de los descendido
 4. `python src/liga/simulate.py [n_sims]` simula el resto de la temporada y escribe
    `results/liga_probabilities.json` (campeón, Champions, Europa League, descenso, posiciones).
    Zonas y desempates documentados en la cabecera de `src/liga/simulate.py`.
+
+## Fuentes evaluadas (verificadas desde el entorno cloud, nov 2026)
+
+Alcanzables vía `raw.githubusercontent.com` (HTTPS; `github.com` y su API dan 403):
+
+| Fuente | Cobertura La Liga | Contenido | Licencia | Notas |
+|---|---|---|---|---|
+| [datasets/football-datasets](https://github.com/datasets/football-datasets) (`datasets/la-liga/season-<aabb>.csv`) | 1993/94 → 2025/26, 380/380 partidos con resultado por temporada | resultado, descanso, árbitro, tiros (HS/AS), a puerta (HST/AST), faltas, córners, tarjetas | PDDL (dominio público) | Espejo de football-data.co.uk. Sin cuotas. **No tiene 2026/27** (a 2026-11-08) |
+| [openfootball/football.json](https://github.com/openfootball/football.json) | desde ~2016/17 hasta 2026/27 (en curso) | resultado y descanso | CC0 | La única con la temporada en curso (hasta 2026-09-20); faltan 10 resultados en 2024/25 y 15 en 2025/26 |
+| [footballcsv/cache.footballdata](https://github.com/footballcsv/cache.footballdata) | 1993/94 → 2023/24 | resultado y descanso | CC0 | Nombres abreviados de football-data; usada para validación cruzada |
+| [jalapic/engsoccerdata](https://github.com/jalapic/engsoccerdata) (`data-raw/spain.csv`) | 1928 → 2024, 27.335 partidos | resultado y descanso | GPL ≥ 2 (licencia del paquete; revisar antes de redistribuir datos) | Historial muy largo entre rivales |
+| [statsbomb/open-data](https://github.com/statsbomb/open-data) | 2004/05 → 2020/21, casi todo solo partidos del Barça; 2015/16 completa | eventos y xG por tiro | licencia propia de StatsBomb (atribución) | Útil para validar xG, no como fuente principal |
+
+No alcanzables desde aquí (sin permisos de red): football-data.co.uk (original, con cuotas), clubelo.com, Understat, FBref, football-data.org, API-Football, SportMonks. De pago: Opta.
+
+Seguridad de la cadena de datos (pendiente de implementar): fijar las descargas a un commit concreto en lugar de `master`, guardar el SHA-256 de cada fichero en `cleaning_report.json`, y mantener la validación cruzada entre fuentes independientes.
