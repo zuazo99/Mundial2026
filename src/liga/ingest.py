@@ -215,12 +215,25 @@ def check_transitions(seasons: dict, max_changes: int = 3, exceptions: dict = No
 
 # ─── CLI ─────────────────────────────────────────────────────────────────────
 
-def build_dataset(raw_dir: str, out_dir: str) -> None:
+# Primera temporada de la cadena de ELO en producción. Calentar el ELO desde 1993 NO se adoptó: en el backtest
+# empeoró el log-loss de campeón (+0,010) y de Champions (ver scripts/liga_backtest_elo.py).
+PRODUCTION_FIRST_SEASON = "1617"
+
+
+def build_dataset(raw_dir: str, out_dir: str, first_season: str = None) -> None:
+    """first_season ('1617'): ignora las temporadas anteriores (también de Segunda) al calcular el ELO."""
     seasons = load_seasons(raw_dir)
+    if first_season is not None:
+        lo = season_key(first_season)
+        seasons = {c: df for c, df in seasons.items() if season_key(c) >= lo}
+        if not seasons:
+            raise SystemExit(f"first_season={first_season!r} deja sin temporadas en {raw_dir}.")
     if not seasons:
         raise SystemExit(f"No hay ficheros SP1_*.csv en {raw_dir}. "
                          "Descárgalos con scripts/download_liga.py o cópialos a mano.")
     second = load_seasons(raw_dir, division="SP2")
+    if first_season is not None:
+        second = {c: df for c, df in second.items() if season_key(c) >= lo}
     if second:
         print(f"ℹ️  Sembrando ascendidos con {len(second)} temporada(s) de Segunda (SP2)")
     check_transitions(seasons)
@@ -238,4 +251,6 @@ def build_dataset(raw_dir: str, out_dir: str) -> None:
 
 
 if __name__ == "__main__":
-    build_dataset(path("data", "liga", "raw"), path("data", "liga"))
+    # Entrada: histórico fusionado (scripts/build_liga_history.py); ELO desde PRODUCTION_FIRST_SEASON.
+    build_dataset(sys.argv[1] if len(sys.argv) > 1 else path("data", "liga", "raw_hist"), path("data", "liga"),
+                  first_season=sys.argv[2] if len(sys.argv) > 2 else PRODUCTION_FIRST_SEASON)

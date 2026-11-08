@@ -25,8 +25,8 @@ for S in SEASONS:
     for r in full.itertuples(): hg[idx[r.home],idx[r.away]],ag[idx[r.home],idx[r.away]]=r.hg,r.ag
     order=sim.final_order(hg,ag); actual={teams[i]:k+1 for k,i in enumerate(order)}
     for md,cut in CUTS.items():
-        seasons={c:(df if c!=S else df.sort_values("date",kind="stable").head(cut)) for c,df in sp1.items() if c<=S}
-        second={c:df for c,df in sp2_all.items() if c<S}
+        seasons={c:(df if c!=S else df.sort_values("date",kind="stable").head(cut)) for c,df in sp1.items() if ingest.season_key(c)<=ingest.season_key(S)}
+        second={c:df for c,df in sp2_all.items() if ingest.season_key(c)<ingest.season_key(S)}
         long=ingest.to_long(ingest.add_elo(seasons,second_div=second)); elo_now=ingest.final_elos(seasons,second_div=second)
         played=seasons[S][["home","away","hg","ag"]]; pend=ingest.pending_fixtures(seasons[S])
         for sname,sh in SHRINKS.items():

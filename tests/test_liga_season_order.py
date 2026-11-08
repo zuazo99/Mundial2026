@@ -72,3 +72,23 @@ def test_train_from_rejects_unknown_or_empty_training_window():
     long = ingest.to_long(ingest.add_elo(y2k_seasons()))
     with pytest.raises(ValueError, match="train_from"):
         lm.train_liga(long, train_from="2627")                              # posterior a todos los datos
+
+
+def test_build_dataset_first_season_limits_the_elo_chain(tmp_path):
+    import shutil
+    raw = tmp_path / "raw"
+    raw.mkdir()
+    for code, df in y2k_seasons().items():
+        pd.DataFrame({"Div": "SP1", "Date": df["date"].dt.strftime("%d/%m/%Y"), "HomeTeam": df["home"],
+                      "AwayTeam": df["away"], "FTHG": df["hg"], "FTAG": df["ag"]}).to_csv(raw / f"SP1_{code}.csv", index=False)
+    full, cut = tmp_path / "full", tmp_path / "cut"
+    ingest.build_dataset(str(raw), str(full))
+    ingest.build_dataset(str(raw), str(cut), first_season="9900")
+    a = pd.read_csv(full / "df_liga.csv", dtype={"season": str})
+    b = pd.read_csv(cut / "df_liga.csv", dtype={"season": str})
+    assert sorted(a["season"].unique(), key=ingest.season_key) == CODES
+    assert sorted(b["season"].unique(), key=ingest.season_key) == ["9900", "0001", "0102"]
+    first = b[b["season"] == "9900"].sort_values("date").iloc[0]
+    assert first["elo"] == ingest.ELO_INIT                      # la cadena de ELO empieza en frío en 9900
+    with pytest.raises(SystemExit, match="first_season"):
+        ingest.build_dataset(str(raw), str(tmp_path / "x"), first_season="2627")
